@@ -1,0 +1,33 @@
+// Mixins
+
+@mixin sortable-margin {
+	margin: 6px;
+}
+@mixin sortable-border-radius {
+	border-radius: 50%;
+}
+@mixin sortable-cursor {
+	cursor: url(images/dnd/cursor/openhand.cur), move; /* Cursor for IE. */
+	cursor: url(images/dnd/cursor/openhand.cur) 7 5, move; /* Cursor for FF and Chrome (setting midpoint). */
+}
+@mixin sortable-box-sizing {
+	box-sizing: border-box;
+}
+@mixin sortable-padding {
+	padding: 10px;
+	padding: .5vw;
+	text-align: center;
+	color:$white;
+	font-weight: $font-weight--bold;
+}
+@mixin sortable-width-height {
+	width: 4vw;
+    height: 4vw;
+}
+@mixin sortable-li-width-height {
+	//width: 100%;
+    height: auto;
+}
+@mixin sortable-position-border {
+	border:dashed 3px rgba(0,0,0,.25);
+}

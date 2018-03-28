@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offense Lineup</title>
+<link href="Vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css">
+<link href="css/application.css" rel="stylesheet" type="text/css">
+<script src="Vendor/js/jquery/jquery-3.2.1.min.js"></script>
+<script src="Vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="Vendor/js/jquery/jquery.sortable.js"></script> 
+
+
+<style>
+
+
+.connected, .sortable, .exclude, .handles {
+margin: auto;
+padding: 0;
+/*width: 100%;*/
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.sortable.grid {
+overflow: hidden;
+}
+.connected li, .sortable li, .exclude li, .handles li {
+list-style: none;
+border: 2px dashed rgba(0,0,0,0.35);
+background: rgba(0,0,0,0.25);
+font-family: $font-family--primary;
+color: #1C94C4;
+margin: 5px;
+padding: 5px;
+height: 22px;
+}
+.handles span {
+cursor: move;
+}
+li.disabled {
+opacity: 0.5;
+}
+	ul.sortable.grid {
+		display: table;
+		margin:0 auto;
+	}
+.sortable.grid li {
+float: left;
+width: 78px;
+height: 78px;
+text-align: center;
+}
+li.highlight {
+background: #FEE25F;
+}
+
+
+
+li.sortable-placeholder {
+border: 1px dashed #CCC;
+background: none;
+}
+
+	</style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 embed-responsive-16by9"> 
+      <!-- TheField -->
+      <div class="theField"> 
+        <!-- TheHeader -->
+        <div class="row">
+          <div class="col-md-12">
+            <header id="topHeader"><img src="content/images/logo-BlueStarYouth2.png" class="site-logo" alt="Blue Star Sports Logo"/></header>
+          </div>
+        </div>
+        <!-- /The Header -->
+        <div class="row">
+          <div class="col-md-12">
+            <section> 
+              <!-- The Players Grid -->
+              <ul class="sortable grid connected list">
+				<li><p><label>1</label></p></li>
+				<li><p><label>2</label></p></li>
+				<li><p><label>3</label></p></li>
+				<li><p><label>4</label></p></li>
+				<li><p><label>5</label></p></li>
+				<li><p><label>6</label></p></li>
+				<li><p><label>7</label></p></li>
+				<li><p><label>8</label></p></li>
+				<li><p><label>9</label></p></li>
+				<li><p><label>10</label></p></li>
+				<li><p><label>11</label></p></li>
+			</ul>
+            
+            <ul class="sortable grid connected list no2">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+              
+            <ul class="sortable grid connected list no3">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+              
+            <ul class="sortable grid connected list no4">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+              
+            <ul class="sortable grid connected list no5">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+              
+            <ul class="sortable grid connected list no6">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+
+              
+              <!-- /The Players Grid --> 
+            </section>
+          </div>
+        </div>
+      </div>
+      <!-- /TheField --> 
+    </div>
+  </div>
+</div>
+<script>
+		$(function() {
+			$('.sortable').sortable();
+			$('.handles').sortable({
+				handle: 'span'
+			});
+			$('.connected').sortable({
+				connectWith: '.connected'
+			});
+			$('.exclude').sortable({
+				items: ':not(.disabled)'
+			});
+		});
+	</script>
+</body>
+</html>

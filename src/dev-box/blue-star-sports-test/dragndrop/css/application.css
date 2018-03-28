@@ -1,0 +1,199 @@
+@import url("http://fonts.googleapis.com/css?family=Droid+Serif");
+/* line 17, ../scss/_helpers.scss */
+.srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/* line 35, ../scss/_helpers.scss */
+.padding-0px {
+  padding: 0px; }
+
+/* line 38, ../scss/_helpers.scss */
+.padding-top-180px {
+  padding-top: 180px; }
+
+/* line 41, ../scss/_helpers.scss */
+.padding-top-80px {
+  padding-top: 80px; }
+
+/* line 44, ../scss/_helpers.scss */
+.padding-80px {
+  padding: 80px; }
+
+/* line 47, ../scss/_helpers.scss */
+.margin-0px {
+  margin: 0px; }
+
+/* line 50, ../scss/_helpers.scss */
+.lineEnd {
+  clear: both; }
+
+/* line 53, ../scss/_helpers.scss */
+.display-block {
+  display: block; }
+
+/* line 56, ../scss/_helpers.scss */
+.text-emboss {
+  color: darkorange; }
+
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Droid Serif"), local("DroidSerif"), url(../Vendor/fonts/Droid/droidserif.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215; }
+/* line 11, ../scss/_base.scss */
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 16, ../scss/_base.scss */
+body {
+  /*font-size: $base__font-size;
+  line-height: ($base__line/$base__font-size);*/
+  font-size: 16px;
+  font-size: 1.25vw vw;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #1E6D34; }
+
+/* line 25, ../scss/_base.scss */
+header {
+  text-align: center; }
+
+/* line 30, ../scss/_base.scss */
+h1 {
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 30px; }
+
+/* line 37, ../scss/_base.scss */
+h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+/* line 41, ../scss/_base.scss */
+section {
+  width: 80%;
+  margin: 20px auto; }
+
+/* line 56, ../scss/_base.scss */
+.offsetBack {
+  position: relative;
+  top: 20px !important; }
+
+/* line 60, ../scss/_base.scss */
+.offsetForward {
+  position: relative;
+  top: -20px !important; }
+
+/* line 64, ../scss/_base.scss */
+.col-md-1 {
+  width: 8.33333333%;
+  float: left;
+  border: dashed 3px rgba(0, 0, 0, 0.25);
+  margin: 2px; }
+
+/* line 70, ../scss/_base.scss */
+.btn-default, btn-default:visited {
+  background: #deefff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #deefff 0%, #98bede 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #deefff 0%, #98bede 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #deefff 0%, #98bede 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#98bede',GradientType=0 );
+  /* IE6-9 */
+  border: solid #356aa0 3px;
+  border-radius: 20px; }
+
+/* line 80, ../scss/_base.scss */
+.btn-default:hover {
+  border-color: chocolate; }
+
+/* line 83, ../scss/_base.scss */
+.btn-default h2 {
+  font-size: 28px;
+  font-size: 2.19vw;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block; }
+
+/* line 93, ../scss/_base.scss */
+.football {
+  position: absolute;
+  top: 20px;
+  left: 20px; }
+
+/* line 98, ../scss/_base.scss */
+.nav-pill {
+  float: right;
+  position: absolute;
+  right: 200px;
+  color: #011f43; }
+
+/* line 105, ../scss/_base.scss */
+.nav-pill a, .nav-pill:visited {
+  color: #011f43;
+  font-weight: 700; }
+
+/* line 5, ../scss/_main.scss */
+.site-logo {
+  margin: 2em;
+  position: relative; }
+
+/* line 10, ../scss/_main.scss */
+.theField {
+  background: #154923 url(images/bg/bg_PartialField.jpg) no-repeat left top;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden; }
+
+/* line 21, ../scss/_main.scss */
+.sortable {
+  height: auto;
+  box-sizing: border-box;
+  margin: 6px;
+  background: transparent; }
+
+/* line 30, ../scss/_main.scss */
+.sortable div {
+  width: 4vw;
+  height: 4vw;
+  padding: 10px;
+  padding: .5vw;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  margin: 6px;
+  background: #ff784f;
+  border-radius: 50%;
+  cursor: url(images/dnd/cursor/openhand.cur), move;
+  /* Cursor for IE. */
+  cursor: url(images/dnd/cursor/openhand.cur) 7 5, move;
+  /* Cursor for FF and Chrome (setting midpoint). */
+  box-sizing: border-box; }
+
+/* line 39, ../scss/_main.scss */
+.ui-sortable-helper, .ui-sortable-placeholder {
+  background: transparent;
+  border: transparent; }
+
+/* line 43, ../scss/_main.scss */
+li.sortable p span {
+  font-size: 1.5vw;
+  font-weight: 700; }
+
+/*# sourceMappingURL=application.css.map */

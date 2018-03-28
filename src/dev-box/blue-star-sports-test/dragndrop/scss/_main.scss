@@ -1,0 +1,46 @@
+// ==========================================================================
+// Main
+// ==========================================================================
+
+.site-logo {
+  margin: 2em;
+  position: relative;
+  //top: 40px;
+}
+.theField {
+	background: #154923 url(images/bg/bg_PartialField.jpg) no-repeat left top;
+    background-size: 100%;
+	//position:fixed !important;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+	overflow: hidden;
+}
+.sortable {
+  @include sortable-li-width-height;
+  @include sortable-box-sizing;
+  @include sortable-margin;
+  background: $transparent;
+  
+
+}
+
+.sortable div {
+  @include sortable-width-height;
+  @include sortable-padding;
+  @include sortable-margin;
+  background: $coral;
+  @include sortable-border-radius;
+  @include sortable-cursor;
+  @include sortable-box-sizing;
+}
+.ui-sortable-helper, .ui-sortable-placeholder {
+	background: $transparent;
+	border: $transparent;
+}
+li.sortable p span {
+	font-size: 1.5vw;
+	font-weight: $font-weight--bold;
+}

@@ -1,0 +1,169 @@
+<html>
+
+<head>
+  <title>ONE UI Dev Test</title>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<style>
+  body {
+    font-family: Arial;
+    margin-bottom: 1000px;
+  }
+  
+  .instructions {
+    font-family: Times New Roman;
+    width: 500px;
+  }
+  
+  .controls {
+    margin-top: 20px;
+    margin-left: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .control {
+    padding-bottom: 4px;
+  }
+  
+  .employees {
+    width: 300px;
+    margin-left: 12px;
+    /*float: left;*/
+  }
+  
+  .employee {
+    position: relative;
+    border: 1px solid black;
+    padding: 4px 4px 4px 4px;
+    margin-bottom: 8px;
+  }
+  
+  .employee .name {
+    font-size: 14pt;
+  }
+  
+  .employee .position {
+    display: block;
+  }
+  
+  .employee .hireDate {
+    display: block;
+    font-size: 10pt;
+  }
+  
+  .employee .id {
+    color: green;
+    position: absolute;
+    top: 1px;
+    right: 8px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="instructions" style="display:none"> You have been asked to modify this HTML page using javascript and CSS to make it interactive. If you look at the source
+    of this page, you will find a javascript variable named "employeesById" containing employee information. Your job is
+    to display that information in a user-friendly way and enable simplistic sorting and searching of that data.
+    <p>You will do all of this <em>without</em> a server; you should implement this purely using javascript, HTML and CSS. To
+      implement your solution, <b>please modify 
+    the source of this HTML page</b>. (Do not create a new file.)
+      <p>In your implementation you may use jQuery, or you may do it without using a javascript framework at all. jQuery is
+        already included in the page. Please do not import any other javascript libraries. You are free to use the internet
+        to lookup API references or get any tips you need.
+        <p>Here are the specific requirements you have been asked to implement:
+          <ol>
+            <li>A "business card" should be shown for each employee. A sample business card for John Glanton has been included
+              for reference, but you should change this so the data is taken from employeesById for all employees rather
+              than being hardcoded HTML. Please match the current style exactly.</li>
+            <li>The user should be able to choose to sort by Name or ID, and the business cards should be immediately re-rendered
+              in that order. (You can sort Name exactly as it appears - you don't need to extract the last name and order
+              by that first.)</li>
+            <li>The user should be able to type in a partial employee name. You should match this against business cards by employee
+              name, case insensitively, with an implicit "wildcard" before and after the typed string. Any business cards
+              not matching this should be removed. <b>For example:</b> if one types "b" it should show Ben Tobin, David Brown
+              and Samuel Chamberlain. But once the user types "br", it should show only David Brown.</li>
+            <li>We would like the user's ID to appear in the top right corner of each business card. Using CSS only (i.e. do
+              not change the HTML markup), move the ID to the top right of each card.</li>
+          </ol>
+          <p>Your solution will be graded based on the following criteria:
+            <ul>
+              <li>Accurate implementation of each of the requirements listed above</li>
+              <li>Clarity and conciseness of code</li>
+            </ul>
+  </div>
+  <hr/>
+  <div class="controls">
+    <div class="control">Search:
+      <input type="text" name="search" id="search" />
+    </div>
+    <div class="control">Sort:
+      <select name="sort" id="sort">
+      <option name="Name" value="Name">Name</option>
+      <option name="ID" value="ID">ID</option>
+    </select>
+    </div>
+  </div>
+  <div class="test"></div>
+
+  <script>
+    // This object contains a property whose key is the ID of an employee, and whose value is another
+    // object containing the remaining details for that employee.
+    $(document).ready(function () {
+      $(function () {
+        var employeesById = {
+          "8110923": { "Name": "John Glanton", "Position": "Chief Executive", "HireDate": "2008-01-15" },
+          "7734981": { "Name": "Samuel Chamberlain", "Position": "Sales", "HireDate": "2012-05-01" },
+          "3400981": { "Name": "Louis Toadvine", "Position": "Customer Support", "HireDate": "2011-08-24" },
+          "5517823": { "Name": "Ben Tobin", "Position": "Developer", "HireDate": "2013-03-19" },
+          "4587234": { "Name": "David Brown", "Position": "Director of HR", "HireDate": "2012-01-10" }
+        };
+        
+        // Create an array of employeesById
+        var sort_array = [];
+        var sortByName = [sort_array.sort(function(x,y){return x.Name > y.Name})]
+        var sortByKey = [sort_array.sort(function(x,y){return x.Key > y.Key})]
+        for (var key in employeesById) {
+            sort_array.push({key:key,Name:employeesById[key].Name,Position:employeesById[key].Position,HireDate:employeesById[key].HireDate});
+        }
+
+        //Sort the array
+        $('#sort').change(function () {
+          if ($('#sort').val() == 'ID') 
+            sortByKey;
+             else 
+            sortByName;
+            console.log(sort_array)
+        })
+
+        // Build the data
+        var div_data = [];
+        
+        $.each(sort_array, function (key, value) {
+            div_data.push('<div class=\"employees"\><div class=\"employee"\><p>' + '<span class=\"name"\>' + sort_array[key].Name + '</span><br>' + '<span class=\"position"\>' + sort_array[key].Position + '<br>' + '<span class=\"hireDate"\>' + "Employeed Since " + sort_array[key].HireDate + '<span class=\"id"\>' + sort_array[key].key + '</span>' + '</p></div></div>')
+           showData()
+        })
+      
+        //console.log(array);
+        
+        
+
+        //Display the Data
+        function showData() {
+          $("div.test").html(div_data);
+        }
+
+        
+//////////////////////////////////////////////////////////////////////
+      });
+    });
+
+//$("#search").autocomplete({
+  //source: employeesById
+//});
+
+  </script>
+
+
+</body>
+
+</html>

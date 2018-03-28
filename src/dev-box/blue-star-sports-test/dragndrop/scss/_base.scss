@@ -1,0 +1,108 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Serif'), local('DroidSerif'), url(../Vendor/fonts/Droid/droidserif.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+  /*font-size: $base__font-size;
+  line-height: ($base__line/$base__font-size);*/
+  font-size: 16px;
+  font-size: get-vw(16px)vw;
+  font-family: $font-family--primary;
+  background: #1E6D34;
+}
+
+header {
+  text-align:center;
+
+}
+
+h1 {
+  font-weight: $font-weight--ultra-bold;
+	color: $white;
+	margin-bottom: 30px;
+
+}
+
+h2 {
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--bold;
+}
+section {
+	width: $section-width;
+	margin: $section-margin;
+}
+//ul.sortable.grid {
+//	list-style-type: none;
+//	display: table;
+//	width:auto;
+//	margin: 0 auto;
+//}
+//ul.sortable.grid li {
+//	float:left;
+//	padding:2px;
+//
+//}
+.offsetBack {
+	position: relative;
+	top: 20px !important;
+}
+.offsetForward {
+	position: relative;
+	top: -20px !important;
+}
+.col-md-1 {
+	width:8.33333333%;
+	float:left;
+	@include sortable-position-border;
+	margin: 2px;
+}
+.btn-default, btn-default:visited {
+
+	background: #deefff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #deefff 0%, #98bede 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #deefff 0%,#98bede 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #deefff 0%,#98bede 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#98bede',GradientType=0 ); /* IE6-9 */
+	border: solid #356aa0 3px;
+	border-radius: 20px;
+}
+.btn-default:hover {
+	border-color: chocolate;
+}
+.btn-default h2 {
+	font-size: 28px;
+	font-size: 2.19vw;
+	text-align: center;
+	font-weight: $font-weight--bold;
+	text-transform: uppercase;
+	display: block;
+
+	
+}
+.football {
+	position: absolute;
+	top:20px;
+	left:20px;
+}
+.nav-pill {
+	float: right;
+    position: absolute;
+	right: 200px;
+	color: $DCBlue;
+	
+}
+.nav-pill a, .nav-pill:visited {
+	color: $DCBlue;
+	font-weight: $font-weight--bold;
+}
