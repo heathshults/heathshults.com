@@ -1,8 +1,8 @@
 {
-  "title": "Agency",
+  "title": "HeathScript",
   "name": "heathshults.com",
   "version": "1.0.0",
-  "description": "Agency is a one page HTML theme for Bootstrap.",
+  "description": "Portfolio site for me.",
   "keywords": [
     "css",
     "sass",
@@ -11,19 +11,19 @@
     "theme",
     "template"
   ],
-  "homepage": "https://startbootstrap.com/template-overviews/agency",
+  "homepage": "http://heathshults.com",
   "bugs": {
     "url": "https://github.com/BlackrockDigital/startbootstrap-agency/issues",
     "email": "feedback@startbootstrap.com"
   },
   "license": "MIT",
-  "author": "Start Bootstrap",
+  "author": "Heath E Shults",
   "contributors": [
-    "David Miller (http://davidmiller.io/)"
+    "Heath Shults"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BlackrockDigital/startbootstrap-agency.git"
+    "url": "git+https://github.com/heathshults/heathshults.com.git"
   },
   "dependencies": {
     "bootstrap": "4.0.0",
@@ -37,7 +37,6 @@
     "gulp-clean-css": "3.9.2",
     "gulp-header": "2.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
     "gulp-uglify": "3.0.0"
   },
   "main": "gulpfile.js",
