@@ -1,0 +1,82 @@
+body{
+   background: #F8F8F8;
+}
+
+
+.kitchen-layout{
+    height:100%;
+    margin:0;
+}
+
+
+.kitchen-layout-body{
+    position: relative;
+}
+
+.kitchen-layout-left{
+    background-color: #ccc;
+    position: fixed;
+    overflow-y: auto;
+    top:0;
+    left:0;
+    width:14rem;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+.kitchen-layout-main{
+    margin-left: 14rem;
+    padding: 2.5vh 5%;
+    padding-bottom:5rem;
+}
+
+.kitchen-header{
+    background-color: #05314D;
+    color: #fff;
+    padding: 1.5rem;
+    position: relative;
+    text-align: right;
+
+    .kitchen-app-title{
+        color:#ccc;
+        margin-top: -.2rem;
+        font-size: .5rem;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+    }
+}
+
+
+//TEMP move to framiekit
+.fk-menu{
+    padding:1rem;
+}
+
+.fk-menu-label{
+    text-transform: uppercase;
+    margin-top:1rem;
+    margin-bottom: .25rem;
+}
+
+.fk-menu-list{
+    padding-left: .5rem;
+    list-style: none;
+    margin: 0;
+
+    .fk-menu-list_item{
+        a{
+            text-decoration: none;
+            color: rgb(83, 83, 83);
+
+            &:hover {
+                color: rgb(39, 39, 39);
+            }
+        }
+        padding-bottom:  .25rem;
+    }
+}
+
+
+
+
