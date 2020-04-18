@@ -1,4 +1,5 @@
 node_modules
-DevBox
-_notes
+src/DevBox
+www
+**/*/_notes
 
