@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<form ref='uploadForm' 
+			id='fileupload' 
+			action='/upload' 
+			method='post' 
+			encType="multipart/form-data">
+				<input type="file" name="sampleFile" />
+				<input type='submit' value='Upload!' />
+		</form>		
+		<script src="/js/jquery.fileupload.js"></script>
+		<script>
+		$('#fileupload').fileupload();
+		</script>
+	</body>
+</html>
