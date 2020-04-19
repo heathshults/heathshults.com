@@ -1,3 +1,6 @@
+
+
+
 // Mixins
 
 // Bootstrap Button Variant
@@ -82,3 +85,35 @@
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
+
+// functions
+
+/*
+ * CSS CUSTOM VARIABLE FUNCTION
+ *
+ * Get css vars from scss vars
+ *
+ * Use:
+ * `color: v(primary);`
+ * `color: v(primary, #000);`
+ * `padding-left: v(x-padding, 2rem);`
+ * `transform: translate3d(v(x-delta), v(y-delta), 0);`
+ *
+ * Parameters:
+ *  $Var: name of the SASS variable, without its double hyphen prefix
+ *  $fallback: (optional, null by default): custom property fallback value
+ */
+// $colors: map-merge($map1: $grays, $map2: $theme-dark-mode-colors);
+// $keys: map-keys($colors);
+
+// @function getV($var, $fallback: null) {
+//   @if map-has-key($colors, $var) {
+//     $cssVarName: #{$var};
+//   }
+//   @if($fallback) {
+//     @return var(--$cssVarName, $fallback);
+//   } @else {
+//     @return var(--$cssVarName);
+//   }
+// }
+

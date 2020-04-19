@@ -1,0 +1,127 @@
+@import 'maps';
+@import 'variables';
+@import 'mixins';
+
+html {
+	background-color: $blueGray-darker !important;
+	color: $baige-medium !important;
+}
+body {
+	background-color: $blueGray-darker !important;
+	color: $baige-medium !important;
+}
+:not([style*="background-color:"]) {
+	background-color: $blueGray-darker !important;
+}
+:not([style*="color:"]) {
+	color: $baige-medium !important;
+}
+input {
+	&:not([style*="background-color:"]) {
+		background-color: $blueGray-dark !important;
+		&:hover {
+			background-color: $blue-dark !important;
+		}
+		&:active {
+			background-color: $blue-dark !important;
+		}
+		&:focus {
+			background-color: $blue-dark !important;
+		}
+	}
+	&:not([style*="background-image:"]) {
+		background-image: none !important;
+	}
+}
+textarea {
+	&:not([style*="background-color:"]) {
+		background-color: $blueGray-dark !important;
+		&:hover {
+			background-color: $blue-dark !important;
+		}
+		&:active {
+			background-color: $blue-dark !important;
+		}
+		&:focus {
+			background-color: $blue-dark !important;
+		}
+	}
+	&:not([style*="background-image:"]) {
+		background-image: none !important;
+	}
+}
+[role="button"] {
+	background-color: $blueGray-dark !important;
+	&:hover {
+		background-color: $blue-dark !important;
+	}
+	&:active {
+		background-color: $blue-dark !important;
+	}
+	&:focus {
+		background-color: $blue-dark !important;
+	}
+}
+:not([style*="border-color:"]) {
+	border-color: $blueGray-medium !important;
+}
+::before {
+	border-color: $blueGray-medium !important;
+}
+::after {
+	border-color: $blueGray-medium !important;
+}
+input::placeholder {
+	color: $baige-medium !important;
+}
+textarea::placeholder {
+	color: $baige-medium !important;
+}
+h1:not([style*="color:"]) {
+	color: $text-onDark !important;
+}
+h2:not([style*="color:"]) {
+	color: $text-onDark !important;
+}
+h3:not([style*="color:"]) {
+	color: $text-onDark !important;
+}
+h4:not([style*="color:"]) {
+	color: $text-onDark !important;
+}
+h5:not([style*="color:"]) {
+	color: $text-onDark !important;
+}
+h6:not([style*="color:"]) {
+	color: $text-onDark !important;
+}
+cite:not([style*="color:"]) {
+	color: $green-light !important;
+}
+button:not([style*="background-color:"]) {
+	background-color: $blueGray-dark !important;
+	&:hover {
+		background-color: $blue-dark !important;
+	}
+	&:active {
+		background-color: $blue-dark !important;
+	}
+	&:focus {
+		background-color: $blue-dark !important;
+	}
+}
+a:not([style*="color:"]) {
+	color: $blue-light-muted !important;
+	&:hover {
+		color: $blue-lighter-muted !important;
+	}
+	&:active {
+		color: $blue-lightest-muted !important;
+	}
+	&:focus {
+		color: $blue-lightest-muted !important;
+	}
+}
+div:empty {
+	background-color: $blueGray-darker !important;
+}

@@ -2,14 +2,38 @@
 
 (function($) {
     "use strict"; // Start of use strict
+    
+    $('.ninja-mode-widget').bind('mouseup', function(event) {
+      event.preventDefault;
+      
+      //var $darkmode = $("#darkmode");
+      
+      $('#ninja').toggleClass('ninja-01 ninja-02')
+      
+      if($("#darkmode").disabled) {
+        
+        $("#darkmode").disabled = false;
+        localStorage.setItem("darkreader", "enabled");
+        
+      } else {
+        
+        $("#darkmode").disabled = true;
+        localStorage.setItem("darkreader", "disabled");
+        
+      }
+    })
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
+    // navigation and darkmode (toggleNinjaMode)
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
+      event.preventDefault
+      var $anchor = $(event.target);
         $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+          scrollTop: ($($anchor.attr('href')).offset().top - 50)
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
+        return 
+      
     });
 
     // Highlight the top nav as scrolling occurs

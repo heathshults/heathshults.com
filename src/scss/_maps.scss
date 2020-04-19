@@ -1,0 +1,26 @@
+$theme-default-colors: (
+  yellow-base: #fed136,
+  danger: #e74c3c
+);
+
+$theme-dark-mode-colors: (
+  text-onDark: rgb(255, 220, 206),
+  blueGray-medium: rgb(80, 115, 134),
+  blueGray-dark: rgb(32, 48, 64),
+  blueGray-darker: rgb(16, 20, 23),
+  baige-medium: rgb(167, 158, 139),
+  green-light: rgb(128, 204, 148),
+  blue-light-muted: rgb(128, 182, 204),
+  blue-lighter-muted: rgb(142, 193, 217),
+  blue-lightest-muted: rgb(155, 203, 230),
+  blue-dark: rgb(30, 54, 78)
+);
+
+$grays: (
+  gray-base: #000,
+  gray-darker: #222, // lighten(gray-base, 13.5%)
+  gray-dark: #333,   // lighten(gray-base, 20%)
+  gray:#555, //  lighten(gray-base, 33.5%)
+  gray-light:#777 , // lighten(gray-base, 46.7%)
+  gray-lighter: #eee // lighten(gray-base, 93.5%)
+);
