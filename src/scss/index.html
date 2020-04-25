@@ -23,8 +23,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Theme CSS -->
-    <!-- <link href="css/heathshults.min.css" rel="stylesheet"> -->
-    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <link href="css/heathshults.min.css" rel="stylesheet">
     <link disabled id="darkmode" rel="stylesheet" href="/css/theme-dark-mode.css">
     <script>
       if (localStorage.getItem("darkreader") == "enabled") {
@@ -386,7 +385,7 @@ c0,0,6.938,55.318-29.297,54.354C123.756,79.154,89.689,20.2,118.166,9.188C147.078
         <div class="row">
           <div class="col-md-4">
             <span class="copyright">Copyright &copy; HeathShults.com <script>
-                document.write(new Date().getFullYear());
+                document.write(new Date().getFullYear())
 
               </script></span>
           </div>
@@ -493,10 +492,7 @@ c0,0,6.938,55.318-29.297,54.354C123.756,79.154,89.689,20.2,118.166,9.188C147.078
     <script src="js/contact_me.js"></script>
 
     <!-- Theme JavaScript -->
-    <!-- <script src="js/heathshults.js"></script> -->
-    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-    <% } %>
+    <script src="js/heathshults.js"></script>
 
   </body>
 

@@ -1,58 +1,72 @@
-let {src, dest, watch, series, parrallel} = require('gulp');
-let sass = require('gulp-sass');
-let browserSync = require('browser-sync');
-let header = require('gulp-header');
-let cleanCSS = require('gulp-clean-css');
-let rename = require("gulp-rename");
-let uglify = require('gulp-uglify');
-let pkg = require('./package.json');
-let connect = require('gulp-connect-php');
-let open = require('open')
-let autoprefixer = require('gulp-autoprefixer')
-const postcss = require('gulp-postcss');
-const postcssCustomProperties = require('postcss-custom-properties');
-let debug = require('gulp-debug')
+let path = require('path');
 
-// Set the banner content
-let banner = ['/*!\n',
-    ' * HeathShults.com - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-    ' * Copyright 2020-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-    ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n',
-    ' */\n',
-    ''
-].join('');
+// let fs = require('fs-extra')
+import {src, dest, watch, series, parallel} from 'gulp';
+
+import sass from 'gulp-sass';
+import browserSync from 'browser-sync';
+import header from 'gulp-header';
+import cleanCSS from 'gulp-clean-css';
+import rename from "gulp-rename";
+import uglify from 'gulp-uglify';
+import * as pkg from './package.json';
+import connect from 'gulp-connect-php';
+import open from 'open';
+import autoprefixer from 'gulp-autoprefixer';
+import postcss from 'gulp-postcss';
+import postcssCustomProperties from 'postcss-custom-properties';
+import debug from 'gulp-debug';
+import changed from 'gulp-changed';
+
+let p = {
+  src: path.resolve('./', 'src'),
+  src_js: path.resolve(src, 'js'),
+  src_scss: path.resolve(src, 'scss'),
+  src_html: src,
+  src_img: path.resolve(src, 'img'),
+  www: path.resolve('./', 'www'),
+  www_js: path.resolve(www, 'js'),
+  www_css: path.resolve(www, 'css'),
+  www_html: www,
+  www_img: path.resolve(www, 'img')  
+}
+
+let assets = '{jpg,png,gif,svg,mp4}'
+
+
 
 // Compiles sassy files from /sassy into /css
 // NOTE: This theme uses sassy by default. To swtich to sassy you will need to update this gulpfile by changing the 'less' tasks to run 'sass'!
 function sassy(cb) {
     return src(['src/scss/heathshults.scss', 'src/scss/theme-dark-mode.scss'], {sourcemaps: true})
+    .pipe(changed(p.www_css))
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(dest('www/css'), {sourcemap: '.', overwrite: true})
-            .pipe(cleanCSS({ compatibility: 'ie11' }, (details) => {
-              console.log(`${details.name}: ${details.stats.originalSize}`);
-              console.log(`${details.name}: ${details.stats.minifiedSize}`);
+        .pipe(header(banner, { pkg }))
+        .pipe(dest(p.www_css), {sourcemap: '.', overwrite: true})
+            .pipe(cleanCSS({ compatibility: 'ie11' }, ({name, stats}) => {
+              console.log(`${name}: ${stats.originalSize}`);
+              console.log(`${name}: ${stats.minifiedSize}`);
             }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('www/css'), {sourcemap: '.', overwrite: true})
+        .pipe(dest(p.www_css), {sourcemap: '.', overwrite: true})
         .pipe(browserSync.reload({
             stream: true
-        }));
-    if (typeof cb === 'function') {
+        })),
+    ()=>{if (typeof cb === 'function') {
         cb(null, file);
         called = true;
-      }
-};
-exports.sassy = sassy
+      }};
+}
+export {sassy};
 
 // Minify compiled CSS
 function minify_css(cb) {
   sassy()
-    return src('src/css/heathshults.css')
+    return src(`${p.www_css}/heathshults.css`)
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('www/css'))
+        .pipe(dest(p.www_css))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -60,12 +74,12 @@ function minify_css(cb) {
         cb(null, file);
         called = true;
       }
-};
-exports.minify_css = minify_css
+}
+export {minify_css};
 
 // create css variable fallback properties 
 function css_variable_fallbacks() {
-  src('./www/css/*.css').pipe(
+  src(`${p.www_css}/*.css`).pipe(
   postcss([
     postcssCustomProperties(/* pluginOptions */)
   ])
@@ -73,26 +87,26 @@ function css_variable_fallbacks() {
   dest('.')
 );
 }
-exports.css_variable_fallbacks = css_variable_fallbacks
+export {css_variable_fallbacks};
 
 // Minify JS
 function minify_js(cb) {
-    return src('src/js/heathshults.js')
+    return src(`${src_js}/heathshults.js`)
+    .pipe(changed(p.www_js))
         // .pipe(uglify())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(dest('www/js'), {overwrite: true})
+        .pipe(header(banner, { pkg }))
+        .pipe(dest(p.www_js), {overwrite: true})
         .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('www/js'), {overwrite: true})
+        .pipe(dest(p.www_js), {overwrite: true})
         .pipe(browserSync.reload({
             stream: true
-        }))
-    if (typeof cb === 'function') {
+        })),
+    ()=>{if (typeof cb === 'function') {
         cb(null, file);
         called = true;
-      }
-};
-
-exports.minify_js = minify_js
+      }};
+}
+export {minify_js};
 
 // Copy vendor libraries from /node_modules into /vendor
 function copy(cb) {
@@ -110,49 +124,52 @@ function copy(cb) {
             '!node_modules/font-awesome/*.md',
             '!node_modules/font-awesome/*.json'
         ])
-        .pipe(dest('src/vendor/font-awesome'))
+        .pipe(dest(`${src}/vendor/font-awesome`))
     if (typeof cb === 'function') {
         cb(null, file);
         called = true;
       }
 }
-exports.copy = copy
+export {copy};
 
 function copy_html(cb) {
-    src('src/**/*.html')
-    .pipe(dest('www'), {overwrite: true})
-    .pipe(debug({title: 'copied'})), cb()
+    src(`${p.src_html}/**/*.html`)
+    .pipe(changed(p.www_html))
+    .pipe(dest(p.www_html), {overwrite: true})
+    .pipe(debug({title: 'copied'})), cb();
     // if (typeof cb === 'function') {
     //     cb(null, file);
     //     called = true;
     //   }
 }
-exports.copy_html = copy_html
+export {copy_html};
 
 function copy_js(cb) {
     src('src/js/**/*.{js,json}')
-    .pipe(dest('www/js'))
+    .pipe(changed(DESTINATION))
+    .pipe(dest(p.www_js))
     if (typeof cb === 'function') {
       cb(null, file);
       called = true;
     }
 }
-exports.copy_js = copy_js
+export {copy_js};
 
 function copy_assets(cb) {
-    src('src/**/*.{jpg,png,gif,svg,mp4}')
-    .pipe(dest('www'))
-    
-    if (typeof cb === 'function') {
+  src(`${p.src}/**/*.${assets}`)
+  .pipe(dest(p.www)),
+  ()=>{
+  let file = ''  
+  if (typeof cb === 'function') {
       cb(null, file);
       called = true;
     }
-    
+  }
 }
-exports.copy_assets = copy_assets
+export {copy_assets};
 
 // Run everything
-exports.build = series(sassy, minify_css, minify_js, copy);
+export const build = series(sassy, minify_css, minify_js, copy);
 
 // Configure the browserSync task
 // function serve(cb) {
@@ -161,46 +178,46 @@ exports.build = series(sassy, minify_css, minify_js, copy);
 //             baseDir: './www'
 //         },
 //     })
-    // if (typeof cb === 'function') {
-    //     cb(null, file);
-    //     called = true;
-    //   }
+// if (typeof cb === 'function') {
+//     cb(null, file);
+//     called = true;
+//   }
 // }
 // exports.browserSync = browserSync
 
 function connect_sync(cb) {
-    // connect.server({
-    //   hostname: 'localhodt',
-    //   port: 8000,
-    //   base: 'www'
-    // }, function (){
-    //   browserSync({
-    //     proxy: 'http://localhost:8000'
-    //   });
-    // });
+    connect.server({
+      hostname: 'localhodt',
+      port: 8000,
+      base: 'www'
+    }, function (){
+      browserSync({
+        proxy: 'http://localhost:8000'
+      });
+    });
    
-    // watch('**/*.php').on('change', function () {
+    watch('**/*.php').on('change', function () {
       
-    //   browserSync.reload();
-    // })
+      browserSync.reload();
+    })
     (async () => { await open("http://dev.heathshults.com") })
     let file = ''
     if (typeof cb === 'function') {
         cb(null, file);
         called = true;
       }
-  };
-  exports.connect_sync = connect_sync
-  
-  // close the server
-  function close_server(cb) {
-    connect.closeServer()
-    if (typeof cb === 'function') {
-        cb(null, file);
-        called = true;
-      }
-};
-exports.close_server = close_server
+}
+export {connect_sync};
+
+// close the server
+function close_server(cb) {
+  connect.closeServer()
+  if (typeof cb === 'function') {
+      cb(null, file);
+      called = true;
+    }
+}
+export {close_server};
 
 // Dev task with browserSync
 function watchers(cb) {
@@ -216,9 +233,7 @@ function watchers(cb) {
   //       cb(null, file);
   //       called = true;
   //     };
-};
-exports.watchers = watchers
-
-
-exports.dev = series(sassy, minify_css, minify_js, watchers, connect_sync);
+}
+export {watchers};
+export const dev = series(sassy, minify_css, minify_js, watchers, connect_sync);
 

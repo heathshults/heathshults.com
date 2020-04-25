@@ -10,9 +10,10 @@ body {
 	background-color: $blueGray-darker !important;
 	color: $baige-medium !important;
 }
-:not([style*="background-color:"]) {
-	background-color: $blueGray-darker !important;
-}
+
+// :not([style*="background-color:"]) {
+// 	background-color: $blueGray-darker !important;
+// }
 :not([style*="color:"]) {
 	color: $baige-medium !important;
 }
@@ -124,4 +125,18 @@ a:not([style*="color:"]) {
 }
 div:empty {
 	background-color: $blueGray-darker !important;
+}
+
+//class overrides
+.bg-light-gray {
+	background-color: $blueGray-darker;
+}
+.bg-white {
+	background-color: $blueGray-dark;
+}
+#portfolio .portfolio-item .portfolio-caption {
+	background-color: $blueGray-dark;
+}
+section#contact{
+	background-color: $blueGray-darker;
 }

@@ -117,3 +117,15 @@
 //   }
 // }
 
+// accessor functions
+// z-index: 
+// usage: z-index(global, nav); z-index(dm-switcher, button)
+@function z-index($keys...) {
+  $value: $z-indexes;
+
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+}

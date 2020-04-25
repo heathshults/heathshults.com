@@ -1,6 +1,6 @@
-@import "maps.scss";
-@import "variables.scss";
-@import "mixins.scss";
+@import "maps";
+@import "variables";
+@import "mixins";
 
 // Global Componentscc
 
@@ -51,6 +51,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+.header {
+  position: relative;
+  height: vh100;
+}
+
 .img-centered {
     margin: 0 auto;
 }
@@ -72,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-xl {
-    @include button-variant(white, $theme-primary, $theme-primary);
+    @include button-variant($gray-base, $theme-primary, $theme-primary);
     @include heading-font;
     font-weight: 700;
     border-radius: 3px;
@@ -100,9 +105,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(100%, 150px);
   transition: all .15s ease-out;
   text-decoration: none;
+  outline: 0;
   
   &:hover, &focus {
     background: rgba(0,0,0,.5);
+    outline: 0;
     //padding-right: 24px;
     border: 0 !important;
     
@@ -141,6 +148,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .which-mode {
   display: inline;
+  position: absolute;
+  z-index: 1532;
   flex: 1 1 auto;
   font-size: 115%;
   font-weight: 600;
@@ -158,11 +167,14 @@ h1, h2, h3, h4, h5, h6 {
 .shades-container.is-open {
   .shades {
     position: static;
-   transform: translateY(-20px)
+    transform: translateY(-32px);
+    transition: all .35s ease-out;
   }
 }
 .shades {
   position: absolute;
+  z-index: 1533;
+  transition: all .35s ease-out;
 }
 
 .mode-icon {

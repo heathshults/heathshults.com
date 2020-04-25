@@ -1,64 +1,56 @@
-// Agency Theme JavaScript
+/*!
+ * HeathShults.com - Heath Shults v1.0 (http://heathshults.com)
+ * Copyright 2020-2020 Heath-Shults
+ * Licensed under MIT (https://github.com/heathshults/heathshults.com/LICENSE)
+ */
 
 (function($) {
-    "use strict"; // Start of use strict
+  'use strict'; // Start of use strict
+  
+  // jQuery for page scrolling feature - requires jQuery Easing plugin
+  $('a.page-scroll').bind('click', function(event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+        scrollTop: ($($anchor.attr('href')).offset().top - 50)
+    }, 1250, 'easeInOutExpo');
+    event.preventDefault();
+  });
+
+  // Highlight the top nav as scrolling occurs
+  $('body').scrollspy({
+      target: '.navbar-fixed-top',
+      offset: 51
+  });
+
+  // Closes the Responsive Menu on Menu Item Click
+  $('.navbar-collapse ul li a').click(function(){ 
+          $('.navbar-toggle:visible').click();
+  });
+
+  // Offset for Main Navigation
+  $('#mainNav').affix({
+      offset: {
+          top: 100
+      }
+  })
+  
+  // darkmode - gotta wear shades
+  let $shades_container = $('.shades-container')
+
+  $('#mode_widget').click(function(event) {
+    $shades_container.toggleClass('is-open')
     
-    let $shades_container = $('.shades-container')
-    $( "#mode_widget" ).click(function( event ) {
-      $shades_container.addClass('is-open')
-      alert( "clicked: " + event.target.nodeName );
-      $('#shades').toggleClass('.shades .shades-open')
-    });
+    if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', true)) {
+
+      $('link[href="/css/theme-dark-mode.css"]').prop('disabled', false);
+      localStorage.setItem('darkreader', 'enabled');
+      
+    } else if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', false)){
+      $('link[href="/css/theme-dark-mode.css"]').prop('disabled', true);
+      localStorage.setItem('darkreader', 'disabled')
+    }
     
-    $('#mode_widget').click( (event) => {
-      event.preventDefault;
-      $('#shades').toggleClass('.shades .shades-open')
-      
-      //var $darkmode = $("#darkmode");
-      
-      
-      // if($("#darkmode").disabled) {
-        
-      //   $("#darkmode").disabled = false;
-      //   localStorage.setItem("darkreader", "enabled");
-        
-      // } else {
-        
-      //   $("#darkmode").disabled = true;
-      //   localStorage.setItem("darkreader", "disabled");
-        
-      // }
-    })
+  });
 
-    // jQuery for page scrolling feature - requires jQuery Easing plugin
-    // navigation and darkmode (toggleNinjaMode)
-    // $('a.page-scroll').bind('click', function(event) {
-    //   event.preventDefault
-    //   var $anchor = $(event.target);
-    //     $('html, body').stop().animate({
-    //       scrollTop: ($($anchor.attr('href')).offset().top - 50)
-    //     }, 1250, 'easeInOutExpo');
-    //     event.preventDefault();
-    //     return 
-      
-    // });
-
-    // Highlight the top nav as scrolling occurs
-    $('body').scrollspy({
-        target: '.navbar-fixed-top',
-        offset: 51
-    });
-
-    // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function(){ 
-            $('.navbar-toggle:visible').click();
-    });
-
-    // Offset for Main Navigation
-    $('#mainNav').affix({
-        offset: {
-            top: 100
-        }
-    })
 
 })(jQuery); // End of use strict

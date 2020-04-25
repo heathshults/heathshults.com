@@ -18,9 +18,51 @@ $theme-dark-mode-colors: (
 
 $grays: (
   gray-base: #000,
-  gray-darker: #222, // lighten(gray-base, 13.5%)
-  gray-dark: #333,   // lighten(gray-base, 20%)
+  gray-darker: #050505, // lighten(gray-base, 13.5%)
+  gray-dark: #121212,   // lighten(gray-base, 20%)
   gray:#555, //  lighten(gray-base, 33.5%)
   gray-light:#777 , // lighten(gray-base, 46.7%)
   gray-lighter: #eee // lighten(gray-base, 93.5%)
+);
+
+$experimental: (
+  dm-base: #000,
+  dm-canvas: #222831,
+  dm-surface: #30475E,
+  dm-surface-alt: #393E46,
+  dm-accent: #F2A365,
+  dm-accent-alt: #D65A31,
+  dm-light: #ECECEC,
+  dm-light-alt: #EEEEEE
+);
+
+$colors: (text: #151515,
+  themes: (
+    dark: (
+      background: map-get($experimental, dm-canvas),
+      text: map-get($experimental, dm-light),
+    ),
+    light: (
+      background: #151515,
+      text: #16140F
+    )
+  )
+);
+
+// reference: https://www.viget.com/articles/maps-math-and-magic-build-a-flexible-variable-system-in-sass/
+// Usage:
+// color: map-get($colors, text);
+
+$z-indexes: (
+  global: (
+    nav: 1000,
+    modal: 1001,
+    hoverContent: 1002,
+  ),
+
+  dm-switcher: (
+    button: 1531,
+    shades: 1533,
+    text: 1532
+  )
 );

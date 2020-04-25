@@ -5,7 +5,7 @@ const app = express();
 // default options
 app.use(fileUpload());
 
-app.post('/upload', function(req, res) {
+app.post('/data', function(req, res) {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
@@ -14,7 +14,7 @@ app.post('/upload', function(req, res) {
   let sampleFile = req.files.sampleFile;
 
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv('/somewhere/on/your/server/filename.jpg', function(err) {
+  sampleFile.mv('/src/img/header-bg.jpg', function(err) {
     if (err)
       return res.status(500).send(err);
 
