@@ -33,17 +33,19 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     
     <!-- Theme CSS -->
-    <link href="css/heathshults.min.css" rel="stylesheet">
-    <link disabled id="darkmode" rel="stylesheet" href="/css/theme-dark-mode.css">
-
-    <link href="css/heathshults.min.css" rel="stylesheet">
-    <link disabled id="darkmode" rel="stylesheet" href="/css/theme-dark-mode.css">
+    {# <link href="css/heathshults.min.css" rel="stylesheet">
+    <link disabled id="darkmode" rel="stylesheet" href="/css/theme-dark-mode.css"> #}
+    
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <link disabled id="darkmode"  href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
 
     <script>
       if (localStorage.getItem("darkreader")=="enabled") {
         document.getElementById("darkmode").disabled=false;
+        alert('looks like we have dark mode here.')
       } else {
         document.getElementById("darkmode").disabled=true;
+        alert('looks like we have light mode here.')
       }
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -219,15 +221,6 @@
         </div>
       </div>
     </header>
-    <% if (htmlWebpackPlugin.options.appMountId) { %>
-    <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
-    <% } %>
-
-    <% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
-    <% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
-    <div id="<%= htmlWebpackPlugin.options.appMountIds[index]%>"></div>
-    <% } %>
-    <% } %>
 <section id="services">
   <div class="container">
     <div class="row">
@@ -236,6 +229,15 @@
         <h3 class="section-subheading text-muted"><span class="cursive">Keeping it</span> <strong
             class="font-bold-regular">SIMPLE</strong>, <strong class="font-bold-regular">ELEGANT</strong> &amp;
           <strong class="font-bold-regular">CLEAN</strong>.</h3>
+          <% if (htmlWebpackPlugin.options.appMountId) { %>
+    <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+    <% } %>
+
+    <% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
+    <% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
+    <div id="<%= htmlWebpackPlugin.options.appMountIds[index]%>"></div>
+    <% } %>
+    <% } %>
       </div>
     </div>
     <div class="row text-center">
@@ -419,7 +421,7 @@
       <div class="col-md-4">
         <span class="copyright">Copyright &copy; HeathShults.com
           <script>
-            document.write(new Date().getFullYear())
+            document.write(new Date().getFullYear());
 
           </script></span>
       </div>
@@ -524,11 +526,16 @@
 <script src="js/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="js/heathshults.js"></script>
-    <% if (htmlWebpackPlugin.options.window) { %>
+{# <script src="js/heathshults.js"></script> #}
+ <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+   <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+ <% } %>
+ 
+ <% if (htmlWebpackPlugin.options.window) { %>
+ 
     <script>
   <% for (var varName in htmlWebpackPlugin.options.window) { %>
-        window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName])%>;
+       window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName])%>;
   <% } %>
     </script>
     <% } %>

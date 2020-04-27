@@ -1,0 +1,13 @@
+{
+  "scss": [{
+      "path": "src/scss/hscript.scss",
+      "name": "heathscript",
+      "primary": true
+    },
+    {
+      "path": "src/scss/theme-dark-mode.scss",
+      "name": "theme-dark-mode",
+      "primary": false
+    }
+  ]
+}

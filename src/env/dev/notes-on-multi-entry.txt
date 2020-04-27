@@ -1,0 +1,42 @@
+const scss_config = require('./src/env/dev/config')
+const rootPath = path.resolve(__dirname, './')
+const entryPoints = {
+  app: [
+    path.join(__dirname, 'src', 'index'),
+    path.join(__dirname, 'src/scss', 'hscript.scss'),
+    path.join(__dirname, 'src/scss', 'theme-dark-mode.scss')
+  ]
+}
+scss_config.scss.forEach(entry => {
+  entryPoints[entry.name] = path.join(rootPath, entry.path);
+});
+
+const cacheGroups = {}
+
+scss_config.scss.forEach(entryPoint => {
+  cacheGroups[entryPoint.name] = {
+    name: entryPoint.name,
+    test: (m, c, entry = entryPoint.name) => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
+    chunks: 'all',
+    enforce: true
+  }
+});
+
+and then
+
+module.exports = {
+  mode: 'development',
+  entry: entryPoints,
+  watch: true,
+  output: {
+    path: path.join(__dirname, 'www'),
+    publicPath: './',
+    filename: "heathscript.bundle.js",
+    chunkFilename: '[name].js'
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: cacheGroups
+    }
+  },
+  and so on

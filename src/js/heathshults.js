@@ -35,22 +35,26 @@
   })
   
   // darkmode - gotta wear shades
-  let $shades_container = $('.shades-container')
+  $(document).ready(()=>{
+    let whichMode = document.querySelector('.which-mode')
+    whichMode.innerHTML = 'Light Mode<span id="ninja" class="fa fa-sun-o mode-icon"></span>'
+    let $shades_container = $('.shades-container')
 
-  $('#mode_widget').click(function(event) {
-    $shades_container.toggleClass('is-open')
-    
-    if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', true)) {
-
-      $('link[href="/css/theme-dark-mode.css"]').prop('disabled', false);
-      localStorage.setItem('darkreader', 'enabled');
+    $('#mode_widget').click(function(event) {
+      $shades_container.toggleClass('is-open')
       
-    } else if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', false)){
-      $('link[href="/css/theme-dark-mode.css"]').prop('disabled', true);
-      localStorage.setItem('darkreader', 'disabled')
-    }
-    
-  });
+      if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', true)) {
 
+        $('link[href="/css/theme-dark-mode.css"]').prop('disabled', false);
+        localStorage.setItem('darkreader', 'enabled');
+        whichMode.innerHTML = 'Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span>'
+        
+      } else if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', false)){
+        $('link[href="/css/theme-dark-mode.css"]').prop('disabled', true);
+        localStorage.setItem('darkreader', 'disabled')
+      }
+      
+    });
+  })
 
 })(jQuery); // End of use strict

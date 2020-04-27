@@ -64,15 +64,15 @@ textarea {
 	}
 }
 :not([style*="border-color:"]) {
-	border-color: $blueGray-medium !important;
+	border-color: $gray-dark !important;
 }
 ::before {
-	border-color: $blueGray-medium !important;
+	border-color: $gray-dark !important;
 }
 ::after {
-	border-color: $blueGray-medium !important;
+	border-color: $gray-dark !important;
 }
-input::placeholder {
+input::placeholder { 
 	color: $baige-medium !important;
 }
 textarea::placeholder {
@@ -100,15 +100,15 @@ cite:not([style*="color:"]) {
 	color: $green-light !important;
 }
 button:not([style*="background-color:"]) {
-	background-color: $blueGray-dark !important;
+	background-color: map-get($theme-dark-mode-colors, blueGray-darker) !important;
 	&:hover {
-		background-color: $blue-dark !important;
+		background-color: map-get($theme-dark-mode-colors, blueGray-dark) !important;
 	}
 	&:active {
-		background-color: $blue-dark !important;
+		background-color: map-get($theme-dark-mode-colors, blueGray-dark) !important;
 	}
 	&:focus {
-		background-color: $blue-dark !important;
+		background-color: map-get($theme-dark-mode-colors, blueGray-dark) !important;
 	}
 }
 a:not([style*="color:"]) {
