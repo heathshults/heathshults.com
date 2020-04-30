@@ -210,13 +210,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: all .15s ease-out
 }
 
-
+.js-page-scroll.btn.btn-xl {
+    color: #000;
+}
 // Custom Navigation Bar
 
 .navbar-custom {
     // background-color: $gray-darker;
     background: #151515;
-    background: linear-gradient(0deg, rgba(0,0,0,0) 25%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 15%, rgba(0,0,0,1) 100%);
     border-color: transparent;
     .navbar-brand {
         color: $theme-primary;

@@ -1,13 +1,7 @@
 let path = require('path');
 
 // let fs = require('fs-extra')
-import {
-  src,
-  dest,
-  watch,
-  series,
-  parallel
-} from 'gulp';
+let {src, dest, watch, series, parallel} = require('gulp');
 
 import sass from 'gulp-sass';
 import browserSync from 'browser-sync';
@@ -47,7 +41,7 @@ function sassy(cb) {
   return src(['src/scss/heathshults.scss', 'src/scss/theme-dark-mode.scss'], {
       sourcemaps: true
     })
-    .pipe(changed('www/css'))
+    // .pipe(changed('www/css'))
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(header(banner, {
@@ -202,7 +196,7 @@ export {
 function copy_js(cb) {
   src('src/js/**/*.{js,json}')
     .pipe(changed(DESTINATION))
-    .pipe(dest(www/js))
+    .pipe(dest(www / js))
   if (typeof cb === 'function') {
     cb(null, file);
     called = true;

@@ -2,14 +2,33 @@ const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const sane = require('sane');
+const { WebpackPluginServe: Serve } = require('webpack-plugin-serve');
+
+const serve = new Serve({ static: ['/app/assets'] });
+const watcher = sane(path.resolve(__dirname, 'src/'), { glob: [ '**/*.scss', '**/*.ejs', '**/*.js' ] });
+
+serve.on('listening', () => {
+  watcher.on('change', (filePath, root, stat) => {
+    serve.emit('reload', { source: 'config' });
+  });
+});
+
+serve.on('close', () => watcher.close());
 // const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 // const OfflinePlugin = require('offline-plugin/runtime').install();
 const autoprefixer = require('autoprefixer')
 
 const isDev = (process.env.NODE_ENV === 'development');
 const basePath = process.cwd();
+
+const options = { 
+  hmr: true,
+  liveReload: true,
+  open: true
+ };
 
 // const nunjucksContext = require('./resources/data/index');
 // const nunjucksDevConfig = require('./resources/html/config.dev.json');
@@ -30,44 +49,14 @@ const basePath = process.cwd();
 //   template: `resources/html/pages/${page}`,
 // }));
 
-function recursiveIssuer(m) {
-  if (m.issuer) {
-    return recursiveIssuer(m.issuer);
-  } else if (m.name) {
-    return m.name;
-  } else {
-    return false;
-  }
-}
-
 module.exports = {
   mode: 'development',
   entry: {
     app: [
-      path.join(__dirname, 'src', 'index'),
-      path.join(__dirname, 'src/scss', 'heathscript.scss'),
-      path.join(__dirname, 'src/scss', 'theme-dark-mode.scss')
+      path.join(__dirname, 'src', 'index.js'),
+      path.join(__dirname, 'src', 'css.js'),
+      'webpack-plugin-serve/client'
     ]
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        HeathScriptStyles: {
-          name: 'heathscript',
-          test: (m, c, entry = path.join(__dirname, 'src/scss', 'heathscript.scss')) =>
-            m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
-          chunks: 'all',
-          enforce: true,
-        },
-        DarkModeStyles: {
-          name: 'ThemeDarkMode',
-          test: (m, c, entry = path.join(__dirname, 'src/scss', 'theme-dark-mode.scss')) =>
-            m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
-          chunks: 'all',
-          enforce: true,
-        },
-      },
-    },
   },
   watch: true,
   output: {
@@ -76,6 +65,24 @@ module.exports = {
     filename: "hScript.bundle.js",
     chunkFilename: '[name].js'
   },
+   optimization: {
+     splitChunks: {
+       cacheGroups: {
+         heath_script: {
+           name: 'heathscript',
+           test: /heathscript\.s?css$/,
+           chunks: 'all',
+           enforce: true,
+         },
+         theme_dark_mode: {
+           name: 'theme-dark-mode',
+           test: /theme-dark-mode\.s?css$/,
+           chunks: 'all',
+           enforce: true,
+         },
+       },
+     },
+   },
   module: {
     rules: [
       {
@@ -107,18 +114,28 @@ module.exports = {
       // },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-              reloadAll: true,
-            },
+        exclude: /node_modules/,
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: process.env.NODE_ENV === 'development',
+            reloadAll: true,
           },
+        },
           'css-loader',
-          {loader: 'postcss-loader', options: { plugins: () => [autoprefixer()] } },
-          {loader: 'resolve-url-loader', options: { keepQuery: true }},
-          'sass-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: () => [autoprefixer()]
+          }
+        },
+        {
+          loader: 'resolve-url-loader',
+          options: {
+            keepQuery: true
+          }
+        },
+        'sass-loader',
         ],
       },
       {
@@ -130,65 +147,56 @@ module.exports = {
           },
         }, ],
       },
-      // {
-      //   test: /\.(png|jpe?g|gif|svg|json)$/i,
-      //   use: [{
-      //     loader: 'file-loader',
-      //   }, ],
-      // },
     ]
   },
   plugins: [
     // new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(
-      {
-        filename: '[chunkhash].[name].css'
-      }
-    ),
+    new Serve(options),
+    new MiniCssExtractPlugin({
+      filename: '[name].build.css'
+    }),
     new HtmlWebpackPlugin({
+      inject: false,
       filename: path.resolve(__dirname, './www/index.html'),
       template: 'src/index.ejs',
-      favicon: 'src/favicon.ico', // or use favicons-webpack-plugin
-      // minify: {
-      //   removeComments: true,
-      //   collapseWhitespace: true,
-      //   removeAttributeQuotes: true
-      // }
+      favicon: 'src/favicon.ico'
+      // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
     }),
+    // new HtmlWebpackPlugin({
+    //   filename: path.resolve(__dirname, './www/index-allcode.html'),
+    //   template: 'src/index-allcode.ejs',
+    // }),
     // copy assets and manifest.json
-    new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, 'src/content'),
-      to: path.resolve(__dirname, 'www/content') 
+    new CopyWebpackPlugin([
+    {
+      from: 'src/css',
+      to: 'css',
+      ignore: ['heathshults.css', 'heathshults.min.css'] 
     },
     {
-      from: path.resolve(__dirname, 'src/css'),
-      to: path.resolve(__dirname, 'www/css'),
-    ignore: ['heathshults.css', 'heathshults.min.css'] 
-    },
-    {
-      from: path.resolve(__dirname, 'DevBox/Blue-Star-Sports-Test/*'),
-      to: 'www',
+      from: 'src/DevBox/Blue-Star-Sports-Test/*',
+      to: 'DevBox/Blue-Star-Sports-Test/*',
       ignore: ['**/*.zip'] 
     },
     {
-      from: path.resolve(__dirname, 'src/img/*'),
-      to: path.resolve(__dirname, 'img/*'),
+      from: 'src/img/*',
+      to: 'img/*',
       ignore: ['**/*.zip'] 
     },
     {
-      from: path.resolve(__dirname, 'src/js/*'),
-      to: path.resolve(__dirname, 'js/*'),
-      ignore: ['**/*.zip'] 
+      from: 'src/js/*',
+      to: 'js/*',
+      ignore: ['heathshults.js', 'contact_me.js', 'jqBootstrapValidation.js']
     },
     {
-      from: path.resolve(__dirname, 'src/lib/*'),
-      to: path.resolve(__dirname, 'lib/*'),
-      ignore: ['**/*.zip']
+      from: 'src/lib/*',
+      to: 'lib/*',
+      ignore: ['**/*.ejs']
     },
     {
-      from: path.resolve(__dirname, 'src/vendor/*'),
-      to: path.resolve(__dirname, 'vendor/*'),
-      ignore: ['**/*.zip']
+      from: 'src/vendor/*',
+      to: 'vendor/*',
+      ignore: ['**/*.ejs']
     }
     ]),
     new webpack.DefinePlugin({
@@ -199,19 +207,32 @@ module.exports = {
     //     minify: false
     //   }
     // })
+    // Ignore node_modules so CPU usage with poll
+    // watching drops significantly.
+    new webpack.WatchIgnorePlugin([
+      path.join(__dirname, "node_modules")
+    ]),
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx']
   },
   devtool: 'source-map',
-  devServer: {
-    contentBase: path.join(__dirname, '/www/'),
-    inline: true,
-    host: 'localhost',
-    port: 9900,
-    compress: true,
-    hot: true
-  }
+  // devServer: {
+  //   stats: "errors-only",
+  //   contentBase: path.join(__dirname, '/www/'),
+  //   inline: true,
+  //   host: 'localhost',
+  //   port: 9900,
+  //   compress: true,
+  //   hot: true,
+  //   watchOptions: {
+  //     // Delay the rebuild after the first change
+  //     aggregateTimeout: 300,
+
+  //     // Poll using interval (in ms, accepts boolean too)
+  //     poll: 1000,
+  //   },
+  // }
 }
 
 // if (!isDev) {

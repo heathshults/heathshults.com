@@ -17,11 +17,12 @@ $blueGray-medium: rgb(80, 115, 134);
 $blueGray-dark: rgb(15, 22, 29);
 $blueGray-darker: rgb(12, 15, 17);
 $baige-medium: rgb(167, 158, 139);
-$text-onDark: rgb(255, 220, 206);
+$text-onDark: map-get($theme-dark-mode-colors, text-onDark);
 $green-light: rgb(128, 204, 148);
 $blue-light-muted: rgb(128, 182, 204);
 $blue-lighter-muted: rgb(142, 193, 217);
 $blue-lightest-muted: rgb(155, 203, 230);
 $blue-dark: rgb(30, 54, 78);
+$link-primary: $theme-primary !default;
 
 
