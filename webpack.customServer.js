@@ -171,7 +171,7 @@ module.exports = {
     {
       from: 'src/img/*',
       to: 'img/*',
-      ignore: ['**/*.zip'] 
+      ignore: ['**/*.ejs'] 
     },
     {
       from: 'src/js/*',
@@ -201,7 +201,7 @@ module.exports = {
             match: ['src/*.html', 'src/scss/*.scss', 'src/css/*.css', 'src/js/*.js', 'src/js/*.json'],
             fn: function (event, file) {
               if (event === 'change') {
-                exec('node_modules/.bin/webpack --config webpack.build.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
+                exec('./node_modules/.bin/webpack --config webpack.build.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
                   if (error) {
                       console.log(`error: ${error.message}`);
                       return;
@@ -238,14 +238,8 @@ module.exports = {
     inline: false,
     host: 'localhost',
     port: 9900,
-    compress: true
-    // watchOptions: {
-    //   // Delay the rebuild after the first change
-    //   aggregateTimeout: 300,
-
-    //   // Poll using interval (in ms, accepts boolean too)
-    //   poll: 1000,
-    // },
+    compress: true,
+    liveReload: false
   }
 }
 

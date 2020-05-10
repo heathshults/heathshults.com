@@ -12,45 +12,38 @@
     <title>Heath Shults - Web Developer+</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
-    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'> -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    
     <!-- Theme CSS -->
-    <link href="heathscript.build.css" rel="stylesheet">
-    <link disabled id="darkmode" rel="stylesheet" href="theme-dark-mode.build.css">
+    <link href="css/heathscript.css" rel="stylesheet">
+    <link disabled id="darkmode" rel="stylesheet" href="css/theme-dark-mode.css">
     
     <script>
       if (localStorage.getItem("darkreader") == "enabled") {
         document.getElementById("darkmode").disabled = false;
+        console.log('Dark Mode is NOT Active.')
       } else {
         document.getElementById("darkmode").disabled = true;
+        console.log('Dark Mode IS Active.')
       }
 
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
   </head>
 
   <body id="page-top" class="index">
-    <button id="mode_widget" class="mode-widget" style="background-color: transparent !important">
-      <div class="shades-container">
-        <img id="shades" class="shades" src="img/svg/opt-glasses.svg" width="130" alt="dark mode switcher" />
-        <span class="which-mode">Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span></span>
-
-      </div>
-    </button>
+    
     
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -70,20 +63,25 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="hidden nav__item">
+            <li class="hidden ">
               <a href="#page-top" class="nav__link"></a>
             </li>
-            <li class="nav__item">
-              <a class="js-page-scroll nav__link" href="#services">Services</a>
+            <li class="">
+              <a class="js-page-scroll page-scroll nav__link" href="#services">Services</a>
             </li>
-            <li class="nav__item">
-              <a class="js-page-scroll nav__link" href="#portfolio">Portfolio</a>
+            <li class="">
+              <a class="js-page-scroll page-scroll nav__link" href="#portfolio">Portfolio</a>
             </li>
-            <li class="nav__item">
-              <a class="js-page-scroll nav__link" href="#about">About</a>
+            <li class="">
+              <a class="js-page-scroll page-scroll nav__link" href="#about">About</a>
             </li>
-            <li class="nav__item">
-              <a class="js-page-scroll nav__link" href="#contact">Contact</a>
+            <li class="">
+              <a class="js-page-scroll page-scroll nav__link" href="#contact">Contact</a>
+            </li>
+            <li class="">
+              <button id="mode_widget" class="mode-widget" style="background-color: transparent !important;">
+                  <span class="which-mode">Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span></span>
+              </button>
             </li>
           </ul>
         </div>
@@ -100,6 +98,8 @@
           <div class="intro-lead-in">Welcome To My Playground!</div>
           <div class="intro-heading">It's Nice To Meet You</div>
           <a href="#services" class="js-page-scroll btn btn-xl ">How I Play</a>
+          <div id="m"></div>
+          <script></script>
         </div>
       </div>
     </header>
@@ -401,9 +401,9 @@
     <!-- <script src="js/contact_me.js"></script> -->
 
     <!-- Theme JavaScript -->
-    <!-- <script src="js/heathshults.js"></script> -->
+    <script src="js/heathshults.js"></script>
     
-    <script src="hScript.bundle.js"></script>
+    <!-- <script src="hScript.bundle.js"></script> -->
    
 
   </body>
