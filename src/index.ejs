@@ -26,14 +26,11 @@
     <link disabled id="darkmode" rel="stylesheet" href="css/theme-dark-mode.css">
     
     <script>
-      if (localStorage.getItem("darkreader") == "enabled") {
-        document.getElementById("darkmode").disabled = false;
-        console.log('Dark Mode is NOT Active.')
-      } else {
-        document.getElementById("darkmode").disabled = true;
-        console.log('Dark Mode IS Active.')
+       var lsGetMode = localStorage.getItem('dark_mode')
+       var dm_btn = document.getElementById('mode_widget')
+      if (lsGetMode === "true") {
+        document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
       }
-
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -80,7 +77,7 @@
             </li>
             <li class="">
               <button id="mode_widget" class="mode-widget" style="background-color: transparent !important;">
-                  <span class="which-mode">Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span></span>
+                  <!-- <span class="which-mode">Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span></span> -->
               </button>
             </li>
           </ul>
@@ -116,7 +113,7 @@
           </div>
         </div>
         <div class="row text-center">
-          <div class="col-md-4">
+          <div class="col-md-4 card">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
@@ -126,7 +123,7 @@
               I work with you every step of the way and keep the engine on track.<br><span class="cursive lead">Let's
                 make a <span class="font-bold-regular">BUCK</span> or two!</span></p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 card">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
@@ -137,7 +134,7 @@
               <span class="cursive lead">I think <span class="font-bold-regular">MOBILE</span> first!</span>
             </p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 card">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-lock fa-stack-1x fa-inverse"></i>

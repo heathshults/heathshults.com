@@ -8,9 +8,11 @@
   "type": "module",
   "scripts": {
     "gdev": "node_modules/.bin/gulp dev",
-    "start": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --hot",
+    "start_webpack": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --hot",
     "build": "node_modules/.bin/webpack --config webpack.builder.js --mode development --display-error-details --verbose --watch --colors",
-    "rebuild": "./node_modules/.bin/webpack --config webpack.build.js --mode development --display-error-details --colorsnt --display-error-details --colors",
+    "rebuild": "node_modules/.bin/webpack --config webpack.build.js --mode development --display-error-details --colorsnt --display-error-details --colors",
+    "start": "node_modules/.bin/gulp setup_develop && npm run watchers",
+    "watchers": "node_modules/.bin/gulp watchers",
     "xpress": "node -r esm index.js"
   },
   "devDependencies": {

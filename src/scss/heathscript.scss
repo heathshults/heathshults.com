@@ -7,6 +7,7 @@
 body {
   position: relative;
   overflow-x: hidden;
+  color: map-get($theme-default-colors, text-onLight);
   @include body-font;
   -webkit-tap-highlight-color: $theme-primary;
 }
@@ -90,7 +91,8 @@ h1, h2, h3, h4, h5, h6 {
 
 // DarkMode Widget
 .mode-widget {
-  padding: 1rem 1.2rem;
+  width: 116px;
+  padding: 0 1.2rem;
   font-size: 100%;
   font-weight: 400;
   color: $theme-primary;
@@ -118,6 +120,12 @@ h1, h2, h3, h4, h5, h6 {
       //padding-left: 28px !important;
       transition: all .25s ease-out;
     }
+  }
+  .tiny-text {
+    display: block;
+    width: 100%;
+    font-size: 6px;
+    text-align: right;
   }
 
   .mode-widget__link {
@@ -353,6 +361,7 @@ header, .header {
 
 section, .section {
   padding: 100px 0;
+  
   h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
@@ -375,7 +384,13 @@ section, .section {
 }
 
 // Services Section
-
+.services {
+  color: map-get($theme-default-colors, text-onLight);
+  background-color: #f7f7f7;
+  .card {
+    background-color: #ffffff;
+  }
+}
 .service-heading {
   margin: 15px 0;
   text-transform: none;

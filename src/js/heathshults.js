@@ -35,26 +35,45 @@
       }
   })
 
-  // darkmode - gotta wear shades
-  // $(document).ready(()=>{
-  //   let whichMode = document.querySelector('.which-mode')
-  //   whichMode.innerHTML = 'Light Mode<span id="ninja" class="fa fa-sun-o mode-icon"></span>'
+  var $dm_btn = $('#mode_widget')
+  var lsGetMode = localStorage.getItem('dark_mode')
+  
+  // set button text
+  $(document).ready(()=>{
+    if (lsGetMode === 'fasle') {
+      setModeText(true)
+      //$dm_btn.html('<span class="which-mode">Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span></span>')
+    } else {
+      setModeText(false)
+      // $dm_btn.html('<span class="which-mode">Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span></span>')
+    }
+  })
 
-  //   $('#mode_widget').click(function(event) {
-  //     event.preventDefault()
-            
-  //     if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', true)) {
+  async function setModeText(mode) {
+    if (mode === true) {
+      $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>') 
+    } else {
+      $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+    }
+    
+  }
+  
+  async function setMode(mode) {
+        localStorage.setItem('dark_mode', `${mode}`)
+        document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = mode;
+        setModeText(mode)
+    return 
+  }
 
-  //       $('link[href="/css/theme-dark-mode.css"]').prop('disabled', false);
-  //       localStorage.setItem('darkreader', 'enabled');
-  //       whichMode.innerHTML = 'Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span>'
-        
-  //     } else if ($('link[href="/css/theme-dark-mode.css"]').prop('disabled', false)){
-  //       $('link[href="/css/theme-dark-mode.css"]').prop('disabled', true);
-  //       localStorage.setItem('darkreader', 'disabled')
-  //     }
-      
-  //   });
-  // })
+    // Theme switcher 
+    $dm_btn.on('click', (event) => {
+        event.preventDefault()
+        if (localStorage.getItem('dark_mode') === 'true') {
+          setMode(false), console.log('set to false')
+        } else {
+          setMode(true), console.log('set to true')
+        } 
+        return
+    })
 
 })(jQuery); // End of use strict

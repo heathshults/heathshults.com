@@ -191,7 +191,7 @@ function sassy(done) {
 exports.sassy = sassy
 
 function copy_img(cb) {
-  src('src/img/**/*.{jpg,png,svg}')
+  src('src/**/*.{jpg,png,gif,svg,mp4}')
     .pipe(plumber())
     .pipe(changed('www/'))
     .pipe(dest('www/'), {
@@ -208,12 +208,12 @@ function copy_img(cb) {
 exports.copy_img = copy_img
 
 // Copy vendor libraries from /node_modules into /vendor
-function copy(cb) {
+function copy_vendor(cb) {
   src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
-    .pipe(dest('src/vendor/bootstrap'))
+    .pipe(dest(`${wwwPath}/vendor/bootstrap`))
 
   src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-    .pipe(dest('src/vendor/jquery'))
+    .pipe(dest(`${wwwPath}/vendor/jquery`))
 
   src([
       'node_modules/font-awesome/**',
@@ -224,19 +224,29 @@ function copy(cb) {
       '!node_modules/font-awesome/*.json'
     ])
     .pipe(plumber())
-    .pipe(dest(`${src}/vendor/font-awesome`))
+    .pipe(dest(`${wwwPath}/vendor/font-awesome`))
+
+    src([`${srcPath}/lib`])
+    .pipe(dest(`${wwwPath}/lib`), {overwrite: true})
+
+    src([`${srcPath}/content/**/*`])
+    .pipe(dest(`${wwwPath}/content`), {overwrite: true})
+    
+    src([`${srcPath}/vendor/**/*`])
+    .pipe(dest(`${wwwPath}/vendor`), {overwrite: true})
+    var file = ''
   if (typeof cb === 'function') {
     cb(null, file);
     called = true;
   }
 }
-exports.copy = copy
+exports.copy_vendor = copy_vendor
 
 function copy_html(cb) {
-  src('src/html/**/*.html')
+  src(`${srcPath}/layouts/**/*.html`)
   .pipe(plumber())
-    .pipe(changed('www/'))
-    .pipe(dest('www/'), {
+    .pipe(changed(wwwPath))
+    .pipe(dest(wwwPath), {
       overwrite: true
     })
     .pipe(debug({
@@ -278,91 +288,101 @@ function copy_assets(cb) {
 }
 exports.copy_assets = copy_assets
 
+function copy_all (cb) { series(sassy, copy_js, copy_vendor, ejsit, copy_img ), cb() }
+exports.copy_all = copy_all
+
 function watchers(cb) {
   // eslint-disable-next-line no-sequences
   watch('src/*.ejs', ejsit), cb()
-  watch('src/**/*.{jpg,png,svg}', copy_img), cb()
+  watch('src/**/*.{jpg,png,gif,svg,mp4}', copy_img), cb()
   watch('src/scss/*.scss', sassy), cb()
   watch('src/js/*.{js,json}', copy_js), cb()
 }
 exports.watchers = watchers
 
 // Configure the browserSync task
-// function serve(cb) {
-//     browserSync.init({
-//         server: {
-//             baseDir: './www'
-//         },
-//     })
-// if (typeof cb === 'function') {
-//     cb(null, file);
-//     called = true;
-//   }
-// }
-// exports.browserSync = browserSync
+function serve(cb) {
+    browserSync.init({
+        server: {
+            baseDir: wwwPath
+        },
+    })
+if (typeof cb === 'function') {
+    cb(null, file);
+    called = true;
+  }
+}
+exports.browserSync = browserSync
 
-// function connect_sync(cb) {
-//   connect.server({
-//     hostname: 'localhost',
-//     port: 8000,
-//     base: 'www/'
-//   }, function() {
-//     browserSync({
-//       proxy: 'http://localhost:8000'
-//     });
-//   });
+function connect_sync(cb) {
+ 
+  connect.server({base: 'www/'}, function (){
+    browserSync({
+      proxy: '127.0.0.1:8000',
+      open: 'localhost',
+      watch: true,
+      injectChanges: true,
+      files: [
+        {
+            match: ['src/**/*.php'],
+            fn: function (event, file) {
+               browserSync.reload()
+            },
+            options: {
+                ignored: ['*.scss', '*.ejs']
+            }
+        }
+    ]
+    });
+  }), cb()
 
-//   watch('**/*.php').on('change', function() {
+  // let file = ''
+  // if (typeof cb === 'function') {
+  //   cb(null, file);
+  //   called = true;
+  // }
 
-//       browserSync.reload();
-//     })
-//     (async () => {
-//       await open("http://dev.heathshults.com")
-//     })
-//   let file = ''
-//   if (typeof cb === 'function') {
-//     cb(null, file);
-//     called = true;
-//   }
-// }
-// exports.connect_sync = connect_sync
+}
 
-// // close the server
-// function close_server(cb) {
-//   connect.closeServer()
-//   if (typeof cb === 'function') {
-//     cb(null, file);
-//     called = true;
-//   }
-// }
-// exports.close_server = close_server
+exports.connect_sync = connect_sync
+
+// close the server
+function close_server(cb) {
+  connect.closeServer()
+  if (typeof cb === 'function') {
+    cb(null, file);
+    called = true;
+  }
+}
+exports.close_server = close_server
 
 // Dev task with browserSync
-// function watchers(cb) {
+function watchers2(cb) {
 
-//   watch('src/scss/*.scss', {
-//     readDelay: 500,
-//     verbose: true
-//   }, sassy);
-//   // watch('src/css/*.css', {readDelay: 500, verbose: true }, minify_css);
-//   watch('src/js/*.js', {
-//     readDelay: 500,
-//     verbose: true
-//   }, minify_js);
-//   // Reloads the browser whenever HTML or JS files change
-//   watch('src/*.html', copy_html);
-//   watch('src/**/*.{jpg,png,gif,svg,mp4}', {
-//     readDelay: 500,
-//     verbose: true
-//   }, copy_assets, browserSync.reload)
-//   // let file = ''  
-//   // if (typeof cb === 'function') {
-//   //       cb(null, file);
-//   //       called = true;
-//   //     };
-// }
-// exports.watchers = watchers
+  watch('src/scss/*.scss', {
+    readDelay: 500,
+    verbose: true
+  }, sassy);
+  // watch('src/css/*.css', {readDelay: 500, verbose: true }, minify_css);
+  watch('src/js/*.js', {
+    readDelay: 500,
+    verbose: true
+  }, copy_js);
+  // Reloads the browser whenever HTML or JS files change
+  watch('src/*.ejs', ejsit);
+  watch('src/**/*.{jpg,png,gif,svg,mp4}', {
+    readDelay: 500,
+    verbose: true
+  }, copy_assets, browserSync.reload)
+  // let file = ''  
+  // if (typeof cb === 'function') {
+  //       cb(null, file);
+  //       called = true;
+  //     };
+}
+exports.watchers2 = watchers2
 
 // // Run everything
 // exports.build = series(sassy, minify_css, minify_js, copy_vendors)
-// exports.dev = series(sassy, minify_css, minify_js, watchers, connect_sync)
+
+exports.setup_develop = series(copy_all, watchers, connect_sync)
