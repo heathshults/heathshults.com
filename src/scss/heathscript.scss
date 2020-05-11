@@ -8,6 +8,7 @@ body {
   position: relative;
   overflow-x: hidden;
   color: map-get($theme-default-colors, text-onLight);
+  background-color: map-get($theme-default-colors , background-primary);
   @include body-font;
   -webkit-tap-highlight-color: $theme-primary;
 }
@@ -34,6 +35,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
+  color: #333;
   outline: none;
 }
 
@@ -70,6 +72,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-darkest-gray {
   background-color: $gray-darker;
+}
+
+// font families
+.cursive {
+  font-family: $font-cursive;
+  font-weight: 700;
 }
 
 // Restyled Primary Buttons
@@ -254,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
       letter-spacing: 1px;
       &:hover,
       &:focus {
-        color: $theme-primary;
+        color: #333;
         outline: none;
       }
     }
@@ -288,6 +296,8 @@ h1, h2, h3, h4, h5, h6 {
     }
     .navbar-nav > .active > a {
       border-radius: 3px;
+      color: #333;
+      font-weight: 700;
     }
   }
 }
@@ -386,9 +396,30 @@ section, .section {
 // Services Section
 .services {
   color: map-get($theme-default-colors, text-onLight);
-  background-color: #f7f7f7;
+  background-color: $theme-background-secondary;
+  .card__row {
+    display: flex;
+    align-items: stretch;
+    height: 320px;
+  }
   .card {
+    flex: 1 1 auto;
+    height: 100%;
     background-color: #ffffff;
+    &:not(:last-child) {
+      margin-right: .5rem
+    }
+    .card__header {
+      padding: 1.2rem;
+      font-size: 1.2rem;
+      background-color: $theme-background-primary;
+    }
+    .card__body {
+      padding: .5rem 1rem;
+    }
+    .card__footer {
+      padding: 2rem;
+    }
   }
 }
 .service-heading {

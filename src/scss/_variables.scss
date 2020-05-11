@@ -4,6 +4,8 @@
 
 $theme-primary:    #fed136;
 $theme-danger:     #e74c3c;
+$theme-background-primary: map-get($theme-default-colors, background-primary) !default;
+$theme-background-secondary: map-get($theme-default-colors, background-secondary) !default;
 
 $gray-base:			#000 !default;
 $gray-darker:		lighten($gray-base, 13.5%) !default; // #222
@@ -26,3 +28,4 @@ $blue-dark: rgb(30, 54, 78);
 $link-primary: $theme-primary !default;
 
 
+$font-cursive: 'Nothing You Could Do', cursive !default;
