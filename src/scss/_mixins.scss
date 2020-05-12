@@ -74,7 +74,7 @@
 }
 
 @mixin script-font {
-  font-family: "Nothing You Could Do", "Helvetica Neue", Helvetica, Arial, cursive;
+  font-family: $font-cursive-Caveat;
 }
 
 @mixin body-font {

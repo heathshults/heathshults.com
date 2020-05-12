@@ -1,7 +1,7 @@
 $theme-default-colors: (
   background-primary: #f8f8f8,
   background-secondary: #ebebeb,
-  text-onLight: #333,
+  text-onLight: #1a1a1a,
   yellow-base: #fed136,
   danger: #e74c3c
 );
@@ -25,7 +25,8 @@ $grays: (
   gray-dark: #121212,   // lighten(gray-base, 20%)
   gray:#555, //  lighten(gray-base, 33.5%)
   gray-light:#777 , // lighten(gray-base, 46.7%)
-  gray-lighter: #eee // lighten(gray-base, 93.5%)
+  gray-lighter: #dedede, // lighten(gray-base, 93.5%)
+  gray-lightest: #eee // lighten(gray-base, 93.5%)
 );
 
 $experimental: (
