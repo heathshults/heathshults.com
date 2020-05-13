@@ -162,6 +162,22 @@ function ejsit(done) {
 }
 exports.ejsit = ejsit
 
+function js(done) {
+  try {
+    exec('./node_modules/.bin/webpack --config webpack-js.js --mode development --display-error-details --verbose --watch --colors', (error, stdout, stderr) => {
+      if (error) {
+          console.log(`error: ${error.message}`);
+          return;
+      }
+    })
+  }
+  catch(e) {
+    console.log('HeathenError: ' + e)
+  }
+  done()
+}
+exports.js = js
+
 function sassy(done) {
   try {
     exec(`sass --sourcemap ${srcPath}/scss/heathscript.scss ${wwwPath}/css/heathscript.css`, (error, stdout, stderr) => {
@@ -295,8 +311,8 @@ function watchers(cb) {
   // eslint-disable-next-line no-sequences
   watch('src/*.ejs', ejsit), cb()
   watch(['src/img/**/*.{jpg,png,gif,svg}', 'src/content//**/*.{jpg,png,gif,svg}'], copy_img), cb()
-  watch('src/scss/*.scss', sassy), cb()
-  watch('src/js/*.{js,json}', copy_js), cb()
+  watch('src/scss/**/*.scss', sassy), cb()
+  watch('src/js/*.{js,json,mjs,cjs}', copy_js), cb()
 }
 exports.watchers = watchers
 

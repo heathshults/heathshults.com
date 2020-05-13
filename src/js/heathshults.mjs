@@ -4,6 +4,8 @@
  * Licensed under MIT (https://github.com/heathshults/heathshults.com/LICENSE)
  */
 
+// import * as jQuery from "../vendor/jquery/jquery";
+
 (function($) {
   'use strict'; // Start of use strict
   
@@ -76,4 +78,13 @@
         return
     })
 
-})(jQuery); // End of use strict
+    // progress bars
+  var theBars = $('.progress-bar')
+  $.each(theBars, (i, bar)=> {
+    bar.atr('width') = bar.attr('aria-valuenow')
+  }) 
+
+})(); // End of use strict
+
+
+

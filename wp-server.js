@@ -2,7 +2,7 @@
 
 const Webpack = require('webpack');
 const WebpackDevServer = require('../../../lib/Server');
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('./webpack.dev');
 
 const compiler = Webpack(webpackConfig);
 const devServerOptions = Object.assign({}, webpackConfig.devServer, {

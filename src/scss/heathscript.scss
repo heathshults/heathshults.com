@@ -1089,3 +1089,48 @@ img::-moz-selection {
   filter: grayscale(.5);
 }
 
+.progress-bar-container {
+  display: flex;
+  flex: 100%;
+  flex-direction: row;
+  align-items: center;
+  .progress {
+    flex: 100%;
+    flex-direction: row;
+  }
+}
+//checkbox group for progress bar
+.check-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flex-stack {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+// .flex,
+// .flex-stack {
+//   display: flex;
+//   flex: 1;
+//   align-items: center;
+// }
+
+.HorFlexContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.VertFlexContainer {
+  display: flex;
+  flex-direction: column;
+}
+.FlexFill {
+  flex: 1; /* this essentially means "use all remaining space" if it's in a series of other Flex elements */
+  overflow:auto;
+  box-sizing:border-box;
+}
