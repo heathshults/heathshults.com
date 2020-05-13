@@ -1,0 +1,24 @@
+root: {
+  --theme-primary: #fed136;
+  --theme-danger: #e74c3c;
+
+  --gray-base: #000 !default;
+  --gray-darker: lighten(--gray-base, 13.5%) !default; // #222
+  --gray-dark: lighten(--gray-base, 20%) !default;   // #333
+  --gray: lighten(--gray-base, 33.5%) !default; // #555
+  --gray-light: lighten(--gray-base, 46.7%) !default; // #777
+  --gray-lighter: lighten(--gray-base, 93.5%) !default; // #eee
+
+  // Dark Mode Colors
+  --blueGray-medium: rgb(80, 115, 134);
+  --blueGray-dark: rgb(32, 48, 64);
+  --blueGray-darker: rgb(16, 20, 23);
+  --baige-medium: rgb(167, 158, 139);
+  --text-onDark: rgb(255, 220, 206);
+  --green-light: rgb(128, 204, 148);
+  --blue-light-muted: rgb(128, 182, 204);
+  --blue-lighter-muted: rgb(142, 193, 217);
+  --blue-lightest-muted: rgb(155, 203, 230);
+  --blue-dark: rgb(30, 54, 78);
+}
+

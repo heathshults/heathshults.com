@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Mixins
 // Background Cover Mixin
 @mixin background-cover {
@@ -19,4 +20,136 @@
 }
 @mixin heading-font {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+=======
+
+
+
+// Mixins
+
+// Bootstrap Button Variant
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+          border-color: darken($border, 25%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// Background Cover Mixin
+
+@mixin background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+// Font Mixins
+
+@mixin serif-font {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin script-font {
+  font-family: $font-cursive-Caveat;
+}
+
+@mixin body-font {
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin heading-font {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+// functions
+
+/*
+ * CSS CUSTOM VARIABLE FUNCTION
+ *
+ * Get css vars from scss vars
+ *
+ * Use:
+ * `color: v(primary);`
+ * `color: v(primary, #000);`
+ * `padding-left: v(x-padding, 2rem);`
+ * `transform: translate3d(v(x-delta), v(y-delta), 0);`
+ *
+ * Parameters:
+ *  $Var: name of the SASS variable, without its double hyphen prefix
+ *  $fallback: (optional, null by default): custom property fallback value
+ */
+// $colors: map-merge($map1: $grays, $map2: $theme-dark-mode-colors);
+// $keys: map-keys($colors);
+
+// @function getV($var, $fallback: null) {
+//   @if map-has-key($colors, $var) {
+//     $cssVarName: #{$var};
+//   }
+//   @if($fallback) {
+//     @return var(--$cssVarName, $fallback);
+//   } @else {
+//     @return var(--$cssVarName);
+//   }
+// }
+
+// accessor functions
+// z-index: 
+// usage: z-index(global, nav); z-index(dm-switcher, button)
+@function z-index($keys...) {
+  $value: $z-indexes;
+
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+>>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2
 }

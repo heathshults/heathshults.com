@@ -1,0 +1,72 @@
+$theme-default-colors: (
+  background-primary: #f8f8f8,
+  background-secondary: #ebebeb,
+  text-onLight: #1a1a1a,
+  yellow-base: #fed136,
+  danger: #e74c3c
+);
+
+$theme-dark-mode-colors: (
+  text-onDark: rgb(255, 220, 206),
+  blueGray-medium: rgb(80, 115, 134),
+  blueGray-dark: rgb(32, 48, 64),
+  blueGray-darker: #101417,
+  baige-medium: rgb(167, 158, 139),
+  green-light: rgb(128, 204, 148),
+  blue-light-muted: rgb(128, 182, 204),
+  blue-lighter-muted: rgb(142, 193, 217),
+  blue-lightest-muted: rgb(155, 203, 230),
+  blue-dark: rgb(30, 54, 78)
+);
+
+$grays: (
+  gray-base: #000,
+  gray-darker: #050505, // lighten(gray-base, 13.5%)
+  gray-dark: #121212,   // lighten(gray-base, 20%)
+  gray:#555, //  lighten(gray-base, 33.5%)
+  gray-light:#777 , // lighten(gray-base, 46.7%)
+  gray-lighter: #dedede, // lighten(gray-base, 93.5%)
+  gray-lightest: #eee // lighten(gray-base, 93.5%)
+);
+
+$experimental: (
+  dm-base: #000,
+  dm-canvas: #222831,
+  dm-surface: #30475E,
+  dm-surface-alt: #393E46,
+  dm-accent: #F2A365,
+  dm-accent-alt: #D65A31,
+  dm-light: #ECECEC,
+  dm-light-alt: #EEEEEE
+);
+
+$colors: (text: #151515,
+  themes: (
+    dark: (
+      background: map-get($experimental, dm-canvas),
+      text: map-get($experimental, dm-light),
+    ),
+    light: (
+      background: #151515,
+      text: #16140F
+    )
+  )
+);
+
+// reference: https://www.viget.com/articles/maps-math-and-magic-build-a-flexible-variable-system-in-sass/
+// Usage:
+// color: map-get($colors, text);
+
+$z-indexes: (
+  global: (
+    nav: 1000,
+    modal: 1001,
+    hoverContent: 1002,
+  ),
+
+  dm-switcher: (
+    button: 1531,
+    shades: 1533,
+    text: 1532
+  )
+);

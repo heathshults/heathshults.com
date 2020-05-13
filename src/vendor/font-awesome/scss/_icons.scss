@@ -605,7 +605,10 @@
 .#{$fa-css-prefix}-opencart:before { content: $fa-var-opencart; }
 .#{$fa-css-prefix}-expeditedssl:before { content: $fa-var-expeditedssl; }
 .#{$fa-css-prefix}-battery-4:before,
+<<<<<<< HEAD
 .#{$fa-css-prefix}-battery:before,
+=======
+>>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2
 .#{$fa-css-prefix}-battery-full:before { content: $fa-var-battery-full; }
 .#{$fa-css-prefix}-battery-3:before,
 .#{$fa-css-prefix}-battery-three-quarters:before { content: $fa-var-battery-three-quarters; }
@@ -732,6 +735,7 @@
 .#{$fa-css-prefix}-google-plus-official:before { content: $fa-var-google-plus-official; }
 .#{$fa-css-prefix}-fa:before,
 .#{$fa-css-prefix}-font-awesome:before { content: $fa-var-font-awesome; }
+<<<<<<< HEAD
 .#{$fa-css-prefix}-handshake-o:before { content: $fa-var-handshake-o; }
 .#{$fa-css-prefix}-envelope-open:before { content: $fa-var-envelope-open; }
 .#{$fa-css-prefix}-envelope-open-o:before { content: $fa-var-envelope-open-o; }
@@ -787,3 +791,5 @@
 .#{$fa-css-prefix}-superpowers:before { content: $fa-var-superpowers; }
 .#{$fa-css-prefix}-wpexplorer:before { content: $fa-var-wpexplorer; }
 .#{$fa-css-prefix}-meetup:before { content: $fa-var-meetup; }
+=======
+>>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2
