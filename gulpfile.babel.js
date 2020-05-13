@@ -294,7 +294,7 @@ exports.copy_all = copy_all
 function watchers(cb) {
   // eslint-disable-next-line no-sequences
   watch('src/*.ejs', ejsit), cb()
-  watch('src/**/*.{jpg,png,gif,svg,mp4}', copy_img), cb()
+  watch(['src/img/**/*.{jpg,png,gif,svg}', 'src/content//**/*.{jpg,png,gif,svg}'], copy_img), cb()
   watch('src/scss/*.scss', sassy), cb()
   watch('src/js/*.{js,json}', copy_js), cb()
 }
