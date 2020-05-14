@@ -5,7 +5,6 @@
   "homepage": "http://heathshults.com",
   "author": "Heath Shults",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "gdev": "node_modules/.bin/gulp dev",
     "start_webpack": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --hot",
