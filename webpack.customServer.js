@@ -6,8 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { exec } = require('child_process')
-
-
 // const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 // const OfflinePlugin = require('offline-plugin/runtime').install();
 const autoprefixer = require('autoprefixer')
@@ -51,7 +49,7 @@ module.exports = {
   // watch: true,
   output: {
     path: path.join(__dirname, 'www'),
-    publicPath: './',
+    publicPath: 'www',
     filename: "hScript.bundle.js",
     chunkFilename: '[name].js'
   },
@@ -135,19 +133,18 @@ module.exports = {
           options: {
             limit: false,
           },
-        }, ],
+        }],
       },
     ]
   },
   plugins: [
     // new CleanWebpackPlugin(),
-   
     new MiniCssExtractPlugin({
       filename: '[name].build.css'
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      filename: path.resolve(__dirname, './www/index.html'),
+      filename: path.resolve(__dirname, 'www/index.html'),
       template: 'src/index.ejs',
       favicon: 'src/favicon.ico'
       // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
@@ -156,7 +153,7 @@ module.exports = {
     //   filename: path.resolve(__dirname, './www/index-allcode.html'),
     //   template: 'src/index-allcode.ejs',
     // }),
-    // copy assets and manifest.json
+    // copy assets 
     new CopyWebpackPlugin([
     {
       from: 'src/css',
@@ -165,27 +162,27 @@ module.exports = {
     },
     {
       from: 'src/DevBox/Blue-Star-Sports-Test/*',
-      to: 'DevBox/Blue-Star-Sports-Test/*',
+      to: 'DevBox/Blue-Star-Sports-Test/',
       ignore: ['**/*.zip'] 
     },
     {
       from: 'src/img/*',
-      to: 'img/*',
+      to: 'img/',
       ignore: ['**/*.ejs'] 
     },
     {
       from: 'src/js/*',
-      to: 'js/*',
+      to: 'js/',
       ignore: ['heathshults.js', 'contact_me.js', 'jqBootstrapValidation.js']
     },
     {
       from: 'src/lib/*',
-      to: 'lib/*',
+      to: 'lib/',
       ignore: ['**/*.ejs']
     },
     {
       from: 'src/vendor/*',
-      to: 'vendor/*',
+      to: 'vendor/',
       ignore: ['**/*.ejs']
     }
     ]),
@@ -194,14 +191,15 @@ module.exports = {
       {
         host: 'localhost',
         port: 9900,
-        proxy: 'http://localhost:9900/',
+        proxy: 'http://127.0.0.1:9900/',
         injectCss: true,
         files: [
           {
-            match: ['src/*.html', 'src/scss/*.scss', 'src/css/*.css', 'src/js/*.js', 'src/js/*.json'],
+            match: ['src/*.html', 'src/*.ejs', 'src/scss/*.scss', 'src/css/*.css', 'src/js/*.js', 'src/js/*.json'],
             fn: function (event, file) {
               if (event === 'change') {
-                exec('./node_modules/.bin/webpack --config webpack.build.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
+                exec('./node_modules/.bin/gulp watchers', (error, stdout, stderr) => {
+                // exec('./node_modules/.bin/webpack-dev-server --config webpack.build.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
                   if (error) {
                       console.log(`error: ${error.message}`);
                       return;
@@ -234,7 +232,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     stats: "errors-only",
-    contentBase: path.join(__dirname, '/www/'),
+    contentBase: path.join(__dirname, 'www'),
     inline: false,
     host: 'localhost',
     port: 9900,
@@ -245,7 +243,7 @@ module.exports = {
 
 // if (!isDev) {
 //   module.exports.plugins.push(
-//     new CleanWebpackPlugin(['dist']),
-//     new webpack.optimize.UglifyJsPlugin(),
+//     new CleanWebpackPlugin(['www']),
+//     // new webpack.optimize.UglifyJsPlugin(),
 //   );
 // }

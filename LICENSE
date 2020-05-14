@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-The MIT License (MIT)
-
-Copyright (c) 2013-2018 Blackrock Digital LLC
-=======
 MIT License
 
 Copyright (c) 2017 heathshults
->>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -15,96 +9,13 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-<<<<<<< HEAD
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-=======
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
->>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-<<<<<<< HEAD
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-<!--
-<script src="/js/showdown.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $("#status").html("<p>Loading page content...</p>");
-        // Load the Markdown file and convert it to HTML for display
-        var markdownURL = "buttons.md";
-        $.get(markdownURL, function(markdownContent) {
-            var converter = new showdown.Converter({ 
-                tables: true,
-                parseImgDimensions: true,
-                literalMidWordUnderscores: true,
-                literalMidWordAsterisks: true,
-                tablesHeaderId: true,
-                tasklists: true,
-                simpleLineBreaks: true,
-                metadata: true
-            });
-            var htmlContent = converter.makeHtml(markdownContent);
-            $("div#content").html(htmlContent);
-        });
-    });
-    //load scripts
-    var scripts = [
-  '/assets/js/vendor/anchorjs/anchorjs-generate-menu.js',
-  '/assets/js/fm.js'
-];
-var src;
-var script;
-var pendingScripts = [];
-var firstScript = document.scripts[0];
-
-// Watch scripts load in IE
-function stateChange() {
-  // Execute as many scripts in order as we can
-  var pendingScript;
-  while (pendingScripts[0] && pendingScripts[0].readyState == 'loaded') {
-    pendingScript = pendingScripts.shift();
-    // avoid future loading events from this script (eg, if src changes)
-    pendingScript.onreadystatechange = null;
-    // can't just appendChild, old IE bug if element isn't closed
-    firstScript.parentNode.insertBefore(pendingScript, firstScript);
-  }
-}
-
-// loop through our script urls
-while (src = scripts.shift()) {
-  if ('async' in firstScript) { // modern browsers
-    script = document.createElement('script');
-    script.async = false;
-    script.src = src;
-    document.head.appendChild(script);
-  }
-  else if (firstScript.readyState) { // IE<10
-    // create a script and add it to our todo pile
-    script = document.createElement('script');
-    pendingScripts.push(script);
-    // listen for state changes
-    script.onreadystatechange = stateChange;
-    // must set src AFTER adding onreadystatechange listener
-    // else we’ll miss the loaded event for cached scripts
-    script.src = src;
-  }
-  else { // fall back to defer
-    document.write('<script src="' + src + '" defer></'+'script>');
-  }
-}
-
-    
-  anchors.add()
-</script>
--->
-=======
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
->>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2

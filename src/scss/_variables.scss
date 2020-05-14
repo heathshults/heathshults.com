@@ -1,22 +1,5 @@
 // Variables
 
-<<<<<<< HEAD
-// Restated Bootstrap Variables
-
-$white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
-
-$primary: #fed136 !default;
-=======
 
 
 $color_red_orange:            #f63a0f !default;
@@ -36,13 +19,23 @@ $theme-background-secondary:  map-get($theme-default-colors, background-secondar
 $black:                       #000000 !default;
 $black_25:                    rgba(0, 0, 0, 0.25) !default;
 
-$gray-base:			              #111111 !default;
+$gray-base:			             #111111 !default;
 $gray-darker:		              lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:			              lighten($gray-base, 20%) !default;   // #333
 $gray:				                lighten($gray-base, 33.5%) !default; // #555
 $gray-light:		              lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter:		            #dedede !default; // #dedede
+$gray-lighter:		           #dedede !default; // #dedede
 $gray-lightest:		            lighten($gray-base, 93.5%) !default; // #eee
+
+$gray-100:                  #f8f9fa !default;
+$gray-200:                  #e9ecef !default;
+$gray-300:                  #dee2e6 !default;
+$gray-400:                  #ced4da !default;
+$gray-500:                  #adb5bd !default;
+$gray-600:                  #868e96 !default;
+$gray-700:                  #495057 !default;
+$gray-800:                  #343a40 !default;
+$gray-900:                  #212529 !default;
 
 $white:                     #ffffff !default;
 $white_8:                   rgba(255, 255, 255, 0.08) !default;
@@ -73,4 +66,3 @@ $text-shadow-light-spread:0px 4px 13px rgba(0, 0, 0, .75) !default;
 $text-shadow-medium: 0px 0px 10px rgba(0, 0, 0, .85) !default;
 
 $bg-black-to-transparent: linear-gradient(0deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 100%) !default;
->>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2

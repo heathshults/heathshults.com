@@ -1,3 +1,3 @@
-require('./js/heathshults.mjs')
+require('./js/heathshults.js')
 // require('./js/contact_me')
 // require('./js/jqBootstrapValidation')

@@ -1,10 +1,7 @@
 node_modules
-<<<<<<< HEAD
 
 **/*.zip
-=======
 src/DevBox
 www
 **/*/_notes
 
->>>>>>> 2904778d0915e32d54fc4005b385ec4be73079d2
