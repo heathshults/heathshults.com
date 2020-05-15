@@ -78,11 +78,17 @@
         return
     })
 
+    var theBars = document.querySelectorAll('.progress-bar')
+      alert(theBars)
+      theBars.foreach((bar)=>{
+      bar.style.width = bar.getAttribute('aria-valuenow')
+    })
+
     // progress bars
-  var theBars = $('.progress-bar')
-  $.each(theBars, (i, bar)=> {
-    bar.atr('width') = bar.attr('aria-valuenow')
-  }) 
+  // var theBars = $('.progress-bar')
+  // $.each(theBars, (i, bar)=> {
+  //   bar.atr('width') = bar.attr('aria-valuenow')
+  // }) 
 
 })(); // End of use strict
 

@@ -21,6 +21,14 @@ const options = {
   open: true
  };
 
+
+//  const del = require('del');
+ 
+// (async cleanup() {
+//     const deletedPaths = await del(['temp/*.js', '!temp/unicorn.js']);
+ 
+//     console.log('Deleted files and directories:\n', deletedPaths.join('\n'));
+// })();
 // const nunjucksContext = require('./resources/data/index');
 // const nunjucksDevConfig = require('./resources/html/config.dev.json');
 // const nunjucksProdConfig = require('./resources/html/config.prod.json');
@@ -52,7 +60,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'www'),
     publicPath: './',
-    filename: "hScript.bundle.js",
+    filename: "HeathScript.built.js",
     chunkFilename: '[name].js'
   },
    optimization: {
@@ -143,11 +151,11 @@ module.exports = {
     // new CleanWebpackPlugin(),
    
     new MiniCssExtractPlugin({
-      filename: '[name].build.css'
+      filename: '[name].built.css'
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      filename: path.resolve(__dirname, './www/index.html'),
+      filename: path.resolve(__dirname, 'www/index.html'),
       template: 'src/index.ejs',
       favicon: 'src/favicon.ico'
       // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
@@ -165,27 +173,27 @@ module.exports = {
     },
     {
       from: 'src/DevBox/Blue-Star-Sports-Test/*',
-      to: 'DevBox/Blue-Star-Sports-Test/*',
+      to: 'DevBox/Blue-Star-Sports-Test/',
       ignore: ['**/*.zip'] 
     },
     {
       from: 'src/img/*',
-      to: 'img/*',
-      ignore: ['**/*.zip'] 
+      to: 'img/',
+      ignore: ['**/*.ejs'] 
     },
     {
       from: 'src/js/*',
-      to: 'js/*',
+      to: 'js/',
       ignore: ['heathshults.js', 'contact_me.js', 'jqBootstrapValidation.js']
     },
     {
       from: 'src/lib/*',
-      to: 'lib/*',
+      to: 'lib/',
       ignore: ['**/*.ejs']
     },
     {
       from: 'src/vendor/*',
-      to: 'vendor/*',
+      to: 'vendor/',
       ignore: ['**/*.ejs']
     }
     ]),
@@ -194,29 +202,29 @@ module.exports = {
       {
         host: 'localhost',
         port: 9900,
-        proxy: 'http://localhost:9900/',
-        injectCss: true,
-        files: [
-          {
-            match: ['src/*.html', 'src/scss/*.scss', 'src/css/*.css', 'src/js/*.js', 'src/js/*.json'],
-            fn: function (event, file) {
-              if (event === 'change') {
-                exec('node_modules/.bin/webpack --config webpack.build.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
-                  if (error) {
-                      console.log(`error: ${error.message}`);
-                      return;
-                  }
-                  if (stderr) {
-                      console.log(`stderr: ${stderr}`);
-                      return;
-                  }
-                  console.log(`stdout: ${stdout}`);
-                });
-                console.log('Processed '+file)
-              }
-            }
-          }
-        ],
+        proxy: 'http://localhost:9901/',
+        // injectCss: true,
+        // files: [
+        //   {
+        //     match: ['src/*.html', 'src/scss/*.scss', 'src/css/*.css', 'src/js/*.js', 'src/js/*.json'],
+        //     fn: function (event, file) {
+        //       if (event === 'change') {
+        //         exec('./node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
+        //           if (error) {
+        //               console.log(`error: ${error.message}`);
+        //               return;
+        //           }
+        //           if (stderr) {
+        //               console.log(`stderr: ${stderr}`);
+        //               return;
+        //           }
+        //           console.log(`stdout: ${stdout}`);
+        //         });
+        //         console.log('Processed '+file)
+        //       }
+        //     }
+        //   }
+        // ],
         reloadDelay: 2000
     }),
     new webpack.DefinePlugin({
@@ -234,18 +242,12 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     stats: "errors-only",
-    contentBase: path.join(__dirname, '/www/'),
+    contentBase: path.join(__dirname, 'www/'),
     inline: false,
     host: 'localhost',
-    port: 9900,
-    compress: true
-    // watchOptions: {
-    //   // Delay the rebuild after the first change
-    //   aggregateTimeout: 300,
-
-    //   // Poll using interval (in ms, accepts boolean too)
-    //   poll: 1000,
-    // },
+    port: 9901,
+    compress: true,
+    liveReload: true
   }
 }
 

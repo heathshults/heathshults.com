@@ -22,8 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
     
     <!-- Theme CSS -->
-    <link href="css/heathscript.css" rel="stylesheet">
-    <link disabled id="darkmode" rel="stylesheet" href="css/theme-dark-mode.css">
+    <link href="HeathStyle.built.css" rel="stylesheet">
+    <link disabled id="darkmode" rel="stylesheet" href="theme-dark-mode.built.css">
     
     <script>
        var lsGetMode = localStorage.getItem('dark_mode')
@@ -114,9 +114,12 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">My Skills</h2>
-            <h3 class="section-subheading text-muted"><strong class="font-bold-regular">SIMPLE</strong>, 
+            <h3 class="section-heading"><strong class="font-bold-regular">KEEPING IT HONEST</strong></h3> 
               <strong class="font-bold-regular">ELEGANT</strong> &amp;
-              <strong class="font-bold-regular">CLEAN</strong>.</h3>
+              <strong class="font-bold-regular">CLEAN</strong>.
+            <!-- <h3 class="section-subheading text-muted"><strong class="font-bold-regular">SIMPLE</strong>, 
+              <strong class="font-bold-regular">ELEGANT</strong> &amp;
+              <strong class="font-bold-regular">CLEAN</strong>.</h3> -->
           </div>
         </div>
         <div class="row text-center card__row">
@@ -128,36 +131,63 @@
                 </div>
                 <h4 class="service-heading lead">HTML5 • Markdown</h4>
               </div>
-              <div class="card__body">
-                <p class="text-muted">HTML5 Skill Level</p>
-                <div class="rogress-bar-container">
-
-                  <div class="">
-                    <input type="radio" class="radio" name="progress" value="five" id="five" disabled>
-                    <label for="five" class="label">OK</label>
+              <div class="card__body" style="align-self: stretch; align-items:initial">
+                <p class="text-muted"><strong>Skill Level</strong></p>
+                <div class="progress-bar-stacker">
+                  <div class="radio-group">
+                      <input type="radio" class="radio five" name="html_progress" value="5" id="html_five" >
+                      <label for="five" class="label ">OK</label>
+                      
+                      <input type="radio" class="radio twentyfive" name="html_progress" value="25" id="html_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" class="radio fifty" name="html_progress" value="50" id="html_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" class="radio seventyfive" name="html_progress" value="75" id="html_seventyfive" >
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" class="radio onehundred" name="html_progress" value="100" id="html_onehundred" checked>
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
                     
-                    <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" disabled>
-                    <label for="twentyfive" class="label">Good</label>
-                    
-                    <input type="radio" class="radio" name="progress" value="fifty" id="fifty" disabled>
-                    <label for="fifty" class="label">Intermediate</label>
-                    
-                    <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive" disabled>
-                    <label for="seventyfive" class="label">Advanced</label>
-                    
-                    <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred" disabled  checked>
-                    <label for="onehundred" class="label">Expert</label>
-                  </div>
-                  <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        HTML5 100%
+                      </div>
+                    </div>
+                  
                 </div>
-                
 
+                <div class="progress-bar-stacker" style="margin-top: 20px;">
+                  <div class="radio-group">
+                      <input type="radio" class="radio five" name="progress" value="5" id="md_five" >
+                      <label for="five" class="label">OK</label>
+                      
+                      <input type="radio" class="radio twentyfive" name="progress" value="25" id="md_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" class="radio fifty" name="progress" value="50" id="md_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" class="radio seventyfive" name="progress" value="75" id="md_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" class="radio onehundred" name="progress" value="100" id="md_onehundred" >
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                        Markdown
+                      </div>
+                    </div>
+                  
                 </div>
+              </div> <!-- /.card-body -->
+              <div class="card__footer">
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
               </div>
-              <!-- <div class="card__footer">
-                <span class="lead mx-auto">Let's make a <span class="font-bold-regular">MILLION</span> or TWO!</span>
-              </div> -->
             </div>
             <!-- <div class="card">
               <div class="card__header">
@@ -186,9 +216,58 @@
                 <h4 class="service-heading lead">CSS • Modular SCSS</h4>
               </div>
               <div class="card__body">
-                <p class="text-muted">User experience is key! You must look
-                  your best on all size screens. <span class="font-bold-regular">SCREEN FIRST DESIGN</span> keepS <span class="font-bold-regular">YOUR BUSINESS</span> looking great!
-                </p>
+                <p class="text-muted"><strong>Skill Level</strong></p>
+                <div class="progress-bar-stacker">
+                  <div class="radio-group">
+                      <input type="radio" class="radio five" name="css_progress" value="5" id="css_five" >
+                      <label for="five" class="label ">OK</label>
+                      
+                      <input type="radio" class="radio twentyfive" name="css_progress" value="25" id="css_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" class="radio fifty" name="css_progress" value="50" id="css_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" class="radio seventyfive" name="css_progress" value="75" id="css_seventyfive" >
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" class="radio onehundred" name="css_progress" value="100" id="css_onehundred" checked>
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        CSS 100%
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="progress-bar-stacker" style="margin-top: 20px;">
+                  <div class="radio-group">
+                      <input type="radio" class="radio five" name="scss_progress" value="5" id="scss_five" >
+                      <label for="five" class="label">OK</label>
+                      
+                      <input type="radio" class="radio twentyfive" name="scss_progress" value="25" id="scss_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" class="radio fifty" name="scss_progress" value="50" id="scss_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" class="radio seventyfive" name="scss_progress" value="75" id="scss_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" class="radio onehundred" name="scss_progress" value="100" id="scss_onehundred" checked >
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        SCSS 100%
+                      </div>
+                    </div>
+                  
+                </div>
               </div>
               <div class="card__footer">
                 <span class="lead mx-auto">I think <span class="font-bold-regular">DEVICE SCREENS</span> first!</span>
@@ -221,18 +300,64 @@
                   <i class="fa fa-circle fa-stack-2x color-white"></i>
                   <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
                 </span>
-                <h4 class="service-heading">Web Security</h4>
+                <h4 class="service-heading">JAVASCRIPT • TYPESCRIPT</h4>
               </div>
               <div class="card__body">
-                <p class="text-muted">Let's not forget about <span class="font-bold-regular">TRUST</span>. I provide a
-                  <span class="font-bold-regular">SAFE</span> &amp; <span class="font-bold-regular">SECURE</span>
-                  experience for
-                  both you and your valued customer..<br>
-              </div>
+                <p class="text-muted"><strong>Skill Level</strong></p>
+                <div class="progress-bar-stacker">
+                  <div class="radio-group">
+                      <input type="radio" class="radio five" name="21_progress" value="5" id="21_five" >
+                      <label for="five" class="label ">OK</label>
+                      
+                      <input type="radio" class="radio twentyfive" name="21_progress" value="25" id="21_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" class="radio fifty" name="21_progress" value="50" id="21_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" class="radio seventyfive" name="21_progress" value="75" id="21_seventyfive" >
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" class="radio onehundred" name="21_progress" value="100" id="21_onehundred" checked>
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        HTML5 100%
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="progress-bar-stacker" style="margin-top: 20px;">
+                  <div class="radio-group">
+                      <input type="radio" class="radio five" name="22_progress" value="5" id="22_five" >
+                      <label for="five" class="label">OK</label>
+                      
+                      <input type="radio" class="radio twentyfive" name="22_progress" value="25" id="22_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" class="radio fifty" name="22_progress" value="50" id="22_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" class="radio seventyfive" name="22_progress" value="75" id="22_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" class="radio onehundred" name="22_progress" value="100" id="22_onehundred" >
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                        Markdown
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
               <div class="card__footer">
-                <span class="lead mx-auto">Safe, <span class="font-bold-regular">Secure</span> &amp; <span
-                    class="font-bold-regular">Peace</span> of Mind.</span>
-                </p>
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
               </div>
             </div>
           </div>
@@ -487,11 +612,18 @@
     <!-- <script src="js/contact_me.js"></script> -->
 
     <!-- Theme JavaScript -->
-    <script src="js/heathshults.mjs" type="module"></script>
+    <script src="HeathScript.built.js" type="module"></script>
     
     <!-- <script src="hScript.bundle.js"></script> -->
    
-
+    <script>
+      var theBars = document.querySelectorAll('.progress-bar')
+      theBars.forEach(aBar => {
+        var barWidth = $(aBar).attr('aria-valuenow')
+        $(aBar).attr('style',`width: ${barWidth}%`);
+      });
+    
+    </script>
   </body>
 
 </html>

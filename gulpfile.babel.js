@@ -275,10 +275,25 @@ function copy_html(cb) {
 }
 exports.copy_html = copy_html
 
+function copy_css(cb) {
+  src(`${srcPath}/css/**/*.{css,map}`)
+    .pipe(plumber())
+    //.pipe(changed(`${wwwPath}/css`))
+    .pipe(dest(`${wwwPath}/css`)), cb()
+  // () => { 
+  //   let file = ''
+  //   if (typeof cb === 'function') {
+  //     cb(null, file);
+  //     called = true;
+  //   }
+  // }
+}
+exports.copy_css = copy_css
+
 function copy_js(cb) {
   src(`${srcPath}/js/**/*.{js,json}`)
     .pipe(plumber())
-    .pipe(changed(`${wwwPath}/js`))
+    //.pipe(changed(`${wwwPath}/js`))
     .pipe(dest(`${wwwPath}/js`)), cb()
   // () => { 
   //   let file = ''
@@ -305,7 +320,10 @@ function copy_assets(cb) {
 exports.copy_assets = copy_assets
 
 function copy_all (cb) { series(sassy, copy_js, copy_vendor, ejsit, copy_img ), cb() }
-exports.copy_all = copy_all
+exports.copy_dev = copy_all
+
+function copy_dev (cb) { series(copy_css, copy_js, copy_vendor, copy_img ), cb() }
+exports.copy_dev = copy_dev
 
 function watchers(cb) {
   // eslint-disable-next-line no-sequences

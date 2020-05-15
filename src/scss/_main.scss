@@ -1,9 +1,3 @@
-@import "./_maps.scss";
-@import "./_variables.scss";
-@import "./_mixins.scss";
-@import "./_components";
-
-// Global Componentscc
 
 body {
   position: relative;
@@ -462,7 +456,7 @@ section, .section {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  height: 350px;
+  height: 410px;
 }
 .card {
   position: relative;
@@ -1133,4 +1127,24 @@ img::-moz-selection {
   flex: 1; /* this essentially means "use all remaining space" if it's in a series of other Flex elements */
   overflow:auto;
   box-sizing:border-box;
+}
+
+.bg-lime-green {
+  background-color: #86e01e;
+}
+
+.bg-heavy-yellow {
+  background-color: #f2b01e;
+}
+
+.bg-less-heavy-yellow {
+  background-color: #f2d31b;
+}
+
+.bg-orange {
+  background-color: #f27011;
+}
+
+.d-none {
+  display: none;
 }

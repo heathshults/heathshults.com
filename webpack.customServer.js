@@ -3,10 +3,10 @@ const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { exec } = require('child_process')
-
+const gulpfile = require('./gulpfile.babel.js')
 
 // const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 // const OfflinePlugin = require('offline-plugin/runtime').install();
@@ -21,6 +21,15 @@ const options = {
   open: true
  };
 
+
+
+//  const del = require('del');
+ 
+// (async cleanup() {
+//     const deletedPaths = await del(['temp/*.js', '!temp/unicorn.js']);
+ 
+//     console.log('Deleted files and directories:\n', deletedPaths.join('\n'));
+// })();
 // const nunjucksContext = require('./resources/data/index');
 // const nunjucksDevConfig = require('./resources/html/config.dev.json');
 // const nunjucksProdConfig = require('./resources/html/config.prod.json');
@@ -50,17 +59,17 @@ module.exports = {
   },
   // watch: true,
   output: {
-    path: path.join(__dirname, 'www'),
+    path: path.join(__dirname, 'www/'),
     publicPath: './',
-    filename: "hScript.bundle.js",
+    filename: "HeathScript.built.js",
     chunkFilename: '[name].js'
   },
    optimization: {
      splitChunks: {
        cacheGroups: {
          heath_script: {
-           name: 'heathscript',
-           test: /heathscript\.s?css$/,
+           name: 'HeathStyle',
+           test: /HeathStyle\.s?css$/,
            chunks: 'all',
            enforce: true,
          },
@@ -141,13 +150,12 @@ module.exports = {
   },
   plugins: [
     // new CleanWebpackPlugin(),
-   
     new MiniCssExtractPlugin({
-      filename: '[name].build.css'
+      filename: '[name].built.css'
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      filename: path.resolve(__dirname, './www/index.html'),
+      filename: path.resolve(__dirname, 'www/index.html'),
       template: 'src/index.ejs',
       favicon: 'src/favicon.ico'
       // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
@@ -157,66 +165,72 @@ module.exports = {
     //   template: 'src/index-allcode.ejs',
     // }),
     // copy assets and manifest.json
-    new CopyWebpackPlugin([
-    {
-      from: 'src/css',
-      to: 'css',
-      ignore: ['heathshults.css', 'heathshults.min.css'] 
-    },
-    {
-      from: 'src/DevBox/Blue-Star-Sports-Test/*',
-      to: 'DevBox/Blue-Star-Sports-Test/*',
-      ignore: ['**/*.zip'] 
-    },
-    {
-      from: 'src/img/*',
-      to: 'img/*',
-      ignore: ['**/*.ejs'] 
-    },
-    {
-      from: 'src/js/*',
-      to: 'js/*',
-      ignore: ['heathshults.js', 'contact_me.js', 'jqBootstrapValidation.js']
-    },
-    {
-      from: 'src/lib/*',
-      to: 'lib/*',
-      ignore: ['**/*.ejs']
-    },
-    {
-      from: 'src/vendor/*',
-      to: 'vendor/*',
-      ignore: ['**/*.ejs']
-    }
-    ]),
+    
+    // new CopyPlugin([
+    // {
+    //   from: 'src/css/*',
+    //   to: '',
+    //   ignore: ['heathshults.css', 'heathshults.min.css'] 
+    // },
+    // {
+    //   from: 'src/DevBox/Blue-Star-Sports-Test/*',
+    //   to: '',
+    //   ignore: ['**/*.zip'] 
+    // },
+    // {
+    //   from: 'src/img/*',
+    //   to: '',
+    //   ignore: ['**/*.ejs'] 
+    // },
+    // {
+    //   from: 'src/js/*',
+    //   to: '.',
+    //   ignore: ['heathshults.js', 'contact_me.js', 'jqBootstrapValidation.js']
+    // },
+    // {
+    //   from: 'src/DevBox/*',
+    //   to: 'DevBox/',
+    //   ignore: ['**/*.ejs']
+    // },
+    // {
+    //   from: 'src/lib/*',
+    //   to: 'lib/',
+    //   ignore: ['**/*.ejs']
+    // },
+    // {
+    //   from: 'src/vendor/**/*',
+    //   to: 'vendor/',
+    //   ignore: ['**/*.ejs']
+    // }
+    // ]),
     new BrowserSyncPlugin(
       // BrowserSync options
       {
         host: 'localhost',
         port: 9900,
-        proxy: 'http://localhost:9900/',
-        injectCss: true,
-        files: [
-          {
-            match: ['src/*.html', 'src/scss/*.scss', 'src/css/*.css', 'src/js/*.js', 'src/js/*.json'],
-            fn: function (event, file) {
-              if (event === 'change') {
-                exec('./node_modules/.bin/webpack --config webpack.build.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
-                  if (error) {
-                      console.log(`error: ${error.message}`);
-                      return;
-                  }
-                  if (stderr) {
-                      console.log(`stderr: ${stderr}`);
-                      return;
-                  }
-                  console.log(`stdout: ${stdout}`);
-                });
-                console.log('Processed '+file)
-              }
-            }
-          }
-        ],
+        proxy: 'http://localhost:9901/',
+        // injectCss: true,
+        // files: [
+        //   {
+        //     match: ['src/*.html', 'src/scss/*.scss', 'src/css/*.css', 'src/js/*.js', 'src/js/*.json'],
+        //     fn: function (event, file) {
+        //       if (event === 'change') {
+        //         exec('./node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors', (error, stdout, stderr) => {
+        //           if (error) {
+        //               console.log(`error: ${error.message}`);
+        //               return;
+        //           }
+        //           if (stderr) {
+        //               console.log(`stderr: ${stderr}`);
+        //               return;
+        //           }
+        //           console.log(`stdout: ${stdout}`);
+        //         });
+        //         console.log('Processed '+file)
+        //       }
+        //     }
+        //   }
+        // ],
         reloadDelay: 2000
     }),
     new webpack.DefinePlugin({
@@ -234,15 +248,40 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     stats: "errors-only",
-    contentBase: path.join(__dirname, '/www/'),
+    contentBase: path.join(__dirname, 'www/'),
     inline: false,
     host: 'localhost',
-    port: 9900,
+    port: 9901,
     compress: true,
-    liveReload: false
+    liveReload: true,
+    writeToDisk: true
   }
 }
 
+
+
+async function copy(event, file) {
+
+  exec('./node_modules/.bin/gulp copy_img', 
+    async (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+
+  exec('./node_modules/.bin/gulp copy_js', 
+    async (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+
+  exec('./node_modules/.bin/gulp copy_vendor', 
+    async (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+
+  exec('./node_modules/.bin/gulp copy_css', 
+    async (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+
+  return
+}
+
+ copy()
 // if (!isDev) {
 //   module.exports.plugins.push(
 //     new CleanWebpackPlugin(['dist']),
