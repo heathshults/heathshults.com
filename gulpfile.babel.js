@@ -320,7 +320,7 @@ function copy_assets(cb) {
 exports.copy_assets = copy_assets
 
 function copy_all (cb) { series(sassy, copy_js, copy_vendor, ejsit, copy_img ), cb() }
-exports.copy_dev = copy_all
+exports.copy_all = copy_all
 
 function copy_dev (cb) { series(copy_css, copy_js, copy_vendor, copy_img ), cb() }
 exports.copy_dev = copy_dev

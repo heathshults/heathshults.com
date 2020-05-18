@@ -27,23 +27,25 @@ $gray-light:		              lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:		            #dedede !default; // #dedede
 $gray-lightest:		            lighten($gray-base, 93.5%) !default; // #eee
 
-$white:                     #ffffff !default;
+$white:                     #fff !default;
 $white_8:                   rgba(255, 255, 255, 0.08) !default;
 $white_30:                  rgba(255, 255, 255, 0.3) !default;
 $white_5:                   rgba(255, 255, 255, 0.05) !default;
 $white_10:                  rgba(255, 255, 255, 0.1) !default;
 
 // Dark Mode Colors
-$blueGray-medium:           rgb(80, 115, 134);
-$blueGray-dark:             rgb(15, 22, 29);
-$blueGray-darker:           rgb(12, 15, 17);
-$baige-medium:              rgb(167, 158, 139);
-$text-onDark:               map-get($theme-dark-mode-colors, text-onDark);
-$green-light:               rgb(128, 204, 148);
-$blue-light-muted:          rgb(128, 182, 204);
-$blue-lighter-muted:        rgb(142, 193, 217);
-$blue-lightest-muted:       rgb(155, 203, 230);
-$blue-dark:                 rgb(30, 54, 78);
+$blueGray-medium:           rgb(80, 115, 134) !default;
+$blueGray-dark:             rgb(15, 22, 29) !default;
+$blueGray-very-dark:        rgb(24, 26, 27) !default; // #181a1b
+$blueGray-darker:           rgb(12, 15, 17) !default;
+$blueGray-light:           rgb(45, 55, 60) !default;
+$baige-medium:              rgb(167, 158, 139) !default;
+$text-onDark:               map-get($theme-dark-mode-colors, text-onDark) !default;
+$green-light:               rgb(128, 204, 148) !default;
+$blue-light-muted:          rgb(128, 182, 204) !default;
+$blue-lighter-muted:        rgb(142, 193, 217) !default;
+$blue-lightest-muted:       rgb(155, 203, 230) !default;
+$blue-dark:                 rgb(30, 54, 78) !default;
 $link-primary:              $theme-primary !default;
 
 
@@ -51,8 +53,10 @@ $font-cursive-Caveat: 'Caveat', cursive !default;
 $font-cursive-NYCD: 'Nothing You Could Do', cursive !default;
 $font-cursive-Sedgwick: 'Sedgwick Ave Display', cursive !default;
 
-$text-shadow-light: 0px 5px 7px rgba(0, 0, 0, .85) !default;
+$text-shadow-light: 0px 0px 4px rgba(0, 0, 0, .95) !default;
 $text-shadow-light-spread:0px 4px 13px rgba(0, 0, 0, .75) !default;
 $text-shadow-medium: 0px 0px 10px rgba(0, 0, 0, .85) !default;
 
 $bg-black-to-transparent: linear-gradient(0deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 100%) !default;
+
+

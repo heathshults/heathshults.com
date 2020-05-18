@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "gdev": "node_modules/.bin/gulp dev",
-    "start": "npm run devServer && npm run copy",
-    "copy": "gulp copy_all",
+    "start": "npm run devServer",
+    "copy": "gulp copy_dev",
     "devServer": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --watch",
     "build": "node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors",
     "start-gulp": "node_modules/.bin/gulp setup_develop && npm run watchers",

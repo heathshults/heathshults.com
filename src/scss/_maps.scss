@@ -3,7 +3,13 @@ $theme-default-colors: (
   background-secondary: #ebebeb,
   text-onLight: #1a1a1a,
   yellow-base: #fed136,
-  danger: #e74c3c
+  danger: #e74c3c,
+  gray-base: #000,
+  gray-light:#777 , // lighten(gray-base, 46.7%)
+  gray-lighter: #dedede, // lighten(gray-base, 93.5%)
+  orange: #f27011,
+  yellow: #f2b01e,
+  lime: #86e01e
 );
 
 $theme-dark-mode-colors: (
@@ -40,7 +46,8 @@ $experimental: (
   dm-light-alt: #EEEEEE
 );
 
-$colors: (text: #151515,
+$colors: (
+  text: #151515,
   themes: (
     dark: (
       background: map-get($experimental, dm-canvas),

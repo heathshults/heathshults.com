@@ -13,8 +13,8 @@
 
 .progress {
   flex: 1 0 100%;
-  align-items: stretch;
-  height: 16px;
+  align-items: center;
+  height: 24px;
   margin: 1.2rem 0;
   background: #bfbfbf;
   border: 1px solid #bfbfbf;
@@ -26,14 +26,16 @@
 .progress-bar {
   flex: 1 1 auto;
   align-items: center;
-  color: #333;
+  justify-content: left;
+  height: 24px;
+  padding: 1px 5px;
   font-size: 10px;
   font-weight: 700;
-  height: 16px;
-  padding: 1px;
+  // line-height: 1rem;
+  color: #333;
+  text-align: left;
   border: 1px solid #bfbfbf;
   border-radius: 2px;
-  line-height: 1rem;
 	// background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
   // background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
   // background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
@@ -50,7 +52,7 @@
   // box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
- .radio.five:checked ~ .progress > .progress-bar {
+.radio.five:checked ~ .progress > .progress-bar {
   width: 5%;
   background-color: #f63a0f;
   -webkit-transition-property: width, background-color;
@@ -129,8 +131,8 @@
 .radio:checked + .label {
   padding-top: 4px;
   color: white;
-  border: 1px solid rgba(0, 0, 0, 0.75);
   background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.75);
   &::after {
     border-top: 6px solid rgba(0, 0, 0, 0.75);
     transform: translateX(-50%);

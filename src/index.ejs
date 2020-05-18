@@ -29,7 +29,8 @@
        var lsGetMode = localStorage.getItem('dark_mode')
        var dm_btn = document.getElementById('mode_widget')
       if (lsGetMode === "true") {
-        document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
+        document.querySelector('#darkmode').disabled = false;
+        // document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
       }
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,57 +41,79 @@
   </head>
 
   <body id="page-top" class="index">
-    
-    
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse d-flex justify-content-space-between" id="bs-example-navbar-collapse-1">
-        <span class="navbar-header js-page-scroll d-inline-flex">
-          <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-          </button>
-          <a class="navbar-brand js-page-scroll cursive d-flex align-items-center" href="#page-top">
-            <i class="fa fa-fw" aria-hidden="true"></i>HeathShults.com</a>
-        </span>
-
-
-          <span><ul class="nav navbar-nav navbar-right">
-          <li class="hidden ">
-          <a href="#page-top" class="nav__link"></a>
-          </li>
-          <li class="">
-          <a class="js-page-scroll page-scroll nav__link" href="#skills">Services</a>
-          </li>
-          <li class="">
-          <a class="js-page-scroll page-scroll nav__link" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="">
-          <a class="js-page-scroll page-scroll nav__link" href="#about">About</a>
-          </li>
-          <li class="">
-          <a class="js-page-scroll page-scroll nav__link" href="#contact">Contact</a>
-          </li>
-          <li class="">
-          <button id="mode_widget" class="mode-widget" style="background-color: transparent !important;">
-          <!-- <span class="which-mode">Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span></span> -->
-          </button>
-          
-          </li>
-          <li>
-            <span class="navbar-text" >
-            <i class="fa fa-arrow-circle-left font-size-110"></i> Latest Project on this Website.
-          </span></span>
-          </li>
-          </ul>
-          
+     <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand site-logo js-page-scroll" href="#page-top"><i class="fa fa-fw" aria-hidden="true"></i>HeathShults.com</a>
+          </div></div>
+        <div class="col-md-6">
+          <!-- <div class="collapse navbar-collapse d-flex justify-content-space-between" id="bs-example-navbar-collapse-1"> -->
+          <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+            <!-- <span class="navbar-header js-page-scroll d-inline-flex">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand js-page-scroll cursive d-flex align-items-center" href="#page-top">
+                <i class="fa fa-fw" aria-hidden="true"></i>HeathShults.com</a>
+            </span> -->
+            
+              <ul class="nav navbar-nav navbar-right mt-2">
+                <li class="hidden ">
+                  <a href="#page-top" class="nav__link"></a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link js-page-scroll" href="#skills">My Skills</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link js-page-scroll" href="#portfolio">My Portfolio</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link js-page-scroll" href="#about">About Me</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link js-page-scroll" href="#contact">Contact</a>
+                </li>
+                
+            </ul>
+  
+          </div>
+          <!-- /.navbar-collapse -->
         </div>
-        <!-- /.navbar-collapse -->
+        <div class="col-md-3">
+          <ul class="nav navbar-nav navbar-right mt-2">
+            <li class="nav__item">
+                <button id="mode_widget" class="mode-widget" style="background-color: transparent !important;">
+                  <!-- <span class="which-mode">Dark Mode<span id="ninja" class="fa fa-moon-o mode-icon"></span></span> -->
+                </button>
+            
+              </li>
+              <!-- <li>
+                <span class="navbar-text">
+                  <i class="fa fa-arrow-circle-left font-size-110"></i> Latest Project on this Website.
+                </span>
+            
+            </li> -->
+            </ul>
+        </div>
       </div>
+    </div>
+    
+   
+
+    
+        
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        
+      
 
       <!-- /.container-fluid -->
     </nav>
@@ -129,25 +152,25 @@
                 <div class="logo-row">
                   <img src="img/logos/HTML5_Logo_512.png" alt="HTML5" class="dev-logo" height="65" /> <img src="img/logos/markdown-150.png" alt="Markdown" class="dev-logo" height="45" /> 
                 </div>
-                <h4 class="service-heading lead">HTML5 • Markdown</h4>
+                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
               </div>
               <div class="card__body" style="align-self: stretch; align-items:initial">
                 <p class="text-muted"><strong>Skill Level</strong></p>
                 <div class="progress-bar-stacker">
                   <div class="radio-group">
-                      <input type="radio" class="radio five" name="html_progress" value="5" id="html_five" >
+                      <input type="radio" disabled class="radio five" name="html_progress" value="5" id="html_five" >
                       <label for="five" class="label ">OK</label>
                       
-                      <input type="radio" class="radio twentyfive" name="html_progress" value="25" id="html_twentyfive" >
+                      <input type="radio" disabled class="radio twentyfive" name="html_progress" value="25" id="html_twentyfive" >
                       <label for="twentyfive" class="label">Good</label>
                       
-                      <input type="radio" class="radio fifty" name="html_progress" value="50" id="html_fifty" >
+                      <input type="radio" disabled class="radio fifty" name="html_progress" value="50" id="html_fifty" >
                       <label for="fifty" class="label">Intermediate</label>
                       
-                      <input type="radio" class="radio seventyfive" name="html_progress" value="75" id="html_seventyfive" >
+                      <input type="radio" disabled class="radio seventyfive" name="html_progress" value="75" id="html_seventyfive" >
                       <label for="seventyfive" class="label">Advanced</label>
                       
-                      <input type="radio" class="radio onehundred" name="html_progress" value="100" id="html_onehundred" checked>
+                      <input type="radio" disabled class="radio onehundred" name="html_progress" value="100" id="html_onehundred" checked>
                       <label for="onehundred" class="label">Expert</label>
                     </div><!-- </div> -->
                     
@@ -161,19 +184,19 @@
 
                 <div class="progress-bar-stacker" style="margin-top: 20px;">
                   <div class="radio-group">
-                      <input type="radio" class="radio five" name="progress" value="5" id="md_five" >
+                      <input type="radio" disabled class="radio five" name="progress" value="5" id="md_five" >
                       <label for="five" class="label">OK</label>
                       
-                      <input type="radio" class="radio twentyfive" name="progress" value="25" id="md_twentyfive" >
+                      <input type="radio" disabled class="radio twentyfive" name="progress" value="25" id="md_twentyfive" >
                       <label for="twentyfive" class="label">Good</label>
                       
-                      <input type="radio" class="radio fifty" name="progress" value="50" id="md_fifty" >
+                      <input type="radio" disabled class="radio fifty" name="progress" value="50" id="md_fifty" >
                       <label for="fifty" class="label">Intermediate</label>
                       
-                      <input type="radio" class="radio seventyfive" name="progress" value="75" id="md_seventyfive" checked>
+                      <input type="radio" disabled class="radio seventyfive" name="progress" value="75" id="md_seventyfive" checked>
                       <label for="seventyfive" class="label">Advanced</label>
                       
-                      <input type="radio" class="radio onehundred" name="progress" value="100" id="md_onehundred" >
+                      <input type="radio" disabled class="radio onehundred" name="progress" value="100" id="md_onehundred" >
                       <label for="onehundred" class="label">Expert</label>
                     </div><!-- </div> -->
                     
@@ -213,25 +236,25 @@
                 <div class="logo-row">
                   <img src="img/logos/css3-150.png" alt="CSS3" class="dev-logo" height="65" /> <img src="img/logos/Sass-150.png" alt="SASS" class="dev-logo "height="55" /> 
                 </div>
-                <h4 class="service-heading lead">CSS • Modular SCSS</h4>
+                <!-- <h4 class="service-heading lead">CSS • Modular SCSS</h4> -->
               </div>
               <div class="card__body">
                 <p class="text-muted"><strong>Skill Level</strong></p>
                 <div class="progress-bar-stacker">
                   <div class="radio-group">
-                      <input type="radio" class="radio five" name="css_progress" value="5" id="css_five" >
+                      <input type="radio" disabled class="radio five" name="css_progress" value="5" id="css_five" >
                       <label for="five" class="label ">OK</label>
                       
-                      <input type="radio" class="radio twentyfive" name="css_progress" value="25" id="css_twentyfive" >
+                      <input type="radio" disabled class="radio twentyfive" name="css_progress" value="25" id="css_twentyfive" >
                       <label for="twentyfive" class="label">Good</label>
                       
-                      <input type="radio" class="radio fifty" name="css_progress" value="50" id="css_fifty" >
+                      <input type="radio" disabled class="radio fifty" name="css_progress" value="50" id="css_fifty" >
                       <label for="fifty" class="label">Intermediate</label>
                       
-                      <input type="radio" class="radio seventyfive" name="css_progress" value="75" id="css_seventyfive" >
+                      <input type="radio" disabled class="radio seventyfive" name="css_progress" value="75" id="css_seventyfive" >
                       <label for="seventyfive" class="label">Advanced</label>
                       
-                      <input type="radio" class="radio onehundred" name="css_progress" value="100" id="css_onehundred" checked>
+                      <input type="radio" disabled class="radio onehundred" name="css_progress" value="100" id="css_onehundred" checked>
                       <label for="onehundred" class="label">Expert</label>
                     </div><!-- </div> -->
                     
@@ -245,19 +268,19 @@
 
                 <div class="progress-bar-stacker" style="margin-top: 20px;">
                   <div class="radio-group">
-                      <input type="radio" class="radio five" name="scss_progress" value="5" id="scss_five" >
+                      <input type="radio" disabled class="radio five" name="scss_progress" value="5" id="scss_five" >
                       <label for="five" class="label">OK</label>
                       
-                      <input type="radio" class="radio twentyfive" name="scss_progress" value="25" id="scss_twentyfive" >
+                      <input type="radio" disabled class="radio twentyfive" name="scss_progress" value="25" id="scss_twentyfive" >
                       <label for="twentyfive" class="label">Good</label>
                       
-                      <input type="radio" class="radio fifty" name="scss_progress" value="50" id="scss_fifty" >
+                      <input type="radio" disabled class="radio fifty" name="scss_progress" value="50" id="scss_fifty" >
                       <label for="fifty" class="label">Intermediate</label>
                       
-                      <input type="radio" class="radio seventyfive" name="scss_progress" value="75" id="scss_seventyfive" checked>
+                      <input type="radio" disabled class="radio seventyfive" name="scss_progress" value="75" id="scss_seventyfive" checked>
                       <label for="seventyfive" class="label">Advanced</label>
                       
-                      <input type="radio" class="radio onehundred" name="scss_progress" value="100" id="scss_onehundred" checked >
+                      <input type="radio" disabled class="radio onehundred" name="scss_progress" value="100" id="scss_onehundred" checked >
                       <label for="onehundred" class="label">Expert</label>
                     </div><!-- </div> -->
                     
@@ -296,35 +319,34 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card__header">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x color-white"></i>
-                  <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">JAVASCRIPT • TYPESCRIPT</h4>
+                <div class="logo-row">
+                  <img src="img/logos/js-logo.jpg" alt="javascript" class="dev-logo mr-2" height="65" /> <img src="img/logos/AngularJS_logo.svg.png" alt="AngularJS" class="dev-logo " /> 
+                </div>
+                <!-- <h4 class="service-heading lead">JavaScript • Angular</h4> -->
               </div>
               <div class="card__body">
                 <p class="text-muted"><strong>Skill Level</strong></p>
                 <div class="progress-bar-stacker">
                   <div class="radio-group">
-                      <input type="radio" class="radio five" name="21_progress" value="5" id="21_five" >
+                      <input type="radio" disabled class="radio five" name="21_progress" value="5" id="21_five" >
                       <label for="five" class="label ">OK</label>
                       
-                      <input type="radio" class="radio twentyfive" name="21_progress" value="25" id="21_twentyfive" >
+                      <input type="radio" disabled class="radio twentyfive" name="21_progress" value="25" id="21_twentyfive" >
                       <label for="twentyfive" class="label">Good</label>
                       
-                      <input type="radio" class="radio fifty" name="21_progress" value="50" id="21_fifty" >
+                      <input type="radio" disabled class="radio fifty" name="21_progress" value="50" id="21_fifty" >
                       <label for="fifty" class="label">Intermediate</label>
                       
-                      <input type="radio" class="radio seventyfive" name="21_progress" value="75" id="21_seventyfive" >
+                      <input type="radio" disabled class="radio seventyfive" name="21_progress" value="75" id="21_seventyfive"checked >
                       <label for="seventyfive" class="label">Advanced</label>
                       
-                      <input type="radio" class="radio onehundred" name="21_progress" value="100" id="21_onehundred" checked>
+                      <input type="radio" disabled class="radio onehundred" name="21_progress" value="100" id="21_onehundred" >
                       <label for="onehundred" class="label">Expert</label>
                     </div><!-- </div> -->
                     
                     <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                        HTML5 100%
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                        JAVASCRIPT
                       </div>
                     </div>
                   
@@ -332,25 +354,25 @@
 
                 <div class="progress-bar-stacker" style="margin-top: 20px;">
                   <div class="radio-group">
-                      <input type="radio" class="radio five" name="22_progress" value="5" id="22_five" >
+                      <input type="radio" disabled class="radio five" name="22_progress" value="5" id="22_five" >
                       <label for="five" class="label">OK</label>
                       
-                      <input type="radio" class="radio twentyfive" name="22_progress" value="25" id="22_twentyfive" >
+                      <input type="radio" disabled class="radio twentyfive" name="22_progress" value="25" id="22_twentyfive" >
                       <label for="twentyfive" class="label">Good</label>
                       
-                      <input type="radio" class="radio fifty" name="22_progress" value="50" id="22_fifty" >
+                      <input type="radio" disabled class="radio fifty" name="22_progress" value="50" id="22_fifty" >
                       <label for="fifty" class="label">Intermediate</label>
                       
-                      <input type="radio" class="radio seventyfive" name="22_progress" value="75" id="22_seventyfive" checked>
+                      <input type="radio" disabled class="radio seventyfive" name="22_progress" value="75" id="22_seventyfive" checked>
                       <label for="seventyfive" class="label">Advanced</label>
                       
-                      <input type="radio" class="radio onehundred" name="22_progress" value="100" id="22_onehundred" >
+                      <input type="radio" disabled class="radio onehundred" name="22_progress" value="100" id="22_onehundred" >
                       <label for="onehundred" class="label">Expert</label>
                     </div><!-- </div> -->
                     
                     <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
-                        Markdown
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        ANGULAR
                       </div>
                     </div>
                   
@@ -360,6 +382,209 @@
                 <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card__header">
+                <div class="logo-row">
+                  <img src="img/logos/Node.js_logo.png" alt="Node JS" class="dev-logo" height="75" />  <img src="img/logos/php.png" alt="PHP" class="dev-logo" height="65" /> 
+                </div>
+                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
+              </div>
+              <div class="card__body" style="align-items: initial; align-self: stretch;">
+                <p class="text-muted"><strong>Skill Level</strong></p>
+                <div class="progress-bar-stacker">
+                  <div class="radio-group">
+                      <input type="radio" disabled class="radio five" name="52_progress" value="5" id="52_five" >
+                      <label for="five" class="label ">OK</label>
+                      
+                      <input type="radio" disabled class="radio twentyfive" name="52_progress" value="25" id="52_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" disabled class="radio fifty" name="52_progress" value="50" id="52_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" disabled class="radio seventyfive" name="52_progress" value="75" id="52_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" disabled class="radio onehundred" name="52_progress" value="100" id="52_onehundred">
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        Node JS
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="progress-bar-stacker" style="margin-top: 20px;">
+                  <div class="radio-group">
+                      <input type="radio" disabled class="radio five" name="53_skill" value="5" id="md_five" >
+                      <label for="five" class="label">OK</label>
+                      
+                      <input type="radio" disabled class="radio twentyfive" name="53_skill" value="25" id="md_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" disabled class="radio fifty" name="53_skill" value="50" id="md_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" disabled class="radio seventyfive" name="53_skill" value="75" id="md_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" disabled class="radio onehundred" name="53_skill" value="100" id="md_onehundred" >
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        PHP
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="card__footer">
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card__header">
+                <div class="logo-row">
+                  <img src="img/logos/Node.js_logo.png" alt="Node JS" class="dev-logo" height="75" />  <img src="img/logos/php.png" alt="PHP" class="dev-logo" height="65" /> 
+                </div>
+                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
+              </div>
+              <div class="card__body" style="align-items: initial; align-self: stretch;">
+                <p class="text-muted"><strong>Skill Level</strong></p>
+                <div class="progress-bar-stacker">
+                  <div class="radio-group">
+                      <input type="radio" disabled class="radio five" name="52_progress" value="5" id="52_five" >
+                      <label for="five" class="label ">OK</label>
+                      
+                      <input type="radio" disabled class="radio twentyfive" name="52_progress" value="25" id="52_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" disabled class="radio fifty" name="52_progress" value="50" id="52_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" disabled class="radio seventyfive" name="52_progress" value="75" id="52_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" disabled class="radio onehundred" name="52_progress" value="100" id="52_onehundred">
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        Node JS
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="progress-bar-stacker" style="margin-top: 20px;">
+                  <div class="radio-group">
+                      <input type="radio" disabled class="radio five" name="53_skill" value="5" id="md_five" >
+                      <label for="five" class="label">OK</label>
+                      
+                      <input type="radio" disabled class="radio twentyfive" name="53_skill" value="25" id="md_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" disabled class="radio fifty" name="53_skill" value="50" id="md_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" disabled class="radio seventyfive" name="53_skill" value="75" id="md_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" disabled class="radio onehundred" name="53_skill" value="100" id="md_onehundred" >
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        PHP
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="card__footer">
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card__header">
+                <div class="logo-row">
+                  <img src="img/logos/Node.js_logo.png" alt="Node JS" class="dev-logo" height="75" />  <img src="img/logos/php.png" alt="PHP" class="dev-logo" height="65" /> 
+                </div>
+                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
+              </div>
+              <div class="card__body" style="align-items: initial; align-self: stretch;">
+                <p class="text-muted"><strong>Skill Level</strong></p>
+                <div class="progress-bar-stacker">
+                  <div class="radio-group">
+                      <input type="radio" disabled class="radio five" name="52_progress" value="5" id="52_five" >
+                      <label for="five" class="label ">OK</label>
+                      
+                      <input type="radio" disabled class="radio twentyfive" name="52_progress" value="25" id="52_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" disabled class="radio fifty" name="52_progress" value="50" id="52_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" disabled class="radio seventyfive" name="52_progress" value="75" id="52_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" disabled class="radio onehundred" name="52_progress" value="100" id="52_onehundred">
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        Node JS
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="progress-bar-stacker" style="margin-top: 20px;">
+                  <div class="radio-group">
+                      <input type="radio" disabled class="radio five" name="53_skill" value="5" id="md_five" >
+                      <label for="five" class="label">OK</label>
+                      
+                      <input type="radio" disabled class="radio twentyfive" name="53_skill" value="25" id="md_twentyfive" >
+                      <label for="twentyfive" class="label">Good</label>
+                      
+                      <input type="radio" disabled class="radio fifty" name="53_skill" value="50" id="md_fifty" >
+                      <label for="fifty" class="label">Intermediate</label>
+                      
+                      <input type="radio" disabled class="radio seventyfive" name="53_skill" value="75" id="md_seventyfive" checked>
+                      <label for="seventyfive" class="label">Advanced</label>
+                      
+                      <input type="radio" disabled class="radio onehundred" name="53_skill" value="100" id="md_onehundred" >
+                      <label for="onehundred" class="label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="progress">
+                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        PHP
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="card__footer">
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
+              </div>
+            </div><!-- /.card -->
           </div>
         </div>
       </div>
@@ -617,11 +842,88 @@
     <!-- <script src="hScript.bundle.js"></script> -->
    
     <script>
+      // ====== RANKING BARS
       var theBars = document.querySelectorAll('.progress-bar')
       theBars.forEach(aBar => {
         var barWidth = $(aBar).attr('aria-valuenow')
         $(aBar).attr('style',`width: ${barWidth}%`);
       });
+
+      // ====== NAV JS ====== //
+      $('a.js-page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+        });
+
+        // Highlight the top nav as scrolling occurs
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 51
+        });
+
+        // Closes the Responsive Menu on Menu Item Click
+        $('.navbar-collapse .navbar-nav .nav__item .nav__link').click(function(){ 
+                $('.navbar-toggle:visible').click();
+        });
+
+        // Offset for Main Navigation
+        $('#mainNav').affix({
+            offset: {
+                top: 100
+            }
+        })
+
+        // ** ====== MODE WIDHET ====== ** //
+  var $dm_btn = $('#mode_widget')
+  var lsGetMode = localStorage.getItem('dark_mode')
+  
+  // set button text
+  $(document).ready(()=>{
+    if (lsGetMode === 'fasle') {
+      setModeText(true)
+      //$dm_btn.html('<span class="which-mode">Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span></span>')
+    } else {
+      setModeText(false)
+      // $dm_btn.html('<span class="which-mode">Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span></span>')
+    }
+  })
+
+  function setModeText(mode) {
+    if (mode === 'true') {
+      $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>') 
+    } else {
+      $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+    }
+  }
+  
+  function setMode(mode) {
+        localStorage.setItem('dark_mode', `${mode}`)
+        document.querySelector('#darkmode').disabled = mode; 
+
+        if (mode === 'true') {
+        document.querySelector('#darkmode').disabled = false;
+        $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>') 
+
+        // document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
+      } else {
+        $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+      }
+    return setModeText(mode)
+  }
+
+    // Theme switcher 
+    $dm_btn.bind('click', (event) => {
+        event.preventDefault()
+        if (localStorage.getItem('dark_mode') === 'true') {
+          setMode('false'), console.log('set to false')
+        } else {
+          setMode('true'), console.log('set to true')
+        } 
+        return
+    })
     
     </script>
   </body>

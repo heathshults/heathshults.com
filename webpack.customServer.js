@@ -3,14 +3,15 @@ const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { exec } = require('child_process')
 const gulpfile = require('./gulpfile.babel.js')
-
-// const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const FileCopyPlugin = require('./config/FileCopyPlugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
 // const OfflinePlugin = require('offline-plugin/runtime').install();
-const autoprefixer = require('autoprefixer')
+const autoprefixer = require('autoprefixer');
+const { callbackify } = require('util');
 
 const isDev = (process.env.NODE_ENV === 'development');
 const basePath = process.cwd();
@@ -21,8 +22,7 @@ const options = {
   open: true
  };
 
-
-
+//#region 
 //  const del = require('del');
  
 // (async cleanup() {
@@ -48,6 +48,8 @@ const options = {
 //   filename: page.replace('njk', 'html'),
 //   template: `resources/html/pages/${page}`,
 // }));
+//#endregion
+
 
 module.exports = {
   mode: 'development',
@@ -59,8 +61,8 @@ module.exports = {
   },
   // watch: true,
   output: {
-    path: path.join(__dirname, 'www/'),
-    publicPath: './',
+    path: path.resolve(process.cwd(), 'www'),// path.resolve(process.cwd(), 'dist')
+    // publicPath: '/assets/',
     filename: "HeathScript.built.js",
     chunkFilename: '[name].js'
   },
@@ -86,21 +88,11 @@ module.exports = {
     rules: [
       {
         test: /.(jsx|js)?$/,
-        include: [
-          path.resolve(__dirname, 'src/lib')
-        ],
-        exclude: [
-          path.resolve(__dirname, 'node_modules')
-        ],
+        include: [ path.resolve(__dirname, 'src/lib') ],
+        exclude: [ path.resolve(__dirname, 'node_modules') ],
         loader: 'babel-loader',
         options: {
-          presets: [
-            ["@babel/preset-env", {
-              "targets": {
-                "browsers": "last 2 chrome versions"
-              }
-            }]
-          ]
+          presets: [ "@babel/preset-env" ]
         }
       },
       {
@@ -149,7 +141,13 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(
+      // {
+      //   cleanOnceBeforeBuildPatterns: ['**/*', '!content'],
+      //   verbose: true,
+      //   protectWebpackAssets: false
+      // }
+    ),
     new MiniCssExtractPlugin({
       filename: '[name].built.css'
     }),
@@ -166,43 +164,49 @@ module.exports = {
     // }),
     // copy assets and manifest.json
     
-    // new CopyPlugin([
-    // {
-    //   from: 'src/css/*',
-    //   to: '',
-    //   ignore: ['heathshults.css', 'heathshults.min.css'] 
-    // },
-    // {
-    //   from: 'src/DevBox/Blue-Star-Sports-Test/*',
-    //   to: '',
-    //   ignore: ['**/*.zip'] 
-    // },
-    // {
-    //   from: 'src/img/*',
-    //   to: '',
-    //   ignore: ['**/*.ejs'] 
-    // },
-    // {
-    //   from: 'src/js/*',
-    //   to: '.',
-    //   ignore: ['heathshults.js', 'contact_me.js', 'jqBootstrapValidation.js']
-    // },
-    // {
-    //   from: 'src/DevBox/*',
-    //   to: 'DevBox/',
-    //   ignore: ['**/*.ejs']
-    // },
-    // {
-    //   from: 'src/lib/*',
-    //   to: 'lib/',
-    //   ignore: ['**/*.ejs']
-    // },
-    // {
-    //   from: 'src/vendor/**/*',
-    //   to: 'vendor/',
-    //   ignore: ['**/*.ejs']
-    // }
-    // ]),
+  //   new CopyPlugin([
+  //    {
+  //     from: `${path.resolve(process.cwd(), 'src/css')}/**/*.{css,map}`,
+  //     to: path.resolve(process.cwd(), 'www/css'),
+  //     ignore: ['heathshults.css', 'heathshults.min.css'] 
+  //   },
+  //   {
+  //     from: 'content/**/*',
+  //     // to: '',
+  //     ignore: ['**/*.zip'] 
+  //   },
+  //   {
+  //     from: 'img/**/*.{png,jpg,gif,svg}',
+  //     // to: '',
+  //     ignore: ['**/*.ejs'] 
+  //   },
+  //   {
+  //     from: 'js/**/*',
+  //     // to: '.',
+  //     ignore: ['HeathScript.js', 'contact_me.js', 'jqBootstrapValidation.js']
+  //   },
+  //   {
+  //     from: 'DevBox/**/*',
+  //     // to: 'DevBox/',
+  //     ignore: ['**/*.ejs']
+  //   },
+  //   {
+  //     from: 'lib/**/*.{js,json}',
+  //     // to: 'lib/',
+  //     ignore: ['**/*.ejs']
+  //   },
+  //   {
+  //     from: 'vendor/**/*',
+  //     // to: 'vendor/',
+  //     ignore: ['**/*.ejs']
+  //   }
+  // ]),
+    new FileCopyPlugin([
+        'copy_img',
+        'copy_js',
+        'copy_vendor',
+        'copy_css'
+    ]),
     new BrowserSyncPlugin(
       // BrowserSync options
       {
@@ -259,32 +263,61 @@ module.exports = {
 }
 
 
-
-async function copy(event, file) {
-
-  exec('./node_modules/.bin/gulp copy_img', 
-    async (error) => { if (error) {console.log(`error: ${error.message}`)}
-  });
-
-  exec('./node_modules/.bin/gulp copy_js', 
-    async (error) => { if (error) {console.log(`error: ${error.message}`)}
-  });
-
-  exec('./node_modules/.bin/gulp copy_vendor', 
-    async (error) => { if (error) {console.log(`error: ${error.message}`)}
-  });
-
-  exec('./node_modules/.bin/gulp copy_css', 
-    async (error) => { if (error) {console.log(`error: ${error.message}`)}
-  });
-
-  return
-}
-
- copy()
 // if (!isDev) {
 //   module.exports.plugins.push(
 //     new CleanWebpackPlugin(['dist']),
 //     new webpack.optimize.UglifyJsPlugin(),
 //   );
 // }
+/*
+function copy_images() {
+  console.log('copying images...')
+  exec('./node_modules/.bin/gulp copy_img', 
+  (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+  callbackify()
+}
+
+function copy_js() {
+  console.log('copying javascript files...')
+  exec('./node_modules/.bin/gulp copy_js', 
+    (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+  callbackify()
+}
+
+function copy_vendor() {
+  console.log('copying vendor files...')
+  exec('./node_modules/.bin/gulp copy_vendor', 
+    (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+  callbackify()
+}
+
+function copy_css() {
+  console.log('copying css...')
+  exec('./node_modules/.bin/gulp copy_css', 
+    (error) => { if (error) {console.log(`error: ${error.message}`)}
+  });
+  callbackify()
+}
+let copy_tasks = [
+  'copy_img',
+  'copy_js',
+  'copy_vendor',
+  'copy_css'
+]
+
+
+
+const Copier = (options = []) => {
+      let tasks = options
+      tasks.map(task => {
+      console.log(`copying ${task}...`)
+      exec(`./node_modules/.bin/gulp ${task}`, (error) => { 
+          if (error) {console.log(`error: ${error.message}`)}
+      })
+    })
+}
+Copier(copy_tasks)
+*/

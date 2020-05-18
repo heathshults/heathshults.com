@@ -6,42 +6,50 @@
 
 // import * as jQuery from "../vendor/jquery/jquery";
 
-(function($) {
+(function ($) {
   'use strict'; // Start of use strict
-  
+
   // jQuery for page scrolling feature - requires jQuery Easing plugin
-  $('a.js-page-scroll').bind('click', function(event) {
-      var $anchor = $(this);
-      $('html, body').stop().animate({
-          scrollTop: ($($anchor.attr('href')).offset().top - 5)
-      }, 1250, 'easeInOutExpo');
-      event.preventDefault();
+  // ====== RANKING BARS
+  var theBars = document.querySelectorAll('.progress-bar')
+  theBars.forEach(aBar => {
+    var barWidth = $(aBar).attr('aria-valuenow')
+    $(aBar).attr('style', `width: ${barWidth}%`);
+  });
+
+  // ====== NAV JS ====== //
+  $('a.js-page-scroll').bind('click', function (event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: ($($anchor.attr('href')).offset().top - 50)
+    }, 1250, 'easeInOutExpo');
+    event.preventDefault();
   });
 
   // Highlight the top nav as scrolling occurs
   $('body').scrollspy({
-      target: '.navbar-fixed-top',
-      offset: 50
+    target: '.navbar-fixed-top',
+    offset: 51
   });
 
-
   // Closes the Responsive Menu on Menu Item Click
-  $('.navbar-collapse ul li a').click(function(){ 
-          $('.navbar-toggle:visible').click();
+  $('.navbar-collapse .navbar-nav .nav__item .nav__link').click(function () {
+    $('.navbar-toggle:visible').click();
   });
 
   // Offset for Main Navigation
   $('#mainNav').affix({
-      offset: {
-          top: 50
-      }
+    offset: {
+      top: 60
+    }
   })
 
+  // ** ====== MODE WIDHET ====== ** //
   var $dm_btn = $('#mode_widget')
   var lsGetMode = localStorage.getItem('dark_mode')
-  
+
   // set button text
-  $(document).ready(()=>{
+  $(document).ready(() => {
     if (lsGetMode === 'fasle') {
       setModeText(true)
       //$dm_btn.html('<span class="which-mode">Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span></span>')
@@ -51,46 +59,38 @@
     }
   })
 
-  async function setModeText(mode) {
-    if (mode === true) {
-      $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>') 
+  function setModeText(mode) {
+    if (mode === 'true') {
+      $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
     } else {
       $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
     }
-    
-  }
-  
-  async function setMode(mode) {
-        localStorage.setItem('dark_mode', `${mode}`)
-        document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = mode;
-        setModeText(mode)
-    return 
   }
 
-    // Theme switcher 
-    $dm_btn.on('click', (event) => {
-        event.preventDefault()
-        if (localStorage.getItem('dark_mode') === 'true') {
-          setMode(false), console.log('set to false')
-        } else {
-          setMode(true), console.log('set to true')
-        } 
-        return
-    })
+  function setMode(mode) {
+    localStorage.setItem('dark_mode', `${mode}`)
+    document.querySelector('#darkmode').disabled = mode;
 
-    var theBars = document.querySelectorAll('.progress-bar')
-      alert(theBars)
-      theBars.foreach((bar)=>{
-      bar.style.width = bar.getAttribute('aria-valuenow')
-    })
+    if (mode === 'true') {
+      document.querySelector('#darkmode').disabled = false;
+      $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
 
-    // progress bars
-  // var theBars = $('.progress-bar')
-  // $.each(theBars, (i, bar)=> {
-  //   bar.atr('width') = bar.attr('aria-valuenow')
-  // }) 
+      // document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
+    } else {
+      $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+    }
+    return setModeText(mode)
+  }
+
+  // Theme switcher 
+  $dm_btn.bind('click', (event) => {
+    event.preventDefault()
+    if (localStorage.getItem('dark_mode') === 'true') {
+      setMode('false'), console.log('set to false')
+    } else {
+      setMode('true'), console.log('set to true')
+    }
+    return
+  })
 
 })(); // End of use strict
-
-
-
