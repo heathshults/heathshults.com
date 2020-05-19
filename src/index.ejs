@@ -119,11 +119,11 @@
     </nav>
 
     <!-- Header -->
-    <header class="d-flex align-items-stretch header">
+    <header class="d-flex align-items-stretch hs-header">
       <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Welcome To My Playground!</div>
-          <div class="intro-heading">It's Nice To Meet You</div>
+        <div class="hs-intro-text">
+          <div class="hs-intro-lead-in">Welcome To My Playground!</div>
+          <div class="hs-intro-heading">It's Nice To Meet You</div>
           <a href="#skills" class="js-page-scroll btn btn-xl ">How I Play</a>
           <div id="m"></div>
           <script></script>
@@ -132,460 +132,480 @@
     </header>
 
     <!-- Services Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="hs-skills j-showmore">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">My Skills</h2>
-            <h3 class="section-heading"><strong class="font-bold-regular">KEEPING IT HONEST</strong></h3> 
+            <h2 class="hs-section-heading">My Skills</h2>
+            <h3 class="hs-section-heading"><strong class="font-bold-regular">KEEPING IT HONEST</strong></h3> 
               <strong class="font-bold-regular">ELEGANT</strong> &amp;
               <strong class="font-bold-regular">CLEAN</strong>.
-            <!-- <h3 class="section-subheading text-muted"><strong class="font-bold-regular">SIMPLE</strong>, 
+            <!-- <h3 class="section-subheading hs-text-muted"><strong class="font-bold-regular">SIMPLE</strong>, 
               <strong class="font-bold-regular">ELEGANT</strong> &amp;
               <strong class="font-bold-regular">CLEAN</strong>.</h3> -->
           </div>
         </div>
-        <div class="row text-center card__row">
+        <div class="row text-center card__row js-slick-carousel">
+          <!-- CARD 01 -->
           <div class="col-md-4">
-            <div class="card">
-              <div class="card__header">
-                <div class="logo-row">
-                  <img src="img/logos/HTML5_Logo_512.png" alt="HTML5" class="dev-logo" height="65" /> <img src="img/logos/markdown-150.png" alt="Markdown" class="dev-logo" height="45" /> 
+            <div class="hs-card">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="img/logos/HTML5_Logo_512.png" alt="HTML5" class="hs-dev-logo" height="65" /> <img src="img/logos/markdown-150.png" alt="Markdown" class="hs-dev-logo" height="45" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
               </div>
-              <div class="card__body" style="align-self: stretch; align-items:initial">
-                <p class="text-muted"><strong>Skill Level</strong></p>
-                <div class="progress-bar-stacker">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="html_progress" value="5" id="html_five" >
-                      <label for="five" class="label ">OK</label>
+              <div class="hs-card__body" style="align-self: stretch; align-items:initial">
+                <p class="hs-text-muted"><strong>Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="html_hs-ranking" value="5" id="html_five" >
+                      <label for="five" class="hs-label ">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="html_progress" value="25" id="html_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="html_hs-ranking" value="25" id="html_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="html_progress" value="50" id="html_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="html_hs-ranking" value="50" id="html_fifty" >
+                      <label for="fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="html_progress" value="75" id="html_seventyfive" >
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="html_hs-ranking" value="75" id="html_seventyfive" >
+                      <label for="seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="html_progress" value="100" id="html_onehundred" checked>
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="html_hs-ranking" value="100" id="html_onehundred" checked>
+                      <label for="onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         HTML5 100%
                       </div>
                     </div>
                   
                 </div>
+                
+                <div class="hs-divider d-flex align-items-center"></div>
+                  <p class="hs-hs-text-muted"><strong>Markdaown Skill Level</strong></p>
 
-                <div class="progress-bar-stacker" style="margin-top: 20px;">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="progress" value="5" id="md_five" >
-                      <label for="five" class="label">OK</label>
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="hs-ranking" value="5" id="md_five" >
+                      <label for="five" class="hs-label">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="progress" value="25" id="md_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="hs-ranking" value="25" id="md_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="progress" value="50" id="md_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="hs-ranking" value="50" id="md_fifty" >
+                      <label for="fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="progress" value="75" id="md_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="hs-ranking" value="75" id="md_seventyfive" checked>
+                      <label for="seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="progress" value="100" id="md_onehundred" >
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="hs-ranking" value="100" id="md_onehundred" >
+                      <label for="onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
                         Markdown
                       </div>
                     </div>
                   
                 </div>
               </div> <!-- /.card-body -->
-              <div class="card__footer">
+              <div class="hs-card__footer">
                 <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
               </div>
             </div>
-            <!-- <div class="card">
-              <div class="card__header">
+            <!-- <div class="hs-card">
+              <div class="hs-card__header">
                 <span class="fa-stack fa-4x color-white">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="service-heading">E-Commerce</h4>
               </div>
-              <div class="card__body">
-                <p class="text-muted">From concept &amp; strategy, to design &amp; development, through launch &amp; beyond.
+              <div class="hs-card__body">
+                <p class="hs-text-muted">From concept &amp; strategy, to design &amp; development, through launch &amp; beyond.
                   I work with you every step of the way and keep the engine on track.</p>
               </div>
-              <div class="card__footer">
+              <div class="hs-card__footer">
                 <span class="lead mx-auto">Let's make a <span class="font-bold-regular">MILLION</span> or TWO!</span>
               </div>
             </div> -->
           </div>
-          
+          <!-- CARD 02 -->
           <div class="col-md-4">
-            <div class="card">
-              <div class="card__header">
-                <div class="logo-row">
-                  <img src="img/logos/css3-150.png" alt="CSS3" class="dev-logo" height="65" /> <img src="img/logos/Sass-150.png" alt="SASS" class="dev-logo "height="55" /> 
+            <div class="hs-card">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="img/logos/css3-150.png" alt="CSS3" class="hs-dev-logo" height="65" /> <img src="img/logos/Sass-150.png" alt="SASS" class="hs-dev-logo "height="55" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">CSS • Modular SCSS</h4> -->
               </div>
-              <div class="card__body">
-                <p class="text-muted"><strong>Skill Level</strong></p>
-                <div class="progress-bar-stacker">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="css_progress" value="5" id="css_five" >
-                      <label for="five" class="label ">OK</label>
+              <div class="hs-card__body">
+                <p class="hs-text-muted"><strong>CSS Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="css_hs-ranking" value="5" id="css_five" >
+                      <label for="five" class="hs-label ">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="css_progress" value="25" id="css_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="css_hs-ranking" value="25" id="css_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="css_progress" value="50" id="css_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="css_hs-ranking" value="50" id="css_fifty" >
+                      <label for="fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="css_progress" value="75" id="css_seventyfive" >
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="css_hs-ranking" value="75" id="css_seventyfive" >
+                      <label for="seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="css_progress" value="100" id="css_onehundred" checked>
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="css_hs-ranking" value="100" id="css_onehundred" checked>
+                      <label for="onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         CSS 100%
                       </div>
                     </div>
                   
                 </div>
+                
+                <div class="hs-divider d-flex align-items-center"></div>
+                <p class="hs-hs-text-muted"><strong>SASS Skill Level</strong></p>
 
-                <div class="progress-bar-stacker" style="margin-top: 20px;">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="scss_progress" value="5" id="scss_five" >
-                      <label for="five" class="label">OK</label>
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="scss_hs-ranking" value="5" id="scss_five" >
+                      <label for="five" class="hs-label">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="scss_progress" value="25" id="scss_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="scss_hs-ranking" value="25" id="scss_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="scss_progress" value="50" id="scss_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="scss_hs-ranking" value="50" id="scss_fifty" >
+                      <label for="fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="scss_progress" value="75" id="scss_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="scss_hs-ranking" value="75" id="scss_seventyfive" checked>
+                      <label for="seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="scss_progress" value="100" id="scss_onehundred" checked >
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="scss_hs-ranking" value="100" id="scss_onehundred" checked >
+                      <label for="onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         SCSS 100%
                       </div>
                     </div>
                   
                 </div>
               </div>
-              <div class="card__footer">
+              <div class="hs-card__footer">
                 <span class="lead mx-auto">I think <span class="font-bold-regular">DEVICE SCREENS</span> first!</span>
               </div>
             </div>
           </div>
           <!-- <div class="col-md-4">
-            <div class="card">
-              <div class="card__header">
+            <div class="hs-card">
+              <div class="hs-card__header">
                 <span class="fa-stack fa-4x">
                   <i class="fa fa-circle fa-stack-2x color-white"></i>
                   <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="service-heading">Screen First Approach!</h4>
               </div>
-              <div class="card__body">
-                <p class="text-muted">User experience is key! You must look
+              <div class="hs-card__body">
+                <p class="hs-text-muted">User experience is key! You must look
                   your best on all size screens. <span class="font-bold-regular">SCREEN FIRST DESIGN</span> keepS <span class="font-bold-regular">YOUR BUSINESS</span> looking great!
                 </p>
               </div>
-              <div class="card__footer">
+              <div class="hs-card__footer">
                 <span class="lead mx-auto">I think <span class="font-bold-regular">DEVICE SCREENS</span> first!</span>
               </div>
             </div>
           </div> -->
+          <!-- CARD 03 -->
           <div class="col-md-4">
-            <div class="card">
-              <div class="card__header">
-                <div class="logo-row">
-                  <img src="img/logos/js-logo.jpg" alt="javascript" class="dev-logo mr-2" height="65" /> <img src="img/logos/AngularJS_logo.svg.png" alt="AngularJS" class="dev-logo " /> 
+            <div class="hs-card">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="img/logos/js-logo.jpg" alt="javascript" class="hs-dev-logo mr-2" height="65" /> <img src="img/logos/AngularJS_logo.svg.png" alt="AngularJS" class="hs-dev-logo " /> 
                 </div>
                 <!-- <h4 class="service-heading lead">JavaScript • Angular</h4> -->
               </div>
-              <div class="card__body">
-                <p class="text-muted"><strong>Skill Level</strong></p>
-                <div class="progress-bar-stacker">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="21_progress" value="5" id="21_five" >
-                      <label for="five" class="label ">OK</label>
+              <div class="hs-card__body">
+                <p class="hs-text-muted"><strong>JavaScript Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="21_hs-ranking" value="5" id="21_five" >
+                      <label for="five" class="hs-label ">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="21_progress" value="25" id="21_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="21_hs-ranking" value="25" id="21_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="21_progress" value="50" id="21_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="21_hs-ranking" value="50" id="21_fifty" >
+                      <label for="fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="21_progress" value="75" id="21_seventyfive"checked >
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="21_hs-ranking" value="75" id="21_seventyfive"checked >
+                      <label for="seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="21_progress" value="100" id="21_onehundred" >
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="21_hs-ranking" value="100" id="21_onehundred" >
+                      <label for="onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                         JAVASCRIPT
                       </div>
                     </div>
                   
                 </div>
 
-                <div class="progress-bar-stacker" style="margin-top: 20px;">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="22_progress" value="5" id="22_five" >
-                      <label for="five" class="label">OK</label>
+                <div class="hs-divider d-flex align-items-center"></div>
+                  <p class="hs-hs-text-muted"><strong>Angular Skill Level</strong></p>
+
+                <div class="hs-ranking-bar-stacker mt-4">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="22_hs-ranking" value="5" id="22_five" >
+                      <label for="22_five" class="hs-label">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="22_progress" value="25" id="22_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="22_hs-ranking" value="25" id="22_twentyfive" >
+                      <label for="22_twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="22_progress" value="50" id="22_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="22_hs-ranking" value="50" id="22_fifty" checked>
+                      <label for="22_fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="22_progress" value="75" id="22_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="22_hs-ranking" value="75" id="22_seventyfive" >
+                      <label for="22_seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="22_progress" value="100" id="22_onehundred" >
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="22_hs-ranking" value="100" id="22_onehundred" >
+                      <label for="22_onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         ANGULAR
                       </div>
                     </div>
                   
                 </div>
               </div> <!-- /.card-body -->
-              <div class="card__footer">
+              <div class="hs-card__footer">
                 <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
               </div>
             </div>
           </div>
         </div>
+        
         <div class="row mt-4">
+          <!-- CARD 04 -->
           <div class="col-md-4">
-            <div class="card">
-              <div class="card__header">
-                <div class="logo-row">
-                  <img src="img/logos/Node.js_logo.png" alt="Node JS" class="dev-logo" height="75" />  <img src="img/logos/php.png" alt="PHP" class="dev-logo" height="65" /> 
+            <div class="hs-card">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="img/logos/Node.js_logo.png" alt="Node JS" class="hs-dev-logo" height="75" />  <img src="img/logos/php.png" alt="PHP" class="hs-dev-logo" height="65" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
               </div>
-              <div class="card__body" style="align-items: initial; align-self: stretch;">
-                <p class="text-muted"><strong>Skill Level</strong></p>
-                <div class="progress-bar-stacker">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="52_progress" value="5" id="52_five" >
-                      <label for="five" class="label ">OK</label>
+              <div class="hs-card__body" style="align-items: initial; align-self: stretch;">
+                <p class="hs-text-muted"><strong>Node JS Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="54_hs-ranking" value="5" id="54_five" >
+                      <label for="54_five" class="hs-label ">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="52_progress" value="25" id="52_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="54_hs-ranking" value="25" id="54_twentyfive" >
+                      <label for="54_twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="52_progress" value="50" id="52_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="54_hs-ranking" value="50" id="54_fifty" >
+                      <label for="54_fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="52_progress" value="75" id="52_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="54_hs-ranking" value="75" id="54_seventyfive" checked>
+                      <label for="54_seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="52_progress" value="100" id="52_onehundred">
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="54_hs-ranking" value="100" id="54_onehundred">
+                      <label for="54_onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                         Node JS
                       </div>
                     </div>
                   
                 </div>
-
-                <div class="progress-bar-stacker" style="margin-top: 20px;">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="53_skill" value="5" id="md_five" >
-                      <label for="five" class="label">OK</label>
+                <div class="hs-divider d-flex align-items-center"></div>
+                  <p class="hs-hs-text-muted"><strong>PHP Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="58_skill" value="5" id="58_five" >
+                      <label for="58_five" class="hs-label">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="53_skill" value="25" id="md_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="58_skill" value="25" id="58_twentyfive" >
+                      <label for="58_twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="53_skill" value="50" id="md_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="58_skill" value="50" id="58_fifty" >
+                      <label for="58_fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="53_skill" value="75" id="md_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="58_skill" value="75" id="58_seventyfive" checked>
+                      <label for="58_seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="53_skill" value="100" id="md_onehundred" >
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="58_skill" value="100" id="58_onehundred" >
+                      <label for="58_onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                         PHP
                       </div>
                     </div>
                   
                 </div>
               </div> <!-- /.card-body -->
-              <div class="card__footer">
+              <div class="hs-card__footer">
                 <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
               </div>
             </div><!-- /.card -->
-          </div>
+
+          </div> <!-- /.col-md-4 -->
+          <!-- CARD 05 -->
           <div class="col-md-4">
-            <div class="card">
-              <div class="card__header">
-                <div class="logo-row">
-                  <img src="img/logos/Node.js_logo.png" alt="Node JS" class="dev-logo" height="75" />  <img src="img/logos/php.png" alt="PHP" class="dev-logo" height="65" /> 
+            <div class="hs-card">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="img/logos/mysql.png" alt="Node JS" class="hs-dev-logo" height="96" />  <img src="img/logos/sql-server.png" alt="PHP" class="hs-dev-logo ml-4" height="76" style="margin-top: -30px;" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
               </div>
-              <div class="card__body" style="align-items: initial; align-self: stretch;">
-                <p class="text-muted"><strong>Skill Level</strong></p>
-                <div class="progress-bar-stacker">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="52_progress" value="5" id="52_five" >
-                      <label for="five" class="label ">OK</label>
+              <div class="hs-card__body" style="align-items: initial; align-self: stretch;">
+                <p class="hs-text-muted"><strong>MySQL Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="60_hs-ranking" value="5" id="60_five" >
+                      <label for="60_five" class="hs-label ">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="52_progress" value="25" id="52_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="60_hs-ranking" value="25" id="60_twentyfive" >
+                      <label for="60_twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="52_progress" value="50" id="52_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="60_hs-ranking" value="50" id="60_fifty" checked>
+                      <label for="60_fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="52_progress" value="75" id="52_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="60_hs-ranking" value="75" id="60_seventyfive" >
+                      <label for="60_seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="52_progress" value="100" id="52_onehundred">
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="60_hs-ranking" value="100" id="60_onehundred">
+                      <label for="60_onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                        Node JS
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        MySQL
                       </div>
                     </div>
                   
                 </div>
-
-                <div class="progress-bar-stacker" style="margin-top: 20px;">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="53_skill" value="5" id="md_five" >
-                      <label for="five" class="label">OK</label>
+                <div class="hs-divider d-flex align-items-center"></div>
+                <p class="hs-text-muted"><strong>SQL Server Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group">
+                      <input type="radio" disabled class="hs-radio five" name="63_skill" value="5" id="63_five" >
+                      <label for="63_five" class="hs-label">OK</label>
                       
-                      <input type="radio" disabled class="radio twentyfive" name="53_skill" value="25" id="md_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
+                      <input type="radio" disabled class="hs-radio twentyfive" name="63_skill" value="25" id="63_twentyfive" >
+                      <label for="63_twentyfive" class="hs-label">Good</label>
                       
-                      <input type="radio" disabled class="radio fifty" name="53_skill" value="50" id="md_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
+                      <input type="radio" disabled class="hs-radio fifty" name="63_skill" value="50" id="63_fifty" checked>
+                      <label for="63_fifty" class="hs-label">Intermediate</label>
                       
-                      <input type="radio" disabled class="radio seventyfive" name="53_skill" value="75" id="md_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
+                      <input type="radio" disabled class="hs-radio seventyfive" name="63_skill" value="75" id="63_seventyfive" >
+                      <label for="63_seventyfive" class="hs-label">Advanced</label>
                       
-                      <input type="radio" disabled class="radio onehundred" name="53_skill" value="100" id="md_onehundred" >
-                      <label for="onehundred" class="label">Expert</label>
+                      <input type="radio" disabled class="hs-radio onehundred" name="63_skill" value="100" id="63_onehundred" >
+                      <label for="63_onehundred" class="hs-label">Expert</label>
                     </div><!-- </div> -->
                     
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        SQL Server
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- CARD 06 -->
+          <div class="col-md-4">
+            <div class="hs-card">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="img/logos/webpack-javascript-logo.png" alt="Webpack" class="hs-dev-logo" height="75" />  <img src="img/logos/Git-logo.svg_.png" alt="Git" class="hs-dev-logo" height="55" /> 
+                </div>
+                <h4 class="service-heading lead">HTML5 • Markdown</h4>
+              </div>
+              <div class="hs-card__body" style="align-items: initial; align-self: stretch;">
+                <p class="hs-hs-text-muted"><strong>Skill Level</strong></p>
+              <div class="hs-ranking-bar-stacker">
+                <div class="hs-radio-group">
+                  <input type="radio" disabled class="hs-radio five" name="65_hs-ranking" value="5" id="65_five" >
+                  <label for="65_five" class="hs-label ">OK</label>
+                  
+                  <input type="radio" disabled class="hs-radio twentyfive" name="65_hs-ranking" value="25" id="65_twentyfive" >
+                  <label for="65_twentyfive" class="hs-label">Good</label>
+                    
+                  <input type="radio" disabled class="hs-radio fifty" name="65_hs-ranking" value="50" id="65_fifty" >
+                  <label for="65_fifty" class="hs-label">Intermediate</label>
+                  
+                  <input type="radio" disabled class="hs-radio seventyfive" name="65_hs-ranking" value="75" id="65_seventyfive" checked>
+                  <label for="65_seventyfive" class="hs-label">Advanced</label>
+                  
+                  <input type="radio" disabled class="hs-radio onehundred" name="65_hs-ranking" value="100" id="65_onehundred">
+                  <label for="65_onehundred" class="hs-label">Expert</label>
+                </div><!-- </div> -->
+                
+                <div class="hs-ranking">
+                  <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    Node JS
+                  </div>
+                </div>
+                <div class="hs-divider d-flex align-items-center"></div>
+                <p class="hs-hs-text-muted"><strong>Skill Level</strong></p>
+              </div>
+
+              <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                <div class="hs-radio-group">
+                    <input type="radio" disabled class="hs-radio five" name="68_skill" value="5" id="68_five" >
+                    <label for="68_five" class="hs-label">OK</label>
+                    
+                    <input type="radio" disabled class="hs-radio twentyfive" name="68_skill" value="25" id="68_twentyfive" >
+                    <label for="68_twentyfive" class="hs-label">Good</label>
+                    
+                    <input type="radio" disabled class="hs-radio fifty" name="68_skill" value="50" id="68_fifty" >
+                    <label for="68_fifty" class="hs-label">Intermediate</label>
+                    
+                    <input type="radio" disabled class="hs-radio seventyfive" name="68_skill" value="75" id="68_seventyfive" checked>
+                    <label for="68_seventyfive" class="hs-label">Advanced</label>
+                    
+                    <input type="radio" disabled class="hs-radio onehundred" name="68_skill" value="100" id="68_onehundred" >
+                    <label for="68_onehundred" class="hs-label">Expert</label>
+                  </div>
+                    </div>
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-lime-green" role="rankingbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                         PHP
                       </div>
                     </div>
                   
                 </div>
               </div> <!-- /.card-body -->
-              <div class="card__footer">
+              <div class="hs-card__footer">
                 <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
               </div>
-            </div><!-- /.card -->
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card__header">
-                <div class="logo-row">
-                  <img src="img/logos/Node.js_logo.png" alt="Node JS" class="dev-logo" height="75" />  <img src="img/logos/php.png" alt="PHP" class="dev-logo" height="65" /> 
-                </div>
-                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
-              </div>
-              <div class="card__body" style="align-items: initial; align-self: stretch;">
-                <p class="text-muted"><strong>Skill Level</strong></p>
-                <div class="progress-bar-stacker">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="52_progress" value="5" id="52_five" >
-                      <label for="five" class="label ">OK</label>
-                      
-                      <input type="radio" disabled class="radio twentyfive" name="52_progress" value="25" id="52_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
-                      
-                      <input type="radio" disabled class="radio fifty" name="52_progress" value="50" id="52_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
-                      
-                      <input type="radio" disabled class="radio seventyfive" name="52_progress" value="75" id="52_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
-                      
-                      <input type="radio" disabled class="radio onehundred" name="52_progress" value="100" id="52_onehundred">
-                      <label for="onehundred" class="label">Expert</label>
-                    </div><!-- </div> -->
-                    
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                        Node JS
-                      </div>
-                    </div>
-                  
-                </div>
-
-                <div class="progress-bar-stacker" style="margin-top: 20px;">
-                  <div class="radio-group">
-                      <input type="radio" disabled class="radio five" name="53_skill" value="5" id="md_five" >
-                      <label for="five" class="label">OK</label>
-                      
-                      <input type="radio" disabled class="radio twentyfive" name="53_skill" value="25" id="md_twentyfive" >
-                      <label for="twentyfive" class="label">Good</label>
-                      
-                      <input type="radio" disabled class="radio fifty" name="53_skill" value="50" id="md_fifty" >
-                      <label for="fifty" class="label">Intermediate</label>
-                      
-                      <input type="radio" disabled class="radio seventyfive" name="53_skill" value="75" id="md_seventyfive" checked>
-                      <label for="seventyfive" class="label">Advanced</label>
-                      
-                      <input type="radio" disabled class="radio onehundred" name="53_skill" value="100" id="md_onehundred" >
-                      <label for="onehundred" class="label">Expert</label>
-                    </div><!-- </div> -->
-                    
-                    <div class="progress">
-                      <div class="progress-bar bg-lime-green" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                        PHP
-                      </div>
-                    </div>
-                  
-                </div>
-              </div> <!-- /.card-body -->
-              <div class="card__footer">
-                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
-              </div>
-            </div><!-- /.card -->
-          </div>
+            </div>
+          </div><!-- /.card -->
         </div>
       </div>
     </section>
@@ -596,7 +616,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">Portfolio</h2>
-            <h3 class="section-subheading text-muted">Here is a peek at some of my work. Due to confidentiality some
+            <h3 class="section-subheading hs-text-muted">Here is a peek at some of my work. Due to confidentiality some
               projects are not listed. <br>
               Since these are now out of my hands I can not vouch for the work as it may have changed..</h3>
           </div>
@@ -613,7 +633,7 @@
             </a>
             <div class="portfolio-caption">
               <h4>Youth Program, Website &amp;Game</h4>
-              <p class="text-muted">Graphic Design &amp; Development</p>
+              <p class="hs-text-muted">Graphic Design &amp; Development</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
@@ -627,7 +647,7 @@
             </a>
             <div class="portfolio-caption">
               <h4>International Bowl Expo</h4>
-              <p class="text-muted">Website Design/Development</p>
+              <p class="hs-text-muted">Website Design/Development</p>
             </div>
           </div>
           <!--Portfolio Items-->
@@ -641,7 +661,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">About</h2>
-            <h3 class="section-subheading text-muted">Here is a little about me....</h3>
+            <h3 class="section-subheading hs-text-muted">Here is a little about me....</h3>
           </div>
         </div>
         <div class="row">
@@ -657,7 +677,7 @@
                     <h4 class="subheading">My Humble Path</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">When I began I simply wanted to do Graphics. After creating many website
+                    <p class="hs-text-muted">When I began I simply wanted to do Graphics. After creating many website
                       designs I decided to learn web development. After college I was fortunate enough to land jobs with
                       big clients such as Ford, Mercury and Chevrolet. It wasn't long before I was well known in the
                       Dallas area. Soon after I became Web Development Manager at BPAA and eventually Director of
@@ -683,7 +703,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">Contact Me</h2>
-            <h3 class="section-subheading text-muted">Get the job done right the first time.</h3>
+            <h3 class="section-subheading hs-text-muted">Get the job done right the first time.</h3>
           </div>
         </div>
         <div class="row">
@@ -728,7 +748,7 @@
 
     <footer>
       <div class="container">
-        <div class="row">
+        <div class="row j-showmore">
           <div class="col-md-4">
             <span class="copyright">Copyright &copy; HeathShults.com 
               <script>document.write(new Date().getFullYear());</script>
@@ -775,7 +795,7 @@
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2>Bowlopolis</h2>
-                  <p class="item-intro text-muted">Web design/development & game development for retention/frequency.
+                  <p class="item-intro hs-text-muted">Web design/development & game development for retention/frequency.
                   </p>
                   <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
                   <p>This website was designed with youth bowlers in mind. It's goal was to convert youth into long time
@@ -806,7 +826,7 @@
               <div class="col-lg-8 col-lg-offset-2">
                 <div class="modal-body">
                   <h2>Bowl Expo</h2>
-                  <p class="item-intro text-muted">Website design/development.</p>
+                  <p class="item-intro hs-text-muted">Website design/development.</p>
                   <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
                   <p><a href="http://bowlexpo.com">Bowl Expo</a> is a website for the largest event in the bowling
                     industy. All major manufacturers, leaders and proprietors come here each year to learn more on how
@@ -838,16 +858,26 @@
 
     <!-- Theme JavaScript -->
     <script src="HeathScript.built.js" type="module"></script>
-    
+    <script type="module" src="js/show-more-fadebar/index.js"></script>
     <!-- <script src="hScript.bundle.js"></script> -->
    
     <script>
+
       // ====== RANKING BARS
-      var theBars = document.querySelectorAll('.progress-bar')
+      var theBars = document.querySelectorAll('.hs-ranking-bar')
       theBars.forEach(aBar => {
         var barWidth = $(aBar).attr('aria-valuenow')
         $(aBar).attr('style',`width: ${barWidth}%`);
       });
+
+      // ====== SHOWMORE ==== //
+      document.addEventListener('DOMContentLoaded', ShowMoreSettings = () => {
+        return {
+            fbInitButtonText: '+ Show Much More',
+            fbOpenButtonText: '- Show Far Less',
+            boxHeight: '100vh'
+        }
+      })
 
       // ====== NAV JS ====== //
       $('a.js-page-scroll').bind('click', function(event) {
@@ -924,6 +954,7 @@
         } 
         return
     })
+    
     
     </script>
   </body>

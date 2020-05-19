@@ -1,0 +1,25 @@
+{
+  "api": {
+    "apiurl": "http://blueprint.fanniemae.com:9306/api/ezform.php",
+    "datafile": "/api/data/contact-us.json"
+  },
+  "emailserver": {
+    "location": "mailhub.fanniemae.com",
+    "username": "sxuhms",
+    "password": "Hks1226!"
+  },
+  "email": {
+    "mailto": "heath_shults@fanniemae.com",
+    "copyto": "christopher_gray@fanniemae.com",
+    "replyto": "sender",
+    "subject": "Blueprint Contact Inquiry Notification",
+    "usernotification": "put content here"
+  },
+  "pagemsg": {
+    "successicon": "<svg version='1.1' class='bp-ucon-inject' xmlns='http=//www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'><g class='fk-icon-wrapper'><path d='M21.748 6.398l-1.601-1.601a.754.754 0 0 0-1.067 0l-9.596 9.596-4.565-4.597a.754.754 0 0 0-1.067 0l-1.6 1.601a.754.754 0 0 0 0 1.067l6.693 6.738a.754.754 0 0 0 1.067 0L21.748 7.465a.754.754 0 0 0 0-1.067z'></path></g></svg>",
+    "successmessage": "<p>We have received your message.</p><p>A Blueprint expert will conatact you soon. </p>",
+    "erroricon": "<svg version='1.1' class='bp-ucon-inject' xmlns='http=//www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'><g class='fk-icon-wrapper'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31A7.902 7.902 0 0 1 12 20zm6.31-3.1L7.1 5.69A7.902 7.902 0 0 1 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z'></path></g></svg>",
+    "errormessage": "<strong>Error:</strong> Please check the form and try again. If you still receive an error contact us at Blueprint@fanniemae.com.",
+  }
+
+}

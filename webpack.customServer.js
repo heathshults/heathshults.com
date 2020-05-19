@@ -205,7 +205,8 @@ module.exports = {
         'copy_img',
         'copy_js',
         'copy_vendor',
-        'copy_css'
+        'copy_css',
+        'copy_components'
     ]),
     new BrowserSyncPlugin(
       // BrowserSync options

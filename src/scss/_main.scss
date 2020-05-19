@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-.header {
+.hs-header {
   position: relative;
   height: 100%;
   min-height: 100vh;
@@ -420,7 +420,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-header, .header {
+header, .hs-header {
   min-height: 100vh;
   color: #fff;
   text-align: center;
@@ -429,10 +429,10 @@ header, .header {
   background-attachment: scroll;
   background-position: top -150px center;
   @include background-cover;
-  .intro-text {
+  .hs-intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
-    .intro-lead-in {
+    .hs-intro-lead-in {
       @include serif-font;
       margin-bottom: 25px;
       font-size: 22px;
@@ -440,7 +440,7 @@ header, .header {
       line-height: 22px;
       text-shadow: $text-shadow-light;
     }
-    .intro-heading {
+    .hs-intro-heading {
       @include heading-font;
       margin-bottom: 25px;
       font-size: 50px;
@@ -452,18 +452,18 @@ header, .header {
 }
 
 @media (min-width: 768px) {
-  header, .header {
-    .intro-text {
+  header, .hs-header {
+    .hs-intro-text {
       padding-top: 300px;
       padding-bottom: 200px;
-      .intro-lead-in {
+      .hs-intro-lead-in {
         @include serif-font;
         margin-bottom: 25px;
         font-size: 40px;
         font-style: italic;
         line-height: 40px;
       }
-      .intro-heading {
+      .hs-intro-heading {
         @include heading-font;
         margin-bottom: 50px;
         font-size: 75px;
@@ -474,17 +474,21 @@ header, .header {
   }
 }
 
+.hs-divider {
+  display: flex;
+  height: 30px;
+}
 // Global Section Styles
 
-section, .section {
-  padding: 100px 0;
+section, .hs-section {
+  // padding: 70px 0;
 
-  h2.section-heading {
+  h2.hs-section-heading {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 40px;
   }
-  h3.section-subheading {
+  h3.hs-section-subheading {
     margin-bottom: 75px;
     font-size: 16px;
     font-style: italic;
@@ -495,24 +499,24 @@ section, .section {
 }
 
 @media (min-width: 768px) {
-  section, .section {
+  section, .hs-section {
     min-height: 100vh;
-    padding: 150px 0;
+    padding: 100px 0;
   }
 }
 
-.card__row {
+.hs-card__row {
   height: 400px;
 }
 
 
-.dev-logo {
+.hs-dev-logo {
   max-width: 165px;
   max-height: 96px;
   // max-height: 96px;
   vertical-align: middle;
 }
-.logo-row {
+.hs-logo-row {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -522,42 +526,42 @@ section, .section {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   // background: rgba(71, 66, 55, 0.15);
-  .dev-logo {
+  .hs-dev-logo {
     vertical-align: middle;
   }
 }
 
 // Services Section
-.services, .skills {
+.services, .hs-skills {
   color: map-get($theme-default-colors, text-onLight);
   background-image: url('/img/bg/team-coders-dim-blur.jpg');
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  .section-heading {
+  .hs-section-heading {
     color: $white;
   }
-  .section-subheading {
+  .hs-section-subheading {
     color: $gray-lighter;
   }
 }
-.service-heading {
+.hs-service-heading {
   margin: 15px 0;
   text-transform: none;
 }
 
 // Portfolio Section
 
-#portfolio, .portfolio {
-  .portfolio-item {
+#portfolio, .hs-portfolio {
+  .hs-portfolio-item {
     right: 0;
     margin: 0 0 15px;
-    .portfolio-link {
+    .hs-portfolio-link {
       position: relative;
       display: block;
       max-width: 400px;
       margin: 0 auto;
-      .portfolio-hover {
+      .hs-portfolio-hover {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -569,7 +573,7 @@ section, .section {
         &:hover {
           opacity: 1;
         }
-        .portfolio-hover-content {
+        .hs-portfolio-hover-content {
           position: absolute;
           top: 50%;
           width: 100%;
@@ -588,7 +592,7 @@ section, .section {
         }
       }
     }
-    .portfolio-caption {
+    .hs-portfolio-caption {
       max-width: 400px;
       padding: 25px;
       margin: 0 auto;
@@ -612,8 +616,8 @@ section, .section {
 }
 
 @media (min-width: 767px) {
-  #portfolio, .portfolio {
-    .portfolio-item {
+  #portfolio, .hs-portfolio {
+    .hs-portfolio-item {
       margin: 0 0 30px;
     }
   }
@@ -621,7 +625,7 @@ section, .section {
 
 // Timeline
 
-.timeline {
+.hs-timeline {
   position: relative;
   padding: 0;
   list-style: none;
@@ -647,7 +651,7 @@ section, .section {
     &::after {
       clear: both;
     }
-    .timeline-panel {
+    .hs-timeline-panel {
       position: relative;
       float: right;
       width: 100%;
@@ -666,7 +670,7 @@ section, .section {
         border-left-width: 0;
       }
     }
-    .timeline-image {
+    .hs-timeline-image {
       position: absolute;
       left: 0;
       z-index: 100;
@@ -684,7 +688,7 @@ section, .section {
         line-height: 14px;
       }
     }
-    &.timeline-inverted > .timeline-panel {
+    &.hs-timeline-inverted > .hs-timeline-panel {
       float: right;
       padding: 0 20px 0 100px;
       text-align: left;
@@ -705,16 +709,16 @@ section, .section {
       margin-bottom: 0;
     }
   }
-  .timeline-heading {
+  .hs-timeline-heading {
     h4 {
       margin-top: 0;
       color: inherit;
-      &.subheading {
+      &.hs-subheading {
         text-transform: none;
       }
     }
   }
-  .timeline-body {
+  .hs-timeline-body {
     > p,
     > ul {
       margin-bottom: 0;
@@ -723,20 +727,20 @@ section, .section {
 }
 
 @media (min-width: 768px) {
-  .timeline {
+  .hs-timeline {
     &::before {
       left: 50%;
     }
     > li {
       min-height: 100px;
       margin-bottom: 100px;
-      .timeline-panel {
+      .hs-timeline-panel {
         float: left;
         width: 41%;
         padding: 0 20px 20px 30px;
         text-align: right;
       }
-      .timeline-image {
+      .hs-timeline-image {
         left: 50%;
         width: 100px;
         height: 100px;
@@ -747,7 +751,7 @@ section, .section {
           line-height: 18px;
         }
       }
-      &.timeline-inverted > .timeline-panel {
+      &.hs-timeline-inverted > .hs-timeline-panel {
         float: right;
         padding: 0 30px 20px 20px;
         text-align: left;
@@ -757,13 +761,13 @@ section, .section {
 }
 
 @media (min-width: 992px) {
-  .timeline {
+  .hs-timeline {
     > li {
       min-height: 150px;
-      .timeline-panel {
+      .hs-timeline-panel {
         padding: 0 20px 20px;
       }
-      .timeline-image {
+      .hs-timeline-image {
         width: 150px;
         height: 150px;
         margin-left: -75px;
@@ -773,7 +777,7 @@ section, .section {
           line-height: 26px;
         }
       }
-      &.timeline-inverted > .timeline-panel {
+      &.hs-timeline-inverted > .hs-timeline-panel {
         padding: 0 20px 20px;
       }
     }
@@ -781,13 +785,13 @@ section, .section {
 }
 
 @media (min-width: 1200px) {
-  .timeline {
+  .hs-timeline {
     > li {
       min-height: 170px;
-      .timeline-panel {
+      .hs-timeline-panel {
         padding: 0 20px 20px 100px;
       }
-      .timeline-image {
+      .hs-timeline-image {
         width: 170px;
         height: 170px;
         margin-left: -85px;
@@ -795,7 +799,7 @@ section, .section {
           margin-top: 40px;
         }
       }
-      &.timeline-inverted > .timeline-panel {
+      &.hs-timeline-inverted > .hs-timeline-panel {
         padding: 0 100px 20px 20px;
       }
     }
@@ -836,7 +840,7 @@ section#contact, .contact {
   background-image: url('../img/map-image.png');
   background-repeat: no-repeat;
   background-position: center;
-  .section-heading {
+  .hs-section-heading {
     color: #fff;
   }
   .form-group {
@@ -933,7 +937,7 @@ ul.social-buttons {
   outline: none;
 }
 
-.portfolio-modal {
+.hs-portfolio-modal {
   .modal-dialog{
     width: auto;
     height: 100%;
@@ -3041,7 +3045,7 @@ img::-moz-selection {
 //   cursor: unset;
 // }
 
-.flex-stack {
+.hs-flex-stack {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -3054,12 +3058,12 @@ img::-moz-selection {
 //   align-items: center;
 // }
 
-.HorFlexContainer {
+.hs-HorFlexContainer {
   display: flex;
   flex-direction: row;
 }
 
-.VertFlexContainer {
+.hs-VertFlexContainer {
   display: flex;
   flex-direction: column;
 }
@@ -3069,10 +3073,10 @@ img::-moz-selection {
   overflow: auto;
 }
 .bg-lighter-lime-green {
-  background-color: #86e01e;
+  background-color: #e7ffcb;
 }
 .bg-lime-green {
-  background-color: #e7ffcb;
+  background-color: #86e01e;
   // background-color: #86e01e;
 }
 

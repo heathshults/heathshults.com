@@ -11,6 +11,8 @@ let {src, dest, gulp, task, watch, series, parallel} = require('gulp');
 // var sass = require('gulp-sass')
 var browserSync = require('browser-sync')
 var header = require('gulp-header')
+var browserify = require('browserify')
+var babelify = require('babelify') 
 // var cleanCSS = require('gulp-clean-css')
 var rename = require('gulp-rename')
 var uglify = require('gulp-uglify')
@@ -162,6 +164,18 @@ function ejsit(done) {
 }
 exports.ejsit = ejsit
 
+function jsify(){
+  var fs = require("fs");
+
+  browserify({ debug: true })
+  .transform(babelify)
+  .require('./src/js/index.js', { entry: true })
+  .bundle()
+  .on("error", function (err) { console.log("Error: " + err.message); })
+  .pipe(fs.createWriteStream("HeathScript.built.js"));
+}
+exports.babelify = babelify
+
 function js(done) {
   try {
     exec('./node_modules/.bin/webpack --config webpack-js.js --mode development --display-error-details --verbose --watch --colors', (error, stdout, stderr) => {
@@ -247,14 +261,17 @@ function copy_vendor(cb) {
 
     src([`${srcPath}/content/**/*`])
     .pipe(dest(`${wwwPath}/content`), {overwrite: true})
+
+    src([`${srcPath}/components/**/*.{html,css,js,json,php}`])
+    .pipe(dest(`${wwwPath}/content`), {overwrite: true})
     
     src([`${srcPath}/vendor/**/*`])
-    .pipe(dest(`${wwwPath}/vendor`), {overwrite: true})
-    var file = ''
-  if (typeof cb === 'function') {
-    cb(null, file);
-    called = true;
-  }
+    .pipe(dest(`${wwwPath}/vendor`), {overwrite: true}), cb()
+  //   var file = ''
+  // if (typeof cb === 'function') {
+  //   cb(null, file);
+  //   called = true;
+  // }
 }
 exports.copy_vendor = copy_vendor
 
@@ -291,7 +308,7 @@ function copy_css(cb) {
 exports.copy_css = copy_css
 
 function copy_js(cb) {
-  src(`${srcPath}/js/**/*.{js,json}`)
+  src(`${srcPath}/js/**/*.{js,json,map}`)
     .pipe(plumber())
     //.pipe(changed(`${wwwPath}/js`))
     .pipe(dest(`${wwwPath}/js`)), cb()
@@ -304,6 +321,21 @@ function copy_js(cb) {
   // }
 }
 exports.copy_js = copy_js
+
+function copy_components(cb) {
+  src('src/components/**/*.{js,json,html,css}')
+    .pipe(plumber())
+     //.pipe(changed(`${wwwPath}/js`))
+    .pipe(dest('www/')), cb()
+    // () => {
+    //   let file = ''
+    //   if (typeof cb === 'function') {
+    //     cb(null, file);
+    //     called = true;
+    //   }
+    // }
+}
+exports.copy_components = copy_components
 
 function copy_assets(cb) {
   src('src/**/*.${assets}')
@@ -331,6 +363,7 @@ function watchers(cb) {
   watch(['src/img/**/*.{jpg,png,gif,svg}', 'src/content//**/*.{jpg,png,gif,svg}'], copy_img), cb()
   watch('src/scss/**/*.scss', sassy), cb()
   watch('src/js/*.{js,json,mjs,cjs}', copy_js), cb()
+  watch('src/components/**/*.{js,json,html,css}', copy_components), cb()
 }
 exports.watchers = watchers
 

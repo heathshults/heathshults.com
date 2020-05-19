@@ -1,0 +1,94 @@
+.j-showmore {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  padding-bottom: 60px;
+  transition: height 2.5s;
+}
+
+.j-showmore.is-visible {
+  height: 100%; 
+  transition: height 2.5s;
+}
+
+.j-showmore .j-fader {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  vertical-align: bottom;
+  cursor: pointer;
+  border-bottom: 5px solid #f2f2f2;
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.6), #f8f8f8 60%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f8f8f8', endColorstr='#f8f8f8',GradientType=0 );
+}
+
+.c-code-preview .j-fader {
+  border-bottom: 5px solid #f2f2f2;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), #ffffff 60%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+}
+
+.j-showmore .j-fader__button {
+  cursor: pointer;
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  margin: auto;
+  padding: 4px 8px;
+  background-color: #f2f2f2;
+  border: 0;
+  font-size: 0.75rem;
+  width: 90px;
+  height: 26px;
+  transform: translateX(-50%);
+}
+
+.j-showmore .j-fader__button::before {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  z-index: 100;
+  transform: translate(-50%);
+  width: 100%;
+  content: '${cssValues.fbInitButtonText}';
+  font-size: 0.75rem;
+}
+
+.j-showmore .j-fader__button.is-visible::before {
+  content: '${cssValues.fbOpenButtonText}';
+}
+
+.j-showmore .j-fader__button:hover {
+  background-color: #f8f8f8;
+}
+
+.j-showmore .j-fader__button:focus {
+  outline-color: #49aae6;
+  background-color: #49aae6;
+  color: #fff;
+  box-shadow: unset;
+}
+
+.j-showmore .j-fader__button.is-visible {
+  background-color: #49aae6;
+  transition: all .29s ease-in;
+}
+
+.j-showmore .j-fader.is-visible {
+  border-bottom: 5px solid #49aae6;
+  transition: all .29s ease-in;
+}
+@keyframes slideOpen {
+  from { height: 300px; }
+  to { height: 100%; }
+}
+
+@keyframes slideClosed {
+  from { height: 100%; }
+  to { height: 300px; } 
+}

@@ -1,10 +1,10 @@
-.card__row {
+.hs-card__row {
   display: flex;
   align-items: stretch;
   justify-content: center;
 }
 
-.card {
+.hs-card {
   position: relative;
   flex: 1 1 auto;
   height: 100%;
@@ -13,7 +13,7 @@
   &:not(:last-child) {
     margin-right: .5rem;
   }
-  .card__header {
+  .hs-card__header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,10 +35,11 @@
       text-align: center;
     }
   }
-  .card__body {
+  .hs-card__body {
     padding: 1.5rem 1rem 1rem 1rem;
+    text-align: center;
   }
-  .card__footer {
+  .hs-card__footer {
     display: flex;
     align-self: flex-end;
     // position: absolute;

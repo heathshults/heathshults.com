@@ -1,0 +1,181 @@
+/////////////////////////////////////////////////////////////////////
+///
+//  Frontend Technical test for Schibsted | Accordion JS ES6
+/// Accordion JS
+///
+/////////////////////////////////////////////////////////////////////
+///
+///
+///
+/// namespace                   --> must be written in camel case,
+///                                optional and allows you to write CSS that will not conflict
+///                                with other libraries
+/// ComponentName               --> must be written in pascal case,
+///                                is your top level component such as Form.
+///                                Example: .OfferBtn
+/// ComponentName-descendentName -> must be written in camel case, is a part of your component that
+///                                is applying styles on the components behalf.
+///                                Example:  .OfferBtn-pricebox
+/// ComponentName--modifierName --> must be written in camel case, is a presentation class that modifies
+///                                the base class in some way.
+///                                Example:  .OfferBtn--small
+/// ComponentName.is-stateName -->  must be written in camel case and represents the current state of the element
+///
+/// u-utilityName              --> can add styling to just about any component, examples: u-inlineBlock, u-clearfix
+///
+/////////////////////////////////////////////////////////////////////////
+
+
+.#{$bui-ns-component}-accordion {
+  position: relative;
+  width: 100%;
+  // border: 0;
+  @include stack();
+  border-bottom-width: 1px;
+  @include bp-theme-border($bui-accordion-control-border);
+
+  p {
+    margin-bottom: $bui-accordion-paragraph-margin-bottom;
+  }
+  &__control {
+      & {
+        display: block;
+        position: relative;
+        width: 100%;
+        left: 0;
+        border: none;
+        color: currentColor; // Take the mode primary
+        text-decoration: inherit;
+        padding-top: $bui-accordion-control-padding-top;
+        padding-right: $bui-accordion-control-padding-right;
+        padding-bottom: $bui-accordion-control-padding-bottom;
+        padding-left: $bui-accordion-control-padding-left;
+        text-align: $bui-accordion-control-text-align;
+        background: $bui-accordion-control-background;
+        transition: $bui-accordion-control-transition;
+        cursor: pointer;
+        transition: background-color .5s ease-in-out;
+        overflow: hidden;
+
+          @include bp-type($bui-accordion-control-headline);
+
+          &:hover,
+          &:focus {
+            outline: none;
+          }
+      }
+      &::before {
+          transition: all .2s ease;
+          content: "";
+          height: 0;
+          border-style: solid;
+          border-width: 14px 10px 0 10px;
+          border-color: #f8f8f8 transparent transparent transparent;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+      }
+      &::after {
+          content: "";
+          height: 0;
+          border-style: solid;
+          border-width: 14px 10px 0 10px;
+          border-color: #000000 transparent transparent transparent;
+
+          float: left;
+          transition: transform .3s ease-in-out;
+          transform: rotate(-225deg);
+          transform-origin: 50% 50%;
+      }
+      &:hover {
+          background-color: #3aacca;
+          cursor: pointer;
+          text-shadow: none;
+      }
+      &.is-closed + .Accordion-content {
+          max-height: 0;
+      }
+      &.is-closed::after {
+          transform: rotate(0deg);
+          transform-origin: 50% 50%;
+      }
+  } //END Accordion-Controller
+  &__headline {
+    @include bp-type($bui-accordion-headline);
+    @include stack($bui-accordion-control-headline-stack);
+  }
+
+
+  &__item {
+    // border: 1px solid yellow;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+
+    @include bp-theme-border($bui-accordion-control-border);
+
+    &:last-child {
+      // border-width: 1px 0;
+    }
+  }
+  &-content {
+    display: block;
+    transition: all .2s; /*experiment*/
+    position: relative;/*experiment*/
+    padding: 0;
+    padding-top: $bui-accordion-item-padding-top;
+    padding-right: $bui-accordion-item-padding-right;
+    padding-bottom: $bui-accordion-item-padding-bottom;
+    padding-left: $bui-accordion-item-padding-left;
+    transition: all .5s;/*experiment*/
+    max-height: 500px;/*experiment*/
+    overflow: hidden;/*experiment*/
+  } //END Accordion-content
+  &--lg &__headline {
+    @include bp-type($bui-accordion-headline--large);
+  }
+
+  &--lg &__control {
+    @include bp-type($bui-accordion-control-headline--large);
+  }
+
+  .#{$bui-ns-component}-accordion .bp-accordion__control {
+    .#{$bui-ns-component}-accordion__icon .#{$bui-ns-component}-ucon-chevron-up {
+      left: $bui-accordion-icon-spacing;
+      position: absolute;
+      top: 50%;
+      @include bp-theme-switcher('color', bp-theme-get-interactive('primary'), bp-theme-get-interactive('primary', 'light'));
+      margin-right: 12px;
+      width: 22.63px;
+      height: 22.63px;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .15s ease-in-out;
+      //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+      transform-origin: center center;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+    &.is-open .#{$bui-ns-component}-accordion__icon .#{$bui-ns-component}-ucon-chevron-up {
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .15s ease-in-out;
+      //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+      transform-origin: center center;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+    &.is-closed + .b#{$bui-ns-component}-accordion__content {
+      max-height: 0;
+    }
+    &.is-closed .bp-accordion__icon .bp-ucon-chevron-up {
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .15s ease-in-out;
+      //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+      transform-origin: center center;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(-50%,-50%) rotate(180deg);
+    }
+  }
+  
+}
