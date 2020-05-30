@@ -1,4 +1,4 @@
-# Sans jQuery
+# jQuery to JS
 
 
 ## Events
@@ -195,12 +195,13 @@ Also, see the two part series showing equivalents for ...
 ### click event listenter for all a tags on page
 
 #### jQuery
-```
+```javascript
 $('a').on('click', fn);
 ```
 
 #### JavaScript
- ```
+
+ ```javascript
  [].forEach.call( document.querySelectorAll('a'), function(el) {
    el.addEventListener('click', function() {
      // anchor was clicked
@@ -208,7 +209,7 @@ $('a').on('click', fn);
 });
 ```
 ##### Legacy JS
-```
+```javascript
 var anchors = document.getElementsbyTagName('a');
 addEvent(anchors, 'click', fn);
 ```
@@ -216,7 +217,7 @@ addEvent(anchors, 'click', fn);
 ### Event Delegation
 #### jQuery
 
-```
+```javascript
 $('ul').on('click', 'a', fn);
 ```
 
@@ -224,17 +225,18 @@ This jQuery snippet is using event delegation. The click listener is being appli
 
 #### Modern JavaScript
 
-```
+```javascript
 document.addEventListener('click', function(e) {
    if ( e.target.matchesSelector('ul a') ) {
       // proceed
    }
-}, false);```
+}, false);
+```
 
 # finish this soon ------------------
 
 #### jQuery 
-```
+```javascript
 $('#list').next();
 ```
 
@@ -242,7 +244,7 @@ jQuery's next method will return the element that immediately follows the curren
 
 #### Modern JavaScript
 
-```
+```javascript
 var next = document.querySelector('#list').nextElementSibling; // IE9
 ```
 
@@ -250,7 +252,7 @@ nextElementSibling will refer specifically to the next element node, rather than
 
 #### Legacy
 
-```
+```javascript
 var list = document.getElementById('list'),
 	next = list.nextSibling;
 ```
