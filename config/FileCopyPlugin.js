@@ -2,23 +2,22 @@ const path = require('path')
 const fs = require('fs-extra')
 const { exec } = require('child_process');
 const validateOptions = require('schema-utils');
-const glob = require('glob');
+const glob = require('glob')
 
-var files = []
-var options = []
-var rootDir = path.resolve(process.cwd())
 let tasks = []
 
 const pluginName = 'FileCopyPlugin';
 
 class FileCopyPlugin {
   constructor(options = {}){
-    files = options || [];
+    tasks = options || [];
   }
   apply(compiler) {
     compiler.hooks.run.tap(pluginName, compilation => {
       
-        const Copier = (options = []) => {
+
+      
+      const Copier = (options = []) => {
             tasks = options
             tasks.map(task => {
             console.log(`copying ${task}...`)
@@ -28,9 +27,6 @@ class FileCopyPlugin {
           })
       }
       Copier(tasks)
-      
-      
-     
 
     });
   }
@@ -38,7 +34,8 @@ class FileCopyPlugin {
 
 module.exports = FileCopyPlugin;
 
-//==========================================
+
+// ==========================================
 // const path = require('path')
 // const fs = require('fs-extra')
 // const { exec } = require('child_process');
@@ -51,17 +48,17 @@ module.exports = FileCopyPlugin;
 
 // var filesToCopy = [
 //   {
-//       from: `${rootDir}/src/css/**/*.{css,map}`,
+//       from: `${rootDir}/src/css/`,
 //       to: `${rootDir}/www/css`,
 //       ignore: ['heathshults.css', 'heathshults.min.css'] 
 //     },
 //     {
-//       from: `${rootDir}/content/**/*`,
+//       from: `${rootDir}/content`,
 //       to: `${rootDir}/www/content`,
 //       ignore: ['**/*.zip'] 
 //     },
 //     {
-//       from: `${rootDir}/img/**/*.{png,jpg,gif,svg}`,
+//       from: `${rootDir}/img`,
 //       to: `${rootDir}/img`,
 //       ignore: ['**/*.ejs'] 
 //     }

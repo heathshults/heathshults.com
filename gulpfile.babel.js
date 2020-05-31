@@ -164,17 +164,17 @@ function ejsit(done) {
 }
 exports.ejsit = ejsit
 
-function jsify(){
+function jsify(cb){
   var fs = require("fs");
 
   browserify({ debug: true })
   .transform(babelify)
-  .require('./src/js/index.js', { entry: true })
+  .require('./src/index.js', { entry: true })
   .bundle()
   .on("error", function (err) { console.log("Error: " + err.message); })
-  .pipe(fs.createWriteStream("HeathScript.built.js"));
+  .pipe(fs.createWriteStream("HeathScript.built.js")), cb();
 }
-exports.babelify = babelify
+exports.jsify = jsify
 
 function js(done) {
   try {
@@ -194,7 +194,7 @@ exports.js = js
 
 function sassy(done) {
   try {
-    exec(`sass --sourcemap ${srcPath}/scss/heathscript.scss ${wwwPath}/css/heathscript.css`, (error, stdout, stderr) => {
+    exec(`sass --sourcemap ${srcPath}/scss/heathscript.scss ${wwwPath}/HeathStyle.built.css`, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;

@@ -1,0 +1,323 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/
+/******/ 		return result;
+/******/ 	}
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"app": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push([0,"HeathStyle","theme-dark-mode"]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/css.js":
+/*!********************!*\
+  !*** ./src/css.js ***!
+  \********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scss_HeathStyle_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/HeathStyle.scss */ "./src/scss/HeathStyle.scss");
+/* harmony import */ var _scss_HeathStyle_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_HeathStyle_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scss_theme_dark_mode_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/theme-dark-mode.scss */ "./src/scss/theme-dark-mode.scss");
+/* harmony import */ var _scss_theme_dark_mode_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_theme_dark_mode_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./js/HeathScript.js */ "./src/js/HeathScript.js")
+__webpack_require__(/*! ./js/show-more-fadebar */ "./src/js/show-more-fadebar/index.js")
+// require('./js/jqBootstrapValidation')
+
+
+/***/ }),
+
+/***/ "./src/js/HeathScript.js":
+/*!*******************************!*\
+  !*** ./src/js/HeathScript.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * HeathShults.com - Heath Shults v1.0 (http://heathshults.com)
+ * Copyright 2020-2020 Heath-Shults
+ * Licensed under MIT (https://github.com/heathshults/heathshults.com/LICENSE)
+ */
+
+// import * as jQuery from "../vendor/jquery/jquery";
+
+(function ($) {
+  'use strict'; // Start of use strict
+
+  // jQuery for page scrolling feature - requires jQuery Easing plugin
+  // ====== RANKING BARS
+  var theBars = document.querySelectorAll('.progress-bar')
+  theBars.forEach(aBar => {
+    var barWidth = $(aBar).attr('aria-valuenow')
+    $(aBar).attr('style', `width: ${barWidth}%`);
+  });
+
+  // ====== NAV JS ====== //
+  $('a.js-page-scroll').bind('click', function (event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: ($($anchor.attr('href')).offset().top - 50)
+    }, 1250, 'easeInOutExpo');
+    event.preventDefault();
+  });
+
+  // Highlight the top nav as scrolling occurs
+  $('body').scrollspy({
+    target: '.navbar-fixed-top',
+    offset: 51
+  });
+
+  // Closes the Responsive Menu on Menu Item Click
+  $('.navbar-collapse .navbar-nav .nav__item .nav__link').click(function () {
+    $('.navbar-toggle:visible').click();
+  });
+
+  // Offset for Main Navigation
+  $('#mainNav').affix({
+    offset: {
+      top: 60
+    }
+  })
+
+  // ** ====== MODE WIDHET ====== ** //
+  var $dm_btn = $('#mode_widget')
+  var lsGetMode = localStorage.getItem('dark_mode')
+
+  // set button text
+  $(document).ready(() => {
+    if (lsGetMode === 'fasle') {
+      setModeText(true)
+      //$dm_btn.html('<span class="which-mode">Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span></span>')
+    } else {
+      setModeText(false)
+      // $dm_btn.html('<span class="which-mode">Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span></span>')
+    }
+  })
+
+  function setModeText(mode) {
+    if (mode === 'true') {
+      $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+    } else {
+      $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+    }
+  }
+
+  function setMode(mode) {
+    localStorage.setItem('dark_mode', `${mode}`)
+    document.querySelector('#darkmode').disabled = mode;
+
+    if (mode === 'true') {
+      document.querySelector('#darkmode').disabled = false;
+      $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+
+      // document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
+    } else {
+      $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+    }
+    return setModeText(mode)
+  }
+
+  // Theme switcher 
+  $dm_btn.bind('click', (event) => {
+    event.preventDefault()
+    if (localStorage.getItem('dark_mode') === 'true') {
+      setMode('false'), console.log('set to false')
+    } else {
+      setMode('true'), console.log('set to true')
+    }
+    return
+  })
+
+})(); // End of use strict
+
+/***/ }),
+
+/***/ "./src/js/show-more-fadebar/index.js":
+/*!*******************************************!*\
+  !*** ./src/js/show-more-fadebar/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module './index.mjs'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+
+/***/ }),
+
+/***/ 0:
+/*!*****************************************!*\
+  !*** multi ./src/index.js ./src/css.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /mnt/c/Users/Heath/OneDrive/Documents/Websites/heathshults.com/heath-shults-website/src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! /mnt/c/Users/Heath/OneDrive/Documents/Websites/heathshults.com/heath-shults-website/src/css.js */"./src/css.js");
+
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=HeathScript.built.js.map

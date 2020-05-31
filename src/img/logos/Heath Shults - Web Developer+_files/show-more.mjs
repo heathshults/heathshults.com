@@ -39,14 +39,14 @@ FadeBarCSS = (options) => {
       left: 0;
       z-index: 100;
       width: 100%;
-      height: 50px;
+      height: 30px;
       text-align: center;
       vertical-align: bottom;
       cursor: pointer;
       border-bottom: 5px solid #f2f2f2;
-      background: -moz-linear-gradient(top, ${cssValues.fbStartColor}, ${cssValues.fbEndColor} 60%);
-      background: -webkit-linear-gradient(top, ${cssValues.fbStartColor}, ${cssValues.fbEndColor} 60%);
-      background: linear-gradient(to bottom, ${cssValues.fbStartColor}, ${cssValues.fbEndColor} 60%);
+      background: -moz-linear-gradient(top, ${cssValues.fbStartColor} 0%, ${cssValues.fbEndColor} 65%, ${cssValues.fbEndColor} 75%);
+      background: -webkit-linear-gradient(top, ${cssValues.fbStartColor} 0%, ${cssValues.fbEndColor} 65%, ${cssValues.fbEndColor} 75%);
+      background: linear-gradient(to bottom, ${cssValues.fbStartColor} 0%, ${cssValues.fbEndColor} 65%, ${cssValues.fbEndColor} 75%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='${cssValues.fbStartColor}', endColorstr='${cssValues.fbEndColor}',GradientType=0 );
     }
     .c-code-preview .j-fader {
@@ -123,7 +123,7 @@ FadeBarCSS = (options) => {
   return fbCSS;
 };
 let FadeBar = () => {};
-document.addEventListener('DOMContentLoaded', module.exports = FadeBar = () => {
+document.addEventListener('DOMContentLoaded', FadeBar = () => {
   const VERSION = '0.0.1';
   const NAME = 'ShowMore_FadeBar';
   console.log(`Now using ${NAME} version ${VERSION}`);
@@ -198,8 +198,8 @@ function cs() {
 function defaults() {
   return {
     boxHeight: '300px',
-    fbStartColor: 'rgba(248, 248, 248, 0.6)',
-    fbEndColor: '#f8f8f8',
+    fbStartColor: 'rgba(0,0,0,.75)',
+    fbEndColor: 'rgba(0,0,0,.75)',
     fbBottomBorder: '1px solid #dedede',
     fbInitButtonText: '+ Show More',
     fbOpenButtonText: '- Show Less',

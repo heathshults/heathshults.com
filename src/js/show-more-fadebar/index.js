@@ -1,1 +1,1 @@
-module.exports = require('./show-more.js');
+module.exports = require('./show-more.mjs');

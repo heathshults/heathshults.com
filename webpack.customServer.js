@@ -3,11 +3,11 @@ const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { exec } = require('child_process')
 const gulpfile = require('./gulpfile.babel.js')
-const FileCopyPlugin = require('./config/FileCopyPlugin')
+// const FileCopyPlugin = require('./config/FileCopyPlugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
 // const OfflinePlugin = require('offline-plugin/runtime').install();
 const autoprefixer = require('autoprefixer');
@@ -158,56 +158,61 @@ module.exports = {
       favicon: 'src/favicon.ico'
       // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
     }),
-    // new HtmlWebpackPlugin({
-    //   filename: path.resolve(__dirname, './www/index-allcode.html'),
-    //   template: 'src/index-allcode.ejs',
-    // }),
+    new HtmlWebpackPlugin({
+      filename: path.resolve(__dirname, './www/index-allcode.html'),
+      template: 'src/index-allcode.ejs',
+    }),
     // copy assets and manifest.json
     
-  //   new CopyPlugin([
-  //    {
-  //     from: `${path.resolve(process.cwd(), 'src/css')}/**/*.{css,map}`,
-  //     to: path.resolve(process.cwd(), 'www/css'),
-  //     ignore: ['heathshults.css', 'heathshults.min.css'] 
-  //   },
-  //   {
-  //     from: 'content/**/*',
-  //     // to: '',
-  //     ignore: ['**/*.zip'] 
-  //   },
-  //   {
-  //     from: 'img/**/*.{png,jpg,gif,svg}',
-  //     // to: '',
-  //     ignore: ['**/*.ejs'] 
-  //   },
-  //   {
-  //     from: 'js/**/*',
-  //     // to: '.',
-  //     ignore: ['HeathScript.js', 'contact_me.js', 'jqBootstrapValidation.js']
-  //   },
-  //   {
-  //     from: 'DevBox/**/*',
-  //     // to: 'DevBox/',
-  //     ignore: ['**/*.ejs']
-  //   },
-  //   {
-  //     from: 'lib/**/*.{js,json}',
-  //     // to: 'lib/',
-  //     ignore: ['**/*.ejs']
-  //   },
-  //   {
-  //     from: 'vendor/**/*',
-  //     // to: 'vendor/',
-  //     ignore: ['**/*.ejs']
-  //   }
-  // ]),
-    new FileCopyPlugin([
-        'copy_img',
-        'copy_js',
-        'copy_vendor',
-        'copy_css',
-        'copy_components'
-    ]),
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(process.cwd(), '/src/css/**/*.{css,map}'), 
+          to: path.resolve(process.cwd(), 'www/css'),
+          ignore: ['heathshults.css', 'heathshults.min.css'] 
+        },
+      
+      {
+        from: path.resolve(process.cwd(), 'src/css')+'/**/*.{css,map}',
+        to: path.resolve(process.cwd(), 'www/css'),
+      },
+      {
+        from: 'content/**/*',
+        to: path.resolve(process.cwd(), 'www/content'),
+        ignore: ['**/*.zip'] 
+      },
+      {
+        from: 'img/**/*.{png,jpg,gif,svg}',
+        to: path.resolve(process.cwd(), 'img'),
+        ignore: ['**/*.ejs'] 
+      },
+      {
+        from: 'js/**/*',
+        to: path.resolve(process.cwd(), 'www/js'),
+        ignore: ['HeathScript.js', 'contact_me.js', 'jqBootstrapValidation.js']
+      },
+      {
+        from: 'DevBox/**/*',
+        to: 'DevBox/',
+        ignore: ['**/*.ejs']
+      },
+      {
+        from: 'lib/**/*.{js,json}',
+        to: 'lib/',
+        ignore: ['**/*.ejs']
+      },
+      {
+        from: 'vendor/**/*',
+        to: 'vendor/',
+        ignore: ['**/*.ejs']
+      }
+  ]}),
+    // new FileCopyPlugin([
+    //     'copy_img',
+    //     'copy_js',
+    //     'copy_vendor',
+    //     'copy_css',
+    //     'copy_components'
+    // ]),
     new BrowserSyncPlugin(
       // BrowserSync options
       {
