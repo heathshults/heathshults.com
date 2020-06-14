@@ -7,14 +7,16 @@
   "license": "MIT",
   "scripts": {
     "gdev": "node_modules/.bin/gulp dev",
-    "start": "npm run devServer",
+    "start-webpack": "npm run devServer",
     "copy": "gulp copy_dev",
     "devServer": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --watch",
-    "build": "node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors",
-    "start-gulp": "node_modules/.bin/gulp setup_develop && npm run watchers",
+    "build-webpack": "node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors",
+    "build": "node_modules/.bin/gulp build",
+    "start": "node_modules/.bin/gulp setup_develop",
     "watchers": "node_modules/.bin/gulp watchers",
     "xpress": "node -r esm index.js",
-    "babelify": "browserify -d -e src/js/index.js -t [ babelify --comments false ]"
+    "babelify": "browserify -d -e src/js/index.js -t [ babelify --comments false ]",
+    "sass": "sass src/scss/HeathStyle.scss www/HeathStyle.built.css --watch && sass src/scss/theme-dark-mode.scss www/theme-dark-mode.built.css --watch "
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -73,7 +75,7 @@
     "gulp-uglify": "^1.5.4",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.1",
     "jshint": "^2.11.0",
     "jshint-loader": "^0.8.4",
     "latest-version": "^5.1.0",

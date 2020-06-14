@@ -15,7 +15,6 @@ FadeBarCSS = (options) => {
          -moz-transition: all 500ms cubic-bezier(0.770, 0.000, 0.155, 1.000);
            -o-transition: all 500ms cubic-bezier(0.770, 0.000, 0.155, 1.000);
               transition: all 500ms cubic-bezier(0.770, 0.000, 0.155, 1.000);
-
       -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.155, 1.000);
         -moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.155, 1.000);
           -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.155, 1.000);
@@ -27,7 +26,6 @@ FadeBarCSS = (options) => {
          -moz-transition: all 500ms cubic-bezier(0.770, 0.000, 0.155, 1.000);
            -o-transition: all 500ms cubic-bezier(0.770, 0.000, 0.155, 1.000);
               transition: all 500ms cubic-bezier(0.770, 0.000, 0.155, 1.000);
-
       -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.155, 1.000);
         -moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.155, 1.000);
           -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.155, 1.000);
@@ -60,14 +58,14 @@ FadeBarCSS = (options) => {
       display: inline-block;
       cursor: pointer;
       position: absolute;
-      bottom: -6px;
+      bottom: -2px;
       left: 50%;
       margin: auto;
       padding: 4px 8px;
       background-color: ${cssValues.fbButtonBackground};
       border: 1px solid ${cssValues.fbButtonBorderColor};
       border-bottom: 5px solid ${cssValues.fbButtonBorderColor};
-      font-size: 0.75rem;
+      font-size: 1rem;
       color: ${cssValues.fbButtonTextColor};
       width: 120px;
       height: 26px;
@@ -78,12 +76,12 @@ FadeBarCSS = (options) => {
       display: block;
       position: absolute;
       left: 50%;
-      top: 5%;
+      top: 50%;
       z-index: 100;
       transform: translate(-50%);
       width: 100%;
       content: '${cssValues.fbInitButtonText}';
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
     .j-showmore .j-fader__button.is-visible::before {
       content: '${cssValues.fbOpenButtonText}';
@@ -143,6 +141,8 @@ document.addEventListener('DOMContentLoaded', FadeBar = () => {
     const theFaders = Array.prototype.slice.call(document.querySelectorAll('.j-showmore'));
 
     theFaders.forEach((node) => {
+      const height = node.offsetHeight;
+      console.log(height)
       const theContainer = node;
       const theFadeBar = document.createElement('div');
       const theShowMoreButton = document.createElement('button');
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', FadeBar = () => {
       theFadeBar.classList.add('j-fader');
       theShowMoreButton.classList.add('j-fader__button');
 
-      theShowMoreButton.innerHTML = '';
+      theShowMoreButton.innerText = options.fbInitButtonText;
 
       theFadeBar.appendChild(theShowMoreButton);
       theContainer.appendChild(theFadeBar);
@@ -201,8 +201,8 @@ function defaults() {
     fbStartColor: 'rgba(0,0,0,.75)',
     fbEndColor: 'rgba(0,0,0,.75)',
     fbBottomBorder: '1px solid #dedede',
-    fbInitButtonText: '+ Show More',
-    fbOpenButtonText: '- Show Less',
+    fbInitButtonText: 'Show More',
+    fbOpenButtonText: 'Show Less',
     fbButtonPosition: 'center',
     fbButtonBackground: '#f2f2f2',
     fbButtonBackgroundHover: '#f8f8f8;',
@@ -248,4 +248,3 @@ function settings(opts) {
   return options;
 }
 // FadeBar()
-

@@ -3,13 +3,12 @@
   align-items: stretch;
   justify-content: center;
 }
-
 .hs-card {
   position: relative;
   flex: 1 1 auto;
   height: 100%;
   background-color: #fff;
-  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, .25);
+  // box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, .25);
   &:not(:last-child) {
     margin-right: .5rem;
   }
@@ -25,7 +24,7 @@
     // background-color: #ffd57f;
     // background-color: #d2c3a5;
     //background-color: #afc9d6;
-    background-color: #181a1b;
+    background-color: $blueGray-very-dark;
     //background-color: #6f6155;
     .lead {
       align-self: flex-end;
@@ -41,6 +40,7 @@
   }
   .hs-card__footer {
     display: flex;
+    align-items: center;
     align-self: flex-end;
     // position: absolute;
     // bottom: 0;

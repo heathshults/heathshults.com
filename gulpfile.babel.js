@@ -172,29 +172,30 @@ function jsify(cb){
   .require('./src/index.js', { entry: true })
   .bundle()
   .on("error", function (err) { console.log("Error: " + err.message); })
-  .pipe(fs.createWriteStream("HeathScript.built.js")), cb();
+  .pipe(fs.createWriteStream("www/HeathScript.built.js"))
+  , cb();
 }
 exports.jsify = jsify
 
-function js(done) {
-  try {
-    exec('./node_modules/.bin/webpack --config webpack-js.js --mode development --display-error-details --verbose --watch --colors', (error, stdout, stderr) => {
-      if (error) {
-          console.log(`error: ${error.message}`);
-          return;
-      }
-    })
-  }
-  catch(e) {
-    console.log('HeathenError: ' + e)
-  }
-  done()
-}
-exports.js = js
+// function js(done) {
+//   try {
+//     exec('./node_modules/.bin/webpack --config webpack-js.js --mode development --display-error-details --verbose --watch --colors', (error, stdout, stderr) => {
+//       if (error) {
+//           console.log(`error: ${error.message}`);
+//           return;
+//       }
+//     })
+//   }
+//   catch(e) {
+//     console.log('HeathenError: ' + e)
+//   }
+//   done()
+// }
+// exports.js = js
 
 function sassy(done) {
   try {
-    exec(`sass --sourcemap ${srcPath}/scss/heathscript.scss ${wwwPath}/HeathStyle.built.css`, (error, stdout, stderr) => {
+    exec(`sass ${srcPath}/scss/HeathStyle.scss ${wwwPath}/HeathStyle.built.css`, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -206,7 +207,7 @@ function sassy(done) {
   }
 
   try{
-    exec('sass --sourcemap src/scss/theme-dark-mode.scss www/css/theme-dark-mode.css', (error, stdout, stderr) => {
+    exec(`sass ${srcPath}/scss/theme-dark-mode.scss ${wwwPath}/css/theme-dark-mode.built.css`, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -360,9 +361,10 @@ exports.copy_dev = copy_dev
 function watchers(cb) {
   // eslint-disable-next-line no-sequences
   watch('src/*.ejs', ejsit), cb()
-  watch(['src/img/**/*.{jpg,png,gif,svg}', 'src/content//**/*.{jpg,png,gif,svg}'], copy_img), cb()
-  watch('src/scss/**/*.scss', sassy), cb()
-  watch('src/js/*.{js,json,mjs,cjs}', copy_js), cb()
+  watch(['src/img/**/*.{jpg,png,gif,svg}', 'src/content/**/*.{jpg,png,gif,svg}'], copy_img), cb()
+  watch(['src/scss/**/*.scss', 'src/components/**/*.scss'], sassy), cb()
+  watch(['src/js/*.{js,json,mjs,cjs}', '!src/js/HeathScript.js'], copy_js), cb()
+  watch(['src/js/**/*.js'], jsify), cb()
   watch('src/components/**/*.{js,json,html,css}', copy_components), cb()
 }
 exports.watchers = watchers
@@ -453,3 +455,4 @@ exports.watchers2 = watchers2
 // exports.build = series(sassy, minify_css, minify_js, copy_vendors)
 
 exports.setup_develop = series(copy_all, watchers, connect_sync)
+exports.build = series(copy_all)

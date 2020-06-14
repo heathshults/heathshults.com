@@ -1,0 +1,111 @@
+.progress-bar-container {
+  margin: 100px auto;
+  width: 500px;
+  text-align: center;
+}
+
+.progress {
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar { 
+  height: 18px;
+  background-color: #ee303c;  
+  border-radius: 4px; 
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-striped .progress-bar {   
+  background-color: #FCBC51; 
+  width: 100%; 
+  background-image: linear-gradient(
+        45deg, rgb(252,163,17) 25%, 
+        transparent 25%, transparent 50%, 
+        rgb(252,163,17) 50%, rgb(252,163,17) 75%,
+        transparent 75%, transparent); 
+  animation: progressAnimationStrike 6s;
+}
+
+@keyframes progressAnimationStrike {
+     from { width: 0 }
+     to   { width: 100% }
+}
+ 
+.progress2 {
+  padding: 6px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.25);  
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar2 {
+  height: 18px;
+  border-radius: 30px;
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-moved .progress-bar2 {
+  width: 85%; 
+  background-color: #EF476F;  
+  animation: progressAnimation 6s;
+}
+
+@keyframes progressAnimation {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 85%; background-color: #EF476F; }
+}
+
+$color_green: #4cd964;
+
+$blue: $blue-light;
+$light-blue: $blue-lightest;
+
+$red: $color_red_orange;
+
+.progress-bar3 {
+  height: 18px;
+  border-radius: 4px;
+  background-image: 
+     linear-gradient(to right, 
+       $color_green, $color_turquoise, $blue, 
+       $light-blue, $color_purple, $red);
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-infinite .progress-bar3 {      
+  width: 100%; 
+  background-image: 
+    linear-gradient(to right, $color_green, $color_turquoise, $blue, $light-blue, $color_purple, $red);
+  animation: colorAnimation 1s infinite;
+}
+
+@keyframes colorAnimation {
+  0% { 
+    background-image: 
+    linear-gradient(to right, $color_green, $color_turquoise, $blue, $light-blue, $color_purple, $red);
+  }
+  20% { 
+    background-image: 
+    linear-gradient(to right, $color_turquoise, $blue, $light-blue, $color_purple, $red, $color_green);
+  }
+  40% { 
+    background-image: 
+    linear-gradient(to right, $blue, $light-blue, $color_purple, $red, $color_green, $color_turquoise);
+  }
+  60% { 
+    background-image: 
+    linear-gradient(to right, $light-blue, $color_purple, $red, $color_green, $color_turquoise, $blue);
+  }
+  100% { 
+    background-image: 
+    linear-gradient(to right, $color_purple, $red, $color_green, $color_turquoise, $blue, $light-blue);
+  }
+}

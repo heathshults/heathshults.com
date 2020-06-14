@@ -4,20 +4,19 @@
  * Licensed under MIT (https://github.com/heathshults/heathshults.com/LICENSE)
  */
 
-// import * as jQuery from "../vendor/jquery/jquery";
-
-(function ($) {
+(function () {
   'use strict'; // Start of use strict
 
-  // jQuery for page scrolling feature - requires jQuery Easing plugin
   // ====== RANKING BARS
   var theBars = document.querySelectorAll('.progress-bar')
   theBars.forEach(aBar => {
+    // eslint-disable-next-line no-undef
     var barWidth = $(aBar).attr('aria-valuenow')
     $(aBar).attr('style', `width: ${barWidth}%`);
   });
 
   // ====== NAV JS ====== //
+  // jQuery for page scrolling feature - requires jQuery Easing plugin
   $('a.js-page-scroll').bind('click', function (event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
@@ -92,5 +91,15 @@
     }
     return
   })
+
+
+   // ====== SHOWMORE ==== //
+  // eslint-disable-next-line no-unused-vars
+  let ShowMoreSettings = {
+    fbInitButtonText: 'Show More',
+    fbOpenButtonText: 'Show Less',
+    boxHeight: '100vh'
+  }
+   
 
 })(); // End of use strict

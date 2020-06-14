@@ -6,6 +6,15 @@ const glob = require('glob')
 
 let tasks = []
 
+//  use format below in the plugins section of webpack config
+// new FileCopyPlugin([
+  //     'copy_img',
+  //     'copy_js',
+  //     'copy_vendor',
+  //     'copy_css',
+  //     'copy_components'
+  // ]),
+
 const pluginName = 'FileCopyPlugin';
 
 class FileCopyPlugin {

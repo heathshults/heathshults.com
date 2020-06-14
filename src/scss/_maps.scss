@@ -44,7 +44,7 @@ $experimental: (
   dm-accent: #F2A365,
   dm-accent-alt: #D65A31,
   dm-light: #ECECEC,
-  dm-light-alt: #EEEEEE
+  dm-light-alt: #EEE
 );
 
 $colors: (
@@ -64,14 +64,12 @@ $colors: (
 // reference: https://www.viget.com/articles/maps-math-and-magic-build-a-flexible-variable-system-in-sass/
 // Usage:
 // color: map-get($colors, text);
-
 $z-indexes: (
   global: (
     nav: 1000,
     modal: 1001,
     hoverContent: 1002,
   ),
-
   dm-switcher: (
     button: 1531,
     shades: 1533,

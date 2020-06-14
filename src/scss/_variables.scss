@@ -1,26 +1,29 @@
 // Variables
 
-
-
 $color_red_orange:            #f63a0f !default;
 $color_orange:                #f27011 !default;
 $color_dark_yellow:           #f2b01e !default;
 $color_yellow:                #f2d31b !default;
+$color_green:                 #4cd964 !default;
 $color_lime:                  #86e01e !default;
 $color_light_lime:            #e7ffcb !default;
 $color_silver:                #aaa !default;
+$color_purple:                #9a39d3 !default;
+$color_turquoise:             #5ac8fa !default;
+
 
 // Gray and Brand Colors for use across theme
 
-$theme-primary:               #fed136;
-$theme-danger:                #e74c3c;
+$theme-primary:               #fed136 !default;
+$theme-danger:                #e74c3c !default;
 $theme-background-primary:    map-get($theme-default-colors, background-primary) !default;
 $theme-background-secondary:  map-get($theme-default-colors, background-secondary) !default;
 
-$black:                       #000000 !default;
+$black:                       #000 !default;
 $black_25:                    rgba(0, 0, 0, 0.25) !default;
 
-$gray-base:			              #111111 !default;
+$gray-base:			              #111 !default;
+$gray-medium:                 #2f2f31 !default;
 $gray-darker:		              lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:			              lighten($gray-base, 20%) !default;   // #333
 $gray:				                lighten($gray-base, 33.5%) !default; // #555
@@ -35,18 +38,21 @@ $white_5:                   rgba(255, 255, 255, 0.05) !default;
 $white_10:                  rgba(255, 255, 255, 0.1) !default;
 
 // Dark Mode Colors
-$blueGray-medium:           rgb(80, 115, 134) !default;
-$blueGray-dark:             rgb(15, 22, 29) !default;
-$blueGray-very-dark:        rgb(24, 26, 27) !default; // #181a1b
-$blueGray-darker:           rgb(12, 15, 17) !default;
-$blueGray-light:           rgb(45, 55, 60) !default;
-$baige-medium:              rgb(167, 158, 139) !default;
+$blueGray-medium:           #507386 !default;
+$blueGray-dark:             #0f161d !default;
+$blueGray-very-dark:        #181a1b !default; // #181a1b
+$blueGray-darker:           #0c0f11 !default;
+$blueGray-light:            #2d373c !default;
+$baige-medium:              #a79e8b !default;
 $text-onDark:               map-get($theme-dark-mode-colors, text-onDark) !default;
-$green-light:               rgb(128, 204, 148) !default;
-$blue-light-muted:          rgb(128, 182, 204) !default;
-$blue-lighter-muted:        rgb(142, 193, 217) !default;
-$blue-lightest-muted:       rgb(155, 203, 230) !default;
-$blue-dark:                 rgb(30, 54, 78) !default;
+$green-light:               #80cc94 !default;
+$blue-light:                #0291ca !default;
+$blue-light-muted:          #80b6cc !default;
+$blue-lighter:              #78bad8 !default;
+$blue-lighter-muted:        #8ec1d9 !default;
+$blue-lightest:             #a8dfff !default;
+$blue-lightest-muted:       #9bcbe6 !default;
+$blue-dark:                 #1e364e !default;
 $link-primary:              $theme-primary !default;
 
 
@@ -57,6 +63,13 @@ $font-cursive-Sedgwick: 'Sedgwick Ave Display', cursive !default;
 $text-shadow-light: 0px 0px 4px rgba(0, 0, 0, .95) !default;
 $text-shadow-light-spread:0px 4px 13px rgba(0, 0, 0, .75) !default;
 $text-shadow-medium: 0px 0px 10px rgba(0, 0, 0, .85) !default;
+
+$box-shadow-glow: 0px 4px 16px 2px rgba(255, 255, 255, 0.5) !default;
+
+$shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !default;
+$shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !default;
+$shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175) !default;
+$shadow-none: none !default;
 
 $bg-black-to-transparent: linear-gradient(0deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 100%) !default;
 

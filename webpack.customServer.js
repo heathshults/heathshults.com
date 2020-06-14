@@ -16,11 +16,8 @@ const { callbackify } = require('util');
 const isDev = (process.env.NODE_ENV === 'development');
 const basePath = process.cwd();
 
-const options = { 
-  hmr: true,
-  liveReload: true,
-  open: true
- };
+const srcPath = path.resolve(__dirname, 'src')
+const destPath = path.resolve(__dirname, 'www')
 
 //#region 
 //  const del = require('del');
@@ -154,8 +151,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       filename: path.resolve(__dirname, 'www/index.html'),
-      template: 'src/index.ejs',
-      favicon: 'src/favicon.ico'
+      template: 'src/index.ejs'
       // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
     }),
     new HtmlWebpackPlugin({
@@ -166,53 +162,63 @@ module.exports = {
     
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(process.cwd(), '/src/css/**/*.{css,map}'), 
-          to: path.resolve(process.cwd(), 'www/css'),
-          ignore: ['heathshults.css', 'heathshults.min.css'] 
+        { from: `${srcPath}/css`, 
+          to: `${destPath}/css`,
+          globOptions: {
+            gitignore: true,
+            ignore: ['heathshults.css', 'heathshults.min.css'] 
+          }
         },
-      
       {
-        from: path.resolve(process.cwd(), 'src/css')+'/**/*.{css,map}',
-        to: path.resolve(process.cwd(), 'www/css'),
+        from: `${srcPath}/content`,
+        to: `${destPath}/content`,
+        globOptions: {
+          gitignore: true,
+          ignore: ['**/*.zip'] 
+        }
       },
       {
-        from: 'content/**/*',
-        to: path.resolve(process.cwd(), 'www/content'),
-        ignore: ['**/*.zip'] 
+        from: `${srcPath}/img`,
+        to: `${destPath}/img`,
+        globOptions: {
+          gitignore: true,
+          ignore: ['**/*.ejs'] 
+        }
       },
       {
-        from: 'img/**/*.{png,jpg,gif,svg}',
-        to: path.resolve(process.cwd(), 'img'),
-        ignore: ['**/*.ejs'] 
+        from: `${srcPath}/js`,
+        to: `${destPath}/js`,
+        globOptions: {
+          gitignore: true,
+          ignore: ['HeathScript.js', 'contact_me.js', 'jqBootstrapValidation.js']
+        }
       },
       {
-        from: 'js/**/*',
-        to: path.resolve(process.cwd(), 'www/js'),
-        ignore: ['HeathScript.js', 'contact_me.js', 'jqBootstrapValidation.js']
+        from: `${srcPath}/DevBox`,
+        to: `${destPath}/DevBox`,
+        globOptions: {
+          gitignore: true,
+          ignore: ['**/*.ejs']
+        }
       },
       {
-        from: 'DevBox/**/*',
-        to: 'DevBox/',
-        ignore: ['**/*.ejs']
+        from: `${srcPath}/lib`,
+        to: `${destPath}/lib`,
+        globOptions: {
+          gitignore: true,
+          ignore: ['**/*.ejs']
+        }
       },
       {
-        from: 'lib/**/*.{js,json}',
-        to: 'lib/',
-        ignore: ['**/*.ejs']
-      },
-      {
-        from: 'vendor/**/*',
-        to: 'vendor/',
-        ignore: ['**/*.ejs']
+        from: `${srcPath}/vendor`,
+        to: `${destPath}/vendor`,
+        globOptions: {
+          gitignore: true,
+          ignore: ['**/*.ejs']
+        }
       }
   ]}),
-    // new FileCopyPlugin([
-    //     'copy_img',
-    //     'copy_js',
-    //     'copy_vendor',
-    //     'copy_css',
-    //     'copy_components'
-    // ]),
+    
     new BrowserSyncPlugin(
       // BrowserSync options
       {
