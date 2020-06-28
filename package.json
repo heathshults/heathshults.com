@@ -12,7 +12,7 @@
     "devServer": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --watch",
     "build-webpack": "node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors",
     "build": "node_modules/.bin/gulp build",
-    "start": "node_modules/.bin/gulp setup_develop",
+    "start": "node_modules/.bin/gulp setup_develop && npm run sass",
     "watchers": "node_modules/.bin/gulp watchers",
     "xpress": "node -r esm index.js",
     "babelify": "browserify -d -e src/js/index.js -t [ babelify --comments false ]",

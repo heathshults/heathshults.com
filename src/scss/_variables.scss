@@ -21,6 +21,8 @@ $theme-background-secondary:  map-get($theme-default-colors, background-secondar
 
 $black:                       #000 !default;
 $black_25:                    rgba(0, 0, 0, 0.25) !default;
+$black_50:                    rgba(0, 0, 0, 0.5) !default;
+$black_75:                    rgba(0, 0, 0, 0.75) !default;
 
 $gray-base:			              #111 !default;
 $gray-medium:                 #2f2f31 !default;

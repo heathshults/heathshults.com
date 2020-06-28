@@ -96,10 +96,20 @@
    // ====== SHOWMORE ==== //
   // eslint-disable-next-line no-unused-vars
   let ShowMoreSettings = {
+    boxHeight: '100vh',
+    fbStartColor: 'rgba(0,0,0,.75)',
+    fbEndColor: 'rgba(0,0,0,.75)',
+    fbBottomBorder: '1px solid #2e2e2e',
     fbInitButtonText: 'Show More',
     fbOpenButtonText: 'Show Less',
-    boxHeight: '100vh'
+    fbButtonPosition: 'center',
+    fbButtonBackground: '#151515',
+    fbButtonBackgroundHover: '#333333;',
+    fbButtonTextColor: '#ffffff',
+    fbButtonTextColorHover: '#ffffff',
+    fbButtonTextColorFocus: '#FFF',
+    fbButtonBorderColor: '#000000',
+    fbButtonBorderColorFocus: '#333333',
   }
    
-
 })(); // End of use strict

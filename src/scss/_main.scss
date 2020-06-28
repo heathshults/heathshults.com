@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all .15s ease-out;
   @include heading-font;
 
-  &:hover, &focus {
+  &:hover, &:focus {
     color: #fffccc;
     text-decoration: none;
     cursor: pointer;
@@ -430,7 +430,7 @@ header, .hs-header {
   color: #fff;
   text-align: center;
   background-color: $gray-medium;
-  background-image: url('../img/header-bg.jpg');
+  background-image: url('../img/bg/DRTECHNOLOGY.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: top -150px center;
@@ -494,15 +494,18 @@ section, .hs-section {
   h2.hs-section-heading {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 6rem;
+    text-shadow: $text-shadow-light-spread;
   }
   h3.hs-section-subheading {
-    margin-bottom: 75px;
-    font-size: 16px;
+    margin-bottom: 4rem;
+    font-size: 4rem;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 300;
+    color: #fed136;
+    text-shadow: $text-shadow-light-spread;
     text-transform: none;
-    @include serif-font;
+    @include script-font;
   }
 }
 
@@ -542,16 +545,19 @@ section, .hs-section {
 // Services Section
 .services, .hs-skills {
   color: map-get($theme-default-colors, text-onLight);
-  background-image: url('/img/bg/team-coders-dim-blur.jpg');
+  background-image: url('/img/bg/camera-missing.jpg');
+  //  background-image: url('/img/bg/team-coders-dim-blur.jpg');
   background-attachment: fixed;
-  background-position: center center;
+  background-position: bottom center;
   background-size: cover;
-  .hs-section-heading {
-    color: $white;
-  }
-  .hs-section-subheading {
-    color: #eeecec;
-  }
+  // .hs-section-heading {
+  //   font-size: 6rem;
+  //   color: $white;
+  // }
+  // .hs-section-subheading {
+  //   color: #eeecec;
+  //   @include script-font;
+  // }
   .hs-card {
     background: $white;
   }
@@ -563,7 +569,25 @@ section, .hs-section {
 
 // Portfolio Section
 
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+  background-color: rgba(171, 133, 1, 0.9);
+  background-image: initial;
+}
+
 #portfolio, .hs-portfolio {
+  background-image: url('/img/bg/idea3.jpg');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  .hs-section-heading, .hs-section-subheading {
+    color: #fff;
+  }
+  .hs-section-heading {
+    font-size: 6rem;
+  }
+  .hs-section-subheading {
+    font-size: 4rem;
+  }
   .hs-portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -573,6 +597,7 @@ section, .hs-section {
       max-width: 400px;
       margin: 0 auto;
       .hs-portfolio-hover {
+        // background: rgba(254,209,54,.9);
         position: absolute;
         width: 100%;
         height: 100%;
@@ -583,6 +608,7 @@ section, .hs-section {
         transition: all ease .5s;
         &:hover {
           opacity: 1;
+          background: rgba(254,209,54,.9);
         }
         .hs-portfolio-hover-content {
           position: absolute;
@@ -950,10 +976,33 @@ ul.social-buttons {
 }
 
 .hs-portfolio-modal {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  transition: all .2s ease-in-out;
+  transform: translate(-50%, -50%);
+  &.is-open {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+  }
   .modal-dialog{
-    width: auto;
-    height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 3rem;
     margin: 0;
+    transition: all .2s ease-in-out;
+    transform: translate(0%, 0%);
   }
   .modal-content {
     min-height: 100%;
@@ -3124,3 +3173,6 @@ img::-moz-selection {
 .d-none {
   display: none;
 }
+
+
+
