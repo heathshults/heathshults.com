@@ -634,7 +634,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 hs-portfolio-item">
-            <a href="#portfolioModal2" class="hs-portfolio-link" data-toggle="hs-modal">
+            <a href="#portfolioModal2" class="hs-portfolio-link hs-modal" data-target="portfolioModal01">
               <div class="hs-portfolio-hover">
                 <div class="hs-portfolio-hover-content">
                   <i class="fa fa-plus fa-3x"></i>
@@ -879,6 +879,22 @@
       }
 
       var theModals = document.querySelectorAll('.hs-modal')
+      document.addEventListener('click', modalHandler, false)
+      function modalHandler(e) {
+        e.preventDefault();
+        var modalTrigger = e.target //button
+        if (!modalTrigger.classList.contains('hs-modal')){
+          return
+        } else {
+          var targetModalID = theModalTrigger.getAttribute('data-target') // modal to opens' ID
+          var targetModal = document.getElementById(targetModalID)
+          if (targetModal.classList.contains('hs-modal')) {
+            targetModal.classList.toggle('is-open')
+            targetModal.toggleAttribute('aria-hidden', false)
+          }
+        }
+      }
+
       theModals.forEach(modal => {
         modal.addEventListener('click', (e)=>{
           var targetModalID =  modal.getAttribute('data-target')

@@ -1,0 +1,93 @@
+@import 'mixins/settings';
+@import 'mixins/objects.grid';
+@import 'mixins/utilities.boxing';
+
+aside.hs-drawer {
+  position: fixed;
+  z-index: $drawer-z-index;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: $drawer-color;
+  background-color: $drawer-background-color;
+  visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  .hs-card {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &:not(.hs-drawer--visible) {
+    &.u-high,
+    &.u-higher,
+    &.u-highest {
+      box-shadow: none;
+    }
+  }
+
+  &.hs-drawer--bottom,
+  &.hs-drawer--top {
+    left: 0;
+    width: $drawer-width-horizontal;
+    height: auto;
+    margin-left: (100% - $drawer-width-horizontal) / 2;
+    transform: translate(0, 0);
+  }
+
+  &.hs-drawer--bottom {
+    top: 100%;
+    border-radius: $drawer-border-radius $drawer-border-radius 0 0;
+  }
+
+  &.hs-drawer--bottom.hs-drawer--visible {
+    transform: translateY(-99%);
+  }
+
+  &.hs-drawer--top {
+    bottom: 100%;
+    border-radius: 0 0 $drawer-border-radius $drawer-border-radius;
+  }
+
+  &.hs-drawer--top.hs-drawer--visible {
+    transform: translateY(99%);
+  }
+
+  &.hs-drawer--left,
+  &.hs-drawer--right {
+    top: 0;
+    width: $drawer-width-vertical;
+    height: 100%;
+
+    .hs-card__footer--block {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      .hs-button {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &.hs-drawer--left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  &.hs-drawer--left.hs-drawer--visible {
+    transform: translateX(-1%);
+  }
+
+  &.hs-drawer--right {
+    left: 100%;
+    transform: translate(0, 0);
+  }
+
+  &.hs-drawer--right.hs-drawer--visible {
+    transform: translateX(-99%);
+  }
+
+  &.hs-drawer--visible {
+    visibility: visible;
+  }
+}

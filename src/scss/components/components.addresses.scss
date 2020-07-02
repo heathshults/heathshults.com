@@ -1,0 +1,12 @@
+@import 'mixins/settings';
+@import 'mixins/utilities.typography';
+
+.hs-address {
+  @include paragraph;
+  font-style: $address-font-style;
+}
+
+.hs-address__heading {
+  display: block;
+  font-weight: $address-heading-font-weight;
+}

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card renders a card 1`] = `"<hs-card class=\\"hydrated\\"><div class=\\"hs-card\\"></div></hs-card>"`;
+
+exports[`card renders all the child elements correctly 1`] = `
+"<hs-card class=\\"hydrated\\"><div class=\\"hs-card\\"><hs-image class=\\"hydrated\\"><img class=\\"hs-image\\" src=\\"https://source.unsplash.com/random/\\"></hs-image><hs-card-header class=\\"hydrated\\"><header class=\\"hs-card__header\\"><h2 class=\\"hs-heading u-xlarge\\">
+          Heading
+          <div class=\\"hs-heading__sub\\">Sub-heading</div></h2></header></hs-card-header><hs-card-body class=\\"hydrated\\"><div class=\\"hs-card__body\\"><p class=\\"hs-paragraph\\">
+          Lorem ipsum dolor sit amet, feugiat corpora ex eam. Inciderint eloquentiam sea et.
+        </p></div></hs-card-body><hs-card-footer class=\\"hydrated\\"><footer class=\\"hs-card__footer\\"><div class=\\"hs-input-group\\"><button class=\\"hs-button hs-button--block hs-button--brand\\">Button</button><button class=\\"hs-button hs-button--block hs-button--info\\">Button</button></div></footer></hs-card-footer></div></hs-card>"
+`;
+
+exports[`card renders all the child elements correctly 2`] = `
+"<hs-card class=\\"hydrated\\"><div class=\\"hs-card\\"><hs-media-item class=\\"hydrated\\"><div class=\\"hs-card__item hs-media\\"><hs-media-image src=\\"https://placehold.it/80\\" class=\\"hydrated\\"><div class=\\"hs-media__image\\"><img class=\\"hs-image\\" src=\\"https://placehold.it/80\\"></div></hs-media-image><hs-media-body class=\\"hydrated\\"><div class=\\"hs-media__body\\"><h2 class=\\"hs-heading\\">Title
+            <span class=\\"hs-heading__sub\\">Subtitle</span></h2><p class=\\"hs-paragraph\\">
+            Lorem ipsum dolor sit amet, feugiat corpora ex eam. Lorem ipsum dolor sit amet, feugiat corpora ex eam. Lorem ipsum dolor
+            sit amet, feugiat corpora ex eam.
+          </p></div></hs-media-body></div></hs-media-item></div></hs-card>"
+`;

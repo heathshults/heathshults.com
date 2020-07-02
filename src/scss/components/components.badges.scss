@@ -1,0 +1,60 @@
+@import 'mixins/components.badges';
+
+.hs-badge {
+  @include badge($badge-background-color, $badge-color, $badge-background-color);
+  display: inline-block;
+  margin: $badge-margin;
+  padding: $badge-padding;
+  font-weight: $badge-font-weight;
+  font-size: $badge-font-size;
+  line-height: $badge-line-height;
+  border-radius: $badge-border-radius;
+
+  &.hs-badge--ghost {
+    @include badge($badge-ghost-background-color, $badge-ghost-color);
+  }
+}
+
+.hs-badge--rounded {
+  border-radius: $badge-border-radius-rounded;
+}
+
+.hs-badge--brand {
+  @include badge($badge-brand-background-color, $badge-brand-color, $badge-brand-background-color);
+
+  &.hs-badge--ghost {
+    @include badge($badge-ghost-brand-background-color, $badge-ghost-brand-color);
+  }
+}
+
+.hs-badge--info {
+  @include badge($badge-info-background-color, $badge-info-color, $badge-info-background-color);
+
+  &.hs-badge--ghost {
+    @include badge($badge-ghost-info-background-color, $badge-ghost-info-color);
+  }
+}
+
+.hs-badge--warning {
+  @include badge($badge-warning-background-color, $badge-warning-color, $badge-warning-background-color);
+
+  &.hs-badge--ghost {
+    @include badge($badge-ghost-warning-background-color, $badge-ghost-warning-color);
+  }
+}
+
+.hs-badge--success {
+  @include badge($badge-success-background-color, $badge-success-color, $badge-success-background-color);
+
+  &.hs-badge--ghost {
+    @include badge($badge-ghost-success-background-color, $badge-ghost-success-color);
+  }
+}
+
+.hs-badge--error {
+  @include badge($badge-error-background-color, $badge-error-color, $badge-error-background-color);
+
+  &.hs-badge--ghost {
+    @include badge($badge-ghost-error-background-color, $badge-ghost-error-color);
+  }
+}

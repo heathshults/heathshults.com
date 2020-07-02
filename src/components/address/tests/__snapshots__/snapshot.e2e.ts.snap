@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`address renders correctly 1`] = `"<hs-address class=\\"hydrated\\"><address class=\\"hs-address\\">Address line one</address></hs-address>"`;
+
+exports[`address renders the address heading 1`] = `
+"<hs-address class=\\"hydrated\\"><address class=\\"hs-address\\"><hs-address-heading class=\\"hydrated\\"><span class=\\"hs-address__heading\\">Address header</span></hs-address-heading>
+        Address line one<br>
+        Address line two<br>
+        Postcode
+      </address></hs-address>"
+`;

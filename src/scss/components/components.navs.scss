@@ -1,0 +1,92 @@
+@import 'mixins/components.navs';
+
+nav.hs-nav,
+.hs-nav[role='navigation'] {
+  @include nav--color;
+  z-index: $nav-z-index;
+  width: $nav-width;
+  height: 100%;
+  margin: $nav-margin;
+  padding: $nav-padding;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.hs-nav--left {
+    position: fixed;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.hs-nav--right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+  }
+
+  .hs-nav__item,
+  .hs-nav__content {
+    display: block;
+    height: $nav-height;
+    padding: 0 $nav-item-padding;
+    color: inherit;
+    line-height: $nav-height;
+
+    .hs-image {
+      height: 100%;
+    }
+  }
+
+  .hs-nav__item {
+    @include nav__item--color;
+
+    text-decoration: none;
+  }
+
+  .hs-nav__item--active {
+    @include nav__item--active;
+  }
+
+  .hs-nav__item--brand {
+    @include nav__item--color($nav-item-brand-hover-background-color, $nav-item-brand-hover-color);
+
+    &.hs-nav__item--active {
+      @include nav__item--active($nav-item-brand-active-background-color, $nav-item-brand-active-color);
+    }
+  }
+
+  .hs-nav__item--info {
+    @include nav__item--color($nav-item-info-hover-background-color, $nav-item-info-hover-color);
+
+    &.hs-nav__item--active {
+      @include nav__item--active($nav-item-info-active-background-color, $nav-item-info-active-color);
+    }
+  }
+
+  .hs-nav__item--warning {
+    @include nav__item--color($nav-item-warning-hover-background-color, $nav-item-warning-hover-color);
+
+    &.hs-nav__item--active {
+      @include nav__item--active($nav-item-warning-active-background-color, $nav-item-warning-active-color);
+    }
+  }
+
+  .hs-nav__item--success {
+    @include nav__item--color($nav-item-success-hover-background-color, $nav-item-success-hover-color);
+
+    &.hs-nav__item--active {
+      @include nav__item--active($nav-item-success-active-background-color, $nav-item-success-active-color);
+    }
+  }
+
+  .hs-nav__item--error {
+    @include nav__item--color($nav-item-error-hover-background-color, $nav-item-error-hover-color);
+
+    &.hs-nav__item--active {
+      @include nav__item--active($nav-item-error-active-background-color, $nav-item-error-active-color);
+    }
+  }
+}

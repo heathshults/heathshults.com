@@ -1,0 +1,41 @@
+@import 'mixins/settings';
+
+.hs-tags {
+  position: relative;
+  width: $tags-width;
+  text-align: $tags-text-align;
+}
+
+.hs-tags .hs-card--menu {
+  position: absolute;
+  width: 100%;
+}
+
+.hs-tags__container {
+  display: inline-block;
+  max-width: $tags-container-width;
+  padding-right: $spacing-xsmall;
+}
+
+.hs-tag {
+  position: relative;
+  display: inline-block;
+  max-width: $tags-container-width;
+  margin: $tag-margin;
+  padding: $tag-padding;
+}
+
+.hs-tag__close {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  color: $tag-close-color;
+  font-weight: $tag-close-font-weight;
+}
+
+.hs-tags__field-container {
+  position: absolute;
+  display: inline-block;
+  width: $tags-field-container-width;
+  margin: $tags-field-container-margin;
+}

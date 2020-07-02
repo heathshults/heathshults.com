@@ -1,0 +1,115 @@
+@import 'mixins/components.ranges';
+
+.hs-range[type='range'] {
+  @include range--color;
+
+  width: $range-width;
+  padding: $range-padding;
+  outline: 0;
+  -webkit-appearance: none;
+
+  &.hs-range--brand {
+    @include range--color($range-brand-background-color);
+  }
+
+  &.hs-range--info {
+    @include range--color($range-info-background-color);
+  }
+
+  &.hs-range--warning {
+    @include range--color($range-warning-background-color);
+  }
+
+  &.hs-range--success {
+    @include range--color($range-success-background-color);
+  }
+
+  &.hs-range--error {
+    @include range--color($range-error-background-color);
+  }
+
+  &:not(:disabled):active {
+    &::-webkit-slider-thumb {
+      @include range__thumb--active;
+    }
+
+    &::-moz-range-thumb {
+      @include range__thumb--active;
+    }
+
+    &::-ms-thumb {
+      @include range__thumb--active;
+    }
+  }
+
+  &:focus {
+    &::-webkit-slider-thumb {
+      @include range__thumb--focus;
+    }
+
+    &::-moz-range-thumb {
+      @include range__thumb--focus;
+    }
+
+    &::-ms-thumb {
+      @include range__thumb--focus;
+    }
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb {
+      @include range--disabled;
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include range--disabled;
+    }
+
+    &::-moz-range-thumb {
+      @include range--disabled;
+    }
+
+    &::-moz-range-track {
+      @include range--disabled;
+    }
+
+    &::-ms-thumb {
+      @include range--disabled;
+    }
+
+    &::-ms-track {
+      @include range--disabled;
+    }
+  }
+}
+
+.hs-range::-webkit-slider-runnable-track {
+  @include range__track;
+}
+
+.hs-range::-webkit-slider-thumb {
+  @include range__thumb;
+  @include range__thumb--webkit;
+}
+
+.hs-range::-moz-range-track {
+  @include range__track;
+}
+
+.hs-range::-moz-range-thumb {
+  @include range__thumb;
+}
+
+.hs-range::-ms-track {
+  @include range__track;
+  @include range__track--ms;
+}
+
+.hs-range::-ms-fill-lower,
+.hs-range::-ms-fill-upper {
+  @include range__fill--ms;
+}
+
+.hs-range::-ms-thumb {
+  @include range__thumb;
+}

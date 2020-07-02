@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sticky renders sticky no scroll 1`] = `"<hs-sticky top=\\"20\\" class=\\"hydrated\\"><div><div><hs-alert open=\\"\\" dismissible=\\"\\" type=\\"info\\" class=\\"hydrated\\"><div role=\\"alert\\" class=\\"hs-alert hs-alert--info\\"><button class=\\"hs-button hs-button--close\\">×</button>Sticky alert</div></hs-alert></div></div></hs-sticky>"`;

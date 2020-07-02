@@ -26,7 +26,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f8f8f8', endColorstr='#f8f8f8',GradientType=0 );
 }
 
-.c-code-preview .j-fader {
+.hs-code-preview .j-fader {
   border-bottom: 5px solid #f2f2f2;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), #ffffff 60%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );

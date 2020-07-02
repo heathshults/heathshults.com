@@ -1,0 +1,51 @@
+@import 'mixins/utilities.visibility';
+@import 'mixins/components.links';
+
+a.hs-link,
+.hs-link[role='link'] {
+  @include link--color;
+
+  text-decoration: $link-text-decoration;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: $link-hover-text-decoration;
+  }
+
+  .hs-link--skip {
+    @include visually-hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $z-over-everything;
+
+    &:active,
+    &:focus {
+      width: auto;
+      height: auto;
+      overflow: auto;
+      clip-path: none;
+    }
+  }
+
+  &.hs-link--brand {
+    @include link--color($link-brand-color);
+  }
+
+  &.hs-link--info {
+    @include link--color($link-info-color);
+  }
+
+  &.hs-link--warning {
+    @include link--color($link-warning-color);
+  }
+
+  &.hs-link--success {
+    @include link--color($link-success-color);
+  }
+
+  &.hs-link--error {
+    @include link--color($link-error-color);
+  }
+}

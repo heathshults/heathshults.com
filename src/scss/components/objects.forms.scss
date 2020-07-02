@@ -1,0 +1,25 @@
+@import 'mixins/objects.grid';
+@import 'mixins/components.inputs';
+
+.hs-fieldset,
+.hs-fieldset.hs-list {
+  display: block;
+  width: $fieldset-width;
+  margin: $fieldset-margin;
+  padding: $fieldset-padding;
+  border: $fieldset-border;
+}
+
+.hs-fieldset__legend {
+  @include label;
+  padding: $legend-padding;
+}
+
+.hs-form-element {
+  position: relative;
+  padding: $form-element-padding;
+
+  .hs-label:first-child {
+    padding: $form-element-label-padding;
+  }
+}

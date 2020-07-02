@@ -1,0 +1,70 @@
+@import 'mixins/settings';
+@import 'mixins/objects.grid';
+@import 'mixins/utilities.alignment';
+
+.hs-modal[role='dialog'] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: $modal-z-index;
+  display: block;
+  width: $modal-width;
+  overflow: hidden;
+  background-color: $modal-background-color;
+  border: $modal-border;
+  border-radius: $modal-border-radius;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+
+  > .hs-card {
+    background-color: transparent;
+    box-shadow: none;
+
+    .hs-card__body {
+      position: relative;
+    }
+  }
+
+  &.hs-modal--ghost {
+    color: $modal-ghost-color;
+    background-color: $modal-ghost-background-color;
+
+    .hs-heading {
+      color: $modal-ghost-heading-color;
+    }
+  }
+
+  &.hs-modal--full {
+    top: 1em;
+    left: 1em;
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+    transform: none;
+
+    .hs-card__body {
+      position: absolute;
+      top: 3.5em;
+      bottom: 4em;
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .hs-card__footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+
+  &.hs-modal--visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.hs-button--close {
+  top: $spacing-small;
+}

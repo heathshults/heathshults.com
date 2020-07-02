@@ -148,16 +148,17 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].built.css'
     }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      filename: path.resolve(__dirname, 'www/index.html'),
-      template: 'src/index.ejs'
-      // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
-    }),
-    new HtmlWebpackPlugin({
-      filename: path.resolve(__dirname, './www/index-allcode.html'),
-      template: 'src/index-allcode.ejs',
-    }),
+    new HtmlWebpackPlugin(),
+    // new HtmlWebpackPlugin({
+    //   inject: false,
+    //   filename: path.resolve(__dirname, 'www/index.html'),
+    //   template: 'src/index.ejs'
+    //   // minify: { removeComments: true, collapseWhitespace: true, removeAttributeQuotes: true }
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: path.resolve(__dirname, './www/index-allcode.html'),
+    //   template: 'src/index-allcode.ejs',
+    // }),
     // copy assets and manifest.json
     
     new CopyPlugin({

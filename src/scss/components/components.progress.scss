@@ -1,0 +1,51 @@
+@import 'mixins/components.progress';
+
+.hs-progress {
+  display: block;
+  overflow: hidden;
+  color: $progress-bar-color;
+  text-align: center;
+  background-color: $progress-background-color;
+  border: $progress-border;
+  border-radius: $progress-border-radius;
+
+  &.hs-progress--rounded {
+    border-radius: $progress-rounded-border-radius;
+  }
+
+  .hs-progress__bar[role='progressbar'] {
+    @include progress--color;
+    display: block;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 0;
+
+    &::after {
+      color: transparent !important;
+      content: '-';
+    }
+
+    &.hs-progress__bar--brand {
+      @include progress--color($progress-bar-brand-background-color, $progress-bar-brand-color);
+    }
+
+    &.hs-progress__bar--info {
+      @include progress--color($progress-bar-info-background-color, $progress-bar-info-color);
+    }
+
+    &.hs-progress__bar--warning {
+      @include progress--color($progress-bar-warning-background-color, $progress-bar-warning-color);
+    }
+
+    &.hs-progress__bar--success {
+      @include progress--color($progress-bar-success-background-color, $progress-bar-success-color);
+    }
+
+    &.hs-progress__bar--error {
+      @include progress--color($progress-bar-error-background-color, $progress-bar-error-color);
+    }
+  }
+}

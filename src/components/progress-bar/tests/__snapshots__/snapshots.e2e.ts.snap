@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`progress renders basic progress bar 1`] = `"<hs-progress percentage=\\"5\\" class=\\"hydrated\\"><div class=\\"hs-progress\\">5%</div></hs-progress>"`;
+
+exports[`progress renders rounded ends correctly 1`] = `"<hs-progress size=\\"large\\" type=\\"success\\" percentage=\\"25\\" rounded=\\"\\" class=\\"hydrated\\"><div class=\\"hs-progress hs-progress--rounded u-large\\">25%</div></hs-progress>"`;
+
+exports[`progress renders size correctly 1`] = `"<hs-progress size=\\"small\\" percentage=\\"15\\" class=\\"hydrated\\"><div class=\\"hs-progress u-small\\">15%</div></hs-progress>"`;
+
+exports[`progress renders type correctly 1`] = `"<hs-progress size=\\"medium\\" type=\\"info\\" percentage=\\"20\\" class=\\"hydrated\\"><div class=\\"hs-progress u-medium\\">20%</div></hs-progress>"`;

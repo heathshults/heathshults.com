@@ -1,0 +1,82 @@
+@import 'mixins/components.buttons';
+
+.hs-button {
+  @include button;
+
+  &.hs-button--close {
+    @include button-color(transparent, inherit);
+
+    position: absolute;
+    right: $spacing-small;
+    padding: 0;
+    font-weight: $button-close-font-weight;
+    font-size: $button-close-font-size;
+    line-height: 1;
+    outline: 0;
+  }
+
+  &.hs-button--block {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &.hs-button--rounded {
+    border-radius: $button-rounded-border-radius;
+  }
+
+  &.hs-button--brand {
+    @include button-color($button-brand-background-color, $button-brand-color);
+  }
+
+  &.hs-button--info {
+    @include button-color($button-info-background-color, $button-info-color);
+  }
+
+  &.hs-button--warning {
+    @include button-color($button-warning-background-color, $button-warning-color);
+  }
+
+  &.hs-button--success {
+    @include button-color($button-success-background-color, $button-success-color);
+  }
+
+  &.hs-button--error {
+    @include button-color($button-error-background-color, $button-error-color);
+  }
+
+  &.hs-button--ghost {
+    @include button-ghost;
+  }
+
+  &.hs-button--ghost-brand {
+    @include button-ghost($button-ghost-brand-color, $button-ghost-brand-hover-color);
+  }
+
+  &.hs-button--ghost-info {
+    @include button-ghost($button-ghost-info-color, $button-ghost-info-hover-color);
+  }
+
+  &.hs-button--ghost-warning {
+    @include button-ghost($button-ghost-warning-color, $button-ghost-warning-hover-color);
+  }
+
+  &.hs-button--ghost-success {
+    @include button-ghost($button-ghost-success-color, $button-ghost-success-hover-color);
+  }
+
+  &.hs-button--nude {
+    @include button-nude;
+  }
+}
+
+.hs-button--ghost-error {
+  @include button-ghost($button-ghost-error-color, $button-ghost-error-hover-color);
+}
+
+.hs-button__icon-left {
+  padding-right: $button-icon-left-padding;
+}
+
+.hs-button__icon-right {
+  padding-left: $button-icon-right-padding;
+}

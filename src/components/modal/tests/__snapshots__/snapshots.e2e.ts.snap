@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modal renders renders as open 1`] = `"<hs-modal open=\\"\\" class=\\"hydrated\\"><div aria-hidden=\\"\\" class=\\"hs-overlay hs-overlay--fullpage hs-overlay--visible\\"></div><div role=\\"dialog\\" class=\\"hs-modal hs-modal--visible\\">default</div></hs-modal>"`;
+
+exports[`modal renders renders correctly with no props 1`] = `"<hs-modal class=\\"hydrated\\"><div aria-hidden=\\"\\" class=\\"hs-overlay hs-overlay--fullpage\\"></div><div role=\\"dialog\\" class=\\"hs-modal\\">default</div></hs-modal>"`;
+
+exports[`modal renders renders dismissible button and overlay 1`] = `"<hs-modal open=\\"\\" dismissible=\\"\\" class=\\"hydrated\\"><div aria-hidden=\\"\\" class=\\"hs-overlay hs-overlay--fullpage hs-overlay--visible\\"></div><div role=\\"dialog\\" class=\\"hs-modal hs-modal--visible\\"><button type=\\"button\\" class=\\"hs-button hs-button--close\\">×</button>default</div></hs-modal>"`;

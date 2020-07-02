@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`alert renders correct type 1`] = `"<hs-alert type=\\"brand\\" class=\\"hydrated\\"><div role=\\"alert\\" hidden=\\"\\" class=\\"hs-alert hs-alert--brand u-display-none\\">test this!</div></hs-alert>"`;
+
+exports[`alert renders without parameters 1`] = `"<hs-alert class=\\"hydrated\\"><div role=\\"alert\\" hidden=\\"\\" class=\\"hs-alert u-display-none\\">test this!</div></hs-alert>"`;

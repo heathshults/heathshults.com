@@ -6,17 +6,23 @@
   "author": "Heath Shults",
   "license": "MIT",
   "scripts": {
-    "gdev": "node_modules/.bin/gulp dev",
-    "start-webpack": "npm run devServer",
-    "copy": "gulp copy_dev",
-    "devServer": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --watch",
-    "build-webpack": "node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors",
-    "build": "node_modules/.bin/gulp build",
-    "start": "node_modules/.bin/gulp setup_develop && npm run sass",
-    "watchers": "node_modules/.bin/gulp watchers",
+    "gulp:dev": "node_modules/.bin/gulp dev",
+    "gulp:setup_develop": "node_modules/.bin/gulp setup_develop",
+    "gulp:copy": "gulp copy_dev",
+    "gulp:build": "node_modules/.bin/gulp build",
+    "gulp:watch": "node_modules/.bin/gulp watchers",
+    "webpack:develop": "npm run devServer",
+    "webpack:devServer": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --watch",
+    "webpack:build": "node_modules/.bin/webpack --config webpack.customServer.js --mode development --display-error-details --colors",
     "xpress": "node -r esm index.js",
     "babelify": "browserify -d -e src/js/index.js -t [ babelify --comments false ]",
-    "sass": "sass src/scss/HeathStyle.scss www/HeathStyle.built.css --watch && sass src/scss/theme-dark-mode.scss www/theme-dark-mode.built.css --watch "
+    "sass:compile": "sass src/scss/HeathStyle.scss www/HeathStyle.built.css && sass src/scss/theme-dark-mode.scss www/theme-dark-mode.built.css --watch ",
+    "comp:build": "stencil build --docs",
+    "comp:serve": "stencil build --dev --watch --serve",
+    "comp:test": "stencil test --spec --e2e",
+    "comp:test:watch": "stencil test --spec --e2e --watchAll",
+    "comp:generate": "stencil generate",
+    "start": "npm-run-all -p gulp:setup_develop sass:compile"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -111,7 +117,7 @@
     "url-loader": "^4.1.0",
     "vanilla-require": "^1.0.2",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-nano": "^1.0.0",
     "webpack-plugin-serve": "^0.12.1"
@@ -121,6 +127,9 @@
     "url": "https://github.com/heathshults/heathshults.com.git"
   },
   "dependencies": {
+    "@blaze/atoms": "^11.0.3",
+    "@blaze/css": "^9.2.0",
+    "@blaze/molecules": "^1.2.1",
     "blueimp-file-upload": "^10.3.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6-alpha.6",

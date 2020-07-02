@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`counter renders a default empty counter 1`] = `"<hs-counter class=\\"hydrated\\"><div class=\\"hs-counter\\"><span class=\\"hs-counter__prefix\\"></span><span class=\\"hs-counter__amount\\"></span><span class=\\"hs-counter__suffix\\"></span></div></hs-counter>"`;

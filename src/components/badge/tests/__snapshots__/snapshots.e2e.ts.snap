@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`badge renders appends the color modifier class 1`] = `"<hs-badge type=\\"brand\\" class=\\"hydrated\\"><span class=\\"hs-badge hs-badge--brand\\">brand</span></hs-badge>"`;
+
+exports[`badge renders handles boolean ghost and boolean rounded 1`] = `"<hs-badge ghost=\\"\\" rounded=\\"\\" class=\\"hydrated\\"><span class=\\"hs-badge hs-badge--rounded hs-badge--ghost\\">default</span></hs-badge>"`;
+
+exports[`badge renders handles boolean rounded attribute 1`] = `"<hs-badge rounded=\\"\\" class=\\"hydrated\\"><span class=\\"hs-badge hs-badge--rounded\\">default</span></hs-badge>"`;
+
+exports[`badge renders handles both boolean rounded attribute and type 1`] = `"<hs-badge rounded=\\"\\" type=\\"brand\\" class=\\"hydrated\\"><span class=\\"hs-badge hs-badge--brand hs-badge--rounded\\">brand</span></hs-badge>"`;
+
+exports[`badge renders renders correctly with no props 1`] = `"<hs-badge class=\\"hydrated\\"><span class=\\"hs-badge\\">default</span></hs-badge>"`;
+
+exports[`badge renders supports all the modifiers 1`] = `"<hs-badge ghost=\\"\\" rounded=\\"\\" type=\\"brand\\" class=\\"hydrated\\"><span class=\\"hs-badge hs-badge--brand hs-badge--rounded hs-badge--ghost\\">brand</span></hs-badge>"`;
