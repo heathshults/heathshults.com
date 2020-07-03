@@ -180,7 +180,7 @@ exports.js = js
 
 function sassy(done) {
   try {
-    exec(`sass --sourcemap ${srcPath}/scss/heathscript.scss ${wwwPath}/css/heathscript.css`, (error, stdout, stderr) => {
+    exec(`sass ${srcPath}/scss/heathscript.scss ${wwwPath}/css/heathscript.css`, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -192,7 +192,7 @@ function sassy(done) {
   }
 
   try{
-    exec('sass --sourcemap src/scss/theme-dark-mode.scss www/css/theme-dark-mode.css', (error, stdout, stderr) => {
+    exec('sass src/scss/theme-dark-mode.scss www/css/theme-dark-mode.css', (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
