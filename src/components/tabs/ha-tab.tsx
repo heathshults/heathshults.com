@@ -1,7 +1,9 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'hs-tab',
+  styleUrl: '../../scss/components/components.tabs.scss',
+  shadow: true
 })
 export class Tab {
   @Prop()
@@ -17,10 +19,10 @@ export class Tab {
   type: string;
 
   render() {
-    const typeClass = this.type ? `c-tabs__tab--${this.type}` : '';
+    const typeClass = this.type ? `hs-tabs__tab--${this.type}` : '';
 
     return (
-      <div role="tabpanel" hidden={!this.open} class={`c-tabs__tab ${typeClass}`}>
+      <div role="tabpanel" hidden={!this.open} class={`hs-tabs__tab ${typeClass}`}>
         <slot />
       </div>
     );

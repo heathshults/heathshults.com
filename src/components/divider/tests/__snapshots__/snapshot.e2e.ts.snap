@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`divider renders content 1`] = `"<hs-divider class=\\"hydrated\\"><div class=\\"hs-divider hs-divider--solid\\"><span class=\\"hs-divider__content\\">Hello, world</span></div></hs-divider>"`;
-
-exports[`divider renders correctly 1`] = `"<hs-divider class=\\"hydrated\\"><div class=\\"hs-divider hs-divider--solid\\"></div></hs-divider>"`;

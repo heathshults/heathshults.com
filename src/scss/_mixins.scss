@@ -61,10 +61,8 @@
 // Background Cover Mixin
 
 @mixin background-cover {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
+  -hs-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;
 }
 
 // Font Mixins

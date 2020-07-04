@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/build/hs-atoms.css">
+  <title>Blaze Atoms</title>
+
+  <script src="/build/hs-atoms.js"></script>
+
+  <style>
+    body {
+      font-size: 16px;
+    }
+
+    .o-demo {
+      padding: 2em 0;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+</head>
+
+<body class="o-container hs-container--large u-text">
+  <div class="o-demo">
+    <hs-back-to-top>
+      <button class="hs-button hs-button--brand">
+        <i class="fas fa-angle-double-up"></i> Back to top
+      </button>
+    </hs-back-to-top>
+    <hs-tabs type="info">
+      <hs-tab header="Accordions" open>
+        <hs-accordion>
+          <hs-accordion-pane open header="Click me">
+            This is an expanded accordion
+          </hs-accordion-pane>
+          <hs-accordion-pane header="Click me also">
+            To toggle other panes
+          </hs-accordion-pane>
+          <hs-accordion-pane header="Click me also">
+            To toggle other panes
+          </hs-accordion-pane>
+          <hs-accordion-pane header="Click me also">
+            To toggle other panes
+          </hs-accordion-pane>
+        </hs-accordion>
+      </hs-tab>
+
+      <hs-tab header="Addresses">
+        <hs-address>
+          <hs-address-heading>
+            Address header
+          </hs-address-heading>
+          Address line one
+          <br /> Address line two
+          <br /> Postcode
+        </hs-address>
+      </hs-tab>
+
+      <hs-tab header="Alert">
+        <hs-alert open dismissible>Default</hs-alert>
+        <hs-alert open dismissible type="brand">Brand</hs-alert>
+        <hs-alert open dismissible type="info">Info</hs-alert>
+        <hs-alert open dismissible type="warning">Warning</hs-alert>
+        <hs-alert open dismissible type="success">Success</hs-alert>
+        <hs-alert open type="error">Error (also not dismissible)</hs-alert>
+      </hs-tab>
+
+      <hs-tab header="Alerts">
+        <hs-alerts position="bottomright">
+          <hs-alert open dismissible type="brand">This is a toast</hs-alert>
+          <hs-alert open dismissible type="info">Just for your information</hs-alert>
+          <hs-alert open type="warning">You can't get rid of this warning</hs-alert>
+          <hs-alert open dismissible type="success">Yay things worked</hs-alert>
+          <hs-alert open dismissible type="error">Argh there is an error</hs-alert>
+        </hs-alerts>
+      </hs-tab>
+
+      <hs-tab header="Autocomplete">
+        <hs-autocomplete placeholder="Enter some text..."></hs-autocomplete>
+        <script>
+          var ac = document.querySelector('blaze-autocomplete');
+          var i = 0;
+          ac.addEventListener('search', function (e) {
+            var items = [];
+            if (e.detail) {
+              for (var i = 0; i < 5; i++) {
+                var text = e.detail
+                for (var j = 0; j < i; j++) {
+                  text += e.detail;
+                }
+                items.push({ id: i, text });
+              }
+            }
+            ac.setItems(items);
+          });
+          ac.addEventListener('onSelect', function (e) {
+            console.log(e.detail);
+          });
+        </script>
+        <input type="text">
+      </hs-tab>
+
+      <hs-tab header="Avatars">
+        <hs-avatar size="super" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar size="xlarge" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar size="large" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar size="small" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar size="xsmall" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <br />
+        <hs-avatar text="GP" size="super"></hs-avatar>
+        <hs-avatar text="GP" size="xlarge"></hs-avatar>
+        <hs-avatar text="GP" size="large"></hs-avatar>
+        <hs-avatar text="GP"></hs-avatar>
+        <hs-avatar text="GP" size="small"></hs-avatar>
+        <hs-avatar text="GP" size="xsmall"></hs-avatar>
+        <br />
+        <hs-avatar text="GP" size="super" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar text="GP" size="xlarge" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar text="GP" size="large" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar text="GP" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar text="GP" size="small" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <hs-avatar text="GP" size="xsmall" alt="placeholder" src="https://unsplash.it/200/?image=823"></hs-avatar>
+        <br />
+        <hs-avatar size="super" alt="placeholder" src="https://unsplash.it/200/?image=823" alt-2="placeholder" src-2="https://unsplash.it/200/?image=815"></hs-avatar>
+        <hs-avatar size="xlarge" alt="placeholder" src="https://unsplash.it/200/?image=823" alt-2="placeholder"
+          src-2="https://unsplash.it/200/?image=815"></hs-avatar>
+        <hs-avatar size="large" alt="placeholder" src="https://unsplash.it/200/?image=823" alt-2="placeholder" src-2="https://unsplash.it/200/?image=815"></hs-avatar>
+        <hs-avatar alt="placeholder" src="https://unsplash.it/200/?image=823" alt-2="placeholder" src-2="https://unsplash.it/200/?image=815"></hs-avatar>
+        <hs-avatar size="small" alt="placeholder" src="https://unsplash.it/200/?image=823" alt-2="placeholder" src-2="https://unsplash.it/200/?image=815"></hs-avatar>
+        <hs-avatar size="xsmall" alt="placeholder" src="https://unsplash.it/200/?image=823" alt-2="placeholder"
+          src-2="https://unsplash.it/200/?image=815"></hs-avatar>
+      </hs-tab>
+
+      <hs-tab header="Badges">
+        <hs-badge>default</hs-badge>
+        <hs-badge type="brand">brand</hs-badge>
+        <hs-badge type="info">info</hs-badge>
+        <hs-badge type="warning">warning</hs-badge>
+        <hs-badge type="success">success</hs-badge>
+        <hs-badge type="error">error</hs-badge>
+        <br />
+        <br />
+        <hs-badge rounded>default</hs-badge>
+        <hs-badge rounded type="brand">brand</hs-badge>
+        <hs-badge rounded type="info">info</hs-badge>
+        <hs-badge rounded type="warning">warning</hs-badge>
+        <hs-badge rounded type="success">success</hs-badge>
+        <hs-badge rounded type="error">error</hs-badge>
+        <br />
+        <br />
+        <hs-badge ghost rounded>default</hs-badge>
+        <hs-badge ghost rounded type="brand">brand</hs-badge>
+        <hs-badge ghost rounded type="info">info</hs-badge>
+        <hs-badge ghost rounded type="warning">warning</hs-badge>
+        <hs-badge ghost rounded type="success">success</hs-badge>
+        <hs-badge ghost rounded type="error">error</hs-badge>
+      </hs-tab>
+
+      <hs-tab header="Buttons">
+        <h3>Different Tags</h3>
+        <hs-button>Action</hs-button>
+        <hs-button tag="input" value="Action">Action</hs-button>
+        <hs-button tag="a" href="#">Action</hs-button>
+
+        <h3>Colors</h3>
+        <hs-button type="brand">Action</hs-button>
+        <hs-button type="info">Action</hs-button>
+        <hs-button type="warning">Action</hs-button>
+        <hs-button type="success">Action</hs-button>
+        <hs-button type="error">Action</hs-button>
+
+        <h3>Sizes</h3>
+        <hs-button size="xsmall">Action</hs-button>
+        <hs-button size="small">Action</hs-button>
+        <hs-button size="medium">Action</hs-button>
+        <hs-button size="large">Action</hs-button>
+        <hs-button size="xlarge">Action</hs-button>
+        <hs-button size="super">Action</hs-button>
+
+        <h3>Full Width</h3>
+        <hs-button full>Action</hs-button>
+
+        <h3>Ghost</h3>
+        <hs-button ghost type="brand">Action</hs-button>
+        <hs-button ghost type="info">Action</hs-button>
+        <hs-button ghost type="warning">Action</hs-button>
+        <hs-button ghost type="success">Action</hs-button>
+        <hs-button ghost type="error">Action</hs-button>
+
+        <h3>Rounded</h3>
+        <hs-button rounded type="brand">Action</hs-button>
+        <hs-button rounded type="info">Action</hs-button>
+        <hs-button rounded type="warning">Action</hs-button>
+        <hs-button rounded type="success">Action</hs-button>
+        <hs-button rounded type="error">Action</hs-button>
+        <hs-button ghost rounded type="brand">Action</hs-button>
+        <hs-button ghost rounded type="info">Action</hs-button>
+        <hs-button ghost rounded type="warning">Action</hs-button>
+        <hs-button ghost rounded type="success">Action</hs-button>
+        <hs-button ghost rounded type="error">Action</hs-button>
+
+        <h3>Active</h3>
+        <hs-button active type="info">Action</hs-button>
+        <hs-button type="info">Action</hs-button>
+      </hs-tab>
+
+      <hs-tab header="Breadcrumbs">
+        <hs-breadcrumbs aria-label="Breadcrumbs">
+          <hs-breadcrumb href="/">Home</hs-breadcrumb>
+          <hs-breadcrumb href="/">Cars</hs-breadcrumb>
+          <hs-breadcrumb href="/">Electric</hs-breadcrumb>
+          <hs-breadcrumb href="/">Tesla</hs-breadcrumb>
+          <hs-breadcrumb>P100d</hs-breadcrumb>
+        </hs-breadcrumbs>
+      </hs-tab>
+
+      <hs-tab header="Calendars">
+        <hs-calendar date="August 23, 2018"></hs-calendar>
+        <br>
+        <hs-calendar multiple date="December 17, 1995 03:24:00"></hs-calendar>
+        <br>
+        <hs-calendar type="info"></hs-calendar>
+        <br>
+        <hs-calendar type="success"></hs-calendar>
+        <br>
+        <hs-calendar type="warning"></hs-calendar>
+        <br>
+        <hs-calendar type="error"></hs-calendar>
+      </hs-tab>
+
+      <hs-tab header="Camera">
+        <hs-camera></hs-camera>
+      </hs-tab>
+
+      <hs-tab header="Cards">
+        <hs-card>
+          <hs-image></hs-image>
+          <hs-card-header>
+            <h2 class="hs-heading u-xlarge">
+              Heading
+              <div class="hs-heading__sub">Sub-heading</div>
+            </h2>
+          </hs-card-header>
+          <hs-card-body>
+            <p class="hs-paragraph">
+              Lorem ipsum dolor sit amet, feugiat corpora ex eam. Inciderint eloquentiam sea et.
+            </p>
+          </hs-card-body>
+          <hs-card-footer>
+            <div class="hs-input-group">
+              <button class="hs-button hs-button--block hs-button--brand">Button</button>
+              <button class="hs-button hs-button--block hs-button--info">Button</button>
+            </div>
+          </hs-card-footer>
+        </hs-card>
+        <h2 class="hs-heading">Media card</h2>
+        <hs-card>
+          <hs-media-item>
+            <hs-media-image src="https://placehold.it/80"></hs-media-image>
+            <hs-media-body>
+              <h2 class="hs-heading">Title
+                <span class="hs-heading__sub">Subtitle</span>
+              </h2>
+              <p class="hs-paragraph">
+                Lorem ipsum dolor sit amet, feugiat corpora ex eam. Lorem ipsum dolor sit amet, feugiat corpora ex eam.
+                Lorem ipsum dolor
+                sit amet, feugiat corpora ex eam.
+              </p>
+            </hs-media-body>
+          </hs-media-item>
+        </hs-card>
+      </hs-tab>
+
+      <hs-tab header="Counter">
+        <hs-counter class="u-super" start="120" value="0" duration="10" decimals="2" delay="2000">
+          <span slot="prefix">&pound;</span>
+          <span slot="suffix" class="u-text--quiet u-xsmall"> in current account</span>
+        </hs-counter>
+        <div id="counter-complete"></div>
+        <script>
+          document.querySelector('blaze-counter').addEventListener('complete', () => {
+            document.getElementById('counter-complete').innerHTML = 'Transfer complete...';
+          });
+        </script>
+      </hs-tab>
+
+      <hs-tab header="Dividers">
+        <hs-divider></hs-divider>
+        <hs-divider>Hello, world</hs-divider>
+        <hs-divider type="dashed">Divided by dashes</hs-divider>
+        <hs-divider type="dotted">Dots!</hs-divider>
+      </hs-tab>
+
+      <hs-tab header="Drawers">
+        <button type="button" onclick="javascript:showModal('#drawer')" class="hs-button hs-button--brand">Open drawer</button>
+        <br />
+        <br />
+        <button type="button" onclick="javascript:showModal('#drawer-dismissible')" class="hs-button hs-button--brand">Open
+          drawer
+        </button>
+
+        <hs-drawer id="drawer">
+          <hs-card>
+            <hs-card-header>
+              <h2 class="hs-heading u-xlarge">
+                Heading
+                <div class="hs-heading__sub">Sub-heading</div>
+              </h2>
+            </hs-card-header>
+            <hs-card-body>
+              <p class="hs-paragraph">
+                Lorem ipsum dolor sit amet, feugiat corpora ex eam. Inciderint eloquentiam sea et.
+              </p>
+            </hs-card-body>
+            <hs-card-footer>
+              <div class="hs-input-group">
+                <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#drawer')">Close</button>
+                <button class="hs-button hs-button--block hs-button--info">Button</button>
+              </div>
+            </hs-card-footer>
+          </hs-card>
+        </hs-drawer>
+
+        <hs-drawer dismissible open position="right" id="drawer-dismissible">
+          <hs-card>
+            <hs-image></hs-image>
+            <hs-card-header>
+              <h2 class="hs-heading u-xlarge">
+                Heading
+                <div class="hs-heading__sub">Sub-heading</div>
+              </h2>
+            </hs-card-header>
+            <hs-card-body>
+              <p class="hs-paragraph">
+                Lorem ipsum dolor sit amet, feugiat corpora ex eam. Inciderint eloquentiam sea et.
+              </p>
+            </hs-card-body>
+            <hs-card-footer>
+              <div class="hs-input-group">
+                <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#drawer-dismissible')">Close</button>
+                <button class="hs-button hs-button--block hs-button--info">Button</button>
+              </div>
+            </hs-card-footer>
+          </hs-card>
+        </hs-drawer>
+      </hs-tab>
+
+      <hs-tab header="Images">
+        <hs-image src="https://www.blazeui.com/assets/img/blaze.png"></hs-image>
+        <hs-image></hs-image>
+        <hs-image photo="WLUHO9A_xik" width="1024" height="768"></hs-image>
+        <hs-image user="erondu"></hs-image>
+        <hs-image user="erondu" width="1024" height="768"></hs-image>
+        <hs-image user="erondu" width="1024" height="768" filter="plane"></hs-image>
+        <hs-image user="martinjphoto" width="1024" height="768" filter="mountains" likes></hs-image>
+      </hs-tab>
+
+      <hs-tab header="Modals">
+        <button type="button" onclick="javascript:showModal('#modal-dismissible')" class="hs-button hs-button--brand">Open
+          dismissible Modal</button>
+        <hs-modal dismissible id="modal-dismissible">
+          <hs-card>
+            <hs-card-header>
+              <h2 class="hs-heading u-xlarge">
+                Heading
+                <div class="hs-heading__sub">Sub-heading</div>
+              </h2>
+            </hs-card-header>
+            <hs-card-body>
+              <p class="hs-paragraph">
+                Lorem ipsum dolor sit amet, feugiat corpora ex eam. Inciderint eloquentiam sea et.
+              </p>
+            </hs-card-body>
+            <hs-card-footer>
+              <div class="hs-input-group">
+                <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#modal-dismissible')">Close</button>
+                <button class="hs-button hs-button--block hs-button--info">Button</button>
+              </div>
+            </hs-card-footer>
+          </hs-card>
+        </hs-modal>
+      </hs-tab>
+
+      <hs-tab header="Pagination">
+        <hs-pagination pages="15"></hs-pagination>
+      </hs-tab>
+
+      <hs-tab header="Panels">
+        <hs-panel height="150">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget neque mollis, sodales nulla ut, porta
+            urna. Vivamus
+            gravida placerat metus ac malesuada. Donec convallis dolor in ex tristique, luctus tempus dui sollicitudin.
+            Suspendisse
+            enim urna, auctor ac viverra eget, venenatis non massa. Nulla magna est, ullamcorper eget feugiat ac,
+            condimentum
+            id diam. Cras tempor felis sit amet facilisis sollicitudin. Ut posuere malesuada feugiat. Morbi ex ex,
+            pretium
+            sit amet dolor eget, malesuada gravida est. Nullam id malesuada massa, ac facilisis elit. Nullam ut metus
+            sit
+            amet nisi finibus mollis. Praesent augue felis, feugiat placerat aliquam ut, ultrices sit amet dolor.
+            Phasellus
+            porta ligula nec sapien tempus commodo. Pellentesque hendrerit aliquet ornare. Integer nec tempus quam,
+            vitae
+            bibendum lectus. Suspendisse vestibulum pulvinar neque at scelerisque. Suspendisse accumsan dolor vitae
+            nulla
+            commodo, volutpat commodo nunc bibendum.
+          </p>
+          <p>
+            Integer ut magna ac velit pharetra molestie. Nullam vestibulum est mattis, posuere augue id, suscipit
+            nulla. Praesent vestibulum
+            sapien hendrerit, sodales elit et, eleifend est. Aliquam ornare iaculis diam, commodo iaculis erat
+            consectetur
+            a. Quisque ut porta est. Mauris vulputate est eu auctor vestibulum. Vestibulum velit libero, cursus vel
+            viverra
+            et, fringilla et est. Donec nibh ipsum, finibus eu urna sed, ullamcorper sollicitudin velit. Vestibulum
+            ante
+            ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et malesuada fames ac ante
+            ipsum
+            primis in faucibus. Nulla sit amet bibendum nunc, ut iaculis tellus. Aenean ornare velit vel venenatis
+            scelerisque.
+            Ut ac elit enim. Nulla nec congue ex. Cras nulla ligula, porttitor non pulvinar fermentum, hendrerit sit
+            amet
+            neque.
+          </p>
+          <p>
+            Etiam pulvinar suscipit metus, at lobortis erat eleifend id. Suspendisse scelerisque sem et orci rhoncus
+            posuere. Vivamus
+            faucibus mi et feugiat elementum. Nulla tempor, ligula non ullamcorper condimentum, lorem lorem sagittis
+            tortor,
+            at interdum tellus nunc elementum purus. Nulla tincidunt augue nibh. Ut et augue a ex pretium sodales.
+            Pellentesque
+            quam neque, tincidunt eu fringilla nec, volutpat eget risus.
+          </p>
+          <p>
+            Fusce sit amet arcu sodales, vestibulum quam vel, lacinia mauris. Mauris ut placerat libero, eu gravida
+            lectus. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit. Ut lacinia felis vel nibh blandit, in vestibulum nisl congue.
+            Integer
+            ac dignissim nisi, id vehicula tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per
+            inceptos himenaeos. In posuere vitae metus in fermentum.
+          </p>
+          <p>
+            Quisque venenatis ut eros at posuere. Etiam pulvinar, ipsum eu interdum vestibulum, arcu urna dapibus
+            lorem, quis volutpat
+            tortor enim sed leo. Donec dapibus lacinia purus. Nullam ac porttitor ligula. Fusce aliquet mauris tortor,
+            id
+            euismod neque tempus vel. Fusce luctus ex et volutpat pretium. Nulla varius justo quis aliquam accumsan.
+          </p>
+        </hs-panel>
+      </hs-tab>
+
+      <hs-tab header="Progress bars">
+        <hs-progress size="xsmall" rounded>
+          <hs-progress-bar value="10">
+            10%
+          </hs-progress-bar>
+        </hs-progress>
+        <br />
+        <hs-progress size="small">
+          <hs-progress-bar value="20" type="brand">
+            20%
+          </hs-progress-bar>
+        </hs-progress>
+        <br />
+        <hs-progress size="medium" rounded>
+          <hs-progress-bar value="35" type="info">
+            35%
+          </hs-progress-bar>
+        </hs-progress>
+        <br />
+        <hs-progress size="large">
+          <hs-progress-bar value="65" type="warning">
+            65%
+          </hs-progress-bar>
+        </hs-progress>
+        <br />
+        <hs-progress size="xlarge" rounded>
+          <hs-progress-bar value="80" type="success">
+            80%
+          </hs-progress-bar>
+        </hs-progress>
+        <br />
+        <hs-progress size="super">
+          <hs-progress-bar value="100" type="error">
+            100%
+          </hs-progress-bar>
+        </hs-progress>
+        <br />
+
+        <hs-progress>
+          <hs-progress-bar value="25">
+            25%
+          </hs-progress-bar>
+          <hs-progress-bar value="10" type="brand">
+            10%
+          </hs-progress-bar>
+          <hs-progress-bar value="20" type="info">
+            20%
+          </hs-progress-bar>
+          <hs-progress-bar value="15" type="warning">
+            15%
+          </hs-progress-bar>
+          <hs-progress-bar value="15" type="success">
+            15%
+          </hs-progress-bar>
+          <hs-progress-bar value="10" type="error">
+            10%
+          </hs-progress-bar>
+        </hs-progress>
+      </hs-tab>
+
+      <hs-tab header="Sticky">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget neque mollis, sodales nulla ut, porta
+          urna. Vivamus
+          gravida placerat metus ac malesuada. Donec convallis dolor in ex tristique, luctus tempus dui sollicitudin.
+          Suspendisse
+          enim urna, auctor ac viverra eget, venenatis non massa. Nulla magna est, ullamcorper eget feugiat ac,
+          condimentum
+          id diam. Cras tempor felis sit amet facilisis sollicitudin. Ut posuere malesuada feugiat. Morbi ex ex,
+          pretium
+          sit amet dolor eget, malesuada gravida est. Nullam id malesuada massa, ac facilisis elit. Nullam ut metus
+          sit
+          amet nisi finibus mollis. Praesent augue felis, feugiat placerat aliquam ut, ultrices sit amet dolor.
+          Phasellus
+          porta ligula nec sapien tempus commodo. Pellentesque hendrerit aliquet ornare. Integer nec tempus quam,
+          vitae
+          bibendum lectus. Suspendisse vestibulum pulvinar neque at scelerisque. Suspendisse accumsan dolor vitae
+          nulla
+          commodo, volutpat commodo nunc bibendum.
+        </p>
+        <hs-sticky top="20">
+          <hs-button type="info">Sticky button</hs-button>
+        </hs-sticky>
+        <p>
+          Integer ut magna ac velit pharetra molestie. Nullam vestibulum est mattis, posuere augue id, suscipit
+          nulla. Praesent vestibulum
+          sapien hendrerit, sodales elit et, eleifend est. Aliquam ornare iaculis diam, commodo iaculis erat
+          consectetur
+          a. Quisque ut porta est. Mauris vulputate est eu auctor vestibulum. Vestibulum velit libero, cursus vel
+          viverra
+          et, fringilla et est. Donec nibh ipsum, finibus eu urna sed, ullamcorper sollicitudin velit. Vestibulum
+          ante
+          ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et malesuada fames ac ante
+          ipsum
+          primis in faucibus. Nulla sit amet bibendum nunc, ut iaculis tellus. Aenean ornare velit vel venenatis
+          scelerisque.
+          Ut ac elit enim. Nulla nec congue ex. Cras nulla ligula, porttitor non pulvinar fermentum, hendrerit sit
+          amet
+          neque.
+        </p>
+        <p>
+          Etiam pulvinar suscipit metus, at lobortis erat eleifend id. Suspendisse scelerisque sem et orci rhoncus
+          posuere. Vivamus
+          faucibus mi et feugiat elementum. Nulla tempor, ligula non ullamcorper condimentum, lorem lorem sagittis
+          tortor,
+          at interdum tellus nunc elementum purus. Nulla tincidunt augue nibh. Ut et augue a ex pretium sodales.
+          Pellentesque
+          quam neque, tincidunt eu fringilla nec, volutpat eget risus.
+        </p>
+        <p>
+          Fusce sit amet arcu sodales, vestibulum quam vel, lacinia mauris. Mauris ut placerat libero, eu gravida
+          lectus. Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Ut lacinia felis vel nibh blandit, in vestibulum nisl congue.
+          Integer
+          ac dignissim nisi, id vehicula tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+          per
+          inceptos himenaeos. In posuere vitae metus in fermentum.
+        </p>
+        <p>
+          Quisque venenatis ut eros at posuere. Etiam pulvinar, ipsum eu interdum vestibulum, arcu urna dapibus
+          lorem, quis volutpat
+          tortor enim sed leo. Donec dapibus lacinia purus. Nullam ac porttitor ligula. Fusce aliquet mauris tortor,
+          id
+          euismod neque tempus vel. Fusce luctus ex et volutpat pretium. Nulla varius justo quis aliquam accumsan.
+        </p>
+        <p>
+          More Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget neque mollis, sodales nulla ut,
+          porta
+          urna. Vivamus
+          gravida placerat metus ac malesuada. Donec convallis dolor in ex tristique, luctus tempus dui sollicitudin.
+          Suspendisse
+          enim urna, auctor ac viverra eget, venenatis non massa. Nulla magna est, ullamcorper eget feugiat ac,
+          condimentum
+          id diam. Cras tempor felis sit amet facilisis sollicitudin. Ut posuere malesuada feugiat. Morbi ex ex,
+          pretium
+          sit amet dolor eget, malesuada gravida est. Nullam id malesuada massa, ac facilisis elit. Nullam ut metus
+          sit
+          amet nisi finibus mollis. Praesent augue felis, feugiat placerat aliquam ut, ultrices sit amet dolor.
+          Phasellus
+          porta ligula nec sapien tempus commodo. Pellentesque hendrerit aliquet ornare. Integer nec tempus quam,
+          vitae
+          bibendum lectus. Suspendisse vestibulum pulvinar neque at scelerisque. Suspendisse accumsan dolor vitae
+          nulla
+          commodo, volutpat commodo nunc bibendum.
+        </p>
+      </hs-tab>
+
+      <hs-tab header="Timelines">
+        <hs-timeline alternate loading>
+          <hs-timeline-item left>
+            Nothing
+          </hs-timeline-item>
+          <hs-timeline-item type="brand">
+            Big bang!
+          </hs-timeline-item>
+          <hs-timeline-item type="info" left>
+            Galaxies for everywhere
+          </hs-timeline-item>
+          <hs-timeline-item type="warning">
+            Solar systems form
+          </hs-timeline-item>
+          <hs-timeline-item type="success" left>
+            Earth appears
+          </hs-timeline-item>
+          <hs-timeline-item type="error">
+            Human infestation occurs!
+          </hs-timeline-item>
+          <hs-timeline-item left last>
+            All this has happened before, and will happen again
+          </hs-timeline-item>
+          <hs-timeline-item loading>
+            Evolution &lt;loading>...
+          </hs-timeline-item>
+        </hs-timeline>
+      </hs-tab>
+
+      <hs-tab header="Toggles">
+        <hs-toggle>Default</hs-toggle>
+        <hs-toggle toggled type="brand">Brand</hs-toggle>
+        <hs-toggle type="info">Info</hs-toggle>
+        <hs-toggle toggled type="warning">Warning</hs-toggle>
+        <hs-toggle type="success">Success</hs-toggle>
+        <hs-toggle toggled type="error">Error</hs-toggle>
+      </hs-tab>
+    </hs-tabs>
+  </div>
+  <script>
+    function showModal(modal) {
+      document.querySelector(modal).show();
+    }
+
+    function closeModal(modal) {
+      document.querySelector(modal).close();
+    }
+  </script>
+</body>
+
+</html>

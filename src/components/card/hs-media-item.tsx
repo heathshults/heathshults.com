@@ -1,7 +1,9 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'hs-media-item',
+  styleUrl: '../../scss/components/components.cards.scss',
+  shadow: true
 })
 export class HSMediaItem {
   render() {

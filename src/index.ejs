@@ -122,9 +122,15 @@
     <header class="d-flex align-items-stretch hs-header">
       <div class="container">
         <div class="hs-intro-text">
-          <div class="hs-intro-lead-in">Welcome To My Playground!</div>
-          <div class="hs-intro-heading">It's Nice To Meet You</div>
-          <a href="#skills" class="js-page-scroll btn btn-xl ">How I Play</a>
+          <p style="height: 65px;">
+            <span class="hs-intro-lead-in">Welcome To My Playground!</span>
+          </p>
+          <p style="height: 95px;">
+            <span class="hs-intro-heading">It's Nice To Meet You</span>
+          </p>
+          <p>
+            <a href="#skills" class="js-page-scroll btn btn-xl ">How I Play</a>
+          </p>
           <div id="m"></div>
           <script></script>
         </div>
@@ -620,13 +626,29 @@
         </div>
         <div class="row mt-5">
           <div class="col-md-4 col-sm-6 hs-portfolio-item">
+            <hs-card>
+              <hs-card-img-header img-path="/img/portfolio/BlueStarSports/BSS-card-heading.jpg"></hs-card-img-header>
+              <hs-card-body>
+                <p class="hs-paragraph">
+                  Lorem ipsum dolor sit amet, feugiat corpora ex eam. Inciderint eloquentiam sea et.
+                </p>
+              </hs-card-body>
+              <hs-card-footer>
+                <div class="hs-input-group">
+                  <button class="hs-button hs-button--block hs-button--brand">Button</button>
+                  <button class="hs-button hs-button--block hs-button--info">Button</button>
+                </div>
+              </hs-card-footer>
+            </hs-card>
+          </div>
+          <div class="col-md-4 col-sm-6 hs-portfolio-item">
             <a href="#portfolioModal1" class="hs-portfolio-link hs-modal" data-target="portfolioModal01">
               <div class="hs-portfolio-hover">
                 <div class="hs-portfolio-hover-content">
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+              <img src="/img/portfolio/bowlopolis/bolopolis-headerImg.png" class="img-responsive" alt="">
             </a>
             <div class="hs-portfolio-caption">
               <h4>Youth Program, Website &amp;Game</h4>
@@ -880,11 +902,12 @@
 
       var theModals = document.querySelectorAll('.hs-modal')
       document.addEventListener('click', modalHandler, false)
-      function modalHandler(e) {
-        e.preventDefault();
-        var modalTrigger = e.target //button
+      function modalHandler(event) {
+        event.preventDefault();
+        var modalTrigger = event.target //button
         if (!modalTrigger.classList.contains('hs-modal')){
-          return
+          // return
+          console.log('didnt see a modal class on the trigger')
         } else {
           var targetModalID = theModalTrigger.getAttribute('data-target') // modal to opens' ID
           var targetModal = document.getElementById(targetModalID)
@@ -895,16 +918,16 @@
         }
       }
 
-      theModals.forEach(modal => {
-        modal.addEventListener('click', (e)=>{
-          var targetModalID =  modal.getAttribute('data-target')
-          console.log(targetModalID)
-          console.log(document.getElementById(targetModalID))
-          var tmodal = document.getElementById(targetModalID)
-          tmodal.classList.toggle('is-open')
-          // .classList.toggleClass('is-open')
-        })
-      })
+      // theModals.forEach(modal => {
+      //   modal.addEventListener('click', (e)=>{
+      //     var targetModalID =  modal.getAttribute('data-target')
+      //     console.log(targetModalID)
+      //     console.log(document.getElementById(targetModalID))
+      //     var tmodal = document.getElementById(targetModalID)
+      //     tmodal.classList.toggle('is-open')
+      //     // .classList.toggleClass('is-open')
+      //   })
+      // })
 
       // ====== NAV JS ====== //
       // $('a.js-page-scroll').bind('click', function(event) {

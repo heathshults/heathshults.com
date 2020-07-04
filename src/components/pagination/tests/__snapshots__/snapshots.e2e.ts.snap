@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`pagination renders renders the correct buttons when pages set 1`] = `"<hs-pagination pages=\\"15\\" class=\\"hydrated\\"><nav class=\\"hs-pagination\\"><button class=\\"hs-pagination__control\\" disabled=\\"\\">‹</button><div class=\\"hs-pagination__pages\\"><button class=\\"hs-pagination__control\\" aria-current=\\"\\">1</button><button class=\\"hs-pagination__control\\">2</button></div><button class=\\"hs-pagination__control\\">›</button></nav></hs-pagination>"`;
-
-exports[`pagination renders should work without parameters 1`] = `"<hs-pagination class=\\"hydrated\\"><nav class=\\"hs-pagination\\"><button class=\\"hs-pagination__control\\" disabled=\\"\\">‹</button><div class=\\"hs-pagination__pages\\"><button class=\\"hs-pagination__control\\" aria-current=\\"\\">1</button></div><button class=\\"hs-pagination__control\\" disabled=\\"\\">›</button></nav></hs-pagination>"`;

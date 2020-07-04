@@ -160,6 +160,7 @@ function ejsit(done) {
     .pipe(rename({
       extname: ".html"
     }))
+    .pipe(debug({ title: 'compiled html: ' }))
     .pipe(dest(wwwPath, { overwrite: true, cwd: process.cwd() })), done()
 }
 exports.ejsit = ejsit
@@ -199,7 +200,7 @@ function sassy(done) {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
-      }
+      } else {console.log('Sass compiled: HeathStyle.built.css')}
     })
   }
   catch(e) {
@@ -211,7 +212,7 @@ function sassy(done) {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
-      }
+      } else {console.log('Sass compiled: theme-dark-mode.built.css')}
     })
   }
   catch(e) {
@@ -222,15 +223,17 @@ function sassy(done) {
 exports.sassy = sassy
 
 function copy_img(cb) {
-  src('src/**/*.{jpg,png,gif,svg,mp4}')
-    .pipe(plumber())
-    .pipe(changed('www/'))
+  src([
+    'src/img/**/*.{jpg,png,gif,svg,mp4}',
+    'src/content/**/*.{jpg,png,gif,svg,mp4,html}',
+    'src/**/*.{jpg,png,gif,svg,mp4}'
+  ])
+    // .pipe(plumber())
+    // .pipe(changed('www/'))
     .pipe(dest('www/'), {
       overwrite: true
     })
-    .pipe(debug({
-      title: 'copied'
-    })), cb();
+    .pipe(debug({ title: 'copied' })), cb();
   // if (typeof cb === 'function') {
   //     cb(null, file);
   //     called = true;
@@ -241,9 +244,11 @@ exports.copy_img = copy_img
 // Copy vendor libraries from /node_modules into /vendor
 function copy_vendor(cb) {
   src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
+  .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/vendor/bootstrap`))
 
   src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
+  .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/vendor/jquery`))
 
   src([
@@ -255,18 +260,23 @@ function copy_vendor(cb) {
       '!node_modules/font-awesome/*.json'
     ])
     .pipe(plumber())
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/vendor/font-awesome`))
 
     src([`${srcPath}/lib`])
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/lib`), {overwrite: true})
 
     src([`${srcPath}/content/**/*`])
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/content`), {overwrite: true})
 
     src([`${srcPath}/components/**/*.{html,css,js,json,php}`])
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/content`), {overwrite: true})
     
     src([`${srcPath}/vendor/**/*`])
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/vendor`), {overwrite: true}), cb()
   //   var file = ''
   // if (typeof cb === 'function') {
@@ -279,7 +289,7 @@ exports.copy_vendor = copy_vendor
 function copy_html(cb) {
   src(`${srcPath}/layouts/**/*.html`)
   .pipe(plumber())
-    .pipe(changed(wwwPath))
+    // .pipe(changed(wwwPath))
     .pipe(dest(wwwPath), {
       overwrite: true
     })
@@ -297,6 +307,7 @@ function copy_css(cb) {
   src(`${srcPath}/css/**/*.{css,map}`)
     .pipe(plumber())
     //.pipe(changed(`${wwwPath}/css`))
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/css`)), cb()
   // () => { 
   //   let file = ''
@@ -312,6 +323,7 @@ function copy_js(cb) {
   src(`${srcPath}/js/**/*.{js,json,map}`)
     .pipe(plumber())
     //.pipe(changed(`${wwwPath}/js`))
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest(`${wwwPath}/js`)), cb()
   // () => { 
   //   let file = ''
@@ -324,10 +336,17 @@ function copy_js(cb) {
 exports.copy_js = copy_js
 
 function copy_components(cb) {
-  src('src/components/**/*.{js,json,html,css}')
-    .pipe(plumber())
+  exec('stencil build', (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    } else {console.log('Components built. Stencil will now chill...')}
+  }), cb()
+  // src('src/components/**/*.{js,json,html,css}')
+  //   .pipe(plumber())
      //.pipe(changed(`${wwwPath}/js`))
-    .pipe(dest('www/')), cb()
+    //  .pipe(debug({ title: 'copied' }))
+    // .pipe(dest('www/')), cb()
     // () => {
     //   let file = ''
     //   if (typeof cb === 'function') {
@@ -341,6 +360,7 @@ exports.copy_components = copy_components
 function copy_assets(cb) {
   src('src/**/*.${assets}')
     .pipe(plumber())
+    .pipe(debug({ title: 'copied' }))
     .pipe(dest('www/')),
     () => {
       let file = ''
@@ -454,5 +474,5 @@ exports.watchers2 = watchers2
 // // Run everything
 // exports.build = series(sassy, minify_css, minify_js, copy_vendors)
 
-exports.setup_develop = series(copy_all, watchers, connect_sync)
+exports.setup_develop = series(sassy, jsify, copy_js, copy_vendor, ejsit, copy_img, watchers, connect_sync)
 exports.build = series(copy_all)
