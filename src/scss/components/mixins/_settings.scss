@@ -179,10 +179,10 @@ $border-radius-rounded: 30em !default;
 //
 // Box shadows
 //
-$box-shadow: 0 0 1px rgba(map-get($colors, black), 0.6) !default;
-$box-shadow-high: 0 0 1px rgba(map-get($colors, black), 0.6), 0 5px 10px -3px rgba(map-get($colors, black), 0.4) !default;
-$box-shadow-higher: 0 0 1px rgba(map-get($colors, black), 0.6), 0 10px 25px -4px rgba(map-get($colors, black), 0.4) !default;
-$box-shadow-highest: 0 0 1px rgba(map-get($colors, black), 0.6), 0 20px 55px -8px rgba(map-get($colors, black), 0.4) !default;
+$box-shadow: 0 4px 6px 2px rgba(map-get($colors, black), 0.3) !default;
+$box-shadow-high: 0 4px 1px rgba(map-get($colors, black), 0.3), 0 5px 10px -3px rgba(map-get($colors, black), 0.4) !default;
+$box-shadow-higher: 0 4px 1px rgba(map-get($colors, black), 0.3), 0 10px 25px -4px rgba(map-get($colors, black), 0.4) !default;
+$box-shadow-highest: 0 4px 1px rgba(map-get($colors, black), 0.3), 0 20px 55px -8px rgba(map-get($colors, black), 0.4) !default;
 
 //
 // Focus styles
@@ -456,7 +456,7 @@ $card-margin: $spacing-small 0 0 0 !default;
 $card-padding: 0 !default;
 $card-width: 100% !default;
 $card-max-height: 280px !default;
-$card-background-color: transparent !default;
+$card-background-color: white !default;
 $card-z-index: $z-over-content !default;
 $card-box-shadow: $box-shadow !default;
 $card-border-radius: $border-radius !default;
@@ -501,6 +501,8 @@ $card-item-control-color: map-get($colors, $text-color) !default;
 $card-item-accordion-control-background-color: map-get($colors, grey-background) !default;
 $card-item-accordion-control-color: map-get($colors, $text-color) !default;
 
+$card-img-header-width: 100% !default;
+$card-img-header-height: 260px !default;
 //
 // Dividers
 //

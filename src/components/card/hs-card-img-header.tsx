@@ -10,12 +10,14 @@ export class HSCardImgHeader {
 
   @Prop() cardHeader: any;
   @Prop() overlay: any;
-  @Prop() imgElem: HTMLImageElement;
+  @Prop() imgElem: any;
   @Prop() imgPath: string;
+  @Prop() imgWidth?: string = '100%';
+  @Prop() imgHeight?: string = '260px';
 
   componentWillLoad() {
     this.cardHeader = document.getElementById('imgHeader');
-    this.imgElem = this.cardHeader.querySelector('img');
+    this.imgElem = this.cardHeader.getElementById('#hsHeaderImg');
     this.imgElem.src = this.imgPath;
     this.overlay = this.cardHeader.querySelector('#imgHeaderOverlay');
     this.overlay.addEventListener('click', ev => {
@@ -30,7 +32,7 @@ export class HSCardImgHeader {
     return (
       <header id="imgHeader" class="hs-card__img-header">
         <a id="imgHeaderOverlay" class="hs-img-header__overlay" href="#">
-          <img src={this.imgPath} class="hs-img-header-img" alt="header image" width="100%" />
+          <img id="hsHeaderImg" src={this.imgPath} class="hs-img-header-img" alt="header image" width={this.imgWidth} height={this.imgHeight} />
         </a>
       </header>
     );

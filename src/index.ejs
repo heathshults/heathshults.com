@@ -10,20 +10,22 @@
     <meta name="author" content="">
 
     <title>Heath Shults - Web Developer+</title>
+    <script type="module" src="/build/heathenscript-ui-components.esm.js"></script>
+    <script nomodule src="/build/heathenscript-ui-components.js"></script>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nothing+You+Could+Do&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
     
     <!-- Theme CSS -->
-    <link href="HeathStyle.built.css" rel="stylesheet">
-    <link disabled id="darkmode" rel="stylesheet" href="theme-dark-mode.built.css">
+    <link href="/assets/css/HeathStyle.built.css" rel="stylesheet">
+    <link disabled id="darkmode" rel="stylesheet" href="/assets/css/theme-dark-mode.built.css">
     
     <script>
        var lsGetMode = localStorage.getItem('dark_mode')
@@ -152,10 +154,10 @@
         <div class="row text-center hs-card__row mt-4">
           <!-- CARD 01 -->
           <div class="col-md-4">
-            <div class="hs-card shadow-glow-lg">
+            <div class="hs-card ">
               <div class="hs-card__header">
                 <div class="hs-logo-row">
-                  <img src="img/logos/dmHTML5_Logo_512.png" alt="HTML5" class="hs-dev-logo" height="65" /> <img src="img/logos/markdown-150.png" alt="Markdown" class="hs-dev-logo" height="45" /> 
+                  <img src="/assets/img/logos/dmHTML5_Logo_512.png" alt="HTML5" class="hs-dev-logo" height="65" /> <img src="/assets/img/logos/markdown-150.png" alt="Markdown" class="hs-dev-logo" height="45" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
               </div>
@@ -180,7 +182,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         HTML5 100%
                       </div>
                     </div>
@@ -209,7 +211,7 @@
                     </div>
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Advanced" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
                         Markdown
                       </div>
                     </div>
@@ -239,10 +241,10 @@
           </div>
           <!-- CARD 02 -->
           <div class="col-md-4">
-            <div class="hs-card shadow-glow-lg">
+            <div class="hs-card ">
               <div class="hs-card__header">
                 <div class="hs-logo-row">
-                  <img src="img/logos/dm-css3-150.png" alt="CSS3" class="hs-dev-logo" height="65" /> <img src="img/logos/Sass-150.png" alt="SASS" class="hs-dev-logo "height="55" /> 
+                  <img src="/assets/img/logos/dm-css3-150.png" alt="CSS3" class="hs-dev-logo" height="65" /> <img src="/assets/img/logos/Sass-150.png" alt="SASS" class="hs-dev-logo "height="55" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">CSS • Modular SCSS</h4> -->
               </div>
@@ -267,7 +269,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         CSS 100%
                       </div>
                     </div>
@@ -296,7 +298,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         SCSS 100%
                       </div>
                     </div>
@@ -329,10 +331,10 @@
           </div> -->
           <!-- CARD 03 -->
           <div class="col-md-4">
-            <div class="hs-card shadow-glow-lg">
+            <div class="hs-card ">
               <div class="hs-card__header">
                 <div class="hs-logo-row">
-                  <img src="img/logos/js-logo.jpg" alt="javascript" class="hs-dev-logo mr-2" height="65" /> <img src="img/logos/dm-AngularJS_logo.svg.png" alt="AngularJS" class="hs-dev-logo " /> 
+                  <img src="/assets/img/logos/js-logo.jpg" alt="javascript" class="hs-dev-logo mr-2" height="65" /> <img src="/assets/img/logos/dm-AngularJS_logo.svg.png" alt="AngularJS" class="hs-dev-logo " /> 
                 </div>
                 <!-- <h4 class="service-heading lead">JavaScript • Angular</h4> -->
               </div>
@@ -357,7 +359,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Advanced" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                         JAVASCRIPT
                       </div>
                     </div>
@@ -386,7 +388,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Almost Advanced" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Almost Advanced" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         ANGULAR
                       </div>
                     </div>
@@ -403,10 +405,10 @@
         <div class="row mt-4">
           <!-- CARD 04 -->
           <div class="col-md-4">
-            <div class="hs-card shadow-glow-lg">
+            <div class="hs-card ">
               <div class="hs-card__header">
                 <div class="hs-logo-row">
-                  <img src="img/logos/dm-Node.png" alt="Node JS" class="hs-dev-logo mr-4" height="75" />  <img src="img/logos/php.png" alt="PHP" class="hs-dev-logo" height="65" /> 
+                  <img src="/assets/img/logos/dm-Node.png" alt="Node JS" class="hs-dev-logo mr-4" height="75" />  <img src="/assets/img/logos/php.png" alt="PHP" class="hs-dev-logo" height="65" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
               </div>
@@ -431,7 +433,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Advanced" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                         Node JS
                       </div>
                     </div>
@@ -458,7 +460,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Good" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Good" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                         PHP
                       </div>
                     </div>
@@ -473,10 +475,10 @@
           </div> <!-- /.col-md-4 -->
           <!-- CARD 05 -->
           <div class="col-md-4">
-            <div class="hs-card shadow-glow-lg">
+            <div class="hs-card ">
               <div class="hs-card__header">
                 <div class="hs-logo-row">
-                  <img src="img/logos/dm-mysql.png" alt="mySQL" class="hs-dev-logo mr-4" height="96" />  <img src="img/logos/dm-sql-server.png" alt="SQL Server" class="hs-dev-logo ml-4" height="76" style="margin-top: -30px;" /> 
+                  <img src="/assets/img/logos/dm-mysql.png" alt="mySQL" class="hs-dev-logo mr-4" height="96" />  <img src="/assets/img/logos/dm-sql-server.png" alt="SQL Server" class="hs-dev-logo ml-4" height="76" style="margin-top: -30px;" /> 
                 </div>
                 <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
               </div>
@@ -501,7 +503,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Good" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Good" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
                         MySQL
                       </div>
                     </div>
@@ -528,7 +530,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Good" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Good" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                         SQL Server
                       </div>
                     </div>
@@ -542,10 +544,10 @@
           </div>
           <!-- CARD 06 -->
           <div class="col-md-4">
-            <div class="hs-card shadow-glow-lg">
+            <div class="hs-card ">
               <div class="hs-card__header">
                 <div class="hs-logo-row">
-                  <img src="img/logos/dm-webpack-javascript-logo.png" alt="webpack" class="hs-dev-logo mr-4" height="49" /> <img src="img/logos/gulp.svg" alt="gulp" class="hs-dev-logo "height="55" /> 
+                  <img src="/assets/img/logos/dm-webpack-javascript-logo.png" alt="webpack" class="hs-dev-logo mr-4" height="49" /> <img src="/assets/img/logos/gulp.svg" alt="gulp" class="hs-dev-logo "height="55" /> 
                 </div>
               </div>
               <div class="hs-card__body">
@@ -569,7 +571,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Near Advanced"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Near Advanced"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         Webpack
                       </div>
                     </div>
@@ -598,7 +600,7 @@
                     </div><!-- </div> -->
                     
                     <div class="hs-ranking">
-                      <div class="hs-ranking-bar bg-lime-green" role="hs-rankingbar" data-level="Advanced" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
                         Gulp.js 100%
                       </div>
                     </div>
@@ -627,16 +629,26 @@
         <div class="row mt-5">
           <div class="col-md-4 col-sm-6 hs-portfolio-item">
             <hs-card>
-              <hs-card-img-header img-path="/img/portfolio/BlueStarSports/BSS-card-heading.jpg"></hs-card-img-header>
+              <hs-card-img-header img-width="100%" img-height="260px" img-path="/assets/img/portfolio/BlueStarSports/BSS-card-heading.jpg"></hs-card-img-header>
               <hs-card-body>
+                <h3 class="hs-body-h3">USA Football Database Project</h3>
                 <p class="hs-paragraph">
-                  Lorem ipsum dolor sit amet, feugiat corpora ex eam. Inciderint eloquentiam sea et.
+                  Working at Blue Star Sports (now called StackSports) as a UI Engineer. 
+                  This was a little league football player tracking system. The NFL can track and observe promising players with 
+                  good stats.
                 </p>
               </hs-card-body>
-              <hs-card-footer>
-                <div class="hs-input-group">
-                  <button class="hs-button hs-button--block hs-button--brand">Button</button>
-                  <button class="hs-button hs-button--block hs-button--info">Button</button>
+              <hs-card-footer color-tone="dark">
+                <div class="row m-0 d-flex w-100">
+                <div class="col-md-12 p-5 hs-logo-row--footer">
+                  <img src="assets/img/logos/HTML5_Logo_512.png" class="hs-skill-logo" width="35" alt="HTML5 logo" />
+                  <img src="assets/img/logos/Sass-150.png" class="hs-skill-logo" width="35" alt="sass logo" />
+                  <img src="assets/img/logos/css3-150.png" class="hs-skill-logo" width="35" alt="css logo" />
+                  <img src="assets/img/logos/js-logo.jpg" class="hs-skill-logo" width="35" alt="javascript logo" />
+                  <img src="assets/img/logos/Node.js_logo.svg.png" class="hs-skill-logo" width="35" alt="node js logo" />
+                  <img src="assets/img/logos/gulp-150.png" class="hs-skill-logo" width="35" alt="gulp logo" />
+                  <img src="assets/img/logos/Git-logo.svg_.png" class="hs-skill-logo" width="35" alt="git logo" />
+                </div>
                 </div>
               </hs-card-footer>
             </hs-card>
@@ -648,7 +660,7 @@
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img src="/img/portfolio/bowlopolis/bolopolis-headerImg.png" class="img-responsive" alt="">
+              <img src="/assets/img/portfolio/bowlopolis/bolopolis-headerImg.png" class="img-responsive" alt="">
             </a>
             <div class="hs-portfolio-caption">
               <h4>Youth Program, Website &amp;Game</h4>
@@ -662,7 +674,7 @@
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+              <img src="/assets/img/portfolio/startup-framework.png" class="img-responsive" alt="">
             </a>
             <div class="hs-portfolio-caption">
               <h4>International Bowl Expo</h4>
@@ -688,7 +700,7 @@
             <ul class="timeline">
               <li>
                 <div class="timeline-image">
-                  <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                  <img class="img-circle img-responsive" src="/assets/img/about/1.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
@@ -821,7 +833,7 @@
                   <h2>Bowlopolis</h2>
                   <p class="item-intro hs-text-muted">Web design/development & game development for retention/frequency.
                   </p>
-                  <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
+                  <img class="img-responsive img-centered" src="/assets/img/portfolio/bowlopolis/bowlopolis.png" alt="">
                   <p>This website was designed with youth bowlers in mind. It's goal was to convert youth into long time
                     bowlers</p>
 
@@ -851,7 +863,7 @@
                 <div class="hs-modal-body">
                   <h2>Bowl Expo</h2>
                   <p class="item-intro hs-text-muted">Website design/development.</p>
-                  <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
+                  <img class="img-responsive img-centered" src="/assets/img/portfolio/startup-framework-preview.png" alt="">
                   <p><a href="http://bowlexpo.com">Bowl Expo</a> is a website for the largest event in the bowling
                     industy. All major manufacturers, leaders and proprietors come here each year to learn more on how
                     to make their business profit as well as networking with like minded peers.</p>
@@ -866,6 +878,15 @@
       </div>
     </div>
 
+    <script>
+      function showModal(modal) {
+        document.querySelector(modal).show();
+      }
+  
+      function closeModal(modal) {
+        document.querySelector(modal).close();
+      }
+    </script>
 
     <!-- jQuery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
@@ -881,7 +902,7 @@
     <!-- <script src="js/contact_me.js"></script> -->
 
     <!-- Theme JavaScript -->
-    <script src="HeathScript.built.js" type="module"></script>
+    <script src="/assets/js/HeathScript.built.js" type="module"></script>
     <!-- <script src="hScript.bundle.js"></script> -->
    
     <script>

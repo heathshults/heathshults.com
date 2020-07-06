@@ -2,4 +2,8 @@ node_modules
 src/DevBox
 www
 **/*/_notes
+.dist
+.backup
+.sass-cache
+.vscode
 

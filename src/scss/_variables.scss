@@ -44,6 +44,7 @@ $blueGray-medium:           #507386 !default;
 $blueGray-dark:             #0f161d !default;
 $blueGray-very-dark:        #181a1b !default; // #181a1b
 $blueGray-darker:           #0c0f11 !default;
+$blueGray-darker--alpha75:  rgba(12, 15, 17, 0.75) !default;
 $blueGray-light:            #2d373c !default;
 $baige-medium:              #a79e8b !default;
 $text-onDark:               map-get($theme-dark-mode-colors, text-onDark) !default;

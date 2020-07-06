@@ -4,7 +4,7 @@ import { postcss } from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
 
 export const config: Config = {
-  namespace: 'blueprint-ui-components',
+  namespace: 'heathenscript-ui-components',
   outputTargets: [
     {
       type: 'dist',
@@ -16,13 +16,13 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null // disable service workers
-    },
-    {
-      type: 'www',
-      copy: [
-        { src: 'components/demo.html' }
-      ]
-    }
+    }//,
+    // {
+    //   type: 'www',
+    //   copy: [
+    //     { src: 'components/demo.html' }
+    //   ]
+    // }
   ],
   plugins: [
     sass(),

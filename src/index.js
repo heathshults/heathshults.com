@@ -1,2 +1,2 @@
-require('./js/HeathScript.js')
-require('./js/show-more-fadebar')
+require('./assets/js/HeathScript.js')
+require('./assets/js/show-more-fadebar')

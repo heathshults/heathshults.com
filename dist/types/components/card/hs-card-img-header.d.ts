@@ -2,8 +2,10 @@ export declare class HSCardImgHeader {
     imgHeaderElem: HTMLDivElement;
     cardHeader: any;
     overlay: any;
-    imgElem: HTMLImageElement;
+    imgElem: any;
     imgPath: string;
+    imgWidth?: string;
+    imgHeight?: string;
     componentWillLoad(): void;
     render(): any;
 }

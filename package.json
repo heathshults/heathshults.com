@@ -21,6 +21,7 @@
     "gulp:setup_develop": "node_modules/.bin/gulp setup_develop",
     "gulp:copy": "gulp copy_dev",
     "gulp:build": "node_modules/.bin/gulp build",
+    "gulp:serve": "node_modules/.bin/gulp connect_sync",
     "gulp:watch": "node_modules/.bin/gulp watchers",
     "webpack:develop": "npm run devServer",
     "webpack:devServer": "node_modules/.bin/webpack-dev-server --config webpack.customServer.js --mode development --colors --watch",
@@ -33,7 +34,7 @@
     "comp:test": "node_modules/.bin/stencil test --spec --e2e",
     "comp:test:watch": "node_modules/.bin/stencil test --spec --e2e --watchAll",
     "comp:generate": "node_modules/.bin/stencil generate",
-    "start": "npm-run-all -s  gulp:setup_develop sass:compile"
+    "start": "npm-run-all -s  gulp:setup_develop gulp:watch"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

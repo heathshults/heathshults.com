@@ -34,15 +34,15 @@ var wwwPath =  path.resolve('./', 'www')
 
 let p = {
   
-  src_js: `${srcPath}/js`,
+  src_js: `${srcPath}/assets/js`,
   src_scss: `${srcPath}/scss`,
   src_html: src,
-  src_img: `${srcPath}/img`,
+  src_img: `${srcPath}/assets/img`,
  
-  www_js: `${wwwPath}/js`,
-  www_css: `${wwwPath}/css`,
+  www_js: `${wwwPath}/assets/js`,
+  www_css: `${wwwPath}/assets/css`,
   www_html: wwwPath,
-  www_img: `${wwwPath}/img`
+  www_img: `${wwwPath}/assets/img`
 }
 
 let assets = '{jpg,png,gif,svg,mp4}'
@@ -154,7 +154,7 @@ let assets = '{jpg,png,gif,svg,mp4}'
 // exports.minify_js = minify_js
 
 function ejsit(done) {
-  return src(`${srcPath}/index.ejs`, null, null)
+  return src(`${srcPath}/*.ejs`, null, null)
     .pipe(plumber())
     .pipe(ejs().on('error', log))
     .pipe(rename({
@@ -173,7 +173,7 @@ function jsify(cb){
   .require('./src/index.js', { entry: true })
   .bundle()
   .on("error", function (err) { console.log("Error: " + err.message); })
-  .pipe(fs.createWriteStream("www/HeathScript.built.js"))
+  .pipe(fs.createWriteStream("www/assets/js/HeathScript.built.js"))
   , cb();
 }
 exports.jsify = jsify
@@ -196,7 +196,7 @@ exports.jsify = jsify
 
 function sassy(done) {
   try {
-    exec(`sass ${srcPath}/scss/HeathStyle.scss ${wwwPath}/HeathStyle.built.css`, (error, stdout, stderr) => {
+    exec(`sass ${srcPath}/scss/HeathStyle.scss ${wwwPath}/assets/css/HeathStyle.built.css`, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -208,7 +208,7 @@ function sassy(done) {
   }
 
   try{
-    exec(`sass ${srcPath}/scss/theme-dark-mode.scss ${wwwPath}/css/theme-dark-mode.built.css`, (error, stdout, stderr) => {
+    exec(`sass ${srcPath}/scss/theme-dark-mode.scss ${wwwPath}/assets/css/theme-dark-mode.built.css`, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -224,13 +224,13 @@ exports.sassy = sassy
 
 function copy_img(cb) {
   src([
-    'src/img/**/*.{jpg,png,gif,svg,mp4}',
-    'src/content/**/*.{jpg,png,gif,svg,mp4,html}',
-    'src/**/*.{jpg,png,gif,svg,mp4}'
+    'src/assets/**/*.{jpg,png,gif,svg,mp4}'
+    // 'src/content/**/*.{jpg,png,gif,svg,mp4,html}',
+    // 'src/**/*.{jpg,png,gif,svg,mp4}'
   ])
     // .pipe(plumber())
     // .pipe(changed('www/'))
-    .pipe(dest('www/'), {
+    .pipe(dest('www/assets/img'), {
       overwrite: true
     })
     .pipe(debug({ title: 'copied' })), cb();
@@ -243,13 +243,13 @@ exports.copy_img = copy_img
 
 // Copy vendor libraries from /node_modules into /vendor
 function copy_vendor(cb) {
-  src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
+  src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*'])
   .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/vendor/bootstrap`))
+    .pipe(dest(`${wwwPath}/assets/vendor/bootstrap`))
 
   src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
   .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/vendor/jquery`))
+    .pipe(dest(`${wwwPath}/assets/vendor/jquery`))
 
   src([
       'node_modules/font-awesome/**',
@@ -261,23 +261,23 @@ function copy_vendor(cb) {
     ])
     .pipe(plumber())
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/vendor/font-awesome`))
+    .pipe(dest(`${wwwPath}/assets/vendor/font-awesome`))
 
-    src([`${srcPath}/lib`])
+    src([`${srcPath}/assets/lib`])
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/lib`), {overwrite: true})
+    .pipe(dest(`${wwwPath}/assets/lib`), {overwrite: true})
 
-    src([`${srcPath}/content/**/*`])
+    src([`${srcPath}/assets/content/**/*`])
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/content`), {overwrite: true})
+    .pipe(dest(`${wwwPath}/assets/content`), {overwrite: true})
 
-    src([`${srcPath}/components/**/*.{html,css,js,json,php}`])
+    src([`${srcPath}/assets/components/**/*.{html,css,js,json,php}`])
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/content`), {overwrite: true})
+    .pipe(dest(`${wwwPath}/assets/content`), {overwrite: true})
     
-    src([`${srcPath}/vendor/**/*`])
+    src([`${srcPath}/assets/vendor/**/*`])
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/vendor`), {overwrite: true}), cb()
+    .pipe(dest(`${wwwPath}/assets/vendor`), {overwrite: true}), cb()
   //   var file = ''
   // if (typeof cb === 'function') {
   //   cb(null, file);
@@ -304,11 +304,11 @@ function copy_html(cb) {
 exports.copy_html = copy_html
 
 function copy_css(cb) {
-  src(`${srcPath}/css/**/*.{css,map}`)
+  src(`${srcPath}/assets/css/**/*.{css,map}`)
     .pipe(plumber())
     //.pipe(changed(`${wwwPath}/css`))
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/css`)), cb()
+    .pipe(dest(`${wwwPath}/assets/css`)), cb()
   // () => { 
   //   let file = ''
   //   if (typeof cb === 'function') {
@@ -320,11 +320,11 @@ function copy_css(cb) {
 exports.copy_css = copy_css
 
 function copy_js(cb) {
-  src(`${srcPath}/js/**/*.{js,json,map}`)
+  src(`${srcPath}/assets/js/**/*.{js,json,map}`)
     .pipe(plumber())
     //.pipe(changed(`${wwwPath}/js`))
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest(`${wwwPath}/js`)), cb()
+    .pipe(dest(`${wwwPath}/assets/js`)), cb()
   // () => { 
   //   let file = ''
   //   if (typeof cb === 'function') {
@@ -358,10 +358,10 @@ function copy_components(cb) {
 exports.copy_components = copy_components
 
 function copy_assets(cb) {
-  src('src/**/*.${assets}')
+  src('src/assets/**/*.${assets}')
     .pipe(plumber())
     .pipe(debug({ title: 'copied' }))
-    .pipe(dest('www/')),
+    .pipe(dest('www/assets/')),
     () => {
       let file = ''
       if (typeof cb === 'function') {
@@ -379,13 +379,33 @@ function copy_dev (cb) { series(copy_css, copy_js, copy_vendor, copy_img ), cb()
 exports.copy_dev = copy_dev
 
 function watchers(cb) {
+  connect.server({base: 'www/'}, function (){
+    browserSync({
+      proxy: '127.0.0.1:8000',
+      open: 'localhost',
+      watch: true,
+      injectChanges: true,
+      files: [
+        {
+            match: ['www/**/*.php', 'www/**/*.css', 'www/**/*.{jpg,png,gif,svg}', 'www/**/*.js', 'www/**/*.html'],
+            fn: function (event, file) {
+               browserSync.reload()
+            },
+            options: {
+                ignored: ['package.json']
+            }
+        }
+    ]
+    });
+  }), cb()
   // eslint-disable-next-line no-sequences
   watch('src/*.ejs', ejsit), cb()
-  watch(['src/img/**/*.{jpg,png,gif,svg}', 'src/content/**/*.{jpg,png,gif,svg}'], copy_img), cb()
+  watch(['src/assets/img/**/*.{jpg,png,gif,svg}', 'src/assets/content/**/*.{jpg,png,gif,svg}'], copy_img), cb()
   watch(['src/scss/**/*.scss', 'src/components/**/*.scss'], sassy), cb()
-  watch(['src/js/*.{js,json,mjs,cjs}', '!src/js/HeathScript.js'], copy_js), cb()
-  watch(['src/js/**/*.js'], jsify), cb()
-  watch('src/components/**/*.{js,json,html,css}', copy_components), cb()
+  watch(['src/assets/**/*.css'], copy_css), cb()
+  watch(['src/assets/js/*.{js,json,mjs,cjs}', '!src/assets/js/HeathScript.js'], copy_js), cb()
+  watch(['src/assets/js/**/*.js'], jsify), cb()
+  // watch('src/components/**/*.{js,json,html,css}', copy_components), cb()
 }
 exports.watchers = watchers
 
@@ -413,12 +433,12 @@ function connect_sync(cb) {
       injectChanges: true,
       files: [
         {
-            match: ['src/**/*.php'],
+            match: ['www/**/*.php', 'www/**/*.css', 'www/**/*.{jpg,png,gif,svg}', 'www/**/*.js', 'www/**/*.html'],
             fn: function (event, file) {
                browserSync.reload()
             },
             options: {
-                ignored: ['*.scss', '*.ejs']
+                ignored: ['package.json']
             }
         }
     ]
@@ -453,13 +473,13 @@ function watchers2(cb) {
     verbose: true
   }, sassy);
   // watch('src/css/*.css', {readDelay: 500, verbose: true }, minify_css);
-  watch('src/js/*.js', {
+  watch('src/assets/js/*.js', {
     readDelay: 500,
     verbose: true
   }, copy_js);
   // Reloads the browser whenever HTML or JS files change
   watch('src/*.ejs', ejsit);
-  watch('src/**/*.{jpg,png,gif,svg,mp4}', {
+  watch('src/assets/**/*.{jpg,png,gif,svg,mp4}', {
     readDelay: 500,
     verbose: true
   }, copy_assets, browserSync.reload)
@@ -469,10 +489,10 @@ function watchers2(cb) {
   //       called = true;
   //     };
 }
-exports.watchers2 = watchers2
+exports.watchers2 = watchers2 
 
 // // Run everything
 // exports.build = series(sassy, minify_css, minify_js, copy_vendors)
 
-exports.setup_develop = series(sassy, jsify, copy_js, copy_vendor, ejsit, copy_img, watchers, connect_sync)
+exports.setup_develop = series(sassy, jsify, copy_js, copy_vendor, ejsit, copy_img, copy_css)
 exports.build = series(copy_all)

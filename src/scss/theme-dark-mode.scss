@@ -298,15 +298,11 @@ h6 {
   .navbar-custom {
     background-color: transparent;
     padding: 25px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
     transition: padding 0.3s;
     border: none;
 
     .navbar-brand {
       font-size: 2em;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
       transition: all 0.3s;
     }
 
@@ -330,7 +326,7 @@ h6 {
 }
 
 header {
-  background-image: url('../img/header-bg.jpg');
+  background-image: url('/assets/img/header-bg.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: top -150px center;
@@ -759,7 +755,7 @@ aside.clients {
 
 section#contact {
   background-color: $gray-darker;
-  background-image: url('../img/map-image.png');
+  background-image: url('/assets/img/map-image.png');
   background-position: center;
   background-repeat: no-repeat;
 
@@ -864,8 +860,6 @@ ul.social-buttons {
       line-height: 40px;
       color: white;
       outline: none;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
       transition: all 0.3s;
 
       &:hover,
@@ -894,7 +888,6 @@ ul.social-buttons {
   .modal-content {
     border-radius: 0;
     background-clip: border-box;
-    -webkit-box-shadow: none;
     box-shadow: none;
     border: none;
     min-height: 100%;
@@ -988,6 +981,10 @@ ul.social-buttons {
 ::selection {
   text-shadow: none;
   background: $theme-primary;
+}
+
+img::-moz-selection {
+  background: transparent;
 }
 
 img::selection {

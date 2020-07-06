@@ -11,13 +11,17 @@ export namespace Components {
     interface HsCardBody {
     }
     interface HsCardFooter {
+        "colorTone": string;
+        "colorToneClass": string;
     }
     interface HsCardHeader {
     }
     interface HsCardImgHeader {
         "cardHeader": any;
-        "imgElem": HTMLImageElement;
+        "imgElem": any;
+        "imgHeight"?: string;
         "imgPath": string;
+        "imgWidth"?: string;
         "overlay": any;
     }
     interface HsMediaBody {
@@ -193,13 +197,17 @@ declare namespace LocalJSX {
     interface HsCardBody {
     }
     interface HsCardFooter {
+        "colorTone"?: string;
+        "colorToneClass"?: string;
     }
     interface HsCardHeader {
     }
     interface HsCardImgHeader {
         "cardHeader"?: any;
-        "imgElem"?: HTMLImageElement;
+        "imgElem"?: any;
+        "imgHeight"?: string;
         "imgPath"?: string;
+        "imgWidth"?: string;
         "overlay"?: any;
     }
     interface HsMediaBody {
