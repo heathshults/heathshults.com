@@ -34,10 +34,10 @@ $gray-lighter:		            #dedede !default; // #dedede
 $gray-lightest:		            lighten($gray-base, 93.5%) !default; // #eee
 
 $white:                     #fff !default;
+$white_5:                   #f8f8f8 !default;
 $white_8:                   rgba(255, 255, 255, 0.08) !default;
-$white_30:                  rgba(255, 255, 255, 0.3) !default;
-$white_5:                   rgba(255, 255, 255, 0.05) !default;
 $white_10:                  rgba(255, 255, 255, 0.1) !default;
+$white_30:                  rgba(255, 255, 255, 0.3) !default;
 
 // Dark Mode Colors
 $blueGray-medium:           #507386 !default;
