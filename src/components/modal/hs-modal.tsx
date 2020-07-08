@@ -21,32 +21,51 @@ export class HSModal {
   @Prop()
   dismissible: boolean = false;
 
+  @Prop() winHeight: any = window.innerHeight;
+  @Prop() overlay: any; 
+
   @State() _isOpen: boolean = false;
 
   @Event({ eventName: 'close' }) onClose: EventEmitter;
-
   @Method() async close() {
     this._isOpen = false;
     this.onClose.emit();
+    // this.overlay.style.height = 0;
   }
+  
+  componentWillLoad() {
+    this._isOpen = this.open;
+    
+  }
+  @Method() handleOverlay() {
+    this.overlay = this.elem.shadowRoot.querySelector('#overlay') as HTMLElement;
+    this.overlay.classList.toggle('hs-modal-backdrop--visible');
+    this.overlay.style.height = `${document.body.clientHeight}`;
+  }
+  // componentDidLoad() {
+  //   this.overlay = this.elem.shadowRoot.querySelector('#overlay') as HTMLElement;
+  //   console.log(this.overlay)
+  // }
 
   @Method() async show() {
     this._isOpen = true;
+    this.handleOverlay();
+    //this.overlay = this.elem.shadowRoot.querySelector('#overlay') as HTMLElement;
+    //this.overlay.style.height = this.winHeight;
   }
 
   @Method() async isOpen() {
     return this._isOpen;
   }
 
-  componentWillLoad() {
-    this._isOpen = this.open;
-  }
+
 
   dismiss() {
     if (this.dismissible) this.close();
   }
 
   render() {
+    
     const ghostClass = this.ghost ? `hs-modal--ghost` : '';
     const fullClass = this.full ? `hs-modal--full` : '';
     const modalIsOpenClass = this._isOpen ? 'hs-modal--visible' : '';

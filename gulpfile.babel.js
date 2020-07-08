@@ -379,15 +379,21 @@ function copy_dev (cb) { series(copy_css, copy_js, copy_vendor, copy_img ), cb()
 exports.copy_dev = copy_dev
 
 function watchers(cb) {
-  connect.server({base: 'www/'}, function (){
-    browserSync({
-      proxy: '127.0.0.1:8000',
-      open: 'localhost',
-      watch: true,
-      injectChanges: true
-    });
+  // connect.server({base: 'www/'}, function (){
+    browserSync.init({
+      // proxy: '127.0.0.1:8000',
+      server: {
+        baseDir: './www',
+        open: 'true',
+        watch: true,
+        notify: false,
+        injectChanges: true
+      }
+    })
     
-  }), cb()
+  // })
+  , cb()
+
   // eslint-disable-next-line no-sequences
   watch('src/*.ejs', ejsit), cb()
   watch(['src/assets/img/**/*.{jpg,png,gif,svg}', 'src/assets/content/**/*.{jpg,png,gif,svg}'], copy_img), cb()

@@ -45,16 +45,19 @@
   }
 
   &.hs-modal--full {
-    top: 50%;
+    top: 0%;
     left: 50%;
     z-index: $modal-z-index; // 1071
-    width: 75%;
+    width: 90%;
     height: 0;
     transition: all .25s ease-out;
     transition-delay: .12s;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    &.hs-modal--full {
+      // overflow-y: scroll;
+    }
     &.hs-modal--visible {
-      height: 75vh;
+      height: 100vh;
       background-color: $blueGray-dark;
       opacity: 1;
       transition: all .25s ease-in;
@@ -62,13 +65,18 @@
 
       .hs-button--close {
         position: fixed;
-        top: $spacing-medium;
-        right: $spacing-medium;
+        top: 10px;
+        right: 10px;
         left: unset;
         z-index: 1032;
         width: 4rem;
         height: 4rem;
         font-size: 5rem;
+        color: $white;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        outline: none;
         opacity: 1;
         transition: all .25s ease-in;
       }
@@ -98,22 +106,25 @@
   }
 }
 .hs-modal-backdrop {
-  position: absolute;
-  top: -10px;
+  position: fixed;
+  top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   width: 100%;
-  height: 0px;
+  height: 100vh;
   background-color: rgba(0, 0, 0, .75);
   opacity: 0;
   transition: all .25s ease-in;
+  transition-delay: .12s;
+  &.hs-modal-backdrop--visible {
+    top: 0px;
+    z-index: 1070;
+    height: 100vh;
+    opacity: 1;
+    transition: all .25s ease-out;
+  }
 }
-.hs-modal-backdrop.hs-modal-backdrop-visible {
-  top: 0px;
-  z-index: 2000;
-  height: 100vh;
-  opacity: 1;
-  transition: all .25s ease-out;
-}
+
+
 

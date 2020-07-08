@@ -39,9 +39,12 @@ export namespace Components {
         "dismissible": boolean;
         "full": boolean;
         "ghost": boolean;
+        "handleOverlay": () => Promise<void>;
         "isOpen": () => Promise<boolean>;
         "open": boolean;
+        "overlay": any;
         "show": () => Promise<void>;
+        "winHeight": any;
     }
     interface HsProgress {
         "rounded": boolean;
@@ -229,6 +232,8 @@ declare namespace LocalJSX {
         "ghost"?: boolean;
         "onClose"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
+        "overlay"?: any;
+        "winHeight"?: any;
     }
     interface HsProgress {
         "onChange"?: (event: CustomEvent<any>) => void;

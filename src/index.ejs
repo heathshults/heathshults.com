@@ -967,11 +967,11 @@
 
     <!-- Portfolio Modal 1 -->
     <hs-modal dismissible full id="modBowlopolis">
-      <hs-card>
+      <hs-card color-tone="dark">
         <hs-card-header>
-          <h2 class="hs-heading u-xlarge">
-            Bowlopolis
-            <div class="hs-heading__sub">Sub-heading</div>
+          <h2 class="hs-heading">
+            <span class="hs-text-xl">Bowlopolis</span>
+            <div class="hs-heading__sub text-center">Sub-heading</div>
           </h2>
         </hs-card-header>
         <hs-card-body>
@@ -982,9 +982,9 @@
             <img class="img-responsive img-centered" src="/assets/img/portfolio/bowlopolis/bowlopolis.png" alt="">
           </p>
         </hs-card-body>
-        <hs-card-footer>
+        <hs-card-footer color-tone="dark">
           <div class="hs-input-group">
-            <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#modal-dismissible')">Close</button>
+            <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#modBowlopolis')">Close</button>
             <button class="hs-button hs-button--block hs-button--info">Button</button>
           </div>
         </hs-card-footer>
@@ -1154,6 +1154,8 @@
     
     
     </script>
+    <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));//]]></script>
   </body>
 
 </html>

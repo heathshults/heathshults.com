@@ -5,12 +5,15 @@ export declare class HSModal {
     full: boolean;
     open: boolean;
     dismissible: boolean;
+    winHeight: any;
+    overlay: any;
     _isOpen: boolean;
     onClose: EventEmitter;
     close(): Promise<void>;
+    componentWillLoad(): void;
+    handleOverlay(): void;
     show(): Promise<void>;
     isOpen(): Promise<boolean>;
-    componentWillLoad(): void;
     dismiss(): void;
     render(): any[];
 }
