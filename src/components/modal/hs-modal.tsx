@@ -5,7 +5,7 @@ import { Component, Event, EventEmitter, Prop, Method, State, Element, h } from 
   styleUrl: '../../scss/components/objects.modals.scss',
   shadow: true
 })
-export class Modal {
+export class HSModal {
   @Element()
   elem: HTMLElement;
 
@@ -50,11 +50,11 @@ export class Modal {
     const ghostClass = this.ghost ? `hs-modal--ghost` : '';
     const fullClass = this.full ? `hs-modal--full` : '';
     const modalIsOpenClass = this._isOpen ? 'hs-modal--visible' : '';
-    const overlayIsOpenClass = this._isOpen ? 'hs-overlay--visible' : '';
+    const overlayIsOpenClass = this._isOpen ? 'hs-modal-backdrop--visible' : ''; 
 
     return [
 
-        <div aria-hidden onClick={() => this.dismiss()} class={`hs-overlay hs-overlay--fullpage ${overlayIsOpenClass}`} ></div>,
+        <div id="overlay" aria-hidden onClick={() => this.dismiss()} class={`hs-modal-backdrop ${overlayIsOpenClass}`} ></div>,
         
         <div role="dialog" class={`hs-modal ${ghostClass} ${fullClass} ${modalIsOpenClass}`}>
           

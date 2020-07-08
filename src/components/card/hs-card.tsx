@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'hs-card',
@@ -6,9 +6,10 @@ import { Component, h } from '@stencil/core';
   shadow: true
 })
 export class HSCard {
+  @Prop() colorTone: string;
   render() {
     return (
-      <div class="hs-card">
+      <div class={`hs-card ${this.colorTone}`}>
         <slot />
       </div>
     );

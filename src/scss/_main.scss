@@ -1164,6 +1164,10 @@ img::selection {
   background-color: rgb(242, 211, 27);
 }
 
+.bg-less-heavy-yellow--trans50 {
+  background-color: rgba(242, 211, 27, .5);
+}
+
 .bg-orange {
   background-color: #f27011;
 }
@@ -1205,11 +1209,10 @@ img::selection {
 
 .space-between { 
   justify-content: space-between; 
-}  
+}
 
-
-.space-around { 
-  justify-content: space-around; 
+.space-around {
+  justify-content: space-around;
 }
 
 
@@ -1225,4 +1228,22 @@ img::selection {
 .hs-border-top-white {
   border-top: 1px;
   border-top-color: $white;
+}
+
+.hs-info-message {
+  padding: .7rem;
+  &--black {
+    color: #fff;
+    background: $black_75;
+    .hs-info-link {
+      color: $theme-primary;
+      text-decoration: none;
+      &:visited {
+        color: $theme-primary;
+      }
+      &:hover {
+        color: $white;
+      }
+    }
+  }
 }

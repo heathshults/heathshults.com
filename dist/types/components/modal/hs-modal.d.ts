@@ -1,5 +1,5 @@
 import { EventEmitter } from '../../stencil-public-runtime';
-export declare class Modal {
+export declare class HSModal {
     elem: HTMLElement;
     ghost: boolean;
     full: boolean;

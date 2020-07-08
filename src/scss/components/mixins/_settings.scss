@@ -1,3 +1,4 @@
+@import '../../global';
 //
 /// Screen Sizes
 //
@@ -202,13 +203,13 @@ $z-over-content: 100 !default;
 $z-over-control: 200 !default;
 $z-over-page: 300 !default;
 $z-over-screen: 400 !default;
-$z-over-everything: 500 !default;
+$z-over-everything: 1071 !default;
 
 //
 // Typography
 //
-$text-font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
-$text-font-family-serif: Georgia, Cambria, 'Times New Roman', Times, serif !default;
+$text-font-family-sans-serif: "Roboto", sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$text-font-family-serif: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $text-font-family-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 $text-font-family: $text-font-family-sans-serif;
 
@@ -676,7 +677,7 @@ $nav-item-error-active-color: map-get($colors, white) !default;
 //
 // Overlays
 //
-$overlay-background-color: map-get($colors, black) !default;
+$overlay-background-color:rgba(0, 0, 0, 0.65) !default;
 $overlay-z-index: $z-over-screen !default;
 $overlay-transparent-background-color: transparent !default;
 

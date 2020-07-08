@@ -10,12 +10,21 @@
   display: block;
   width: $modal-width;
   overflow: hidden;
+  visibility: hidden;
   background-color: $modal-background-color;
   border: $modal-border;
   border-radius: $modal-border-radius;
-  transform: translate(-50%, -50%);
-  visibility: hidden;
   opacity: 0;
+  transform: translate(-50%, -50%);
+
+  .hs-button--close {
+    position: fixed;
+    top: $spacing-medium;
+    left: 0;
+    z-index: 1032;
+    opacity: 0;
+    transition: all .25s ease-out;
+  }
 
   > .hs-card {
     background-color: transparent;
@@ -36,11 +45,35 @@
   }
 
   &.hs-modal--full {
-    top: 1em;
-    left: 1em;
-    width: calc(100% - 2em);
-    height: calc(100% - 2em);
-    transform: none;
+    top: 50%;
+    left: 50%;
+    z-index: $modal-z-index; // 1071
+    width: 75%;
+    height: 0;
+    transition: all .25s ease-out;
+    transition-delay: .12s;
+    transform: translate(-50%, -50%);
+    &.hs-modal--visible {
+      height: 75vh;
+      background-color: $blueGray-dark;
+      opacity: 1;
+      transition: all .25s ease-in;
+      transition-delay: .12s;
+
+      .hs-button--close {
+        position: fixed;
+        top: $spacing-medium;
+        right: $spacing-medium;
+        left: unset;
+        z-index: 1032;
+        width: 4rem;
+        height: 4rem;
+        font-size: 5rem;
+        opacity: 1;
+        transition: all .25s ease-in;
+      }
+    
+    }
 
     .hs-card__body {
       position: absolute;
@@ -64,7 +97,23 @@
     opacity: 1;
   }
 }
-
-.hs-button--close {
-  top: $spacing-small;
+.hs-modal-backdrop {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 0px;
+  background-color: rgba(0, 0, 0, .75);
+  opacity: 0;
+  transition: all .25s ease-in;
 }
+.hs-modal-backdrop.hs-modal-backdrop-visible {
+  top: 0px;
+  z-index: 2000;
+  height: 100vh;
+  opacity: 1;
+  transition: all .25s ease-out;
+}
+

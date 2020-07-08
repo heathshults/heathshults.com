@@ -1,8 +1,8 @@
 import { r as registerInstance, e as createEvent, h, g as getElement } from './index-46862ff0.js';
 
-const objectsModalsCss = ".hs-modal[role=dialog]{position:fixed;top:50%;left:50%;z-index:500;display:block;width:75%;overflow:hidden;background-color:#fff;border:0 solid #74748c;border-radius:4px;transform:translate(-50%, -50%);visibility:hidden;opacity:0}.hs-modal[role=dialog]>.hs-card{background-color:transparent;box-shadow:none}.hs-modal[role=dialog]>.hs-card .hs-card__body{position:relative}.hs-modal[role=dialog].hs-modal--ghost{color:#fff;background-color:transparent}.hs-modal[role=dialog].hs-modal--ghost .hs-heading{color:#fff}.hs-modal[role=dialog].hs-modal--full{top:1em;left:1em;width:calc(100% - 2em);height:calc(100% - 2em);transform:none}.hs-modal[role=dialog].hs-modal--full .hs-card__body{position:absolute;top:3.5em;bottom:4em;width:100%;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}.hs-modal[role=dialog].hs-modal--full .hs-card__footer{position:absolute;bottom:0;width:100%}.hs-modal[role=dialog].hs-modal--visible{visibility:visible;opacity:1}.hs-button--close{top:0.5em}";
+const objectsModalsCss = ".hs-modal[role=dialog]{position:fixed;top:50%;left:50%;z-index:1071;display:block;width:75%;overflow:hidden;visibility:hidden;background-color:#fff;border:0 solid #74748c;border-radius:4px;opacity:0;transform:translate(-50%, -50%)}.hs-modal[role=dialog] .hs-button--close{position:fixed;top:1em;left:0;z-index:1032;opacity:0;transition:all 0.25s ease-out}.hs-modal[role=dialog]>.hs-card{background-color:transparent;box-shadow:none}.hs-modal[role=dialog]>.hs-card .hs-card__body{position:relative}.hs-modal[role=dialog].hs-modal--ghost{color:#fff;background-color:transparent}.hs-modal[role=dialog].hs-modal--ghost .hs-heading{color:#fff}.hs-modal[role=dialog].hs-modal--full{top:50%;left:50%;z-index:1071;width:75%;height:0;transition:all 0.25s ease-out;transition-delay:0.12s;transform:translate(-50%, -50%)}.hs-modal[role=dialog].hs-modal--full.hs-modal--visible{height:75vh;background-color:#0f161d;opacity:1;transition:all 0.25s ease-in;transition-delay:0.12s}.hs-modal[role=dialog].hs-modal--full.hs-modal--visible .hs-button--close{position:fixed;top:1em;right:1em;left:unset;z-index:1032;width:4rem;height:4rem;font-size:5rem;opacity:1;transition:all 0.25s ease-in}.hs-modal[role=dialog].hs-modal--full .hs-card__body{position:absolute;top:3.5em;bottom:4em;width:100%;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}.hs-modal[role=dialog].hs-modal--full .hs-card__footer{position:absolute;bottom:0;width:100%}.hs-modal[role=dialog].hs-modal--visible{visibility:visible;opacity:1}.hs-modal-backdrop{position:absolute;top:-10px;right:0px;bottom:0px;left:0px;width:100%;height:0px;background-color:rgba(0, 0, 0, 0.75);opacity:0;transition:all 0.25s ease-in}.hs-modal-backdrop.hs-modal-backdrop-visible{top:0px;z-index:2000;height:100vh;opacity:1;transition:all 0.25s ease-out}";
 
-const Modal = class {
+const HSModal = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.ghost = false;
@@ -33,14 +33,14 @@ const Modal = class {
         const ghostClass = this.ghost ? `hs-modal--ghost` : '';
         const fullClass = this.full ? `hs-modal--full` : '';
         const modalIsOpenClass = this._isOpen ? 'hs-modal--visible' : '';
-        const overlayIsOpenClass = this._isOpen ? 'hs-overlay--visible' : '';
+        const overlayIsOpenClass = this._isOpen ? 'hs-modal-backdrop--visible' : '';
         return [
-            h("div", { "aria-hidden": true, onClick: () => this.dismiss(), class: `hs-overlay hs-overlay--fullpage ${overlayIsOpenClass}` }),
+            h("div", { id: "overlay", "aria-hidden": true, onClick: () => this.dismiss(), class: `hs-modal-backdrop ${overlayIsOpenClass}` }),
             h("div", { role: "dialog", class: `hs-modal ${ghostClass} ${fullClass} ${modalIsOpenClass}` }, this.dismissible && (h("button", { type: "button", class: "hs-button hs-button--close", onClick: () => this.close() }, "\u00D7")), h("slot", null))
         ];
     }
     get elem() { return getElement(this); }
 };
-Modal.style = objectsModalsCss;
+HSModal.style = objectsModalsCss;
 
-export { Modal as hs_modal };
+export { HSModal as hs_modal };

@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
 export namespace Components {
     interface HsCard {
+        "colorTone": string;
     }
     interface HsCardBody {
     }
@@ -18,11 +19,12 @@ export namespace Components {
     }
     interface HsCardImgHeader {
         "cardHeader": any;
+        "clickTarget"?: string;
         "imgElem": any;
         "imgHeight"?: string;
         "imgPath": string;
         "imgWidth"?: string;
-        "overlay": any;
+        "overlay": HTMLLinkElement;
     }
     interface HsMediaBody {
     }
@@ -193,6 +195,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface HsCard {
+        "colorTone"?: string;
     }
     interface HsCardBody {
     }
@@ -204,11 +207,13 @@ declare namespace LocalJSX {
     }
     interface HsCardImgHeader {
         "cardHeader"?: any;
+        "clickTarget"?: string;
         "imgElem"?: any;
         "imgHeight"?: string;
         "imgPath"?: string;
         "imgWidth"?: string;
-        "overlay"?: any;
+        "onLaunchModal"?: (event: CustomEvent<any>) => void;
+        "overlay"?: HTMLLinkElement;
     }
     interface HsMediaBody {
     }

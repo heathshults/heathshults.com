@@ -8,16 +8,12 @@ import { Component, h, Prop } from '@stencil/core';
 export class HSCardFooter {
   @Prop() colorTone: string;
   @Prop() colorToneClass: string;
-  render() {
-    // if (typeof this.colorTone === 'undefined' || typeof this.colorTone === null || this.colorTone === 'light') {
-    //   this.colorToneClass = 'light'
-    // }
-    // if (this.colorTone === 'dark') {
-    //   this.colorToneClass = 'dark'
-    // }
+
+  componentWillLoad() {
     typeof this.colorTone === 'undefined' || typeof this.colorTone === null || this.colorTone === 'light' ? this.colorToneClass = 'light' :
       this.colorTone === 'dark' ? this.colorToneClass = 'dark' : this.colorToneClass = 'light';
-
+  }
+  render() {
     return (
       <footer class={`hs-card__footer ${this.colorToneClass}`}>
         <slot />

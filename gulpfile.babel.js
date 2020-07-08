@@ -384,24 +384,14 @@ function watchers(cb) {
       proxy: '127.0.0.1:8000',
       open: 'localhost',
       watch: true,
-      injectChanges: true,
-      files: [
-        {
-            match: ['www/**/*.php', 'www/**/*.css', 'www/**/*.{jpg,png,gif,svg}', 'www/**/*.js', 'www/**/*.html'],
-            fn: function (event, file) {
-               browserSync.reload()
-            },
-            options: {
-                ignored: ['package.json']
-            }
-        }
-    ]
+      injectChanges: true
     });
+    
   }), cb()
   // eslint-disable-next-line no-sequences
   watch('src/*.ejs', ejsit), cb()
   watch(['src/assets/img/**/*.{jpg,png,gif,svg}', 'src/assets/content/**/*.{jpg,png,gif,svg}'], copy_img), cb()
-  watch(['src/scss/**/*.scss', 'src/components/**/*.scss'], sassy), cb()
+  watch(['src/scss/**/*.scss'], sassy), cb()
   watch(['src/assets/**/*.css'], copy_css), cb()
   watch(['src/assets/js/*.{js,json,mjs,cjs}', '!src/assets/js/HeathScript.js'], copy_js), cb()
   watch(['src/assets/js/**/*.js'], jsify), cb()
@@ -421,7 +411,7 @@ if (typeof cb === 'function') {
     called = true;
   }
 }
-exports.browserSync = browserSync
+exports.serve = serve
 
 function connect_sync(cb) {
  
@@ -452,7 +442,6 @@ function connect_sync(cb) {
   // }
 
 }
-
 exports.connect_sync = connect_sync
 
 // close the server
