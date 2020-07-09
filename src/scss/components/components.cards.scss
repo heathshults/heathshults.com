@@ -42,16 +42,19 @@
   padding: $card-header-padding;
   font-size: 1.2rem;
   color: $blue-lightest-muted;
-  background-color: $blueGray-very-dark;
+  background-color: $blueGray-dark;
 
   .hs-heading {
     padding: 0;
     margin: .5rem auto .25rem;
     font-size: 2.5rem;
     font-weight: 700;
+    color: $theme-primary;
     text-align: center;
   }
 }
+
+
 
 .hs-card__img-header {
   position: relative;
@@ -118,11 +121,12 @@ h3.hs-body-h3 {
 
 
 .hs-card__footer {
-  // padding: $card-footer-padding;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: $card-footer-padding;
+  overflow: hidden;
   .hs-lead, .hs-footer-lead {
     margin-right: auto;
     margin-left: auto;
@@ -138,7 +142,10 @@ h3.hs-body-h3 {
     border-top: solid 1px $gray;
   }
   &.dark {
-    background-color: $blueGray-light;
+    width: 100%;
+    padding: $card-footer-padding;
+    color: $white;
+    background-color: $blueGray-dark;
 
     .hs-lead, .hs-footer-lead {
       color: $white;
@@ -156,7 +163,6 @@ h3.hs-body-h3 {
   }
 
 }
-
 
 .hs-card__footer--block {
   padding: $card-footer-block-padding;
@@ -295,6 +301,7 @@ h3.hs-body-h3 {
 .flex-container {
   display: flex;
   align-items: center;
+  max-width: 90%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -329,5 +336,4 @@ h3.hs-body-h3 {
 
 .flex-item {
   width: auto;
-  margin: 5px;
 }

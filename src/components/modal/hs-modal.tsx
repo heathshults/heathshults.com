@@ -30,7 +30,7 @@ export class HSModal {
   @Method() async close() {
     this._isOpen = false;
     this.onClose.emit();
-    // this.overlay.style.height = 0;
+    this.handleOverlay();
   }
   
   componentWillLoad() {
@@ -40,7 +40,14 @@ export class HSModal {
   @Method() handleOverlay() {
     this.overlay = this.elem.shadowRoot.querySelector('#overlay') as HTMLElement;
     this.overlay.classList.toggle('hs-modal-backdrop--visible');
-    this.overlay.style.height = `${document.body.clientHeight}`;
+
+    () => {
+      let sec = this.elem.closest('section')
+      sec !== null ? sec.style.cssText = 'background-attachment: fixed;' : sec.style.cssText = 'background-attachment: unset';
+    }
+
+    let overlayHeight = this.overlay.style.height;
+    typeof overlayHeight === 'undefined' || overlayHeight < 1 ? overlayHeight = `${document.body.clientHeight}` : overlayHeight = 0;
   }
   // componentDidLoad() {
   //   this.overlay = this.elem.shadowRoot.querySelector('#overlay') as HTMLElement;

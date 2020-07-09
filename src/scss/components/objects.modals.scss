@@ -53,9 +53,7 @@
     transition: all .25s ease-out;
     transition-delay: .12s;
     transform: translateX(-50%);
-    &.hs-modal--full {
-      // overflow-y: scroll;
-    }
+    
     &.hs-modal--visible {
       height: 100vh;
       background-color: $blueGray-dark;
@@ -80,7 +78,6 @@
         opacity: 1;
         transition: all .25s ease-in;
       }
-    
     }
 
     .hs-card__body {
@@ -91,6 +88,7 @@
       overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+      color: $white;
     }
 
     .hs-card__footer {
@@ -103,6 +101,9 @@
   &.hs-modal--visible {
     visibility: visible;
     opacity: 1;
+    & + .hs-section {
+      background-attachment: fixed;
+    }
   }
 }
 .hs-modal-backdrop {
@@ -112,7 +113,7 @@
   bottom: 0px;
   left: 0px;
   width: 100%;
-  height: 100vh;
+  height: 0;
   background-color: rgba(0, 0, 0, .75);
   opacity: 0;
   transition: all .25s ease-in;

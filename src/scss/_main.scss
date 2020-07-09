@@ -596,6 +596,7 @@ section, .hs-section {
 #portfolio, .hs-portfolio {
   background-image: url('/assets/img/bg/idea3.jpg');
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: left top;
   background-size: cover;
   .hs-section-heading, .hs-section-subheading {
@@ -675,6 +676,30 @@ section, .hs-section {
       margin: 0 0 30px;
     }
   }
+}
+/* stylelint-disable-line */ 
+hs-modal hs-card hs-card-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .hs-button {
+    color: $white;
+    background-color: $blueGray-light;
+    border: 1px solid $blueGray-darker;
+  } 
+}
+
+hs-card-header .hs-heading {
+  &.dark {
+    color: $theme-primary;
+    .hs-heading__sub {
+      color: $blueGray-medium;
+    }
+  }
+}
+
+hs-modal hs-card-body {
+  color: $white;
 }
 
 // Timeline
@@ -941,7 +966,7 @@ section#contact, .contact {
 
 // Footer
 
-footer, .footer {
+footer, .hs-footer {
   background: $blueGray-very-dark;
   padding: 25px 0;
   text-align: center;
@@ -950,7 +975,7 @@ footer, .footer {
     @include heading-font;
     text-transform: none;
   }
-  ul.quicklinks {
+  ul.hs-quicklinks {
     margin-bottom: 0;
     line-height: 40px;
     @include heading-font;
@@ -960,7 +985,7 @@ footer, .footer {
 
 // Social Buttons
 
-ul.social-buttons {
+ul.hs-social-buttons {
   margin-bottom: 0;
   li {
     a {
@@ -1222,7 +1247,6 @@ img::selection {
 
 .flex-item {
   width: 35px;
-  margin: 5px;
 }
 
 .hs-border-top-white {
