@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Portfolio website for Heath Shults - Web Developer Manager &amp; Director">
+    <meta name="author" content="">
+
+    <title>Heath Shults - Web Developer+</title>
+    <script type="module" src="/build/heathenscript-ui-components.esm.js"></script>
+    <script nomodule src="/build/heathenscript-ui-components.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nothing+You+Could+Do&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    
+    <!-- Theme CSS -->
+    <link href="/assets/css/HeathStyle.built.css" rel="stylesheet">
+    <link disabled id="darkmode" rel="stylesheet" href="/assets/css/theme-dark-mode.built.css">
+    
+    <script>
+       var lsGetMode = localStorage.getItem('dark_mode')
+       var dm_btn = document.getElementById('mode_widget')
+      if (lsGetMode === "true") {
+        document.querySelector('#darkmode').disabled = false;
+        // document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
+      }
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .navbar-custom {
+        position: fixed;
+        top: 0;
+        z-index: 1072;
+        width: 100%;
+      }
+      /* .site-logo {
+        margin-top: -5px;
+        font-size: 2rem !important;
+      } */
+      .nav-item {
+        /* @include heading-font */
+        flex: 1 1 auto;
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .navbar-nav .nav-link:link {
+        font-size: .9rem;
+        font-weight: 400;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #fed136;
+      }
+
+    </style>
+  </head>
+
+  <body id="page-top" class="index" style="position: relative;">
+     <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-custom fixed-top d-flex align-items-center">
+      <div class="container">
+        <div class="row w-100">
+          <div class="col-md-3 p-0">
+            <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand site-logo js-scroll-trigger" href="#page-top"><i class="fa fa-fw" aria-hidden="true"></i>HeathShults.com</a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            </div>
+          <div class="col-md-7" >
+          <div id="navbarResponsive" class="d-flex align-items-center collapse navbar-collapse" >
+              
+                <ul class="navbar-nav navbar-right w-100 h-100 ml-auto d-flex align-items-center justify-content-between">
+                  <li class="hidden " style="width: 0;"><a href="#page-top" class="nav-link"></a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">My Skills</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">My Portfolio</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Me</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+
+          </div>
+
+          </div>
+          <div class="col-md-2 align-items-center collapse navbar-collapse">
+
+                <a id="mode_widget" href="javascript:void(0)" class="mode-widget w-100 h-100 mr-auto d-flex align-items-center " style="background-color: transparent !important;">
+                </a>
+
+          </div>
+            <!-- /.navbar-collapse -->
+        </div>
+          
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="d-flex align-items-stretch hs-header">
+      <div class="container">
+        <div class="hs-intro-text">
+          <p style="height: 65px;">
+            <span class="hs-intro-lead-in">Hello, I'm Heath.</span>
+          </p>
+          <p style="height: 95px;">
+            <span class="hs-intro-heading">It's Nice To Meet You</span>
+          </p>
+          <p>
+            <a href="#skills" class="js-scroll-trigger btn btn-xl ">Please... Come inside.</a>
+          </p>
+          <div id="m"></div>
+          <script></script>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="skills" class="hs-section hs-skills">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center text-color--white">
+            <h2 class="hs-section-heading">My Skills</h2>
+            <h3 class="hs-section-subheading"><strong class="font-bold-regular">KEEPING IT HONEST</strong></h3> 
+            <!-- <h3 class="section-subheading hs-text-muted"><strong class="font-bold-regular">SIMPLE</strong>, 
+              <strong class="font-bold-regular">ELEGANT</strong> &amp;
+              <strong class="font-bold-regular">CLEAN</strong>.</h3> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center text-color--white">
+            
+          </div>
+        </div>
+        <div class="row text-center hs-card__row mt-4">
+          <!-- CARD 01 -->
+          <div class="col-md-4">
+            <div class="hs-card ">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="/assets/img/logos/dmHTML5_Logo_512.png" alt="HTML5" class="hs-dev-logo" height="65" /> <img src="/assets/img/logos/markdown-150.png" alt="Markdown" class="hs-dev-logo" height="45" /> 
+                </div>
+                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
+              </div>
+              <div class="hs-card__body" >
+                <p class="hs-text-muted"><strong>HTML5 Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="html_hs-ranking" value="5" id="html_five" >
+                      <label for="five" class="hs-label ">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="html_hs-ranking" value="25" id="html_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="html_hs-ranking" value="50" id="html_fifty" >
+                      <label for="fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="html_hs-ranking" value="75" id="html_seventyfive" >
+                      <label for="seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="html_hs-ranking" value="100" id="html_onehundred" checked>
+                      <label for="onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        HTML5 100%
+                      </div>
+                    </div>
+                  
+                </div>
+                
+                <div class="hs-divider d-flex align-items-center"></div>
+                  <p class="hs-hs-text-muted"><strong>Markdaown Skill Level</strong></p>
+
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="hs-ranking" value="5" id="md_five" >
+                      <label for="five" class="hs-label">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="hs-ranking" value="25" id="md_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="hs-ranking" value="50" id="md_fifty" >
+                      <label for="fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="hs-ranking" value="75" id="md_seventyfive" checked>
+                      <label for="seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="hs-ranking" value="100" id="md_onehundred" >
+                      <label for="onehundred" class="hs-label">Expert</label>
+                    </div>
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                        Markdown
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
+              </div>
+            </div>
+            <!-- <div class="hs-card">
+              <div class="hs-card__header">
+                <span class="fa-stack fa-4x color-white">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">E-Commerce</h4>
+              </div>
+              <div class="hs-card__body">
+                <p class="hs-text-muted">From concept &amp; strategy, to design &amp; development, through launch &amp; beyond.
+                  I work with you every step of the way and keep the engine on track.</p>
+              </div>
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">Let's make a <span class="font-bold-regular">MILLION</span> or TWO!</span>
+              </div>
+            </div> -->
+          </div>
+          <!-- CARD 02 -->
+          <div class="col-md-4">
+            <div class="hs-card ">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="/assets/img/logos/dm-css3-150.png" alt="CSS3" class="hs-dev-logo" height="65" /> <img src="/assets/img/logos/Sass-150.png" alt="SASS" class="hs-dev-logo "height="55" /> 
+                </div>
+                <!-- <h4 class="service-heading lead">CSS • Modular SCSS</h4> -->
+              </div>
+              <div class="hs-card__body">
+                <p class="hs-text-muted"><strong>CSS Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="css_hs-ranking" value="5" id="css_five" >
+                      <label for="five" class="hs-label ">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="css_hs-ranking" value="25" id="css_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="css_hs-ranking" value="50" id="css_fifty" >
+                      <label for="fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="css_hs-ranking" value="75" id="css_seventyfive" >
+                      <label for="seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="css_hs-ranking" value="100" id="css_onehundred" checked>
+                      <label for="onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        CSS 100%
+                      </div>
+                    </div>
+                  
+                </div>
+                
+                <div class="hs-divider d-flex align-items-center"></div>
+                <p class="hs-hs-text-muted"><strong>SASS Skill Level</strong></p>
+
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="scss_hs-ranking" value="5" id="scss_five" >
+                      <label for="five" class="hs-label">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="scss_hs-ranking" value="25" id="scss_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="scss_hs-ranking" value="50" id="scss_fifty" >
+                      <label for="fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="scss_hs-ranking" value="75" id="scss_seventyfive" checked>
+                      <label for="seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="scss_hs-ranking" value="100" id="scss_onehundred" checked >
+                      <label for="onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Expert" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        SCSS 100%
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">I think <span class="font-bold-regular">DEVICE SCREENS</span> first!</span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-4">
+            <div class="hs-card">
+              <div class="hs-card__header">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x color-white"></i>
+                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Screen First Approach!</h4>
+              </div>
+              <div class="hs-card__body">
+                <p class="hs-text-muted">User experience is key! You must look
+                  your best on all size screens. <span class="font-bold-regular">SCREEN FIRST DESIGN</span> keepS <span class="font-bold-regular">YOUR BUSINESS</span> looking great!
+                </p>
+              </div>
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">I think <span class="font-bold-regular">DEVICE SCREENS</span> first!</span>
+              </div>
+            </div>
+          </div> -->
+          <!-- CARD 03 -->
+          <div class="col-md-4">
+            <div class="hs-card ">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="/assets/img/logos/js-logo.jpg" alt="javascript" class="hs-dev-logo mr-2" height="65" /> <img src="/assets/img/logos/dm-AngularJS_logo.svg.png" alt="AngularJS" class="hs-dev-logo " /> 
+                </div>
+                <!-- <h4 class="service-heading lead">JavaScript • Angular</h4> -->
+              </div>
+              <div class="hs-card__body">
+                <p class="hs-text-muted"><strong>JavaScript Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="21_hs-ranking" value="5" id="21_five" >
+                      <label for="five" class="hs-label ">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="21_hs-ranking" value="25" id="21_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="21_hs-ranking" value="50" id="21_fifty" >
+                      <label for="fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="21_hs-ranking" value="75" id="21_seventyfive"checked >
+                      <label for="seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="21_hs-ranking" value="100" id="21_onehundred" >
+                      <label for="onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        JAVASCRIPT
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="hs-divider d-flex align-items-center"></div>
+                  <p class="hs-hs-text-muted"><strong>Angular Skill Level</strong></p>
+
+                <div class="hs-ranking-bar-stacker mt-4">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="22_hs-ranking" value="5" id="22_five" >
+                      <label for="22_five" class="hs-label">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="22_hs-ranking" value="25" id="22_twentyfive" >
+                      <label for="22_twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="22_hs-ranking" value="50" id="22_fifty" checked>
+                      <label for="22_fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="22_hs-ranking" value="75" id="22_seventyfive" >
+                      <label for="22_seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="22_hs-ranking" value="100" id="22_onehundred" >
+                      <label for="22_onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Almost Advanced" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        ANGULAR
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">Elegance: <span class="font-bold-regular">Simplisticly Powerfull</span> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mt-4">
+          <!-- CARD 04 -->
+          <div class="col-md-4">
+            <div class="hs-card ">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="/assets/img/logos/dm-Node.png" alt="Node JS" class="hs-dev-logo mr-4" height="75" />  <img src="/assets/img/logos/php.png" alt="PHP" class="hs-dev-logo" height="65" /> 
+                </div>
+                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
+              </div>
+              <div class="hs-card__body" style="align-items: initial; align-self: stretch;">
+                <p class="hs-text-muted"><strong>Node JS Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="54_hs-ranking" value="5" id="54_five" >
+                      <label for="54_five" class="hs-label ">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="54_hs-ranking" value="25" id="54_twentyfive" >
+                      <label for="54_twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="54_hs-ranking" value="50" id="54_fifty" >
+                      <label for="54_fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="54_hs-ranking" value="75" id="54_seventyfive" checked>
+                      <label for="54_seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="54_hs-ranking" value="100" id="54_onehundred">
+                      <label for="54_onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        Node JS
+                      </div>
+                    </div>
+                  
+                </div>
+                <div class="hs-divider d-flex align-items-center"></div>
+                  <p class="hs-hs-text-muted"><strong>PHP Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="58_skill" value="5" id="58_five" >
+                      <label for="58_five" class="hs-label">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="58_skill" value="25" id="58_twentyfive" >
+                      <label for="58_twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="58_skill" value="50" id="58_fifty" >
+                      <label for="58_fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="58_skill" value="75" id="58_seventyfive" checked>
+                      <label for="58_seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="58_skill" value="100" id="58_onehundred" >
+                      <label for="58_onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Good" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        PHP
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">Clean > Clear > <span class="font-bold-regular">Simplistic</span> </span>
+              </div>
+            </div><!-- /.card -->
+
+          </div> <!-- /.col-md-4 -->
+          <!-- CARD 05 -->
+          <div class="col-md-4">
+            <div class="hs-card ">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="/assets/img/logos/dm-mysql.png" alt="mySQL" class="hs-dev-logo mr-4" height="96" />  <img src="/assets/img/logos/dm-sql-server.png" alt="SQL Server" class="hs-dev-logo ml-4" height="76" style="margin-top: -30px;" /> 
+                </div>
+                <!-- <h4 class="service-heading lead">HTML5 • Markdown</h4> -->
+              </div>
+              <div class="hs-card__body" style="align-items: initial; align-self: stretch;">
+                <p class="hs-text-muted"><strong>MySQL Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="60_hs-ranking" value="5" id="60_five" >
+                      <label for="60_five" class="hs-label ">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="60_hs-ranking" value="25" id="60_twentyfive" >
+                      <label for="60_twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="60_hs-ranking" value="50" id="60_fifty" checked>
+                      <label for="60_fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="60_hs-ranking" value="75" id="60_seventyfive" >
+                      <label for="60_seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="60_hs-ranking" value="100" id="60_onehundred">
+                      <label for="60_onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Good" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        MySQL
+                      </div>
+                    </div>
+                  
+                </div>
+                <div class="hs-divider d-flex align-items-center"></div>
+                <p class="hs-text-muted"><strong>SQL Server Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="63_skill" value="5" id="63_five" >
+                      <label for="63_five" class="hs-label">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="63_skill" value="25" id="63_twentyfive" >
+                      <label for="63_twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="63_skill" value="50" id="63_fifty" checked>
+                      <label for="63_fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="63_skill" value="75" id="63_seventyfive" >
+                      <label for="63_seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="63_skill" value="100" id="63_onehundred" >
+                      <label for="63_onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Good" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        SQL Server
+                      </div>
+                    </div>
+                  
+                </div>
+              </div> <!-- /.card-body -->
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">Relational yet <span class="font-bold-regular">RATIONAL</span></span>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- CARD 06 -->
+          <div class="col-md-4">
+            <div class="hs-card ">
+              <div class="hs-card__header">
+                <div class="hs-logo-row">
+                  <img src="/assets/img/logos/dm-webpack-javascript-logo.png" alt="webpack" class="hs-dev-logo mr-4" height="49" /> <img src="/assets/img/logos/gulp.svg" alt="gulp" class="hs-dev-logo "height="55" /> 
+                </div>
+              </div>
+              <div class="hs-card__body">
+                <p class="hs-text-muted"><strong>Webpack Skill Level</strong></p>
+                <div class="hs-ranking-bar-stacker">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="webpack_hs-ranking" value="5" id="webpack_five" >
+                      <label for="five" class="hs-label ">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="webpack_hs-ranking" value="25" id="webpack_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="webpack_hs-ranking" value="50" id="webpack_fifty" >
+                      <label for="fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="webpack_hs-ranking" value="90" id="webpack_seventyfive" checked>
+                      <label for="seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="webpack_hs-ranking" value="100" id="webpack_onehundred" >
+                      <label for="onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Near Advanced"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        Webpack
+                      </div>
+                    </div>
+                  
+                </div>
+                
+                <div class="hs-divider d-flex align-items-center"></div>
+                <p class="hs-hs-text-muted"><strong>Gulp Skill Level</strong></p>
+
+                <div class="hs-ranking-bar-stacker" style="margin-top: 20px;">
+                  <div class="hs-radio-group hidden-gone">
+                      <input type="radio" disabled class="hs-radio five" name="git_hs-ranking" value="5" id="git_five" >
+                      <label for="five" class="hs-label">OK</label>
+                      
+                      <input type="radio" disabled class="hs-radio twentyfive" name="git_hs-ranking" value="25" id="git_twentyfive" >
+                      <label for="twentyfive" class="hs-label">Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio fifty" name="git_hs-ranking" value="50" id="git_fifty" >
+                      <label for="fifty" class="hs-label">Very Good</label>
+                      
+                      <input type="radio" disabled class="hs-radio seventyfive" name="git_hs-ranking" value="75" id="git_seventyfive">
+                      <label for="seventyfive" class="hs-label">Advanced</label>
+                      
+                      <input type="radio" disabled class="hs-radio onehundred" name="git_hs-ranking" value="100" id="git_onehundred" checked>
+                      <label for="onehundred" class="hs-label">Expert</label>
+                    </div><!-- </div> -->
+                    
+                    <div class="hs-ranking">
+                      <div class="hs-ranking-bar bg-heavy-yellow1" role="hs-rankingbar" data-level="Advanced" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                        Gulp.js 100%
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+              <div class="hs-card__footer">
+                <span class="lead mx-auto">Bringing it all <span class="font-bold-regular">TOGETHER</span></span>
+              </div>
+            </div>
+          </div><!-- /.card -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="hs-portfolio hs-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center text-color--white">
+            <h2 class="hs-section-heading">Portfolio</h2>
+            <h3 class="hs-section-subheading hs-text-muted">
+              &#10038; Design System • Web Components • Websites • CRM &#10038;
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-4 col-sm-6 hs-portfolio-item">
+            <hs-card color-tone="light">
+              <hs-card-img-header img-width="100%" img-height="260px" img-path="/assets/img/portfolio/Fannie-Mae/blueprint-card-header.jpg"></hs-card-img-header>
+              <hs-card-body>
+                
+                <!--  -->
+                  <div class="hs-info-table">
+                    <div class="row">
+                      <div class="col-md-12"> 
+                        <h3 class="hs-body-h3">Blueprint Design System</h3>
+                      </div>
+                    </div>
+                    <div class="row bg-less-heavy-yellow--trans50">
+                      <div class="col-md-6 pl-3">
+                        <strong>Company: </strong><br>
+                        Fannie Mae, Inc.
+                      </div>
+                      <div class="col-md-6 pl-3">
+                        <strong>Position: </strong><br>
+                        Interaction Designer
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12"> 
+                        <p class="hs-paragraph">
+                          <h5>Description:</h5>
+                          Corporate system to guide & govern graphic design, componant usage,
+                          code quality to preserve branding consistency.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                <!--  -->
+              </hs-card-body>
+              <hs-card-footer color-tone="dark">
+                <div class="row m-0 d-flex w-100">
+                <div class="col-md-12 p-3 hs-logo-row--footer">
+                  <ul class="flex-container space-between">
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dmHTML5_Logo_512.png" class="hs-skill-logo" width="35" alt="HTML5 logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/Sass-150.png" class="hs-skill-logo" width="35" alt="sass logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-css3-150.png" class="hs-skill-logo" width="35" alt="css logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/js-logo.jpg" class="hs-skill-logo" width="35" alt="javascript logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-Node.png" class="hs-skill-logo" width="35" alt="node js logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/gulp-150.png" class="hs-skill-logo" width="35" alt="gulp logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-Git-logo.png" class="hs-skill-logo" width="35" alt="git logo" />
+                    </li>
+                  </ul>
+                </div>
+                </div>
+              </hs-card-footer>
+            </hs-card>
+          </div>
+          <div class="col-md-4 col-sm-6 hs-portfolio-item">
+            <hs-card color-tone="light">
+              <hs-card-img-header img-width="100%" img-height="260px" img-path="/assets/img/portfolio/BlueStarSports/BSS-card-heading.jpg"></hs-card-img-header>
+              <hs-card-body>
+                
+                <!--  -->
+                  <div class="hs-info-table">
+                    <div class="row">
+                      <div class="col-md-12"> 
+                        <h3 class="hs-body-h3">USA Football Database Project</h3>
+                      </div>
+                    </div>
+                    <div class="row bg-less-heavy-yellow--trans50">
+                      <div class="col-md-6 pl-3">
+                        <strong>Company: </strong><br>
+                        Blue Star Sports
+                      </div>
+                      <div class="col-md-6 pl-3">
+                        <strong>Position: </strong><br>
+                        UI Engineer
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12"> 
+                        <p class="hs-paragraph">
+                          <h5>Description:</h5>
+                          Little league football player tracking system. The NFL can track and observe 
+                          promising players with good stats for recruiting purposes.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                <!--  -->
+              </hs-card-body>
+              <hs-card-footer color-tone="dark">
+                <div class="row m-0 d-flex w-100">
+                <div class="col-md-12 p-3 hs-logo-row--footer">
+                  <ul class="flex-container space-between">
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dmHTML5_Logo_512.png" class="hs-skill-logo" width="35" alt="HTML5 logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/Sass-150.png" class="hs-skill-logo" width="35" alt="sass logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-css3-150.png" class="hs-skill-logo" width="35" alt="css logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/js-logo.jpg" class="hs-skill-logo" width="35" alt="javascript logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-Node.png" class="hs-skill-logo" width="35" alt="node js logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/gulp-150.png" class="hs-skill-logo" width="35" alt="gulp logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-Git-logo.png" class="hs-skill-logo" width="35" alt="git logo" />
+                    </li>
+                  </ul>
+                </div>
+                </div>
+              </hs-card-footer>
+            </hs-card>
+          </div>
+          <div class="col-md-4 col-sm-6 hs-portfolio-item">
+            <hs-card color-tone="light">
+              <hs-card-img-header 
+                img-width="100%" 
+                img-height="260px" 
+                img-path="/assets/img/portfolio/bowlopolis/bolopolis-headerImg.png"
+                click-target="modBowlopolis"
+                ></hs-card-img-header>
+              <hs-card-body>
+                <!--  -->
+                  <div class="hs-info-table">
+                    <div class="row">
+                      <div class="col-md-12"> 
+                        <h3 class="hs-body-h3">Youth Program, Website &amp; Game</h3>
+                      </div>
+                    </div>
+                    <div class="row bg-less-heavy-yellow--trans50">
+                      <div class="col-md-6 pl-3">
+                        <strong>Company: </strong><br>
+                        BPAA, Inc. 
+                      </div>
+                      <div class="col-md-6 pl-3">
+                        <strong>Position: </strong><br>
+                        Director Technology
+                      </div>
+                    </div>
+                    <div class="row hs-border-top-white">
+                      <div class="col-md-12"> 
+                        <p class="hs-paragraph">
+                          <h5>Description:</h5>
+                          <span class="hs-text-muted">80% Hands on UI/UX Engineering. This projects
+                            included website, game and cartoon production. </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                <!--  -->
+              </hs-card-body>
+              <hs-card-footer color-tone="dark">
+                <div class="row m-0 d-flex w-100">
+                <div class="col-md-12 p-3 hs-logo-row--footer">
+                  <ul class="flex-container space-between">
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dmHTML5_Logo_512.png" class="hs-skill-logo" width="35" alt="HTML5 logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/Sass-150.png" class="hs-skill-logo" width="35" alt="sass logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-css3-150.png" class="hs-skill-logo" width="35" alt="css logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/js-logo.jpg" class="hs-skill-logo" width="35" alt="javascript logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-Node.png" class="hs-skill-logo" width="35" alt="node js logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/gulp-150.png" class="hs-skill-logo" width="35" alt="gulp logo" />
+                    </li>
+                    <li class="flex-item">
+                      <img src="assets/img/logos/dm-Git-logo.png" class="hs-skill-logo" width="35" alt="git logo" />
+                    </li>
+                  </ul>
+                </div>
+                </div>
+              </hs-card-footer>
+            </hs-card>
+          </div>
+          <!--Portfolio Items-->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">About</h2>
+            <h3 class="section-subheading hs-text-muted">Here is a little about me....</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img class="img-circle img-responsive" src="/assets/img/about/1.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>1998-2017</h4>
+                    <h4 class="subheading">My Humble Path</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="hs-text-muted">When I began I simply wanted to do Graphics. After creating many website
+                      designs I decided to learn web development. After college I was fortunate enough to land jobs with
+                      big clients such as Ford, Mercury and Chevrolet. It wasn't long before I was well known in the
+                      Dallas area. Soon after I became Web Development Manager at BPAA and eventually Director of
+                      Technology - Web Development. I have learned every skill from requirements gathering, to Aginle
+                      Scrum to being an expert at front end development.&nbsp; If my skills interest you please contact
+                      me at <a href="mailto:heatheshults@gmail.com">heatheshults@gmail.com</a> to discuss opportunities.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Contact Me</h2>
+            <h3 class="section-subheading hs-text-muted">Get the job done right the first time.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form name="sentMessage" id="contactForm" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required
+                      data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required
+                      data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required
+                      data-validation-required-message="Please enter your phone number.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Your Message *" id="message" required
+                      data-validation-required-message="Please enter a message."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button type="submit" class="btn btn-xl">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; HeathShults.com 
+              <script>document.write(new Date().getFullYear());</script>
+            </span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li><a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li><a href="#">Privacy Policy</a>
+              </li>
+              <li><a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 p-5">
+            <p style="font-size: 1.5rem; font-weight: 700;"><a href="http://www.freepik.com">THANK YOU Freepik!</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+    <hs-modal dismissible full id="modBowlopolis">
+      <hs-card color-tone="light">
+        <hs-card-header>
+          <h2 class="hs-heading dark">
+            <span class="hs-text-xl">USA Football</span>
+            <div class="hs-heading__sub text-center">Little League Football Database</div>
+          </h2>
+        </hs-card-header>
+        <hs-card-body>
+          <p class="hs-paragraph">
+            My Roles: UX Design • UI Developer • Quality Assurance
+          </p>
+          carousel
+        </hs-card-body>
+        <hs-card-footer color-tone="dark">
+          <div class="hs-input-group">
+            <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#modBowlopolis')">Close</button>
+            <button class="hs-button hs-button--block hs-button--info">Button</button>
+          </div>
+        </hs-card-footer>
+      </hs-card>
+    </hs-modal>
+
+    <hs-modal dismissible full id="modBowlopolis">
+      <hs-card color-tone="light">
+        <hs-card-header>
+          <h2 class="hs-heading dark">
+            <span class="hs-text-xl">Bowlopolis</span>
+            <div class="hs-heading__sub text-center">Sub-heading</div>
+          </h2>
+        </hs-card-header>
+        <hs-card-body>
+          <p class="hs-paragraph">
+            Web design/development & game development for retention/frequency.
+          </p>
+          <p class="hs-paragraph">
+            <img class="img-responsive img-centered" src="/assets/img/portfolio/bowlopolis/bowlopolis.png" alt="">
+          </p>
+        </hs-card-body>
+        <hs-card-footer color-tone="dark">
+          <div class="hs-input-group">
+            <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#modBowlopolis')">Close</button>
+            <button class="hs-button hs-button--block hs-button--info">Button</button>
+          </div>
+        </hs-card-footer>
+      </hs-card>
+    </hs-modal>
+
+
+    <script>
+      function showModal(modal) {
+        document.querySelector(modal).show();
+      }
+  
+      function closeModal(modal) {
+        document.querySelector(modal).close();
+      }
+    </script>
+
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <!-- for popups -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqBootstrapValidation/1.3.6/jqBootstrapValidation.min.js"></script>
+    <!-- <script src="js/contact_me.js"></script> -->
+
+    <!-- Theme JavaScript -->
+    <script src="/assets/js/HeathScript.built.js" type="module"></script>
+    <!-- <script src="hScript.bundle.js"></script> -->
+   
+    <script>
+      //  onclick="javascript:showModal('#modBowlopolis');"
+      // // ====== RANKING BARS
+      var theBars = document.querySelectorAll('.hs-ranking-bar')
+      theBars.forEach(aBar => {
+        var barWidth = $(aBar).attr('aria-valuenow')
+        $(aBar).attr('style',`width: ${barWidth}%`);
+      });
+
+      // // ====== SHOWMORE ==== //
+      let ShowMoreSettings =  {
+            fbInitButtonText: 'Show More',
+            fbOpenButtonText: 'Show Less',
+            boxHeight: '100vh'
+      };
+
+      // theModals.forEach(modal => {
+      //   modal.addEventListener('click', (e)=>{
+      //     var targetModalID =  modal.getAttribute('data-target')
+      //     console.log(targetModalID)
+      //     console.log(document.getElementById(targetModalID))
+      //     var tmodal = document.getElementById(targetModalID)
+      //     tmodal.classList.toggle('is-open')
+      //     // .classList.toggleClass('is-open')
+      //   })
+      // })
+
+      // ====== NAV JS ====== //
+      // $('a.js-scroll-trigger').bind('click', function(event) {
+      //   var $anchor = $(this);
+      //   $('html, body').stop().animate({
+      //       scrollTop: ($($anchor.attr('href')).offset().top - 50)
+      //   }, 1250, 'easeInOutExpo');
+      //   event.preventDefault();
+      //   });
+
+        // Highlight the top nav as scrolling occurs
+        // $('body').scrollspy({
+        //     target: '.navbar-fixed-top',
+        //     offset: 51
+        // });
+
+        // Closes the Responsive Menu on Menu Item Click
+        // $('.navbar-collapse .navbar-nav .nav-item .nav-link').click(function(){ 
+        //         $('.navbar-toggle:visible').click();
+        // });
+
+        // Offset for Main Navigation
+        // $('#mainNav').affix({
+        //     offset: {
+        //         top: 100
+        //     }
+        // })
+
+        // ** ====== MODE WIDHET ====== ** //
+  // var $dm_btn = $('#mode_widget')
+  // var lsGetMode = localStorage.getItem('dark_mode')
+  
+  // set button text
+  // $(document).ready(()=>{
+  //   if (lsGetMode === 'fasle') {
+  //     setModeText(true)
+  //     //$dm_btn.html('<span class="which-mode">Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span></span>')
+  //   } else {
+  //     setModeText(false)
+  //     // $dm_btn.html('<span class="which-mode">Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span></span>')
+  //   }
+  // })
+
+  // function setModeText(mode) {
+  //   if (mode === 'true') {
+  //     $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>') 
+  //   } else {
+  //     $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+  //   }
+  // }
+  
+  // function setMode(mode) {
+  //       localStorage.setItem('dark_mode', `${mode}`)
+  //       document.querySelector('#darkmode').disabled = mode; 
+
+  //       if (mode === 'true') {
+  //       document.querySelector('#darkmode').disabled = false;
+  //       $dm_btn.html('<span class="which-mode"> Dark Mode<span id="mode_icon" class="fa fa-moon-o mode-icon"></span><span class="tiny-text">Enabled</span></span>') 
+
+  //       // document.querySelector('link[href="css/theme-dark-mode.css"]').disabled = false;
+  //     } else {
+  //       $dm_btn.html('<span class="which-mode"> Light Mode<span id="mode_icon" class="fa fa-sun-o mode-icon"></span><span class="tiny-text">Enabled</span></span>')
+  //     }
+  //   return setModeText(mode)
+  // }
+
+    // Theme switcher 
+    // $dm_btn.bind('click', (event) => {
+    //     event.preventDefault()
+    //     if (localStorage.getItem('dark_mode') === 'true') {
+    //       setMode('false'), console.log('set to false')
+    //     } else {
+    //       setMode('true'), console.log('set to true')
+    //     } 
+    //     return
+    // })
+    
+    
+    </script>
+  </body>
+
+</html>

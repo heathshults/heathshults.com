@@ -54,7 +54,8 @@
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand site-logo js-page-scroll" href="#page-top"><i class="fa fa-fw" aria-hidden="true"></i>HeathShults.com</a>
-          </div></div>
+          </div>
+        </div>
         <div class="col-md-6">
           <!-- <div class="collapse navbar-collapse d-flex justify-content-space-between" id="bs-example-navbar-collapse-1"> -->
           <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
@@ -791,7 +792,7 @@
                     <div class="row hs-border-top-white">
                       <div class="col-md-12"> 
                         <p class="hs-paragraph">
-                          <h5><a href="javascript:void(0);" onclick="javascript:showModal('#modBowlopolis');">Description:</a></h5>
+                          <h5>Description:</h5>
                           <span class="hs-text-muted">80% Hands on UI/UX Engineering. This projects
                             included website, game and cartoon production. </span>
                         </p>
@@ -967,7 +968,30 @@
 
     <!-- Portfolio Modal 1 -->
     <hs-modal dismissible full id="modBowlopolis">
-      <hs-card color-tone="dark">
+      <hs-card color-tone="light">
+        <hs-card-header>
+          <h2 class="hs-heading dark">
+            <span class="hs-text-xl">USA Football</span>
+            <div class="hs-heading__sub text-center">Little League Football Database</div>
+          </h2>
+        </hs-card-header>
+        <hs-card-body>
+          <p class="hs-paragraph">
+            My Roles: UX Design • UI Developer • Quality Assurance
+          </p>
+          carousel
+        </hs-card-body>
+        <hs-card-footer color-tone="dark">
+          <div class="hs-input-group">
+            <button class="hs-button hs-button--block hs-button--brand" onclick="javascript:closeModal('#modBowlopolis')">Close</button>
+            <button class="hs-button hs-button--block hs-button--info">Button</button>
+          </div>
+        </hs-card-footer>
+      </hs-card>
+    </hs-modal>
+
+    <hs-modal dismissible full id="modBowlopolis">
+      <hs-card color-tone="light">
         <hs-card-header>
           <h2 class="hs-heading dark">
             <span class="hs-text-xl">Bowlopolis</span>
@@ -991,36 +1015,6 @@
       </hs-card>
     </hs-modal>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="hs-portfolio-modal hs-modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="hs-modal-dialog">
-        <div class="hs-modal-content">
-          <div class="hs-close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl">
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 col-lg-offset-2">
-                <div class="hs-modal-body">
-                  <h2>Bowl Expo</h2>
-                  <p class="item-intro hs-text-muted">Website design/development.</p>
-                  <img class="img-responsive img-centered" src="/assets/img/portfolio/startup-framework-preview.png" alt="">
-                  <p><a href="http://bowlexpo.com">Bowl Expo</a> is a website for the largest event in the bowling
-                    industy. All major manufacturers, leaders and proprietors come here each year to learn more on how
-                    to make their business profit as well as networking with like minded peers.</p>
-                  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
-                    Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script>
       function showModal(modal) {
@@ -1050,7 +1044,7 @@
     <!-- <script src="hScript.bundle.js"></script> -->
    
     <script>
-
+      //  onclick="javascript:showModal('#modBowlopolis');"
       // // ====== RANKING BARS
       var theBars = document.querySelectorAll('.hs-ranking-bar')
       theBars.forEach(aBar => {

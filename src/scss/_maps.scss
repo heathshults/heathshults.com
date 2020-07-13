@@ -1,4 +1,4 @@
-$theme-default-colors: (
+$hs-default-colors: (
   background-primary: #f8f8f8,
   background-secondary: #ebebeb,
   text-onLight: #1a1a1a,
@@ -13,7 +13,7 @@ $theme-default-colors: (
   light_lime: #e7ffcb
 );
 
-$theme-dark-mode-colors: (
+$hs-dark-mode-colors: (
   text-onDark: rgb(255, 220, 206),
   blueGray-medium: rgb(80, 115, 134),
   blueGray-dark: rgb(32, 48, 64),
@@ -26,7 +26,7 @@ $theme-dark-mode-colors: (
   blue-dark: rgb(30, 54, 78)
 );
 
-$grays: (
+$hs-grays: (
   gray-base: #000,
   gray-darker: #050505, // lighten(gray-base, 13.5%)
   gray-dark: #121212,   // lighten(gray-base, 20%)
@@ -36,7 +36,7 @@ $grays: (
   gray-lightest: #eee // lighten(gray-base, 93.5%)
 );
 
-$experimental: (
+$hs-experimental: (
   dm-base: #000,
   dm-canvas: #222831,
   dm-surface: #30475E,
@@ -47,12 +47,12 @@ $experimental: (
   dm-light-alt: #EEE
 );
 
-$colors: (
+$hs-colors: (
   text: #151515,
   themes: (
     dark: (
-      background: map-get($experimental, dm-canvas),
-      text: map-get($experimental, dm-light),
+      background: map-get($hs-experimental, dm-canvas),
+      text: map-get($hs-experimental, dm-light),
     ),
     light: (
       background: #151515,

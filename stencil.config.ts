@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer';
 
 export const config: Config = {
   namespace: 'heathenscript-ui-components',
+  globalStyle: 'src/components/global/global.scss',
   outputTargets: [
     {
       type: 'dist',

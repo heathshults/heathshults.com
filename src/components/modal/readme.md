@@ -7,12 +7,14 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type      | Default |
-| ------------- | ------------- | ----------- | --------- | ------- |
-| `dismissible` | `dismissible` |             | `boolean` | `false` |
-| `full`        | `full`        |             | `boolean` | `false` |
-| `ghost`       | `ghost`       |             | `boolean` | `false` |
-| `open`        | `open`        |             | `boolean` | `false` |
+| Property      | Attribute     | Description | Type      | Default              |
+| ------------- | ------------- | ----------- | --------- | -------------------- |
+| `dismissible` | `dismissible` |             | `boolean` | `false`              |
+| `full`        | `full`        |             | `boolean` | `false`              |
+| `ghost`       | `ghost`       |             | `boolean` | `false`              |
+| `open`        | `open`        |             | `boolean` | `false`              |
+| `overlay`     | `overlay`     |             | `any`     | `undefined`          |
+| `winHeight`   | `win-height`  |             | `any`     | `window.innerHeight` |
 
 
 ## Events
@@ -25,6 +27,16 @@
 ## Methods
 
 ### `close() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `handleOverlay() => Promise<void>`
 
 
 

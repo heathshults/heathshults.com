@@ -5,35 +5,35 @@
 
 // Bootstrap Button Variant
 
-@mixin button-variant($color, $background, $border) {
-  color: $color;
-  background-color: $background;
-  border-color: $border;
+@mixin button-variant($hs-color, $hs-background, $hs-border) {
+  color: $hs-color;
+  background-color: $hs-background;
+  border-color: $hs-border;
 
   &:focus,
   &.focus {
-    color: $color;
-    background-color: darken($background, 10%);
-        border-color: darken($border, 25%);
+    color: $hs-color;
+    background-color: darken($hs-background, 10%);
+        border-color: darken($hs-border, 25%);
   }
   &:hover {
-    color: $color;
-    background-color: darken($background, 10%);
-        border-color: darken($border, 12%);
+    color: $hs-color;
+    background-color: darken($hs-background, 10%);
+        border-color: darken($hs-border, 12%);
   }
   &:active,
   &.active,
   .open > &.dropdown-toggle {
-    color: $color;
-    background-color: darken($background, 10%);
-        border-color: darken($border, 12%);
+    color: $hs-color;
+    background-color: darken($hs-background, 10%);
+        border-color: darken($hs-border, 12%);
 
     &:hover,
     &:focus,
     &.focus {
-      color: $color;
-      background-color: darken($background, 17%);
-          border-color: darken($border, 25%);
+      color: $hs-color;
+      background-color: darken($hs-background, 17%);
+          border-color: darken($hs-border, 25%);
     }
   }
   &:active,
@@ -47,14 +47,14 @@
     &:hover,
     &:focus,
     &.focus {
-      background-color: $background;
-          border-color: $border;
+      background-color: $hs-background;
+          border-color: $hs-border;
     }
   }
 
   .badge {
-    color: $background;
-    background-color: $color;
+    color: $hs-background;
+    background-color: $hs-color;
   }
 }
 
@@ -72,7 +72,7 @@
 }
 
 @mixin script-font {
-  font-family: $font-cursive-Caveat;
+  font-family: $hs-font-cursive-Caveat;
 }
 
 @mixin body-font {
@@ -98,32 +98,32 @@
  * `transform: translate3d(v(x-delta), v(y-delta), 0);`
  *
  * Parameters:
- *  $Var: name of the SASS variable, without its double hyphen prefix
- *  $fallback: (optional, null by default): custom property fallback value
+ *  $hs-Var: name of the SASS variable, without its double hyphen prefix
+ *  $hs-fallback: (optional, null by default): custom property fallback value
  */
-// $colors: map-merge($map1: $grays, $map2: $theme-dark-mode-colors);
-// $keys: map-keys($colors);
+// $hs-colors: map-merge($hs-map1: $hs-hs-grays, $hs-map2: $hs-hs-dark-mode-colors);
+// $hs-keys: map-keys($hs-colors);
 
-// @function getV($var, $fallback: null) {
-//   @if map-has-key($colors, $var) {
-//     $cssVarName: #{$var};
+// @function getV($hs-var, $hs-fallback: null) {
+//   @if map-has-key($hs-colors, $hs-var) {
+//     $hs-cssVarName: #{$hs-var};
 //   }
-//   @if($fallback) {
-//     @return var(--$cssVarName, $fallback);
+//   @if($hs-fallback) {
+//     @return var(--$hs-cssVarName, $hs-fallback);
 //   } @else {
-//     @return var(--$cssVarName);
+//     @return var(--$hs-cssVarName);
 //   }
 // }
 
 // accessor functions
 // z-index: 
 // usage: z-index(global, nav); z-index(dm-switcher, button)
-@function z-index($keys...) {
-  $value: $z-indexes;
+@function z-index($hs-keys...) {
+  $hs-value: $hs-z-indexes;
 
-  @each $key in $keys {
-    $value: map-get($value, $key);
+  @each $hs-key in $hs-keys {
+    $hs-value: map-get($hs-value, $hs-key);
   }
 
-  @return $value;
+  @return $hs-value;
 }
